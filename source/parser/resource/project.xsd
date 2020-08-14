@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.gehtsoft.com/docgen/project"
+            xmlns:dg="http://www.gehtsoft.com/docgen/project"
+            elementFormDefault="qualified" >
+
+    <xs:complexType name="Output">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="define" type="dg:Define"/>
+        </xs:sequence>
+        <xs:attribute name="template" type="xs:string" use="required" />
+        <xs:attribute name="file" type="xs:string" use="required" />
+        <xs:attribute name="encoding" type="xs:string" default="windows-1252" />
+    </xs:complexType>
+
+    <xs:complexType name="Define">
+        <xs:attribute name="name" type="xs:string" use="required" />
+        <xs:attribute name="value" type="xs:string" default="" />
+    </xs:complexType>
+
+    <xs:complexType name="Common">
+        <xs:sequence minOccurs="1" maxOccurs="unbounded">
+            <xs:element name="define" type="dg:Define"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="SourceFile">
+        <xs:attribute name="name" type="xs:string" use="required" />
+        <xs:attribute name="encoding" type="xs:string" default="windows-1252" />
+    </xs:complexType>
+
+    <xs:complexType name="SourceFolder">
+        <xs:attribute name="name" type="xs:string" use="required" />
+        <xs:attribute name="mask" type="xs:string" default="^.+\.ds$" />
+        <xs:attribute name="recursive" type="xs:boolean" default="false" />
+        <xs:attribute name="encoding" type="xs:string" default="windows-1252" />
+    </xs:complexType>
+
+    <xs:complexType name="Source">
+        <xs:sequence minOccurs="1" maxOccurs="unbounded">
+            <xs:choice>
+                <xs:element name="file" type="dg:SourceFile"/>
+                <xs:element name="folder" type="dg:SourceFolder"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Project">
+        <xs:sequence>
+            <xs:element name="common" type="dg:Common" minOccurs="0" maxOccurs="1" />
+            <xs:element name="source" type="dg:Source"/>
+            <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                <xs:element name="output" type="dg:Output"/>
+            </xs:sequence>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="help-project" type="dg:Project"/>
+</xs:schema>

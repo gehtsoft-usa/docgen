@@ -1,0 +1,21 @@
+<settings>
+    <assembly name="Gehtsoft.EF.Entities" xmldoc="Gehtsoft.EF.Entities.xml" />
+    <!--<assembly name="Gehtsoft.EF.Db.SqlDb" skip="true" /> -->
+
+    <namespace name="Gehtsoft.EF.Db.SqlDb.QueryBuilder" group="Gehtsoft.EF.Db.SqlDb" />
+    <namespace name="Gehtsoft.EF.Db.SqlDb.EntityQueries" group="Gehtsoft.EF.Db.SqlDb" />
+    <namespace name="Gehtsoft.EF.Db.SqlDb.EntityQueries.Linq" group="Gehtsoft.EF.Db.SqlDb" />
+    <namespace name="Gehtsoft.EF.Db.SqlDb.EntityGenericAccessor" group="Gehtsoft.EF.Db.SqlDb" />
+
+    <strip-namespace name="System" />
+    <strip-namespace name="System.Collections" />
+    <strip-namespace name="System.Collections.Generic" />
+    <strip-namespace name="System.Runtime.Serialization" />
+    <strip-namespace name="System.Threading.Tasks" />
+    <strip-namespace name="Gehtsoft.EF.Entities" />
+    <strip-namespace name="Gehtsoft.EF.Db.SqlDb" />
+    <strip-namespace name="Gehtsoft.EF.Db.SqlDb.QueryBuilder" />
+    <strip-namespace name="Gehtsoft.EF.Db.SqlDb.EntityQueries" />
+    <strip-namespace name="Gehtsoft.EF.Db.SqlDb.EntityQueries.Linq" />
+    <strip-namespace name="Gehtsoft.EF.Db.SqlDb.EntityGenericAccessor" />
+</settings>

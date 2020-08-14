@@ -1,0 +1,19 @@
+{
+  "comments": {
+    "lineComment": "!",
+  },
+
+  "brackets": [["[", "]"]],
+
+  "folding": {
+    "markers" : {
+      "start": "^\\s*@(group|article|class|member|param|declaration|see|exception|return|table|row|col|list|list-item|example|tab)\\s*$",
+      "end": "^\\s*@end\\s*$"
+    }
+  },
+
+  "indentationRules": {
+    "increaseIndentPattern": "^\\s*@(group|article|class|member|param|declaration|see|exception|return|table|row|col|list|list-item|example|tab|header)\\s*$",
+    "decreaseIndentPattern": "^\\s*@end\\s*$"
+  }
+}

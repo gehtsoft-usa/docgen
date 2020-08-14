@@ -1,0 +1,983 @@
+### https://eeyo.io/iro/
+### https://eeyo.io/iro/documentation
+
+name                   = docsource
+file_extensions []     = ds;
+textmate_uuid = 47f306e3-76bf-47c6-878e-7e789d7bdbf5
+
+################################################################
+## Styles
+################################################################
+
+styles [] {
+
+.comment : style {
+   color                 = light_green
+   italic                = true
+   ace_scope             = comment
+   textmate_scope        = comment
+   pygments_scope        = Comment
+}
+
+.keyword : style {
+   color     = cyan
+   ace_scope             = keyword
+   textmate_scope        = keyword
+   pygments_scope        = Keyword
+}
+
+.numeric : style {
+   color                 = gold
+   ace_scope             = constant.numeric
+   textmate_scope        = constant.numeric
+   pygments_scope        = Number
+}
+
+.punctuation : style {
+   color     = red_2
+   ace_scope             = punctuation
+   textmate_scope        = punctuation
+   pygments_scope        = Punctuation
+}
+
+.entity.name : style {
+   color     = blue
+   ace_scope             = punctuation
+   textmate_scope        = punctuation
+   pygments_scope        = Punctuation
+}
+
+
+.text : style {
+   color                 = brown
+   ace_scope             = text
+   textmate_scope        = text
+   pygments_scope        = String
+}
+
+.whitespace : style {
+   color                 = white
+   ace_scope             = text
+   textmate_scope        = text
+   pygments_scope        = String
+}
+
+
+.illegal : style {
+   color                 = red
+   ace_scope             = invalid
+   textmate_scope        = invalid
+   pygments_scope        = Generic.Error
+}
+
+}
+
+#################################################
+## Parse contexts
+#################################################
+
+contexts [] {
+
+##############################################
+## Main Context - Entry point context
+##############################################
+
+main : context {
+   : inline_push {
+      regex \= ^(\s*)(@group)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace;
+      : pop {
+         regex \= ^(\s*)(@end)(\s*)$
+         styles[] = .whitespace,.keyword,.whitespace;
+      }
+      : include "group";
+   }
+   
+   : inline_push {
+      regex \= ^(\s*)(@article)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace;
+      : pop {
+         regex \= ^(\s*)(@end)(\s*)$
+         styles[] = .whitespace,.keyword,.whitespace;
+      }
+      : include "article";
+   }
+
+   : inline_push {
+      regex \= ^(\s*)(@class)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace;
+      : pop {
+         regex \= ^(\s*)(@end)(\s*)$
+         styles[] = .whitespace,.keyword,.whitespace;
+      }
+      : include "classbody";
+   }
+}
+
+ifprop : context {
+   : pattern {
+      regex \= ^(\s*)(@if)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }
+}
+
+transformprop : context {
+   : pattern {
+      regex \= ^(\s*)(@transform)(\s*)(=)(\s*)(yes|no|def)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name,.whitespace;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@transform)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.illegal;
+   }
+}
+
+keyprop : context {
+   : pattern {
+      regex \= ^(\s*)(@key)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }
+}
+
+ingroupprop : context {
+   : pattern {
+      regex \= ^(\s*)(@ingroup)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }
+}
+
+
+titleprop : context {
+   : inline_push {
+      regex \= ^(\s*)(@title)(\s*)(=)
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation;
+      : eol_pop {  }
+      : include "text";
+   }
+}
+
+briefprop : context {
+   : inline_push {
+      regex \= ^(\s*)(@brief)(\s*)(=)
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation;
+      : eol_pop {  }
+      : include "text";
+   }
+}
+
+grayprop : context {
+   : pattern {
+      regex \= ^(\s*)(@gray)(\s*)(=)(\s*)(yes|no)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name,.whitespace;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@gray)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.illegal;
+   }
+}
+
+widthprop : context {
+   : pattern {
+      regex \= ^(\s*)(@width)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }
+}
+
+commonprops : context {
+   : include "keyprop";
+   : include "ingroupprop";
+   : include "ifprop";
+   : include "transformprop";
+   : include "titleprop";
+   : include "briefprop";
+}
+
+commoncontent : context {
+   : inline_push {
+      regex \= ^(\s*)(@see)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace;
+      : pop {
+         regex \= ^(\s*)(@end)(\s*)$
+         styles[] = .whitespace,.keyword,.whitespace;
+      }
+      : include "see";
+   }
+
+   : inline_push {
+      regex \= ^(\s*)(@list)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace;
+      : pop {
+         regex \= ^(\s*)(@end)(\s*)$
+         styles[] = .whitespace,.keyword,.whitespace;
+      }
+      : include "list";
+   }
+
+   : inline_push {
+      regex \= ^(\s*)(@header)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace;
+      : pop {
+         regex \= ^(\s*)(@end)(\s*)$
+         styles[] = .whitespace,.keyword,.whitespace;
+      }
+      : include "header";
+   }
+
+   : inline_push {
+      regex \= ^(\s*)(@table)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace;
+      : pop {
+         regex \= ^(\s*)(@end)(\s*)$
+         styles[] = .whitespace,.keyword,.whitespace;
+      }
+      : include "table";
+   }
+
+   : inline_push {
+      regex \= ^(\s*)(@example)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace;
+      : pop {
+         regex \= ^(\s*)(@end)(\s*)$
+         styles[] = .whitespace,.keyword,.whitespace;
+      }
+      : include "example";
+   }
+
+   
+   : include "text";
+}
+
+see : context {
+   : include "keyprop";
+   : include "titleprop";
+   : include "ifprop";
+
+   : include "text";
+}
+
+header : context {
+   : pattern {
+      regex \= ^(\s*)(@level)(\s*)(=)(\s*)([0-6])(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name,.whitespace;
+   }
+   : pattern {
+      regex \= ^(\s*)(@level)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.illegal;
+   }
+   
+   : include "text";
+}
+
+highlighprop : context {
+   : pattern {
+      regex \= ^(\s*)(@highlight)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }
+}
+
+example : context {
+   : include "ifprop";
+   : include "transformprop";
+   : include "titleprop";
+   : include "highlighprop";
+
+   : pattern {
+      regex \= ^(\s*)(@show)(\s*)(=)(\s*)(yes|no|always)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name,.whitespace;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@show)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.illegal;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@tabs)(\s*)(=)(\s*)(yes|no)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name,.whitespace;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@tabs)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.illegal;
+   }
+   
+   : include "grayprop";
+
+   
+   : inline_push {
+      regex \= ^(\s*)(@tab)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace;
+      : pop {
+         regex \= ^(\s*)(@end)(\s*)$
+         styles[] = .whitespace,.keyword,.whitespace;
+      }
+      : include "tab";
+   }
+
+   : include "text";
+}
+
+tab : context {
+   : include "ifprop";
+   : include "titleprop";
+   : include "highlighprop";
+   : include "text";
+}
+
+list : context {
+   : pattern {
+      regex \= ^(\s*)(@type)(\s*)(=)(\s*)(num|dot)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name,.whitespace;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@type)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.illegal;
+   }
+   
+      : inline_push {
+      regex \= ^(\s*)(@list)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace;
+      : pop {
+         regex \= ^(\s*)(@end)(\s*)$
+         styles[] = .whitespace,.keyword,.whitespace;
+      }
+      : include "list";
+   }
+
+
+   : inline_push {
+      regex \= ^(\s*)(@list-item)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace;
+      : pop {
+         regex \= ^(\s*)(@end)(\s*)$
+         styles[] = .whitespace,.keyword,.whitespace;
+      }
+      : include "listitem";
+   }
+}
+
+listitem : context {
+   : include "ifprop";
+   : include "text";
+}
+
+table : context {
+   : include "ifprop";
+   : include "widthprop";
+   
+   : inline_push {
+      regex \= ^(\s*)(@row)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace;
+      : pop {
+         regex \= ^(\s*)(@end)(\s*)$
+         styles[] = .whitespace,.keyword,.whitespace;
+      }
+      : include "tablerow";
+   }
+   
+   : pattern {
+      regex \= (.+)
+      styles[] =.illegal;
+   }
+}
+
+tablerow : context {
+   : include "ifprop";
+   
+   : pattern {
+      regex \= ^(\s*)(@header)(\s*)(=)(\s*)(yes|no)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name,.whitespace;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@header)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.illegal;
+   }
+   
+   : inline_push {
+      regex \= ^(\s*)(@col)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace;
+      : pop {
+         regex \= ^(\s*)(@end)(\s*)$
+         styles[] = .whitespace,.keyword,.whitespace;
+      }
+      : include "tablecol";
+   }
+   
+   : pattern {
+      regex \= (.+)
+      styles[] =.illegal;
+   }
+
+   
+}
+
+tablecol : context {
+   : include "grayprop";
+   : include "widthprop";
+   : include "commoncontent";
+}
+
+text : context {
+   : inline_push {
+      regex \= (\[b\])
+      styles[] = .keyword;
+      : pop {
+         regex \= (\[/b\])
+         styles[] = .keyword;
+      }
+      : include "text";
+   }
+
+   : inline_push {
+      regex \= (\[i\])
+      styles[] = .keyword;
+      : pop {
+         regex \= (\[/i\])
+         styles[] = .keyword;
+      }
+      : include "text";
+   }
+      
+   : inline_push {
+      regex \= (\[u\])
+      styles[] = .keyword;
+      : pop {
+         regex \= (\[/u\])
+         styles[] = .keyword;
+      }
+      : include "text";
+   }
+   
+   : inline_push {
+      regex \= (\[c\])
+      styles[] = .keyword;
+      : pop {
+         regex \= (\[/c\])
+         styles[] = .keyword;
+      }
+      : include "text";
+   }
+
+   : inline_push {
+      regex \= (\[s\])
+      styles[] = .keyword;
+      : pop {
+         regex \= (\[/s\])
+         styles[] = .keyword;
+      }
+      : include "text";
+   }
+
+   : inline_push {
+      regex \= (\[sup\])
+      styles[] = .keyword;
+      : pop {
+         regex \= (\[/sup\])
+         styles[] = .keyword;
+      }
+      : include "text";
+   }
+   
+   : inline_push {
+      regex \= (\[sub\])
+      styles[] = .keyword;
+      : pop {
+         regex \= (\[/sub\])
+         styles[] = .keyword;
+      }
+      : include "text";
+   }
+
+   : inline_push {
+      regex \= (\[green\])
+      styles[] = .keyword;
+      : pop {
+         regex \= (\[/green\])
+         styles[] = .keyword;
+      }
+      : include "text";
+   }
+   
+      : inline_push {
+      regex \= (\[red\])
+      styles[] = .keyword;
+      : pop {
+         regex \= (\[/red\])
+         styles[] = .keyword;
+      }
+      : include "text";
+   }
+   
+   : inline_push {
+      regex \= (\[blue\])
+      styles[] = .keyword;
+      : pop {
+         regex \= (\[/blue\])
+         styles[] = .keyword;
+      }
+      : include "text";
+   }
+   
+   : inline_push {
+      regex \= (\[gray\])
+      styles[] = .keyword;
+      : pop {
+         regex \= (\[/gray\])
+         styles[] = .keyword;
+      }
+      : include "text";
+   }
+
+   : inline_push {
+      regex \= (\[size=)([^\]]+)(\])
+      styles[] = .keyword,.entity.name,.keyword;
+      : pop {
+         regex \= (\[/size\])
+         styles[] = .keyword;
+      }
+      : include "text";
+   }
+
+   : inline_push {
+      regex \= (\[color=)([^\]]+)(\])
+      styles[] = .keyword,.entity.name,.keyword;
+      : pop {
+         regex \= (\[/color\])
+         styles[] = .keyword;
+      }
+      : include "text";
+   }
+   
+   : inline_push {
+      regex \= (\[url=)([^\]]+)(\])
+      styles[] = .keyword,.entity.name,.keyword;
+      : pop {
+         regex \= (\[/url\])
+         styles[] = .keyword;
+      }
+      : include "text";
+   }
+   
+   : inline_push {
+      regex \= (\[eurl=)([^\]]+)(\])
+      styles[] = .keyword,.entity.name,.keyword;
+      : pop {
+         regex \= (\[/eurl\])
+         styles[] = .keyword;
+      }
+      : include "text";
+   }
+   
+   : inline_push {
+      regex \= (\[link=)([^\]]+)(\])
+      styles[] = .keyword,.entity.name,.keyword;
+      : pop {
+         regex \= (\[/link\])
+         styles[] = .keyword;
+      }
+      : include "text";
+   }
+
+   : inline_push {
+      regex \= (\[clink=)([^\]]+)(\])
+      styles[] = .keyword,.entity.name,.keyword;
+      : pop {
+         regex \= (\[/clink\])
+         styles[] = .keyword;
+      }
+      : include "text";
+   }
+
+   : pattern {
+      regex \= (\[br\])
+      styles[] = .keyword;
+   }
+
+   : pattern {
+      regex \= (\[nil\])
+      styles[] = .keyword;
+   }
+   
+   : pattern {
+      regex \= (\[img=)([^\]]+)(\])
+      styles[] = .keyword,.entity.name,.keyword;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@\w+)(\s*)(=?)(.*)$
+      styles[] = .whitespace,.illegal,.whitespace,.illegal,.illegal;
+   }
+
+   : pattern {
+      regex \= (\w+)
+      styles[] = .text;
+   }
+
+}
+
+group : context {
+   : pattern {
+      regex \= ^(\s*)(@sortarticles)(\s*)(=)(\s*)(yes|no)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name,.whitespace;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@sortarticles)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.illegal;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@sortclasses)(\s*)(=)(\s*)(yes|no)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name,.whitespace;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@sortclasses)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.illegal;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@sortgroups)(\s*)(=)(\s*)(yes|no)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name,.whitespace;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@sortgroups)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.illegal;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@order)(\s*)(=)(\s*)(sorted|custom)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name,.whitespace;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@order)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.illegal;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@importhhk)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@importhhc)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }
+   
+   
+   : include "commonprops";
+   : include "commoncontent";
+}
+
+article : context {
+   : pattern {
+      regex \= ^(\s*)(@aliasId)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@excludeFromList)(\s*)(=)(\s*)(yes|no)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name,.whitespace;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@excludeFromList)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.illegal;
+   }
+   
+
+   : include "commonprops";
+   : include "commoncontent";
+}
+
+param : context {
+   : inline_push {
+      regex \= ^(\s*)(@param)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace;
+      : pop {
+         regex \= ^(\s*)(@end)(\s*)$
+         styles[] = .whitespace,.keyword,.whitespace;
+      }
+      : include "parambody";
+   }
+}
+
+parambody : context {
+   : pattern {
+      regex \= ^(\s*)(@name)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }
+   : include "commoncontent";
+}
+
+declaration : context {
+   : inline_push {
+      regex \= ^(\s*)(@declaration)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace;
+      : pop {
+         regex \= ^(\s*)(@end)(\s*)$
+         styles[] = .whitespace,.keyword,.whitespace;
+      }
+      : include "declarationbody";
+   }
+}
+
+declarationbody : context {
+   :include "ifprop";
+
+   : pattern {
+      regex \= ^(\s*)(@language)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@prefix)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }   
+   
+   : pattern {
+      regex \= ^(\s*)(@name)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }   
+   
+   : pattern {
+      regex \= ^(\s*)(@suffix)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }   
+   
+   : pattern {
+      regex \= ^(\s*)(@namesuffix)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@custom)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }   
+   
+   : inline_push {
+      regex \= ^(\s*)(@return)(\s*)(=)
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation;
+      : eol_pop {  }
+      : include "text";
+   }
+
+   : inline_push {
+      regex \= ^(\s*)(@params)(\s*)(=)
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation;
+      : eol_pop {  }
+      : include "text";
+   }
+   
+   : pattern {
+      regex \= (\s+)
+      styles[] =.whitespace;
+   }
+
+   
+   : pattern {
+      regex \= (.+)
+      styles[] =.illegal;
+   }
+}
+
+nameprop : context {
+   : pattern {
+      regex \= ^(\s*)(@name)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }
+   
+}
+
+classbody : context {
+   : include "keyprop";
+   : include "ingroupprop";
+   : include "ifprop";
+   : include "transformprop";
+   : include "nameprop";
+   : include "briefprop";
+   
+   : pattern {
+      regex \= ^(\s*)(@parent)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@declname)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@sig)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@prefix)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@type)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@sort)(\s*)(=)(\s*)(yes|no)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name,.whitespace;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@sort)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.illegal;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@classnameinkey)(\s*)(=)(\s*)(true|false|both)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name,.whitespace;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@classnameinkey)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.illegal;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@import)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@membersToContent)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }
+   
+   : include "param";
+   : include "declaration";
+   
+   : inline_push {
+      regex \= ^(\s*)(@member)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace;
+      : pop {
+         regex \= ^(\s*)(@end)(\s*)$
+         styles[] = .whitespace,.keyword,.whitespace;
+      }
+      : include "memberbody";
+   }
+
+   : include "commoncontent";
+}
+
+return : context {
+   : inline_push {
+      regex \= ^(\s*)(@return)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace;
+      : pop {
+         regex \= ^(\s*)(@end)(\s*)$
+         styles[] = .whitespace,.keyword,.whitespace;
+      }
+      
+      : include "commoncontent";
+   }
+}
+
+exception : context {
+   : inline_push {
+      regex \= ^(\s*)(@exception)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace;
+      : pop {
+         regex \= ^(\s*)(@end)(\s*)$
+         styles[] = .whitespace,.keyword,.whitespace;
+      }
+      
+      : include "exceptioncontent";
+   }
+}
+
+exceptioncontent : context {
+   : include "nameprop";
+   : include "commoncontent";
+}
+
+
+memberbody : context {
+   : include "ifprop";
+   : include "keyprop";
+   : include "nameprop";
+   : include "transformprop";
+   : include "briefprop";
+   
+   : pattern {
+      regex \= ^(\s*)(@custom)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@sig)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@divisor)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@index)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@type)(\s*)(=)(\s*)(property|field|method|constructor|function)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name,.whitespace;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@type)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.illegal;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@visibility)(\s*)(=)(\s*)(public|protected|private|package)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name,.whitespace;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@visibility)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.illegal;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@scope)(\s*)(=)(\s*)(class|instance)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name,.whitespace;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@scope)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.illegal;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@excludeFromList)(\s*)(=)(\s*)(yes|no)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name,.whitespace;
+   }
+   
+   : pattern {
+      regex \= ^(\s*)(@excludeFromList)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.illegal;
+   }
+   
+   : include "return";
+   : include "exception";
+   : include "param";
+   : include "declaration";
+   : include "commoncontent";
+}
+
+}

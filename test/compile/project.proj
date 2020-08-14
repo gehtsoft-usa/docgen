@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+    <TargetFramework>net46</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Gehtsoft.Build.DocGen" Version="0.1.2" IncludeAssets="build" />
+    <PackageReference Include="Gehtsoft.Build.ContentDelivery" Version="0.1.9" IncludeAssets="build" />
+  </ItemGroup>
+
+ <ItemGroup>
+    <CustomFile Include="$(MSBuildProjectDirectory)\img\**\*.png;$(MSBuildProjectDirectory)\html\**\*.*" />
+    <TargetDir Include="$(MSBuildProjectDirectory)\dst" />
+ </ItemGroup>
+
+ <Target Name="CleanDoc">
+  <RemoveDir Directories="@(TargetDir)"/>
+ </Target>
+
+
+ <Target Name="MakeDoc">
+  <MakeDir Directories="@(TargetDir)" />
+  <DocGen Project="project.xml" />
+  <Copy SourceFiles="@(MySourceFiles)" DestinationFolder="$(MSBuildProjectDirectory)/dst" />
+  <ContentFromPackage Package="Gehtsoft.Build.DocGen" Source="Content\template\html\res" Version="0.1.2" Destination="$(MSBuildProjectDirectory)/dst/res" />
+  <ContentFromPackage Package="Gehtsoft.Build.DocGen" Source="Content\template\html\highlighter" Version="0.1.2" Destination="$(MSBuildProjectDirectory)/dst/highlighter" />
+  <ContentFromPackage Package="Gehtsoft.Build.DocGen" Source="Content\template\html\menu" Version="0.1.2" Destination="$(MSBuildProjectDirectory)/dst/menu" />
+  <ContentFromPackage Package="Gehtsoft.Build.DocGen" Source="Content\template\html\pageImages" Version="0.1.2" Destination="$(MSBuildProjectDirectory)/dst/pageImages" />
+ </Target>
+</Project>

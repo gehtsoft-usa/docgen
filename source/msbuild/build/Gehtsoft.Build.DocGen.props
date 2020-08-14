@@ -1,0 +1,9 @@
+<Project TreatAsLocalProperty="DocGenTaskFolder;DocGenTaskAssembly">
+  <PropertyGroup>
+    <DocGenTaskFolder Condition=" '$(MSBuildRuntimeType)' == 'Core' ">netstandard2.0</DocGenTaskFolder>
+    <DocGenTaskFolder Condition=" '$(MSBuildRuntimeType)' != 'Core' ">net46</DocGenTaskFolder>
+    <DocGenTaskAssembly>$(MSBuildThisFileDirectory)..\tasks\$(DocGenTaskFolder)\Gehtsoft.Build.DocGen.dll</DocGenTaskAssembly>
+  </PropertyGroup>
+
+  <UsingTask TaskName="Gehtsoft.Build.DocGen.DocGen" AssemblyFile="$(DocGenTaskAssembly)" />
+</Project>

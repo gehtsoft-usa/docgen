@@ -1,0 +1,64 @@
+<declarations>
+ <!-- visual basic -->
+ <declaration language="vb" type="field" file="declaration\vb.xsl" />
+ <declaration language="vb" type="property" file="declaration\vb.xsl" />
+ <declaration language="vb" type="method" custom="sub" file="declaration\vb.xsl" />
+ <declaration language="vb" type="method" custom="function" file="declaration\vb.xsl" />
+ <declaration language="vb" type="method" file="declaration\vb.xsl" />
+ <!-- C# -->
+ <declaration language="cs" type="field" file="declaration\c-like.xsl" />
+ <declaration language="cs" type="property" file="declaration\c-like.xsl" />
+ <declaration language="cs" type="method" file="declaration\c-like.xsl" />
+ <declaration language="cs" type="constructor" file="declaration\c-like.xsl" />
+ <!-- C++ -->
+ <declaration language="cpp" type="field" file="declaration\c-like.xsl" />
+ <declaration language="cpp" type="property" file="declaration\c-like.xsl" />
+ <declaration language="cpp" type="method" file="declaration\c-like.xsl" />
+ <declaration language="cpp" type="constructor" file="declaration\c-like.xsl" />
+ <declaration language="cpp" type="function" file="declaration\c-like.xsl" />
+ <!-- MQ4 -->
+ <declaration language="mq4" type="function" file="declaration\mq4.xsl" />
+ <!-- EasyLang -->
+ <declaration language="el" type="function" file="declaration\el.xsl" />
+ <!-- IDL -->
+ <declaration language="idl" type="property" file="declaration\idl.xsl" />
+ <declaration language="idl" type="method" file="declaration\idl.xsl" />
+ <!-- Java -->
+ <declaration language="java" type="field" custom="enum" file="declaration\java-enum.xsl" />
+ <declaration language="java" type="field" file="declaration\c-like.xsl" />
+ <declaration language="java" type="property" file="declaration\c-like.xsl" />
+ <declaration language="java" type="method" file="declaration\c-like.xsl" />
+ <declaration language="java" type="constructor" file="declaration\c-like.xsl" />
+ <!-- LUA -->
+ <declaration language="lua" type="field" file="declaration\lua.xsl" />
+ <declaration language="lua" type="property" file="declaration\lua.xsl" />
+ <declaration language="lua" type="method" file="declaration\lua.xsl" />
+ <!-- JavaScript -->
+ <declaration language="javaScript" type="field" file="declaration\javaScript.xsl" />
+ <declaration language="javaScript" type="property" file="declaration\javaScript.xsl" />
+ <declaration language="javaScript" type="method" file="declaration\javaScript.xsl" />
+ <declaration language="javaScript" type="function" file="declaration\javaScript.xsl" />
+ <!-- Report Engine: templates -->
+ <declaration language="re" type="field" file="declaration\re.xsl" />
+ <declaration language="re" type="property" file="declaration\re.xsl" />
+ <declaration language="re" type="method" file="declaration\re.xsl" />
+ <!-- Report Engine: constants -->
+ <declaration language="re1" type="field" file="declaration\re1.xsl" />
+ <declaration language="re1" type="property" file="declaration\re1.xsl" />
+ <declaration language="re1" type="method" file="declaration\re1.xsl" />
+ <!-- Report Engine: statements -->
+ <declaration language="re2" type="field" file="declaration\re2.xsl" />
+ <declaration language="re2" type="property" file="declaration\re2.xsl" />
+ <declaration language="re2" type="method" file="declaration\re2.xsl" />
+
+ <declaration language="xml" type="property" custom="element" file="declaration\xml-element.xsl" />
+ <declaration language="html" type="property" file="declaration\html-tag.xsl" />
+
+ <declaration language="sql" type="field" file="declaration\sql-column.xsl" />
+ <declaration language="sql" type="property" file="declaration\sql-key.xsl" />
+
+ <!-- Report Engine: statements -->
+ <declaration language="python" type="field" file="declaration\python.xsl" />
+ <declaration language="python" type="property" file="declaration\python.xsl" />
+ <declaration language="python" type="method" file="declaration\python.xsl" />
+</declarations>

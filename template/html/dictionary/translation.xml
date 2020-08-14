@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<dictionary default-language="en">
+ <string id="brief">
+  <language id="en" value="Brief" />
+  <language id="fr" value="Résumé" />
+  <language id="ru" value="Резюме" />
+ </string>
+ <string id="details">
+  <language id="en" value="Details" />
+  <language id="fr" value="Détails" />
+  <language id="ru" value="Описание" />
+ </string>
+ <string id="back">
+  <language id="en" value="back" />
+  <language id="fr" value="retour" />
+  <language id="ru" value="назад" />
+ </string>
+ <string id="declaredin">
+  <language id="en" value="Declared in " />
+  <language id="fr" value="" />
+  <language id="ru" value="Определено в " />
+ </string>
+ <string id="declaration">
+  <language id="en" value="Declaration" />
+  <language id="fr" value="" />
+  <language id="ru" value="Объявление" />
+ </string>
+ <string id="return">
+  <language id="en" value="Returns" />
+  <language id="fr" value="" />
+  <language id="ru" value="Возвращаемое значение" />
+ </string>
+ <string id="exceptions">
+  <language id="en" value="Exceptions" />
+  <language id="fr" value="" />
+  <language id="ru" value="Исключения" />
+ </string>
+ <string id="parameters">
+  <language id="en" value="Parameters" />
+  <language id="fr" value="" />
+  <language id="ru" value="Параметры" />
+ </string>
+ <string id="seealso">
+  <language id="en" value="See Also" />
+  <language id="fr" value="" />
+  <language id="ru" value="Дополнительная информация" />
+ </string>
+ <string id="parents">
+  <language id="en" value="Parents" />
+  <language id="fr" value="" />
+  <language id="ru" value="Родительские классы" />
+ </string>
+ <string id="articles">
+  <language id="en" value="Articles" />
+  <language id="fr" value="" />
+  <language id="ru" value="Статьи" />
+ </string>
+ <string id="groups">
+  <language id="en" value="Groups" />
+  <language id="fr" value="" />
+  <language id="ru" value="Разделы" />
+ </string>
+ <string id="index">
+  <language id="en" value="Keywords Index" />
+  <language id="fr" value="" />
+  <language id="ru" value="Ссылочный указатель" />
+ </string>
+</dictionary>

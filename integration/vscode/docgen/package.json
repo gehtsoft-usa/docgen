@@ -1,0 +1,60 @@
+{
+    "name": "docgen",
+    "displayName": "DocGen Support",
+    "publisher": "Gehtsoft",
+    "description": "Gehtsoft Documentation Source Code",
+    "version": "0.0.5",
+    "engines": {
+        "vscode": "^1.37.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "docgen",
+                "aliases": [
+                    "DocGen",
+                    "ds"
+                ],
+                "extensions": [
+                    ".ds"
+                ],
+                "firstLine": "^\\s*@(group|class|article)",
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "docgen",
+                "scopeName": "source.docsource",
+                "path": "./syntaxes/docgen.tmLanguage.xml"
+            }
+        ]
+    },
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/extension.js",
+    "scripts": {
+        "vscode:prepublish": "tsc -p ./",
+        "compile": "tsc -p ./",
+        "tslint": "tslint ./src/**/*.ts",
+        "watch": "tsc -w -p ./",
+        "package": "vsce package",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "@types/node": "^10.12.18",
+        "tslint": "^5.16.0",
+        "typescript": "^3.5.1",
+        "vsce": "^1.61.0",
+        "vscode": "^1.1.36"
+    },
+    "dependencies": {
+        "xmldom": "^0.1.27",
+        "iconv-lite": "^0.5.0",
+        "n-readlines": "^1.0.0"
+    }
+}

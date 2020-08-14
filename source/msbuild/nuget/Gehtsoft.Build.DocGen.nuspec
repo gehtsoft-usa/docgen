@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Gehtsoft.Build.DocGen</id>
+        <version>0.1.2</version>
+        <authors>Gehtsoft</authors>
+        <licenseUrl>http://asp.gehtsoftusa.com/doc/privatelicense.html</licenseUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <releaseNotes>Initial Release</releaseNotes>
+        <description>MSBuild task to compile Hime grammars</description>
+    </metadata>
+    <files>
+        <file src="../build/Gehtsoft.Build.DocGen.props" target="build" />
+        <file src="../buildMultiTargeting/Gehtsoft.Build.DocGen.props" target="buildMultiTargeting" />
+        <file src="../bin/Release/net46/Gehtsoft.Build.DocGen.dll" target="tasks/net46" />
+        <file src="../bin/Release/net46/docgen2.output.dll" target="tasks/net46" />
+        <file src="../bin/Release/net46/docgen2.parser.dll" target="tasks/net46" />
+        <file src="../bin/Release/netstandard2.0/Gehtsoft.Build.DocGen.dll" target="tasks/netstandard2.0" />
+        <file src="../bin/Release/netstandard2.0/docgen2.output.dll" target="tasks/netstandard2.0" />
+        <file src="../bin/Release/netstandard2.0/docgen2.parser.dll" target="tasks/netstandard2.0" />
+        <file src=".\..\..\..\template\**\*.xsl" target="Content/template" />
+        <file src=".\..\..\..\template\**\*.xml" target="Content/template" />
+        <file src=".\..\..\..\template\**\*.txt" target="Content/template" />
+        <file src=".\..\..\..\template\**\*.css" target="Content/template" />
+        <file src=".\..\..\..\template\**\*.js" target="Content/template" />
+        <file src=".\..\..\..\template\**\*.png" target="Content/template" />
+        <file src=".\..\..\..\template\**\*.gif" target="Content/template" />
+    </files>
+</package>

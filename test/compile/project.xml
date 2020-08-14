@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" ?>
+<dg:help-project xmlns:dg="http://www.gehtsoft.com/docgen/project">
+    <dg:common>
+        <dg:define name="simplified-text-syntax" value="yes" />
+    </dg:common>
+
+    <dg:source>
+        <dg:file name="src\index.ds" encoding="utf-8" />
+    </dg:source>
+
+    <dg:output template="%docgen%\template\html\main.xsl" file="dst/null-file" encoding="windows-1252" >
+        <dg:define name="text-language" value="en" />
+        <dg:define name="hhp-language" value="0x409 English (United States)" />
+        <dg:define name="help-title" value="WebApp API Reference" />
+        <dg:define name="chm-file" value="..\webapp.chm" />
+        <dg:define name="advanced-web-content" value="yes" />
+        <dg:define name="default-transform" value="yes" />
+        <dg:define name="enable-highlighter" value="yes" />
+        <dg:define name="external-resources" value="no" />
+    </dg:output>
+</dg:help-project>
+

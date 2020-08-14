@@ -1,0 +1,121 @@
+@group
+    @title=Index
+    @brief=
+    @key=index
+    @ingroup=
+
+    @example
+        @title=test gray
+        @gray=no
+        1233[br]
+        567
+    @end
+
+    @example
+        @title=example
+        using System;
+       !namespace MyNamespace
+       !{
+       !    class MyClass
+       !    {
+       !    }
+       !}
+
+    @end
+    @example
+        @title=example
+        @tabs=yes
+        @tab
+            @title=cs
+            @highlight=cs
+       !using System;
+       !namespace MyNamespace
+       !{
+       !    class MyClass
+       !    {
+       !    }
+       !}
+        @end
+        @tab
+            @title=cpp
+            @highlight=cpp
+       !#include <stdio.h>
+       !
+       !int main()
+       !{
+       !    printf("Hello world!\n");
+       !}
+        @end
+    @end
+
+    @example
+        @title=HTML
+        @highlight=html
+        <html><body>Hello, world!</body></html>
+    @end
+    @example
+        @title=HTML
+        @highlight=cshtml
+        !<x-form mode="twocolumn"
+        !        action="@Url.Action("Profile")"
+        !        title="Profile"
+        !        block="true"
+        !        for="@Model.Response" container-width="10">
+        !    <x-form-errors form-errors="@Model.Errors"
+        !                   support-on-client-validation="true"
+        !                   validator="@(new ValidatorToModelConverter(Model.Validator))" />
+        !
+        !    <x-embed-form model="@Model.ProfileModel"
+        !                  response="@Model.Response.ProfileResponse"
+        !                  url="../UserManagement/Profile.cshtml"/>
+        !
+        !    <x-form-group whole-row="true" style="text-align: center;">
+        !        <x-button role="submit" label="Save" />
+        !    </x-form-group>
+        !</x-form>
+    @end
+
+@end
+
+@class
+    @key=class
+    @name=class
+    @ingroup=index
+    @brief=
+
+    There is a list
+
+    * Element 1
+
+    - Element 2. But this element is
+    made in multiple lines!!!
+
+    Another List
+
+    # element
+
+    # another element
+
+    |{header,30%}name|value|
+
+    |[c]value1[/c]|description|
+
+    There is a list
+
+    * Element 1
+    - Element 2
+
+
+    Another List
+
+    # element
+    # another element
+
+    |{header,30%}name|value|
+    |[c]value1[/c]|description|
+
+    @member
+        @name=member
+        @brief=
+    @end
+@end
