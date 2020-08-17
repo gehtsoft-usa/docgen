@@ -6,6 +6,7 @@
 
     <dg:source>
         <dg:file name="src\index.ds" encoding="utf-8" />
+        <dg:folder name="src\raw" encoding="utf-8" />
     </dg:source>
 
     <dg:output template="%docgen%\template\html\main.xsl" file="dst/null-file" encoding="windows-1252" >

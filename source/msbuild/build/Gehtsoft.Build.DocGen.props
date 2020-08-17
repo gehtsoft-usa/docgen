@@ -6,4 +6,5 @@
   </PropertyGroup>
 
   <UsingTask TaskName="Gehtsoft.Build.DocGen.DocGen" AssemblyFile="$(DocGenTaskAssembly)" />
+  <UsingTask TaskName="Gehtsoft.Build.DocGen.Asm2Xml" AssemblyFile="$(DocGenTaskAssembly)" />
 </Project>

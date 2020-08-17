@@ -17,5 +17,5 @@ dst
 */vscode/docgen/node_modules
 */vscode/docgen/out
 test/*/dst
-test/cs2ds/**/raw
+test/**/src/raw
 test/cs2ds/**/out.xml

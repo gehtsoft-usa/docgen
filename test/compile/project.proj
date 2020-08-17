@@ -4,17 +4,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Gehtsoft.Build.DocGen" Version="0.1.2" IncludeAssets="build" />
+    <PackageReference Include="Gehtsoft.Build.DocGen" Version="0.1.3" IncludeAssets="build" />
     <PackageReference Include="Gehtsoft.Build.ContentDelivery" Version="0.1.9" IncludeAssets="build" />
   </ItemGroup>
 
  <ItemGroup>
     <CustomFile Include="$(MSBuildProjectDirectory)\img\**\*.png;$(MSBuildProjectDirectory)\html\**\*.*" />
     <TargetDir Include="$(MSBuildProjectDirectory)\dst" />
+    <RawDir Include="$(MSBuildProjectDirectory)\src\raw" />
  </ItemGroup>
 
  <Target Name="CleanDoc">
   <RemoveDir Directories="@(TargetDir)"/>
+  <RemoveDir Directories="@(RawDir)"/>
  </Target>
 
 
@@ -27,4 +29,19 @@
   <ContentFromPackage Package="Gehtsoft.Build.DocGen" Source="Content\template\html\menu" Version="0.1.2" Destination="$(MSBuildProjectDirectory)/dst/menu" />
   <ContentFromPackage Package="Gehtsoft.Build.DocGen" Source="Content\template\html\pageImages" Version="0.1.2" Destination="$(MSBuildProjectDirectory)/dst/pageImages" />
  </Target>
+
+ <ItemGroup>
+    <DocSource Include="D:\develop\components\BusinessSpecificComponents\Questionnaire\Gehtsoft.DynamicValidation\bin\Release\netcoreapp2.0\Gehtsoft.DynamicValidation.dll" />
+    <DocSource Include="D:\develop\components\BusinessSpecificComponents\Questionnaire\Gehtsoft.DynamicValidation.Parser\bin\Release\netcoreapp2.0\Gehtsoft.DynamicValidation.Parser.dll" />
+ </ItemGroup>
+
+ <Target Name="Scan">
+    <Asm2Xml Assemblies="@(DocSource)" OutputXml="obj/lib.xml" Mode="netcoreapp3.1" />
+ </Target>
+
+ <Target Name="Raw">
+    <MakeDir Directories="@(RawDir)" />
+    <DocGen Project="prepareproject.xml" />
+ </Target>
+
 </Project>

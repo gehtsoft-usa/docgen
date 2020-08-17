@@ -9,9 +9,11 @@ using System.Net;
 using GehtSoft.DocCreator.Parser;
 using System.Xml;
 using GehtSoft.DocCreator.Output;
+using Microsoft.Build.Framework;
 
 namespace Gehtsoft.Build.DocGen
 {
+
     public class DocGen : Microsoft.Build.Utilities.Task
     {
         public string Project { get; set; }

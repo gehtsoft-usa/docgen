@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="cp866"?>
+<settings>
+  <assembly name="Gehtsoft.DynamicValidation" xmldoc="doc.xml" />
+  <assembly name="Gehtsoft.DynamicValidation.Parser" xmldoc="doc.xml" />
+  <namespace name="Gehtsoft.DynamicValidation.Expression" group="dynval" />
+  <namespace name="Gehtsoft.DynamicValidation.CSharp" group="dynval" />
+  <namespace name="Gehtsoft.DynamicValidation.JavaScript.Compiler" group="dynval" />
+  <namespace name="Gehtsoft.DynamicValidation.Expression.Parser" group="dynval" />
+  <strip-namespace name="System" />
+  <strip-namespace name="System.Collections" />
+  <strip-namespace name="System.Collections.Generic" />
+  <strip-namespace name="System.Linq" />
+  <strip-namespace name="System.Linq.Expressions" />
+  <strip-namespace name="Microsoft.Extensions.DependencyInjection" />
+  <strip-namespace name="System.Threading.Tasks" />
+  <strip-namespace name="Gehtsoft.EF.Db.SqlDb" />
+  <strip-namespace name="Gehtsoft.DynamicValidation.Expression" />
+  <strip-namespace name="Gehtsoft.DynamicValidation.CSharp" />
+  <strip-namespace name="Gehtsoft.DynamicValidation.JavaScript.Compiler" />
+  <strip-namespace name="Gehtsoft.DynamicValidation.Expression.Parser" />
+  <strip-namespace name="Gehtsoft.Questionnaire" />
+  <strip-namespace name="Gehtsoft.Questionnaire.AnswerSearch" />
+  <strip-namespace name="Gehtsoft.Questionnaire.Dao" />
+  <strip-namespace name="Gehtsoft.Questionnaire.Dao.Entities" />
+  <strip-namespace name="Gehtsoft.Questionnaire.Dao.Queries" />
+</settings>

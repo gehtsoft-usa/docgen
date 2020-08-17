@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "docgen2.parser", "parser\do
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gehtsoft.Build.DocGen", "msbuild\Gehtsoft.Build.DocGen.csproj", "{9166AE04-E157-4657-A6F3-5AD9336E81B4}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssemblyToXml", "asm2xml\AssemblyToXml.csproj", "{9330157C-EEAC-457A-AB53-CBBBA023D219}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,14 +35,18 @@ Global
 		{9166AE04-E157-4657-A6F3-5AD9336E81B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9166AE04-E157-4657-A6F3-5AD9336E81B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9166AE04-E157-4657-A6F3-5AD9336E81B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9330157C-EEAC-457A-AB53-CBBBA023D219}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9330157C-EEAC-457A-AB53-CBBBA023D219}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9330157C-EEAC-457A-AB53-CBBBA023D219}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9330157C-EEAC-457A-AB53-CBBBA023D219}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {1A582EB6-2A52-4B66-96EE-004DBE4856CE}
-		                SolutionGuid = {00C74DB4-812B-43C6-A0B1-703B1B37A9C8}
-		                        SolutionGuid = {8535A75D-01A9-4E79-A0C8-993B1AA2C5F9}
 		        SolutionGuid = {F63EF99A-2D59-4DB6-9223-DF03B23B831D}
+		                        SolutionGuid = {8535A75D-01A9-4E79-A0C8-993B1AA2C5F9}
+		                SolutionGuid = {00C74DB4-812B-43C6-A0B1-703B1B37A9C8}
+		SolutionGuid = {1A582EB6-2A52-4B66-96EE-004DBE4856CE}
 	EndGlobalSection
 EndGlobal

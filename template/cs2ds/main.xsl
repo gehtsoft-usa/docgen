@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1252"?>
+﻿<?xml version="1.0" encoding="windows-1252"?>
 <xsl:stylesheet
     version="1.0"
     xmlns:ext="urn:gehtsoft-exslt"
@@ -20,10 +20,11 @@
     <xsl:for-each select="ext:get('g-data')/collection/assemblies/assembly">
         <!-- load xmldoc for assembly -->
         <xsl:value-of select="ext:let('assembly', ./@name)" />
+        <xsl:value-of select="ext:let('location', ./@location)" />
         <xsl:if test="count(ext:get('g-settings')/settings/assembly[./@name=ext:get('assembly')]/@skip) = 0 or ext:get('g-settings')/settings/assembly[./@name=ext:get('assembly')]/@skip != 'true'">
         <xsl:value-of select="ext:removeglobal('xmldoc')" />
         <xsl:if test="count(ext:get('g-settings')/settings/assembly[./@name=ext:get('assembly')]/@xmldoc) > 0">
-            <xsl:value-of select="ext:letglobal('xmldoc', ext:document(ext:get('g-settings')/settings/assembly[./@name=ext:get('assembly')]/@xmldoc))" />
+            <xsl:value-of select="ext:letglobal('xmldoc', ext:document(concat(ext:get('location'),'\', ext:get('g-settings')/settings/assembly[./@name=ext:get('assembly')]/@xmldoc)))" />
         </xsl:if>
         <xsl:for-each select="./type">
             <xsl:value-of select="ext:let('p-type', .)" />
