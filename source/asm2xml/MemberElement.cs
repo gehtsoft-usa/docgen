@@ -28,7 +28,7 @@ namespace AssemblyToXml
         public string Generic { get; set; }
 
         [XmlElement(ElementName = "type", IsNullable = true)]
-        public TypeElement Type { get; set; }
+        public TypeReferenceElement Type { get; set; }
         public bool ShouldSerializeType() => Type != null;
 
         [XmlArray(ElementName = "parameters")]
@@ -37,7 +37,7 @@ namespace AssemblyToXml
 
         [XmlArray("generic-parameters")]
         [XmlArrayItem(ElementName = "type")]
-        public TypeElement[] GenericParameters { get; set; }
+        public TypeReferenceElement[] GenericParameters { get; set; }
         public bool ShouldSerializeGenericParameters() => GenericParameters?.Length > 0;
 
 

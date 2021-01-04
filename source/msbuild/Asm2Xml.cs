@@ -14,12 +14,12 @@ namespace Gehtsoft.Build.DocGen
     {
         public ITaskItem[] Assemblies { get; set; }
         public string OutputXml { get; set; }
-        public string Mode { get; set; } = "netcoreapp3.1";
+        public string Mode { get; set; } = "net50";
 
         public override bool Execute()
         {
             Log.LogMessage("Scanning assemblies for the documentation data");
-            
+
             if (Assemblies == null || Assemblies.Length == 0)
             {
                 Log.LogError("There is no assemblies to scan");
@@ -33,7 +33,7 @@ namespace Gehtsoft.Build.DocGen
             }
 
             List<string> collection = new List<string>();
-            
+
             foreach (var assembly in Assemblies)
             {
                 if (!string.IsNullOrEmpty(assembly.ItemSpec))
@@ -86,7 +86,7 @@ namespace Gehtsoft.Build.DocGen
 
             args.Append(" /out:");
             args.Append(OutputXml);
-            
+
             Log.LogMessage("{0}", path);
             Log.LogMessage("{0}", args.ToString());
 
@@ -109,7 +109,7 @@ namespace Gehtsoft.Build.DocGen
             process.WaitForExit();
 
             var output = process.StandardOutput.ReadToEnd();
-            
+
             if (!string.IsNullOrEmpty(output))
                 Log.LogWarning("Process output: {0}", output);
 
@@ -126,7 +126,7 @@ namespace Gehtsoft.Build.DocGen
                 Log.LogError("Scan failed");
                 return false;
             }
-           
+
             return true;
         }
     }

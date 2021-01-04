@@ -9,7 +9,7 @@ namespace AssemblyToXml
         public string Name { get; set; }
 
         [XmlElement(ElementName = "type")]
-        public TypeElement Type { get; set; }
+        public TypeReferenceElement Type { get; set; }
 
         [XmlAttribute(AttributeName = "parameter-type")]
         public string ParameterType { get; set; }

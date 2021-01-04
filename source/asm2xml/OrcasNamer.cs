@@ -1,6 +1,8 @@
 ﻿// Copyright (c) Microsoft Corporation.  All rights reserved.
 //
 
+using Mono.Cecil;
+using Mono.Collections.Generic;
 using System;
 // using System.Collections.Generic;
 using System.IO;
@@ -11,32 +13,28 @@ namespace AssemblyToXml
 {
     public static class Namer
     {
-        public static string GetMemberName(MemberInfo member)
+        public static string GetMemberName(IMemberDefinition member)
         {
             using (TextWriter writer = new StringWriter())
             {
 
-                switch (member.MemberType)
+                switch (member)
                 {
-                    case MemberTypes.Field:
+                    case FieldDefinition f:
                         writer.Write("F:");
-                        WriteField((FieldInfo) member, writer);
+                        WriteField(f, writer);
                         break;
-                    case MemberTypes.Property:
+                    case PropertyDefinition p:
                         writer.Write("P:");
-                        WriteProperty((PropertyInfo) member, writer);
+                        WriteProperty(p, writer);
                         break;
-                    case MemberTypes.Method:
+                    case MethodDefinition m:
                         writer.Write("M:");
-                        WriteMethod((MethodInfo) member, writer);
+                        WriteMethod(m, writer);
                         break;
-                    case MemberTypes.Constructor:
-                        writer.Write("M:");
-                        WriteConstructor((ConstructorInfo) member, writer);
-                        break;
-                    case MemberTypes.Event:
+                    case EventDefinition e:
                         writer.Write("E:");
-                        WriteEvent((EventInfo)member, writer);
+                        WriteEvent(e, writer);
                         break;
                 }
 
@@ -45,7 +43,7 @@ namespace AssemblyToXml
 
         }
 
-        public static string GetTypeName(TypeInfo type)
+        public static string GetTypeName(TypeReference type)
         {
             using (TextWriter writer = new StringWriter())
             {
@@ -55,15 +53,7 @@ namespace AssemblyToXml
             }
         }
 
-        private static void WriteConstructor(ConstructorInfo constructor, TextWriter writer)
-        {
-            WriteType(constructor.DeclaringType.GetTypeInfo(), writer);
-            if (constructor.IsStatic)
-                writer.Write(".#cctor");
-            else
-                writer.Write(".#ctor");
-            WriteParameters(constructor.GetParameters(), writer);
-        }
+      
 
         public static string TrimTemplate(this string name)
         {
@@ -78,93 +68,92 @@ namespace AssemblyToXml
             return name;
         }
 
-        private static void WriteEvent(EventInfo trigger, TextWriter writer)
+        private static void WriteEvent(EventDefinition trigger, TextWriter writer)
         {
-            WriteType(trigger.DeclaringType.GetTypeInfo(), writer);
+            WriteType(trigger.DeclaringType, writer);
             writer.Write(".{0}", trigger.Name.TrimTemplate());
         }
 
-        private static void WriteField(FieldInfo field, TextWriter writer)
+        private static void WriteField(FieldDefinition field, TextWriter writer)
         {
-            WriteType(field.DeclaringType.GetTypeInfo(), writer);
+            WriteType(field.DeclaringType, writer);
             writer.Write(".{0}", field.Name.TrimTemplate());
         }
 
-        private static void WriteMethod(MethodInfo method, TextWriter writer)
+        private static void WriteMethod(MethodDefinition method, TextWriter writer)
         {
             string name = method.Name.TrimTemplate();
-            WriteType(method.DeclaringType.GetTypeInfo(), writer);
+            WriteType(method.DeclaringType, writer);
             writer.Write(".{0}", name);
 
-            if (method.IsGenericMethod)
-            {
-                var genericParameters = method.GetGenericArguments();
-                if (genericParameters != null)
-                    writer.Write("``{0}", genericParameters.Length);
-            }
+            if (method.GenericParameters.Count > 0)
+                writer.Write("``{0}", method.GenericParameters.Count);
 
-            WriteParameters(method.GetParameters(), writer);
+            WriteParameters(method.Parameters, writer);
 
             // add ~ for conversion operators
             if ((name == "op_Implicit") || (name == "op_Explicit"))
             {
                 writer.Write("~");
-                WriteType(method.ReturnType.GetTypeInfo(), writer);
+                WriteType(method.ReturnType, writer);
             }
 
         }
 
-        private static void WriteParameters(ParameterInfo[] parameters, TextWriter writer)
+        private static void WriteParameters(Collection<ParameterDefinition> parameters, TextWriter writer)
         {
-            if ((parameters == null) || (parameters.Length == 0))
+            if ((parameters == null) || (parameters.Count == 0))
                 return;
             writer.Write("(");
-            for (int i = 0; i < parameters.Length; i++)
+            for (int i = 0; i < parameters.Count; i++)
             {
                 if (i > 0) writer.Write(",");
-                WriteType(parameters[i].ParameterType.GetTypeInfo(), writer);
+                WriteType(parameters[i].ParameterType, writer);
             }
             writer.Write(")");
         }
 
-        private static void WriteProperty(PropertyInfo property, TextWriter writer)
+        private static void WriteProperty(PropertyDefinition property, TextWriter writer)
         {
-            WriteType(property.DeclaringType.GetTypeInfo(), writer);
+            WriteType(property.DeclaringType, writer);
             writer.Write("." + property.Name.TrimTemplate());
-            if (property.GetMethod != null && property.GetMethod.GetParameters()?.Length > 0)
-                WriteParameters(property.GetMethod.GetParameters(), writer);
+
+            if (property.GetMethod != null && property.GetMethod.Parameters.Count > 0)
+                WriteParameters(property.GetMethod.Parameters, writer);
         }
 
-        private static void WriteType(TypeInfo type, TextWriter writer)
+        private static void WriteType(TypeReference type, TextWriter writer)
         {
             if (type.IsArray)
             {
-                WriteType(type.GetElementType().GetTypeInfo(), writer);
+                var array = type as ArrayType;
+
+                WriteType(type.GetElementType(), writer);
                 writer.Write("[");
-                if (type.GetArrayRank() > 1)
+                if (array.Rank > 1)
                 {
-                    for (int i = 0; i < type.GetArrayRank(); i++)
+                    for (int i = 0; i < array.Rank; i++)
                     {
                         if (i > 0) writer.Write(",");
                         writer.Write("0:");
                     }
                 }
-
                 writer.Write("]");
             }
             else if (type.IsGenericParameter)
             {
-                if (type.DeclaringMethod != null)
+                var genericParam = type as GenericParameter;
+                if (genericParam.DeclaringMethod != null)
                     writer.Write("``");
                 else
                     writer.Write("`");
-                writer.Write(type.GenericParameterPosition);
+                writer.Write(genericParam.Position);
             }
             else
             {
                 if (type.DeclaringType != null)
                 {
-                    WriteType(type.DeclaringType.GetTypeInfo(), writer);
+                    WriteType(type.DeclaringType, writer);
                     writer.Write(".");
                 }
                 else if (!string.IsNullOrEmpty(type.Namespace))
@@ -174,32 +163,24 @@ namespace AssemblyToXml
                 }
 
                 writer.Write(type.Name.TrimTemplate());
-                if (type.IsGenericType)
+
+                if (type.HasGenericParameters)
                 {
-                    if (type.IsGenericTypeDefinition)
-                    {
-                        if (type.Name.IndexOf('`') >= 0)
-                        {
-                            writer.Write(type.Name.Substring(type.Name.IndexOf('`')));
-                        }
-                        else
-                        {
-                            writer.Write("`");
-                            var args = type.GetGenericArguments();
-                            writer.Write(args.Length);
-                        }
-                    }
-                    else
+                    writer.Write("`");
+                    writer.Write(type.GenericParameters.Count);
+                }
+
+                if (type is GenericInstanceType genericInstance)
+                {
+                    if (genericInstance.HasGenericArguments)
                     {
                         writer.Write("{");
-                        var args = type.GetGenericArguments();
-                        for (int i = 0; i < args.Length; i++)
+                        for (int i = 0; i < genericInstance.GenericArguments.Count; i++)
                         {
                             if (i > 0)
                                 writer.Write(",");
-                            WriteType(args[i].GetTypeInfo(), writer);
+                            WriteType(genericInstance.GenericArguments[i], writer);
                         }
-
                         writer.Write("}");
                     }
                 }
