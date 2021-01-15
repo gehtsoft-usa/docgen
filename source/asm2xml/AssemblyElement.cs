@@ -40,6 +40,10 @@ namespace AssemblyToXml
             if (!fi.Exists)
                 throw new FileNotFoundException("Assembly is not found", assembly);
 
+            AssemblyPath = assembly;
+            Location = fi.DirectoryName;
+            Name = fi.Name.Substring(0, fi.Name.Length - fi.Extension.Length);
+
             ModuleDefinition module = ModuleDefinition.ReadModule(assembly);
 
             List<TypeElement> types = new List<TypeElement>();

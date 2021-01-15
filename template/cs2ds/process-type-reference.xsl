@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1252"?>
+﻿<?xml version="1.0" encoding="windows-1252"?>
 <xsl:stylesheet
     version="1.0"
     xmlns:ext="urn:gehtsoft-exslt"
@@ -56,7 +56,7 @@
         </xsl:when>
         <xsl:otherwise>
         <xsl:choose>
-            <xsl:when test="count(ext:get('g-settings')/settings/strip-namespace[./@name=ext:get('type')/@namespace]) > 0">
+            <xsl:when test="count(ext:get('g-settings')/settings/strip-namespace[./@name=ext:get('type')/@namespace]) > 0 or string-length(ext:get('type')/@namespace) = 0">
                 <xsl:value-of select="ext:let('name', ext:get('type')/@name)"/>
             </xsl:when>
             <xsl:otherwise>
