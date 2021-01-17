@@ -2,7 +2,7 @@
   "profiles": {
     "AssemblyToXml": {
       "commandName": "Project",
-      "commandLineArgs": "D:\\develop\\components\\Gehtsoft.WebTools\\WebApp\\Instrastructure\\Gehtsoft.WebApp.Infrastructure.AspNetCore\\bin\\Release\\netcoreapp3.1\\Gehtsoft.WebApp.Infrastructure.AspNetCore.dll "
+      "commandLineArgs": "D:\\develop\\components\\BusinessSpecificComponents\\Gehtsoft.Measurements\\Gehtsoft.Measurements\\bin\\Debug\\netstandard2.0\\Gehtsoft.Measurements.dll "
     }
   }
 }

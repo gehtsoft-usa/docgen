@@ -6,6 +6,7 @@ using Mono.Collections.Generic;
 using System;
 // using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 
 
@@ -83,6 +84,10 @@ namespace AssemblyToXml
         private static void WriteMethod(MethodDefinition method, TextWriter writer)
         {
             string name = method.Name.TrimTemplate();
+            if (name == ".ctor")
+                name = "#ctor";
+            if (name == "TryParse")
+                ;
             WriteType(method.DeclaringType, writer);
             writer.Write(".{0}", name);
 
@@ -109,6 +114,14 @@ namespace AssemblyToXml
             {
                 if (i > 0) writer.Write(",");
                 WriteType(parameters[i].ParameterType, writer);
+
+                if (parameters[i].ParameterType.IsByReference)
+                {
+                    if ((parameters[i].Attributes & Mono.Cecil.ParameterAttributes.Out) != 0)
+                        writer.Write("@");
+                    else
+                        writer.Write("&");
+                }
             }
             writer.Write(")");
         }
@@ -183,6 +196,10 @@ namespace AssemblyToXml
                         }
                         writer.Write("}");
                     }
+                }
+                else if (type.ContainsGenericParameter && type.GenericParameters?.Count < 1)
+                {
+                    writer.Write("{`0}");
                 }
             }
         }
