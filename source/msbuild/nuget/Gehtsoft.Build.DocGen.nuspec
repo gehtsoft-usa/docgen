@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Gehtsoft.Build.DocGen</id>
-        <version>0.1.7</version>
+        <version>0.1.11</version>
         <authors>Gehtsoft</authors>
         <licenseUrl>http://asp.gehtsoftusa.com/doc/privatelicense.html</licenseUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <releaseNotes>Asm2Xml job added</releaseNotes>
+        <releaseNotes>linux support added</releaseNotes>
         <description>MSBuild task to compile Hime grammars</description>
     </metadata>
     <files>

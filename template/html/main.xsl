@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1252"?>
+﻿<?xml version="1.0" encoding="windows-1252"?>
 <xsl:stylesheet
     version="1.0"
     xmlns:ext="urn:gehtsoft-exslt"
@@ -7,14 +7,14 @@
     <xsl:template match="/" >
 <xsl:value-of select="ext:letglobal('g-root', /root)" />
 <xsl:value-of select="ext:letglobal('g-example-serial', 0)" />
-<xsl:value-of select="ext:letglobal('g-classes-groups', ext:document('dictionary\classes-groups.xml'))" />
-<xsl:value-of select="ext:letglobal('g-member-groups', ext:document('dictionary\member-groups.xml'))" />
-<xsl:value-of select="ext:letglobal('g-declarations', ext:document('dictionary\declarations.xml'))" />
+<xsl:value-of select="ext:letglobal('g-classes-groups', ext:document('dictionary/classes-groups.xml'))" />
+<xsl:value-of select="ext:letglobal('g-member-groups', ext:document('dictionary/member-groups.xml'))" />
+<xsl:value-of select="ext:letglobal('g-declarations', ext:document('dictionary/declarations.xml'))" />
 <xsl:value-of select="ext:letglobal('g-help-index-root', ext:xmlcreate('help-index', 'root'))" />
 <xsl:value-of select="ext:let('content-node', ext:xmlcreate('help-content', 'root'))" />
 <xsl:value-of select="ext:let('group', /root/group[./@key='index'])" />
 <!-- load localization strings -->
-<xsl:value-of select="ext:let('localization', ext:document('dictionary\translation.xml'))" />
+<xsl:value-of select="ext:let('localization', ext:document('dictionary/translation.xml'))" />
 <xsl:value-of select="ext:let('default-language', ext:get('localization')/dictionary/@default-language)" />
 <xsl:choose>
     <xsl:when test="ext:exist('text-language')" />

@@ -61,7 +61,7 @@ namespace Gehtsoft.Build.DocGen
             var di = new DirectoryInfo(path);
             path = di.FullName;
 
-            path = path + ".exe";
+            path = path + ".dll";
             if (!File.Exists(path))
             {
                 Log.LogError("The assembly compiler is expected to be at {0}", path);
@@ -87,18 +87,18 @@ namespace Gehtsoft.Build.DocGen
             args.Append(" /out:");
             args.Append(OutputXml);
 
-            Log.LogMessage("{0}", path);
-            Log.LogMessage("{0}", args.ToString());
+            //Log.LogMessage("{0}", path);
+            //Log.LogMessage("{0}", args.ToString());
 
             ProcessStartInfo psi = new ProcessStartInfo()
             {
-                Arguments = args.ToString(),
+                Arguments = path + " " + args.ToString(),
                 CreateNoWindow = true,
                 WindowStyle = ProcessWindowStyle.Hidden,
                 RedirectStandardError = true,
                 RedirectStandardOutput = true,
                 WorkingDirectory = Directory.GetCurrentDirectory(),
-                FileName = path,
+                FileName = "dotnet",
                 UseShellExecute = false,
             };
 

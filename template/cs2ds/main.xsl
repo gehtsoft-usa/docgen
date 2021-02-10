@@ -24,7 +24,7 @@
         <xsl:if test="count(ext:get('g-settings')/settings/assembly[./@name=ext:get('assembly')]/@skip) = 0 or ext:get('g-settings')/settings/assembly[./@name=ext:get('assembly')]/@skip != 'true'">
         <xsl:value-of select="ext:removeglobal('xmldoc')" />
         <xsl:if test="count(ext:get('g-settings')/settings/assembly[./@name=ext:get('assembly')]/@xmldoc) > 0">
-            <xsl:value-of select="ext:letglobal('xmldoc', ext:document(concat(ext:get('location'),'\', ext:get('g-settings')/settings/assembly[./@name=ext:get('assembly')]/@xmldoc)))" />
+            <xsl:value-of select="ext:letglobal('xmldoc', ext:document(concat(ext:get('location'), '/', ext:get('g-settings')/settings/assembly[./@name=ext:get('assembly')]/@xmldoc)))" />
         </xsl:if>
         <xsl:for-each select="./type">
             <xsl:value-of select="ext:let('p-type', .)" />

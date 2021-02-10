@@ -166,11 +166,11 @@ namespace GehtSoft.DocCreator.Output
         {
             FileInfo fi;
             fi = new FileInfo(xslt);
-            props["base-xslt-path"] = fi.DirectoryName + "\\";
+            props["base-xslt-path"] = fi.DirectoryName + "/";
             fi = new FileInfo(output);
-            props["base-output-path"] = fi.DirectoryName + "\\";
+            props["base-output-path"] = fi.DirectoryName + "/";
             fi = new FileInfo(Assembly.GetExecutingAssembly().Location);
-            props["application-path"] = fi.DirectoryName + "\\";
+            props["application-path"] = fi.DirectoryName + "/";
             props["codepage"] = codepage;
             Transform(xslt, doc, output, codepage, new XsltExtensionObject(props, mGlobal));
         }

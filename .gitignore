@@ -16,6 +16,8 @@ dst
 *.nupkg
 */vscode/docgen/node_modules
 */vscode/docgen/out
-test/*/dst
-test/**/src/raw
+source/msbuild.test/dst
+source/msbuild.test/src/raw
+test/compile/dst
+test/compile/src/raw
 test/cs2ds/**/out.xml

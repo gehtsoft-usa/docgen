@@ -1,0 +1,8 @@
+@group
+    @key=index
+    @brief=
+    @title=Index
+    @ingroup=
+    @transform=yes
+    @sortgroups=no
+@end
