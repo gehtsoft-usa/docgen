@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Gehtsoft.Build.DocGen</id>
-        <version>0.1.11</version>
+        <version>0.1.12</version>
         <authors>Gehtsoft</authors>
         <licenseUrl>http://asp.gehtsoftusa.com/doc/privatelicense.html</licenseUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <releaseNotes>linux support added</releaseNotes>
+        <releaseNotes>Fix by ref nullables, add support for c, code and para tags, add writing of signatures to method list, add saving detailed summary back to XML doc</releaseNotes>
         <description>MSBuild task to compile Hime grammars</description>
     </metadata>
     <files>

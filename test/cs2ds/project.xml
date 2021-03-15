@@ -16,5 +16,11 @@
     </dg:output>
 
     <dg:output template="%docgen%\template\null\null.xsl" file="model.xml" encoding="windows-1252" />
+
+    <dg:output template="%docgen%/template/xmldoc/main.xsl" file="xmldoc.xml" encoding="utf-8">
+        <dg:define name="assembly" value="Asm2XmlTester" />
+        <dg:define name="namespace" value=".+" />
+        <dg:define name="write-summary" value="yes" />
+    </dg:output>
 </dg:help-project>
 
