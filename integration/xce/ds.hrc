@@ -150,6 +150,9 @@
             <regexp match="/^\s*(@sig)(=)\s*(.*)$/"
                     region1="keyword" region2="sym" region3="service" />
 
+            <regexp match="/^\s*(@writeSignatures)(=)\s*(yes|no|def)$/"
+                    region1="keyword" region2="sym" region3="service" />
+
             <regexp match="/^\s*(@prefix)(=)\s*(.*)$/"
                     region1="keyword" region2="sym" region3="service" />
 

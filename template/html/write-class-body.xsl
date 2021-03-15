@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1252"?>
+﻿<?xml version="1.0" encoding="windows-1252"?>
 <!-- writes article
      param: ext:caller('curr-item') - a class to write
 
@@ -32,6 +32,15 @@
 <xsl:value-of select="ext:xmladdattribute('help-content', ext:get('content-node'), 'name', ext:escape(ext:removehtml(./@name)))" />
 <xsl:value-of select="ext:xmladdattribute('help-content', ext:get('content-node'), 'local', concat(./@key, '.html'))" />
 <xsl:value-of select="ext:let('body-template', ext:caller('body-template'))" />
+<xsl:choose>
+<xsl:when test="count(./@write-signatures) > 0 and ./@write-signatures != 'def'">
+<xsl:value-of select="ext:let('write-signatures', ./@write-signatures) = 'yes'"/>
+</xsl:when>
+<xsl:otherwise>
+<xsl:value-of select="ext:let('write-signatures', ext:get('add-signature-to-brief', 'no') = 'yes')"/>
+</xsl:otherwise>
+</xsl:choose>
+
 
 <html>
 <head>

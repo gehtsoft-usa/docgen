@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Permissions;
 using System.Xml;
 
 namespace GehtSoft.DocCreator.Parser
@@ -111,6 +112,7 @@ namespace GehtSoft.DocCreator.Parser
         private string mTransform = "def";
         private List<string> maImports;          //list of imports
         private string mMembersToContent = "false";        //
+        private string msWriteSigs = "def";       //whether we want to write signatures for the methods 
 
         public string Name
         {
@@ -227,6 +229,10 @@ namespace GehtSoft.DocCreator.Parser
 
             attr = doc.CreateAttribute("members-to-content");
             attr.Value = mMembersToContent;
+            classNode.Attributes.Append(attr);
+
+            attr = doc.CreateAttribute("write-signatures");
+            attr.Value = msWriteSigs;
             classNode.Attributes.Append(attr);
 
 
@@ -358,6 +364,11 @@ namespace GehtSoft.DocCreator.Parser
                     if (sValue == null)
                         throw new ValueError(file, line, "class", sName, "(null)");
                     mTransform = sValue;
+                    return null;
+                case "writeSignatures":
+                    if (sValue == null)
+                        throw new ValueError(file, line, "class", sName, "(null)");
+                    msWriteSigs = sValue;
                     return null;
                 default:
                     throw new UnknownTagError(file, line, "class", sName);

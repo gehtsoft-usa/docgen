@@ -23,8 +23,7 @@ var tagDictionary = [
     {context : "class", options : ["end", "see", "example", "table", "list", "param", "member", "header",
                                    "key", "ingroup", "if", "transform", "name", "brief",
                                    "sig", "parent", "declname", "prefix", "type", "sort", "classnameinkey", 
-                                   "import", "membersToContent"
-
+                                   "import", "membersToContent", "writeSignatures"
                                 ] },
     {context : "member", options : ["end", "see", "example", "table", "list", "param", "return", "exception", "declaration", "header",
                                     "if", "key", "name", "transform", "brief",
@@ -49,6 +48,7 @@ var propertyDictionary = [
     {tag : "class", property : "sort", options : ["yes", "no"]},
     {tag : "class", property : "type", options : ["ref class", "class", "interface", "struct", "value", "enum", "lua_table", "js_object", "xml-schema", "functions", "tags", "sql"]},
     {tag : "class", property : "classnameinkey", options : ["true", "false", "both"]},
+    {tag : "class", property : "writeSignatures", options : ["yes", "no", "def"]},
     {tag : "member", property : "transform", options : ["yes", "no", "def"]},
     {tag : "member", property : "type", options : ["property", "field", "method", "constructor", "function"]},
     {tag : "member", property : "visibility", options : ["public", "protected", "private", "package"]},

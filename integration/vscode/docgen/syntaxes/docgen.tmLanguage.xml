@@ -1,4 +1,4 @@
-<?xml  version="1.0" encoding="UTF-8"?>
+﻿<?xml  version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"   "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0" >
 <!-- Generated via Iro -->
@@ -702,6 +702,85 @@
         <dict>
           <key>match</key>
           <string>^(\s*)(@classnameinkey)(\s*)(=)(\s*)(\S?.*)$</string>
+          <key>captures</key>
+          <dict>
+            <key>1</key>
+            <dict>
+              <key>name</key>
+              <string>text.docsource</string>
+            </dict>
+            <key>2</key>
+            <dict>
+              <key>name</key>
+              <string>keyword.docsource</string>
+            </dict>
+            <key>3</key>
+            <dict>
+              <key>name</key>
+              <string>text.docsource</string>
+            </dict>
+            <key>4</key>
+            <dict>
+              <key>name</key>
+              <string>punctuation.docsource</string>
+            </dict>
+            <key>5</key>
+            <dict>
+              <key>name</key>
+              <string>text.docsource</string>
+            </dict>
+            <key>6</key>
+            <dict>
+              <key>name</key>
+              <string>invalid.docsource</string>
+            </dict>
+          </dict>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>^(\s*)(@writeSignatures)(\s*)(=)(\s*)(yes|no|def)(\s*)$</string>
+          <key>captures</key>
+          <dict>
+            <key>1</key>
+            <dict>
+              <key>name</key>
+              <string>text.docsource</string>
+            </dict>
+            <key>2</key>
+            <dict>
+              <key>name</key>
+              <string>keyword.docsource</string>
+            </dict>
+            <key>3</key>
+            <dict>
+              <key>name</key>
+              <string>text.docsource</string>
+            </dict>
+            <key>4</key>
+            <dict>
+              <key>name</key>
+              <string>punctuation.docsource</string>
+            </dict>
+            <key>5</key>
+            <dict>
+              <key>name</key>
+              <string>text.docsource</string>
+            </dict>
+            <key>6</key>
+            <dict>
+              <key>name</key>
+              <string>punctuation.docsource</string>
+            </dict>
+            <key>7</key>
+            <dict>
+              <key>name</key>
+              <string>text.docsource</string>
+            </dict>
+          </dict>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>^(\s*)(@writeSignatures)(\s*)(=)(\s*)(\S?.*)$</string>
           <key>captures</key>
           <dict>
             <key>1</key>

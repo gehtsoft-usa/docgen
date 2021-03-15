@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1252"?>
+﻿<?xml version="1.0" encoding="windows-1252"?>
 <!-- writes article
      param: ext:caller('curr-item') - a class to write
 
@@ -14,6 +14,7 @@
     <xsl:value-of select="ext:let('transform', ext:caller('transform'))" />
     <xsl:value-of select="ext:let('body-template', ext:caller('body-template'))" />
     <xsl:value-of select="ext:let('content-node', ext:caller('content-node'))" />
+    <xsl:value-of select="ext:let('write-signature', ext:caller('write-signatures') and (contains(ext:caller('group-name'), 'Method') or contains(ext:caller('group-name'), 'Constructor')))"/>
         <p></p>
         <table class="tmain" width="100%">
         <tr><td colspan="2" class="thdr"><b><xsl:value-of select="ext:caller('group-name')" /></b></td></tr>
@@ -36,7 +37,11 @@
                     <xsl:when test="ext:get('transform')='yes'"><xsl:value-of select="ext:call('write-bbcode.xsl', ext:parsebbcode(./@brief))" disable-output-escaping="yes"  /></xsl:when>
                     <xsl:otherwise><xsl:value-of select="./@brief" /></xsl:otherwise>
                     </xsl:choose>
-                </p></td></tr>
+                </p>
+                <xsl:if test="ext:get('write-signature') and count(./declaration) > 0">
+                <code><xsl:value-of select="./declaration/@return" /><xsl:text xml:space="preserve"> </xsl:text><xsl:value-of select="./@name" />(<xsl:value-of select="./declaration/@params" />)</code>
+                </xsl:if>
+                </td></tr>
             </xsl:if>
             <xsl:value-of select="ext:let('curr-member', .)" />
             <xsl:value-of select="ext:call(ext:get('body-template'), /, concat(../@key, '.', ./@key, '.html'), ext:get('codepage'))" />

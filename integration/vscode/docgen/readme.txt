@@ -30,6 +30,9 @@ a) make sure that vsce is installed
 
 npm install -g vsce
 
+Make sure that is in path
+C:\Users\<<username>>\AppData\Roaming\npm\
+
 b) pack extension
 
 vsce package

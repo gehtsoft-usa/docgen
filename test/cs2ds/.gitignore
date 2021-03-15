@@ -1,3 +1,7 @@
 src/raw/
 dst/
 out.xml
+*.chi
+*.chm
+xmldoc.xml
+model.xml

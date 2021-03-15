@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+﻿<?xml version="1.0" ?>
 <dg:help-project xmlns:dg="http://www.gehtsoft.com/docgen/project">
     <dg:source>
         <dg:file name="src\index.ds" encoding="windows-1252" />
@@ -12,6 +12,9 @@
         <dg:define name="chm-file" value="..\Test.chm" />
         <dg:define name="advanced-web-content" value="yes" />
         <dg:define name="default-transform" value="yes" />
+        <!-- <dg:define name="add-signature-to-brief" value="yes" /> -->
     </dg:output>
+
+    <dg:output template="%docgen%\template\null\null.xsl" file="model.xml" encoding="windows-1252" />
 </dg:help-project>
 
