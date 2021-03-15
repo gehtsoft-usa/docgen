@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="windows-1252"?>
+﻿<?xml version="1.0" encoding="windows-1252"?>
 <xsl:stylesheet
     version="1.0"
     xmlns:ext="urn:gehtsoft-exslt"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:output method="text" />
     <xsl:template match="/" >
+    <xsl:value-of select="ext:let('intag', '0')" />
     <xsl:value-of select="ext:let('target', ext:caller('p-target'))" />
     <xsl:value-of select="ext:let('mode', ext:caller('p-mode'))" />
     <xsl:value-of select="ext:let('sig', ext:get('target')/@signature)" />
@@ -72,6 +73,21 @@
         <xsl:value-of select="ext:let('briefdone', '0')" />
         <xsl:apply-templates />
     </xsl:template>
+    <xsl:template match="para">
+        <xsl:apply-templates />
+        <xsl:text>&#13;&#10;&#13;&#10;</xsl:text>
+        <xsl:value-of select="ext:let('briefdone', '1')" />
+    </xsl:template>
+    <xsl:template match="c">
+       <xsl:value-of select="ext:let('intag', '1')" />
+       [c]<xsl:apply-templates />[/c]
+       <xsl:value-of select="ext:let('intag', '0')" />
+    </xsl:template>
+    <xsl:template match="code">
+       <xsl:value-of select="ext:let('intag', '1')" />
+       [c]<xsl:apply-templates />[/c]
+       <xsl:value-of select="ext:let('intag', '0')" />
+    </xsl:template>
     <xsl:template match="param">
         <xsl:apply-templates />
     </xsl:template>
@@ -79,6 +95,7 @@
         <xsl:apply-templates />
     </xsl:template>
     <xsl:template match="see">
+       <xsl:value-of select="ext:let('intag', '1')" />
         <xsl:choose>
         <xsl:when test="count(./@cref) > 0">
           <xsl:value-of select="ext:let('sig1', ./@cref)" />
@@ -116,15 +133,17 @@
           </xsl:choose>
         </xsl:when>
         </xsl:choose>
+        <xsl:value-of select="ext:let('intag', '0')" />
     </xsl:template>
     <xsl:template match="text()">
         <xsl:choose>
+            <xsl:when test="ext:get('intag') = '1'"><xsl:value-of select="." /></xsl:when>
             <xsl:when test="ext:get('mode') = 'summary-class' and ext:get('briefdone') != '1'">
-    @brief=<xsl:value-of select="ext:ltrim(.)" />
+    @brief=<xsl:value-of select="ext:ltrim(.)" /><xsl:text xml:space="preserve">&#13;&#10;</xsl:text>
                 <xsl:value-of select="ext:let('briefdone', '1')" />
             </xsl:when>
             <xsl:when test="ext:get('mode') = 'summary-member' and ext:get('briefdone') != '1'">
-        @brief=<xsl:value-of select="ext:ltrim(.)" />
+        @brief=<xsl:value-of select="ext:ltrim(.)" /><xsl:text xml:space="preserve">&#13;&#10;</xsl:text>
                 <xsl:value-of select="ext:let('briefdone', '1')" />
             </xsl:when>
             <xsl:otherwise>

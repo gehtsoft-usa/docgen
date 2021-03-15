@@ -44,6 +44,9 @@
         <xsl:when test="ext:get('type')/@namespace='System' and ext:get('type')/@name='Double'">
             <xsl:value-of select="ext:let('name', 'double')"/>
         </xsl:when>
+        <xsl:when test="ext:get('type')/@namespace='System' and ext:get('type')/@name='Single'">
+            <xsl:value-of select="ext:let('name', 'float')"/>
+        </xsl:when>
         <xsl:when test="ext:get('type')/@namespace='System' and ext:get('type')/@name='Char'">
             <xsl:value-of select="ext:let('name', 'char')"/>
         </xsl:when>

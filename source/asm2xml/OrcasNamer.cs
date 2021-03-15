@@ -113,14 +113,12 @@ namespace AssemblyToXml
             for (int i = 0; i < parameters.Count; i++)
             {
                 if (i > 0) writer.Write(",");
-                WriteType(parameters[i].ParameterType, writer);
 
+                WriteType(parameters[i].ParameterType, writer);
                 if (parameters[i].ParameterType.IsByReference)
                 {
-                    if ((parameters[i].Attributes & Mono.Cecil.ParameterAttributes.Out) != 0)
-                        writer.Write("@");
-                    else
-                        writer.Write("&");
+                    /*if ((parameters[i].Attributes & Mono.Cecil.ParameterAttributes.Out) != 0)*/
+                    writer.Write("@");
                 }
             }
             writer.Write(")");
@@ -137,7 +135,14 @@ namespace AssemblyToXml
 
         private static void WriteType(TypeReference type, TextWriter writer)
         {
-            if (type.IsArray)
+            if (type.IsByReference)
+            {
+                if (type is ByReferenceType byRefType)
+                    WriteType(byRefType.ElementType, writer);
+                else
+                    WriteType(type.GetElementType(), writer);
+            }
+            else if (type.IsArray)
             {
                 var array = type as ArrayType;
 

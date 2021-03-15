@@ -59,7 +59,11 @@ namespace AssemblyToXml
             Namespace = type.Namespace;
 
             if (type.IsByReference)
+            {
+                if (type is ByReferenceType byRefType)
+                    type = byRefType.ElementType;
                 Prefix = "ref";
+            }
 
             if (type.IsPointer)
                 Suffix = "*";
