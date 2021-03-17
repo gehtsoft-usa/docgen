@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1252"?>
+﻿<?xml version="1.0" encoding="windows-1252"?>
 <!-- file defines grouping of the classes by their types inside the group
 
      each group is defined using class-group tag.
@@ -13,6 +13,7 @@
         <type name="class" />
         <type name="interface" />
         <type name="struct" />
+        <type name="readonly struct" />
         <type name="value" />
     </class-group>
     <class-group title="Enumerations" template="write-member-body.xsl" >

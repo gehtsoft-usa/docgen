@@ -40,6 +40,8 @@ namespace AssemblyToXml
         public TypeReferenceElement[] GenericParameters { get; set; }
         public bool ShouldSerializeGenericParameters() => GenericParameters?.Length > 0;
 
+        [XmlAttribute(AttributeName = "readonly")]
+        public string Readonly { get; set; }
 
         public bool ShouldSerializeParameters() => Parameters.Count > 0;
 

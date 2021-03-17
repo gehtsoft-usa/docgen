@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1252"?>
+﻿<?xml version="1.0" encoding="windows-1252"?>
 <xsl:stylesheet
     version="1.0"
     xmlns:ext="urn:gehtsoft-exslt"
@@ -20,8 +20,11 @@
         <xsl:when test="ext:get('type')/@type='interface'">
     @type=interface
         </xsl:when>
-        <xsl:when test="ext:get('type')/@type='value'">
+        <xsl:when test="ext:get('type')/@type='value' and (count(ext:get('type')/@readonly) = 0 or ext:get('type')/@readonly!='readonly')">
     @type=struct
+        </xsl:when>
+        <xsl:when test="ext:get('type')/@type='value' and (ext:get('type')/@readonly ='readonly')">
+    @type=readonly struct
         </xsl:when>
         <xsl:when test="ext:get('type')/@type='class'">
     @type=class
@@ -93,6 +96,9 @@
                 @return=<xsl:value-of select="ext:trim(ext:call('process-type-reference.xsl', /))" />
                 <xsl:if test="count(./@value) > 0">
                 @suffix=<xsl:value-of select="concat(' = ', ./@value)" />
+                </xsl:if>
+                <xsl:if test="count(./@readonly) > 0 and ./@readonly='readonly'">
+                @prefix=readonly
                 </xsl:if>
             @end
             </xsl:when>

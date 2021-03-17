@@ -19,7 +19,6 @@ namespace AssemblyToXml
         [XmlAttribute(AttributeName = "namespace")]
         public string Namespace { get; set; }
 
-
         [XmlAttribute(AttributeName = "signature")]
         public string Signature { get; set; }
 
@@ -30,6 +29,9 @@ namespace AssemblyToXml
 
         [XmlAttribute(AttributeName = "prefix")]
         public string Prefix { get; set; }
+
+        [XmlAttribute(AttributeName = "readonly")]
+        public string Readonly { get; set; }
 
         public bool ShouldSerializePrefix() => !string.IsNullOrEmpty(Prefix);
 
@@ -156,6 +158,8 @@ namespace AssemblyToXml
             else
                 Abstract = "false";
 
+            if (type.CustomAttributes.FirstOrDefault(ca => ca.AttributeType.FullName == "System.Runtime.CompilerServices.IsReadOnlyAttribute") != null)
+                Readonly = "readonly";
 
             if (type.BaseType != null)
                 Parents.Add(new TypeReferenceElement(type.BaseType));
@@ -206,6 +210,9 @@ namespace AssemblyToXml
                     memberElement.Visibility = "internal";
                 else if (member.IsPrivate)
                     memberElement.Visibility = "private";
+
+                if ((member.Attributes & Mono.Cecil.FieldAttributes.InitOnly) != 0)
+                    memberElement.Readonly = "readonly";
 
                 try
                 {
