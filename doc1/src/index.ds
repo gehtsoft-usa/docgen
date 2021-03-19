@@ -5,13 +5,25 @@
     @brief=
 
     The Gehtsoft Documentation Generator is the tool to author and generate
-    cross-language and cross-format documentation primarely for API. 
+    cross-language and cross-format documentation. It is main audience is 
+    for API developers, yet it can be used to create any documentation. 
 
     The documentation source format is designed to allow:
     * Describe complex structured matters, including user documentation, programmatic API and data structures;
     * Provide rich text formatting abilities;
     * Keep all documentation source independent from final format (e.g. CHM, Web documentation, PDF);
     * Keep all documentation source is plain text files.
+
+    DocGen is distributed under GPL license. 
+
+    The sources are available at github repository <https://github.com/gehtsoft-usa/docgen>
+
+    An archive of precompiled binaries may be downloaded in the 
+    releases section of the repository. 
+
+    The nuget package is distributed via public Gehtsoft USA feed
+    (see [link=tools]for details[/link]).
+
 @end
 
 @article

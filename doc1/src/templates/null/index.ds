@@ -3,4 +3,13 @@
     @brief=The section describes the template that simply saves the model to an XML file
     @ingroup=templates
     @key=nullTemplate
+
+    The null template is located in 
+    `%docgen%/template/null/null.xls` file and has no additional 
+    parameters. 
+
+    To use this template add the following code to 
+    your project
+
+    `<dg:output template="%docgen%/template/null/null.xsl" file="model.xml" encoding="utf-8" />`
 @end

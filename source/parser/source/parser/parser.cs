@@ -38,7 +38,7 @@ namespace GehtSoft.DocCreator.Parser
         }
 
         private readonly char[] TRIM = " \t\n\r".ToCharArray();
-        private static Regex mTableRow = new Regex(@"\s*\|.+\|\>?\s*$", RegexOptions.Singleline);
+        private static Regex mTableRow = new Regex(@"\s*\|.+\|\s*\>?\s*$", RegexOptions.Singleline);
         private static Regex mTableColumn = new Regex(@"^((!?)(\d+%)?,)?(.*)$");
         private static Regex mCode = new Regex("`([^`]+)`");
         private static Regex mBold = new Regex("\\*\\*([^*]+)\\*\\*");
@@ -78,11 +78,35 @@ namespace GehtSoft.DocCreator.Parser
                             line = trimmedline;
                         else
                         {
-                            if (trimmedline.Trim(TRIM) == "```")
+                            if (trimmedline.Trim(TRIM).StartsWith("```"))
                             {
                                 preformattedBlock = !preformattedBlock;
                                 if (preformattedBlock)
                                     preformattedBlockIndent = Math.Max(0, line.Length - trimmedline.Length);
+
+                                if (preformattedBlock)
+                                {
+                                    if (trimmedline.Trim(TRIM) != "```")
+                                    {
+                                        if (!SSTool.IsInAutoExample(parseStack.Peek(), out _))
+                                        {
+                                            var ee = parseStack.Peek().appendNamedValue("example", null, file, iCurrLine);
+                                            parseStack.Push(ee);
+                                            (ee as ExampleItem).Simplified = true;
+                                            ee.appendNamedValue("show", "always", file, iCurrLine);
+                                            ee.appendNamedValue("highlight", trimmedline.Substring(3), file, iCurrLine);
+                                        }
+                                        else if (parseStack.Peek() is ExampleItem)
+                                        {
+                                            parseStack.Peek().appendNamedValue("highlight", trimmedline.Substring(3), file, iCurrLine);
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    if (SSTool.IsInAutoExample(parseStack.Peek(), out ExampleItem exampleItem))
+                                        parseStack.Pop();
+                                }
                                 continue;
                             }
                             else
@@ -138,13 +162,13 @@ namespace GehtSoft.DocCreator.Parser
                                 if (line.Contains("<http"))
                                     line = mLink.Replace(line, m => $"[eurl={m.Groups[1].Value}]{m.Groups[1].Value}[/eurl]");
 
-                                if (SSTool.StartsWith(line, "* ", out r) || SSTool.StartsWith(line, "- ", out r) || SSTool.StartsWith(line, "# ", out r))
+                                if (SSTool.StartsWith(line, "* ", out r) || SSTool.StartsWith(line, "- ", out r) || SSTool.StartsWith(line, "0 ", out r))
                                 {
                                     ListItem list;
                                     if (!SSTool.IsInAutoList(peek, out list))
                                     {
                                         list = peek.appendNamedValue("list", null, file, iCurrLine) as ListItem;
-                                        if (line[0] == '#')
+                                        if (line[0] == '0')
                                             list.appendNamedValue("type", "num", file, iCurrLine);
                                         list.Simplified = true;
                                     }
@@ -187,7 +211,14 @@ namespace GehtSoft.DocCreator.Parser
                                         simplifiedHandled = true;
                                     }
                                 }
-                                else if (SSTool.StartsWith(line, ">> ", out r))
+                                else if (SSTool.StartsWith(line, "# ", out r) || SSTool.StartsWith(line, "## ", out r) || SSTool.StartsWith(line, "### ", out r))
+                                {
+                                    var he = peek.appendNamedValue("headline", null, file, iCurrLine);
+                                    he.appendNamedValue("level", (line.Length - r.Length - 1).ToString(), file, iCurrLine);
+                                    he.appendDescription(r, file, iCurrLine);
+                                    simplifiedHandled = true;
+                                }
+                                else if (SSTool.StartsWith(line, "#### ", out r))
                                 {
                                     peek.appendDescription($"[b]{r}[/b]", file, iCurrLine);
                                     simplifiedHandled = true;

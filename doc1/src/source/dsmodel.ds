@@ -67,7 +67,6 @@
         @brief=The class specification
         @custom=xml-tag
 
-
         @param
             @name=parent
             The name of the parent class. Note: it is not a key to a parent class in the documentation, just an arbitrary text
@@ -140,10 +139,13 @@
 
         @param
             @name=writeSignatures
-            The flag indicating whether the signatures (aka name plus parameters)
-   of the methods will be added to the list of the methods and constructors in the class.
+            [c]yes[/c], [c]no[/c], [c]def[/c]
 
-   The option is useful for classes with lot of overloads.
+            The flag indicating whether the signatures (aka name plus parameters)
+            of the methods will be added to the list of the 
+            methods and constructors in the class.
+
+            The option is useful for classes with lot of overloads.
         @end
 
         The element may contain the following elements:

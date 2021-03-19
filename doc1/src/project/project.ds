@@ -3,6 +3,15 @@
     @brief=The section described the documentation project files
     @ingroup=index
     @key=projectFile
+
+    There are two kind of the project files 
+    you need to create in order to successfully 
+    compile a documentation project:
+
+    1) A msbuild project file that calls all required actions
+
+    2) A docgen project file that sets the source of the documentation
+    and defines the desired documentation output.
 @end
 
 @group
@@ -426,6 +435,8 @@
             The path to the output XML file with
             assemblies content.
 
+            You can use [clink=cs2dsTemplate]cs2ds[/clink] template
+            to create the documentation from this file. 
         @end
     @end
 @end

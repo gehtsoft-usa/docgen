@@ -41,6 +41,7 @@
     @example
         @show=always
         @gray=yes
+        @highlight=ds
         !@article
         !    @title=My tile
         !    Article content.
@@ -137,4 +138,171 @@
     @ingroup=sources
     @key=formattingTables
 
+    The docgen also partially supports using of 
+    MarkDown-style formatting. 
+
+    Te enable markdown style formatting add
+    define with the name `simplified-text-syntax` to 
+    common section of the project file. 
+
+    #### Text formatting
+
+    |!30%,Markdown Tag|Description| >
+    |`*[nil]*text*[nil]*`|Make text **bold**|
+    |`_[nil]_text_[nil]_`|Make text __italic__|
+    |`^[nil]^text^[nil]^`|Make text ^^superscript^^|
+    |`<[nil]http://link>`|This is a link <https://www.gehtsoftusa.com>|
+    
+    To make the text `code` put it between back quotes [c]`[/c].
+
+    #### Code Samples
+
+    To insert a code sample you can put it between triple back quotes [c]```[/c].
+    The first one should define the language name for syntax highlighting
+    (use `text` to no formatting)
+
+    ```text
+       [nil]```csharp
+        if (a > b) 
+            Console.WriteLine("A is bigger");
+       [nil]```
+    ```
+
+    Will be displayed as:
+
+    ```csharp
+        if (a > b) 
+            Console.WriteLine("A is bigger");
+    ```
+
+    #### Headers
+
+    To mark a line as a header, start it with `#` character. The number
+    of characters defines the level of the header.
+
+    @example
+        @show=always
+        @gray=yes
+        !# Header Level 1
+        !## Header Level 2
+        !### Header Level 3
+        !#### Header Level 4
+    @end
+
+    # Header Level 1
+    ## Header Level 2
+    ### Header Level 3
+    #### Header Level 4
+    
+    #### Simple lists
+
+    To make a simple list use `*`, `-` as the first character of the line. 
+    The list lines follows the same rule a paragraph - the next item starts after 
+    the empty line or with the next line starts with list character. 
+
+    @table
+        @width=100%
+        @row
+            @col
+                @width=50%
+                @example
+                    @show=always
+                    @gray=yes
+                    ```
+                        * Item 1
+                        - Item 2
+                        * Item 3
+                          is a multi-line line
+                        * Item 4
+                    ```    
+                @end
+            @end
+            @col
+                * Item 1
+                - Item 2
+                * Item 3
+                  is a multi-line line
+                * Item 4
+            @end
+        @end
+    @end
+
+    #### Numbered Lists
+
+    The numbered lists similar to bullet list, the only difference is that 
+    the symbol `0` should be used in first item. The rest items may have
+    either `0`, `*`, or `-`.
+
+    @table
+        @width=100%
+        @row
+            @col
+                @width=50%
+                @example
+                    @show=always
+                    @gray=yes
+                    ```
+                        0 Item 1
+                        0 Item 2
+                        * And this is numbered list too
+                        * Item 4
+                    ```    
+                @end
+            @end
+            @col
+                0 Item 1
+                0 Item 2
+                * And this is numbered list too
+                * Item 4
+            @end
+        @end
+    @end
+
+    #### Tables
+
+    To format the table use `|` character a column delimiter. Markdown
+    based tables cannot have values longer than 1 line. `|` character must 
+    be the first character in the line.
+
+    Example: `|cell1|cell2|cell3|`
+
+    |cell1|cell2|cell3|
+
+    To make a row header put `!,` after the first `|`
+
+    Example: `|!,cell1|cell2|cell3|`
+
+    |!,cell1|cell2|cell3|
+
+    To make the table 100% width put `>` character at end of the first
+    line of the table
+
+    Example: `|cell1|cell2|cell3| >`
+
+    |cell1|cell2|cell3| >
+
+    To define the width of the column put size in percents after `|` character followed 
+    by `,`. 
+
+    |50%,cell1|25%,cell2|25%,cell3| >
+
+    You can specify both, the width and the header flag
+
+    |!50%,cell1|25%,cell2|25%,cell3| >
+
+    To add more lines put them right after the first line. You can 
+    also use formatting inside the table
+
+    @example
+        @title=Example
+        @show=always
+        @gray=yes
+        !|!50%,cell1|25%,cell2|25%,cell3| >
+        !|[[nil]b]cell4[[nil]/b]|[[nil]i]cell5[[nil]/i]|[[nil]sup]cell6[[nil]sub]|
+        !|*[nil]*cell4*[nil]*|_[nil]_cell5_[nil]_|^[nil]^cell6^[nil]^|
+        @end
+
+    |!50%,cell1|25%,cell2|25%,cell3| >
+    |[b]cell4[/b]|[i]cell5[/i]|[sup]cell6[sub]|
+    |**cell4**|__cell5__|^^cell6^^|
 @end

@@ -117,6 +117,7 @@ namespace GehtSoft.DocCreator.Parser
         private string mHighlight = null;
         private bool mTabs = false;
         private List<DocItem> maTabs;           //!< list of the see also items
+        public bool Simplified { get; set; } = false;
 
         public string If
         {

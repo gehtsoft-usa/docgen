@@ -3,4 +3,159 @@
     @brief=The section describes the template that creates HTML based documentation from the source files
     @ingroup=templates
     @key=htmlTemplate
+
+    The template is used to create the HTML documentation
+    for WEB publishing as well as to be compiled using
+    HTML Help Compiler.
+
+    The template is located at
+    `%docgen%/template/cs2ds/main.xsl`
+
+    This template creates multiple output files, so use `file` parameter
+    of the [clink=docProjectFile1.output]output[/clink] element of the project file
+    to specify the destination folder:
+
+    Example:
+
+    ```xml
+    <dg:output template="%docgen%/template/html/main.xsl" file="dst/null-file" encoding="utf-8">
+    ```
+
+    The template has the following parameters:
+
+    @table
+        @width=100%
+        @row
+            @header=yes
+            @col
+                @width=30%
+                Parameter
+            @end
+            @col
+                Description
+            @end
+        @end
+
+        @row
+            @col
+                `text-language`
+            @end
+            @col
+                2-letter language code, e.g. `en`.
+
+                The parameter is used to localize the output
+                documentation. `en`, `fr` and `ru` are supported.
+            @end
+        @end
+
+        @row
+            @col
+                `help-title`
+            @end
+            @col
+                The title of the help
+            @end
+        @end
+
+        @row
+            @col
+                `write-advanced-web-content`
+            @end
+            @col
+                `yes` or `no`
+
+                The flag indicating whether the content tree
+                must be interactive (e.g. you can collapse nodes)
+            @end
+        @end
+        @row
+            @col
+                `default-transform`
+            @end
+            @col
+                `yes` or `no`
+
+                The flag indicating whether the compiler must
+                escape HTML character and process bbcodes.
+
+                The option is mostly used for backward
+                compatibly with very old sources that
+                has been created before bbcodes are introduced.
+            @end
+        @end
+        @row
+            @col
+                `enable-highlighter`
+            @end
+            @col
+                `yes` or `no`
+
+                The flag indicating whether a syntax highlighting
+                must be enabled for the samples.
+
+                [url=https://highlightjs.org/]Highligh JS[/url]
+                is used for highlight the syntax.
+            @end
+        @end
+        @row
+            @col
+                `external-resources`
+            @end
+            @col
+                `yes` or `no`
+
+                If the value is `yes` the scripts and css
+                are loaded from `res/scripts.js` and
+                `res/styles.js` file.
+
+                The default implementation would be copied
+                during the compilation, but you can
+                redefine the styles and scripts behavior.
+            @end
+        @end
+        @row
+            @col
+                `write-hhp`
+            @end
+            @col
+                `yes` or `no`, default is `yes`
+
+                If value is "yes" an HHP project file will be created.
+
+                You can call HTML Help Compiler 1.3 or 1.4 to create a CHM file.
+
+                The flag indicating whether HTML Help project needs to be generated
+            @end
+        @end
+
+        @row
+            @col
+                `hhp-language`
+            @end
+            @col
+                The full name of the language, e.g. `0x409 English (United States)`
+
+                The parameter is used to generate HTML Help project file
+            @end
+        @end
+
+        @row
+            @col
+                `chm-file`
+            @end
+            @col
+                The name of the CHM file to be created.
+
+                The parameter is used to generate HTML Help project file
+            @end
+        @end
+    @end
+@end
+
+@group
+    @title=HTML Template Modification
+    @brief=The article describes interior organization and logic of HTML template
+    @key=htmlTemplateModification
+    @ingroup=htmlTemplate
+
 @end

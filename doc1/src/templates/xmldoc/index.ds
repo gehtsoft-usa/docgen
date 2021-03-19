@@ -3,4 +3,58 @@
     @brief=The section describes the template that creates XML doc file from the documentation for a C# project.
     @ingroup=templates
     @key=xmldocTemplate
+
+    The null template is located in 
+    `%docgen%/template/xmldoc/main.xls` 
+
+    The following parameters may be specified for the template
+
+    @table
+        @row
+            @header=yes
+            @col
+                @width=30%
+                Parameter
+            @end
+            @col
+                Description
+            @end
+        @end
+        @row
+            @col
+                `assembly`
+            @end
+            @col
+                The name of the assembly (without `.dll` extension)
+            @end
+        @end
+        @row
+            @col
+                `namespace`
+            @end
+            @col
+                A regular expression for namespace(s) to include
+                into the XMLDoc (useful if documentation 
+                covers multiple assemblies). 
+            @end
+        @end
+        @row
+            @col
+                `write-summary`
+            @end
+            @col
+                `yes` or `no`
+
+                The parameter defines whether only
+                the content of brief tag or the whole
+                summary needs to be saved for classes and methods.
+
+                In case your documentation has rich formatting 
+                in detailed description (e.g. a lot of tables, lists)
+                it may be not a good idea to save this
+                information to XMLDoc because formatting support
+                there is highly limited. 
+            @end
+        @end
+    @end
 @end

@@ -9,6 +9,10 @@
     The BBCode is well-know formatting specification actively used
     in phpbb forums and their descendants.
 
+    BBCode is supported only by output templates that has the option
+    to format the text. In order to have bbcode processed make sure
+    that `default-transform` option is enabled in the output template.
+
     BBCode tags should be put in square brackets [c][][/c].
 
     The opening bbcode tag has format [b][[i]tagName[/i]][/b]
@@ -33,4 +37,167 @@
     BBCodes may be used inside other bbcodes, for example:
     [c][[nil]b]myt[[nil]i]e[[nil]sub]xt[[nil]/sub] is [[nil]/i] heavi[[nil]/b]ly [[nil]u]for[[nil]color=gray]mat[[nil]/color]ted[[nil]/u][/c].
     ('[b]myt[i]e[sub]xt[/sub] is [/i] heavi[/b]ly [u]for[color=gray]mat[/color]ted[/u]').
+
+    @member
+        @type=property
+        @name=b
+        @brief=Make text bold
+        @custom=xml-tag
+    @end
+    @member
+        @type=property
+        @name=i
+        @brief=Make text italic
+        @custom=xml-tag
+    @end
+    @member
+        @type=property
+        @name=u
+        @brief=Underline the text
+        @custom=xml-tag
+    @end
+    @member
+        @type=property
+        @name=c
+        @brief=Make text code (monospace)
+        @custom=xml-tag
+    @end
+    @member
+        @type=property
+        @name=sup
+        @brief=Make text superscript
+        @custom=xml-tag
+    @end
+    @member
+        @type=property
+        @name=sub
+        @brief=Make text subscript
+        @custom=xml-tag
+    @end
+    @member
+        @type=property
+        @name=size=
+        @brief=Increase or decrease the size of the text
+        @custom=xml-tag
+
+        @param
+            @name=size
+            Relative size of the text, use `+n` to increase the fond and `-n` to decrease the font, e.g.
+            `[[nil]size=+1]slightly bigger[[nil]/size]`.
+        @end
+    @end
+    @member
+        @type=property
+        @name=red
+        @brief=Make text red
+        @custom=xml-tag
+    @end
+    @member
+        @type=property
+        @name=green
+        @brief=Make text green
+        @custom=xml-tag
+    @end
+    @member
+        @type=property
+        @name=blue
+        @brief=Make text blue
+        @custom=xml-tag
+    @end
+    @member
+        @type=property
+        @name=gray
+        @brief=Make text dark gray
+        @custom=xml-tag
+    @end
+    @member
+        @type=property
+        @name=color=
+        @brief=Sets the color of the text
+        @custom=xml-tag
+
+        @param
+            @name=color
+            A name of the web-color to set or RBG color reference.
+        @end
+    @end
+    @member
+        @type=property
+        @name=link=
+        @brief=A link to another topic
+        @custom=xml-tag
+        @param
+            @name=link
+            A key of another topic.
+        @end
+    @end
+    @member
+        @type=property
+        @name=clink
+        @brief=A link to another topic displayed as a code
+        @custom=xml-tag
+
+        The tag `[[nil]clink=key]text[[nil]/clink]` gives exactly
+        the same result as
+        `[[nil]link=key][[nil]c]text[[nil]/c][[nil]/link]`.
+    @end
+    @member
+        @type=property
+        @name=url=
+        @brief=A link to specified URL to be opened in the same window
+        @custom=xml-tag
+
+        @param
+            @name=url
+            http or https link to be opened.
+        @end
+
+    @end
+    @member
+        @type=property
+        @name=eurl
+        @brief=A link to specified URL to be opened in a new window
+        @custom=xml-tag
+
+        @param
+            @name=url
+            http or https link to be opened.
+        @end
+    @end
+    @member
+        @type=property
+        @name=img=
+        @brief=Inserts an image
+        @custom=xml-tag
+
+        @param
+            @name=img
+            The relative or absolute URL to the image.
+        @end
+
+        Note: this tag has NO closing tag, e.g. `[[nil]img=myimage.png]`
+    @end
+    @member
+        @type=property
+        @name=br
+        @brief=Inserts a page break.
+        @custom=xml-tag
+
+        Note: this tag has NO closing tag, e.g. `[[nil]br]`
+    @end
+    @member
+        @type=property
+        @name=nil
+        @brief=Tag that displays nothing.
+        @custom=xml-tag
+
+        The tag is useful when you need to "break" default behavior of the parser, e.g.
+        when you need to insert a bbcode as a part of the text.
+
+        Example: `[[nil]b]text[[nil]/b]` will be displayed as [b]text[/b]
+
+        Example: `[[[nil]nil]b]text[[[nil]nil]/b]` will be displayed as `[[nil]b]text[[nil]/b]`
+
+        Note: this tag has NO closing tag.
+    @end
 @end

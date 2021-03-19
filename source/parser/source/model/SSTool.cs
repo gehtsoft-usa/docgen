@@ -16,6 +16,12 @@
             return false;
         }
 
+        public static bool IsInAutoExample(DocItem item, out ExampleItem exampleItem)
+        {
+            exampleItem = item as ExampleItem;
+            return exampleItem?.Simplified ?? false;
+        }
+
         public static bool IsInAutoTable(DocItem item, out TableItem tableItem)
         {
             tableItem = null;

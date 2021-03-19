@@ -17,7 +17,7 @@
         <dg:define name="advanced-web-content" value="yes" />
         <dg:define name="default-transform" value="yes" />
         <dg:define name="enable-highlighter" value="yes" />
-        <dg:define name="external-resources" value="no" />
+        <dg:define name="external-resources" value="yes" />
     </dg:output>
 </dg:help-project>
 

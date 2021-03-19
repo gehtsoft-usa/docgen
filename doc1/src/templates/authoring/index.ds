@@ -3,4 +3,32 @@
     @brief=The section describes how to create your own template
     @ingroup=templates
     @key=authoringTemplates
+
+    To save the documentation in a particular format a **template** is used. 
+
+    There are a set of predefined templates, however you can create 
+    your own templates. 
+
+    When documentation is compiled from the source code, the compiler 
+    builds up an XML document that contains all the documentation
+    information. The schema of this document reflects the structure of
+    the documentation. Check [link=modelXML]XML model[/link] for more details. 
+
+    The template is a set of one or more XSLT transformations that 
+    creates one or more text documents (e.g. other HTML for web documentation or 
+    Microsoft HTMLHelp sources, or XML for XMLDoc). In order to facilitate 
+    the procedure approach to the development (as XSLT functional approach is 
+    not always easy to learn for developers) and to extend XSLT 1.0 with 
+    ability to create multiple output files, a set of 
+    [link=xpathFunctions]XPATH extension functions[/link] is
+     provided for these templates.
+
+    As a result, the documentation generator has all features of a 
+    code generator and it also can be used, for example, to create a 
+    documentation source on the base of assembly structure or 
+    doxygen output. 
+
+    If you look for examples, please check `template` folder 
+    of the docgen git repository. All the standard templates
+    are located there. 
 @end

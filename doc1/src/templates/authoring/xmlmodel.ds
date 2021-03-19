@@ -7,6 +7,12 @@
     @type=tags
     @membersToContent=true
 
+    Note: you can always 
+    use [clink=nullTemplate]null[/clink] template
+    to save XML model of your documentation 
+    to a file. It helps a lot 
+    when you develop your own template. 
+
     @member
         @type=property
         @name=root

@@ -19,28 +19,19 @@
     Refer the namespace in your XSLT file in order to be able to
     use this functions.
 
-    @example
-        @show=always
-        @gray=yes
-        ```
+        ```xml
         <xsl:stylesheet
             version="1.0"
-            [b]xmlns:ext="urn:gehtsoft-exslt"[/b]
+            [u]xmlns:ext="urn:gehtsoft-exslt"[/u]
             xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             <xsl:output method="html" />
             <xsl:namespace-alias stylesheet-prefix="ext" result-prefix="#default"/>
             <xsl:template match="/" >
-                <xsl:value-of select="[b]ext:let[/b]('root', /) "/>
+                <xsl:value-of select="[u]ext:let[/u]('root', /) "/>
                 ...
             </xsl:template>
         </xsl:stylesheet>
         ```
-    @end
-
-
-
-
-
 
     @member
         @name=document

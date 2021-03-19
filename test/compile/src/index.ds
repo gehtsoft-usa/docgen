@@ -4,6 +4,11 @@
     @key=index
     @ingroup=
 
+    # H1
+    ## H2
+    ### H3
+    #### H4
+
     @example
         @title=test gray
         @gray=no
@@ -11,19 +16,19 @@
         567
     @end
 
-    @example
-        @title=example 1
-        ```
-        using System;
 
-        namespace MyNamespace
+
+    ```cs
+    using System;
+
+    namespace MyNamespace
+    {
+        class MyClass
         {
-            class MyClass
-            {
-            }
         }
-        ```
-    @end
+    }
+    ```
+
     @example
         @title=example 2
         @highlight=cpp
@@ -94,7 +99,7 @@
     @ingroup=index
     @brief=
 
-    >>  Tricky formatting
+    ####   Tricky formatting
 
     This is **Bold** and __italic__ text.
     We can also do ^^superscript^^ or
@@ -125,7 +130,7 @@
 
     Numbered list!
 
-    # My number list
+    0 My number list
     * And item
     * And...
       multiline item
@@ -145,27 +150,27 @@
     @ingroup=index
     @brief=
 
-    >> Simple Table
+    ####  Simple Table
     |C1,1|C1,2|C1,3|
     |C2,1|C2,2|C2,3|
     |C3,1|C3,2|C3,3|
-    >> Header
+    ####  Header
     |!,C1,1|C1,2|C1,3|
     |C2,1|C2,2|C2,3|
     |C3,1|C3,2|C3,3|
-    >> width
+    ####  width
     |50%,C1,1|C1,2|C1,3|
     |C2,1|C2,2|C2,3|
     |C3,1|C3,2|C3,3|
-    >> header
+    ####  header
     |!,C1,1|C1,2|C1,3|
     |C2,1|C2,2|C2,3|
     |C3,1|C3,2|C3,3|
-    >> header and width
+    ####  header and width
     |!50%,C1,1|10%,C1,2|C1,3|
     |C2,1|C2,2|C2,3|
     |C3,1|C3,2|C3,3|
-    >> header and width and 100%
+    ####  header and width and 100%
     |!50%,C1,1|10%,C1,2|C1,3|>
     |C2,1|C2,2|C2,3|
     |C3,1|C3,2|C3,3|
