@@ -13,6 +13,8 @@ namespace GehtSoft.DocCreator.Parser
         private string mWidth = null;
         private string msIf;                     //!< conditional
 
+        internal bool Simplified { get; set; } = false;
+
         public string If
         {
             get

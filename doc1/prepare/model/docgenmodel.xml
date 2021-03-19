@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc-schema>
+ <common-attributes>
+  <doc-attribute name="title">
+   <brief>The title of the object</brief>
+  </doc-attribute>
+   <doc-attribute name="name">
+   <brief>The name of the object</brief>
+  </doc-attribute>
+  <doc-attribute name="ingroup">
+   <brief>The key of the group to which the object belongs to. All objects except the index group must belong to some group</brief>
+  </doc-attribute>
+  <doc-attribute name="brief">
+   <brief>A brief (one-two sentence) summary of the object</brief>
+  </doc-attribute>
+  <doc-attribute name="key">
+   <brief>The unique key of the article (must be unique among articles, groups and classes)</brief>
+  </doc-attribute>
+  <doc-attribute name="if">
+   <brief>A name of the definition to be set in the doc project file in order to include the object into the documentation. The value is optional. If no value is set, the object will be always included</brief>
+  </doc-attribute>
+  <doc-attribute name="transform">
+   <brief>A flag indicating whether the content contains BB-codes</brief>
+  </doc-attribute>
+ </common-attributes>
+ <doc-element class-name="ArticleItem" doc-tag="article" top-level="true">
+  <brief>The article</brief>
+  <xml-element name="article">
+   <xml-attribute name="title" />
+   <xml-attribute name="key" />
+   <xml-attribute name="in-group" reference="in-group" />
+   <xml-attribute name="brief" />
+   <xml-attribute name="transform" />
+   <xml-attribute name="alias-id" reference="aliasId" />
+   <xml-attribute name="exclude-from-list" reference="excludeFromList" />
+   <xml-attribute name="briefless" />
+  </xml-element>
+  <doc-child name="see" />
+  <doc-attribute name="title" />
+  <doc-attribute name="ingroup" />
+  <doc-attribute name="brief" />
+  <doc-attribute name="key" />
+  <doc-attribute name="if" />
+  <doc-attribute name="transform" />
+  <doc-attribute name="aliasId">
+   <brief>The alias of article for HtmlHelp topic list</brief>
+  </doc-attribute>
+  <doc-attribute name="excludeFromList">
+   <brief>The flag indicating whether the article should not be displayed in the list of the articles in the group and content tree</brief>
+  </doc-attribute>
+ </doc-element>
+ <doc-element class-name="ClassItem" doc-tag="class" top-level="true">
+  <brief>The class specification</brief>
+  <xml-element name="class">
+   <xml-attribute name="name" />
+   <xml-attribute name="sig" />
+   <xml-attribute name="key" />
+   <xml-attribute name="brief" />
+   <xml-attribute name="type" />
+   <xml-attribute name="prefix" />
+   <xml-attribute name="in-group" reference="ingroup" />
+   <xml-attribute name="decl-name" reference="declname" />
+   <xml-attribute name="sort" />
+   <xml-attribute name="transform" />
+   <xml-attribute name="members-to-content" reference="membersToContent" />
+   <xml-attribute name="write-signatures" reference="writeSignatures" />
+  </xml-element>
+  <doc-child name="see" />
+  <doc-child name="member" />
+  <doc-child name="param" />
+  <doc-attribute name="parent">
+   <brief>The name of the parent class. Note: it is not a key to a parent class in the documentation, just an arbitrary text</brief>
+  </doc-attribute>
+  <doc-attribute name="import">
+   <brief>The flag indicating that the class must also display members of another classes (e.g. to use it include parent's class members) </brief>
+  </doc-attribute>
+  <doc-child name="declaration" />
+  <doc-attribute name="name" />
+  <doc-attribute name="sig">
+   <brief>A signature of the class</brief>
+  </doc-attribute>
+  <doc-attribute name="prefix">
+   <brief>A prefix for the class name</brief>
+  </doc-attribute>
+  <doc-attribute name="key" />
+  <doc-attribute name="brief" />
+  <doc-attribute name="type">
+   <brief>A type of the class. The types interpretation depends on the template used. </brief>
+  </doc-attribute>
+  <doc-attribute name="membersToContent">
+   <brief>The flag indicating whether members of the class needs to be exposed in the content tree</brief>
+  </doc-attribute>
+  <doc-attribute name="ingroup" />
+  <doc-attribute name="if" />
+  <doc-attribute name="sort">
+   <brief>The flag indicating whether the members needs to be sorted by the name ("yes" by default)</brief>
+  </doc-attribute>
+  <doc-attribute name="declname">
+   <brief>The name of the class to be used in declarations (the same as the class name by default)</brief>
+  </doc-attribute>
+  <doc-attribute name="transform" />
+  <doc-attribute name="writeSignatures">
+   <brief>The flag indicating whether the signatures (aka name plus parameters)
+   of the methods will be added to the list of the methods and constructors in the class.
+
+   The option is useful for classes with lot of overloads.</brief>
+  </doc-attribute>
+ </doc-element>
+ <doc-element class-name="DeclarationItem" doc-tag="declaration" no-content="true">
+  <brief>A specification of a method for a language specific declaration</brief>
+  <xml-element name="declaration">
+   <xml-attribute name="language" />
+   <xml-attribute name="name" />
+   <xml-attribute name="prefix" />
+   <xml-attribute name="suffix" />
+   <xml-attribute name="name-suffix" />
+   <xml-attribute name="return" />
+   <xml-attribute name="params" />
+   <xml-attribute name="custom" />
+  </xml-element>
+  <doc-attribute name="language">
+   <brief>The programming language</brief>
+  </doc-attribute>
+  <doc-attribute name="name">
+   <brief>The name of the member. By default is equal to the name of the member</brief>
+  </doc-attribute>
+  <doc-attribute name="prefix">
+   <brief>The prefix to put before the declaration</brief>
+  </doc-attribute>
+  <doc-attribute name="custom">
+   <brief>A fully custom declaration</brief>
+  </doc-attribute>
+  <doc-attribute name="suffix">
+   <brief>A suffix to put after the declaration</brief>
+  </doc-attribute>
+  <doc-attribute name="name-suffix">
+    <brief>A suffix to add to the name of the member in declaration</brief>
+  </doc-attribute>
+  <doc-attribute name="params">
+   <brief>The parameter list</brief>
+  </doc-attribute>
+  <doc-attribute name="return">
+   <brief>The return value</brief>
+  </doc-attribute>
+  <doc-attribute name="if" />
+ </doc-element>
+ <doc-element class-name="ExampleTabItem" doc-tag="tab">
+  <brief>A tab in the example item. </brief>
+  <xml-element name="example-tab">
+   <xml-attribute name="title" />
+   <xml-attribute name="highlight" />
+  </xml-element>
+  <doc-attribute name="title">
+   <brief>The name of the tab</brief>
+  </doc-attribute>
+  <doc-attribute name="highlight">
+   <brief>The name of the programming language to do the syntax highlighting (if supported by the output template)</brief>
+  </doc-attribute>
+  <doc-attribute name="if" />
+ </doc-element>
+ <doc-element class-name="ExampleItem" doc-tag="example" format="true">
+  <brief>An example.</brief>
+  <xml-element name="example">
+   <xml-attribute name="title" />
+   <xml-attribute name="transform" />
+   <xml-attribute name="show" />
+   <xml-attribute name="gray" />
+   <xml-attribute name="tabs" />
+   <xml-attribute name="highlight" />
+  </xml-element>
+  <doc-attribute name="title">
+   <brief>A title of the example</brief>
+  </doc-attribute>
+  <doc-attribute name="transform" />
+  <doc-attribute name="show">
+   <brief>A flag indicating if the example must be fully displayed by default (for output templates that supports collapsing of the examples)</brief>
+  </doc-attribute>
+  <doc-attribute name="if" />
+  <doc-attribute name="gray">
+   <brief>A flag indicating whether the example must be displayed on gray background</brief>
+  </doc-attribute>
+  <doc-attribute name="tabs">
+   <brief>A flag indicating whether the example tag contains the text in its body or has one or more tab.
+
+   Please note that if tabs are enabled all the content must be in the tabs!</brief>
+  </doc-attribute>
+  <doc-child name="tab" />
+  <doc-attribute name="highlight">
+   <brief>The name of the programming language to do the syntax highlighting (if supported by the output template)</brief>
+  </doc-attribute>
+ </doc-element>
+ <doc-element class-name="ExceptionItem" doc-tag="exception">
+  <brief>A description of the exception thrown by the method</brief>
+  <xml-element name="exception">
+   <xml-attribute name="name" />
+  </xml-element>
+  <doc-attribute name="name">
+   <brief>The name of the exception</brief>
+  </doc-attribute>
+ </doc-element>
+ <doc-element class-name="GroupItem" doc-tag="group" top-level="true">
+  <brief>A group of articles, classes and other groups</brief>
+  <xml-element name="group">
+   <xml-attribute name="title" />
+   <xml-attribute name="key" />
+   <xml-attribute name="brief" />
+   <xml-attribute name="in-group" reference="ingroup" />
+   <xml-attribute name="sort-articles" reference="sortarticles" />
+   <xml-attribute name="transform" />
+   <xml-attribute name="sort-groups" reference="sortgroups" />
+   <xml-attribute name="sort-classes" reference="sortclasses" />
+   <xml-attribute name="import-hhc" reference="importhhc" />
+   <xml-attribute name="import-hhk" reference="importhhk" />
+   <xml-attribute name="briefless" />
+   <xml-attribute name="order" />
+  </xml-element>
+  <doc-child name="see" />
+  <doc-attribute name="title" />
+  <doc-attribute name="brief" />
+  <doc-attribute name="ingroup" />
+  <doc-attribute name="importhhc">
+   <brief>A name of the custom HTML HELP content file to be added to the group content</brief>
+  </doc-attribute>
+  <doc-attribute name="importhhk">
+   <brief>A name of the custom HTML HELP keywords file to be added to the group content</brief>
+  </doc-attribute>
+  <doc-attribute name="sortarticles">
+   <brief>A flag indicating whether articles needs to be sorted by the name</brief>
+  </doc-attribute>
+  <doc-attribute name="sortgroups">
+   <brief>A flag indicating whether groups needs to be sorted by the name</brief>
+  </doc-attribute>
+  <doc-attribute name="sortclasses">
+   <brief>A flag indicating whether classes needs to be sorted by the name</brief>
+  </doc-attribute>
+  <doc-attribute name="key" />
+  <doc-attribute name="if" />
+  <doc-attribute name="order">
+   <brief>If the value is set to "custom" the documentation won't do any grouping or sorting of the objects inside the group</brief>
+  </doc-attribute>
+  <doc-attribute name="transform" />
+ </doc-element>
+ <doc-element class-name="HeaderItem" doc-tag="headline" format="true">
+  <brief>A header in the description</brief>
+  <xml-element name="header">
+   <xml-attribute name="level" />
+  </xml-element>
+  <doc-attribute name="level">
+   <brief>The level of the header (1 to 4)</brief>
+  </doc-attribute>
+ </doc-element>
+ <doc-element class-name="ListItem" doc-tag="list" format="true" no-content="true">
+  <brief>A list</brief>
+  <xml-element name="list">
+   <xml-attribute name="type" />
+  </xml-element>
+  <doc-attribute name="type">
+   <brief>The type of the list (e.g. num). If type isn't set, the list will be a bulleted list</brief>
+  </doc-attribute>
+  <doc-child name="list-item" />
+  <doc-child name="list" />
+ </doc-element>
+ <doc-element class-name="ListItemItem" doc-tag="list-item">
+  <brief>An element of a list</brief>
+  <xml-element name="list-item"></xml-element>
+ </doc-element>
+ <doc-element class-name="MemberItem" doc-tag="member">
+  <brief>A member of a class</brief>
+  <xml-element name="member">
+   <xml-attribute name="name" />
+   <xml-attribute name="visibility" />
+   <xml-attribute name="scope" />
+   <xml-attribute name="brief" />
+   <xml-attribute name="key" />
+   <xml-attribute name="type" />
+   <xml-attribute name="transform" />
+   <xml-attribute name="custom" />
+   <xml-attribute name="divisor" />
+   <xml-attribute name="class" />
+   <xml-attribute name="class-name" />
+   <xml-attribute name="exclude-from-list" reference="excludeFromList" />
+  </xml-element>
+  <doc-child name="see" />
+  <doc-child name="exception" />
+  <doc-child name="declaration" />
+  <doc-child name="param" />
+  <doc-attribute name="name">
+   <brief>The name of the member</brief>
+  </doc-attribute>
+  <doc-attribute name="sig">
+   <brief>A platform-specific signature of the member (e.g. for .NET type)</brief>
+  </doc-attribute>
+  <doc-attribute name="visibility">
+   <brief>Visibility of the member (e.g. public, protected)</brief>
+  </doc-attribute>
+  <doc-attribute name="scope">
+   <brief>The scope of the member (static or instance)</brief>
+  </doc-attribute>
+  <doc-attribute name="brief" />
+  <doc-child name="return" />
+  <doc-attribute name="type">
+   <brief>The type of the member (e.g. field, property, method)</brief>
+  </doc-attribute>
+  <doc-attribute name="key" />
+  <doc-attribute name="divisor">
+   <brief>A divisor between the class name and method name to be used (a dot (.) by default)</brief>
+  </doc-attribute>
+  <doc-attribute name="if" />
+  <doc-attribute name="excludeFromList">
+   <brief>The flag indicating whether the member must be excluded from list of members in the class</brief>
+  </doc-attribute>
+  <doc-attribute name="transform" />
+ </doc-element>
+ <doc-element class-name="ParamItem" doc-tag="param">
+  <brief>A parameter of a member of a class or of a generic class</brief>
+  <xml-element name="param">
+   <xml-attribute name="name" />
+   <xml-attribute name="gray" />
+  </xml-element>
+  <doc-attribute name="name">
+   <brief>The name of the parameter</brief>
+  </doc-attribute>
+  <doc-attribute name="gray">
+   <brief>The flag indicating that the parameter must be displayed on highlighted background</brief>
+  </doc-attribute>
+  <doc-attribute name="if" />
+ </doc-element>
+ <doc-element class-name="ReturnItem" doc-tag="return">
+  <brief>A value returned from a class</brief>
+  <xml-element name="return"></xml-element>
+ </doc-element>
+ <doc-element class-name="SeeAlsoItem" doc-tag="see">
+  <brief>A see-also reference to another topic</brief>
+  <xml-element name="see-also">
+   <xml-attribute name="title" />
+   <xml-attribute name="key" />
+  </xml-element>
+  <doc-attribute name="key">
+   <brief>The key to which the see also refers to</brief>
+  </doc-attribute>
+  <doc-attribute name="title">
+   <brief>The title to display</brief>
+  </doc-attribute>
+  <doc-attribute name="if" />
+ </doc-element>
+ <doc-element class-name="TableItem" doc-tag="table" format="true" no-content="true">
+  <brief>A table</brief>
+  <xml-element name="table">
+   <xml-attribute name="width" />
+  </xml-element>
+  <doc-attribute name="width">
+   <brief>The width of the table in percents</brief>
+  </doc-attribute>
+  <doc-child name="row" />
+  <doc-attribute name="if" />
+ </doc-element>
+ <doc-element class-name="TableColItem" doc-tag="col">
+  <brief>A table column</brief>
+  <xml-element name="table-col">
+   <xml-attribute name="width" />
+  </xml-element>
+  <doc-attribute name="width">
+   <brief>The width of the column in percents</brief>
+  </doc-attribute>
+ </doc-element>
+ <doc-element class-name="TableRowItem" doc-tag="row" no-content="true">
+  <brief>A table row</brief>
+  <xml-element name="table-row">
+   <xml-attribute name="is-header" />
+  </xml-element>
+  <doc-attribute name="header">
+   <brief>The flag indicating whether the row is a header row of the table</brief>
+  </doc-attribute>
+  <doc-child name="col" />
+  <doc-attribute name="if" />
+ </doc-element>
+</doc-schema>

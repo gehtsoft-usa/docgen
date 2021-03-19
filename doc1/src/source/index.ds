@@ -1,0 +1,140 @@
+@group
+    @title=Source
+    @brief=The section described the documentation source
+    @ingroup=index
+    @key=sources
+
+    Read articles below to understand how to write a documentation using docgen markup language.
+
+    Refer to [link=modelDS]full list of documentation tags[/link] for details how to
+    markup the documentation structure and complex formatting elements like multi-level lists or
+    tables.
+
+    Refer to [link=bbcode]BBcode tags[/link] to learn how to format the text.
+@end
+
+@article
+    @title=Source code principles
+    @brief=The article describes the common principles of the source organization
+    @ingroup=sources
+    @key=principles
+
+    The documentation source format is a plain text format with documentation-specific tags.
+
+    The documentation markup always starts with [c]@[/c] character at the first character of the code (after any
+    number of the whitespace characters).
+
+    A tag is a section of text between the opening tag and special keyword [c]@end[/c]. Each tag may contain
+    values, plain text and sometimes other tags.
+
+    An attribute is always one line construction and consists of the name of the value, and [c]=[/c] character followed by the value.
+
+    The text which does not starts with [c]@[/c] character is considered plain text. Following rules applies to the plain text:
+
+    1) All leading whitespace characters are trimmed. If you need to keep leading whitespace characters
+       put [c]![/c] character in the beginning of the line.
+
+    2) All consecutive lines are concatenated in one paragraph. Separate paragraphs with an empty line.
+
+    And example of tag is below:
+
+    @example
+        @show=always
+        @gray=yes
+        !@article
+        !    @title=My tile
+        !    Article content.
+        !    Still first paragraph.
+        !
+        !    More content. This is a new paragraph.
+        !@end
+    @end
+
+    The tags either defines the structure of the documentation
+    (e.g. [c]groups[/c], [c]article[/c], [c]class[/c] and [c]member[/c]) or helps to define complex formatting
+    (e.g. [c]table[/c] or [c]list[/c]).
+@end
+
+@article
+    @title=Define Documentation Structure
+    @brief=The article describes the group definition and behavior
+    @ingroup=sources
+    @key=structure
+
+    The are four tags that defines the structural elements of the documentation:
+
+    1) Groups.
+
+    Groups is the key element of the organization of the documentation structure. All groups are organized in a [b]tree[/b].
+    One group is always a root (index) group. All other elements (groups, articles, classes) must belong to
+    one of groups.
+
+    2) Articles
+
+    Articles are intended to provide a plain text explanation which does not have any sub-levels and is not
+    connected to the programming code.
+
+    3) Classes
+
+    Classes are intended to provide documentation of code-related things. While they are called "classes" they may represent
+    many different constructors: classes themselves, SQL tables, XML schemas, sets of functions for non-OOP languages and many
+    others.
+
+    Groups, Articles and Classes are only three documentation objects that may appear on the top level. All other elements must
+    be used inside one of these objects.
+
+    These three objects must clearly define to which group they are belong to. There is only one exception - an index group which
+    does not belong to any other groups. This group makes the root of the documentation content tree and is displayed first.
+
+    4) Members
+
+    Members is another level of hierarchy that defines one element of a class. An examples of members could be fields, methods,
+    properties, functions, tags, table columns. Members are always used inside of a class.
+
+    Each element of the structure has an unique key. The key must be unique among ALL documentation objects. The key
+    is used to refer the element in contents or in link bbcode tags.
+
+    The key of members typically automatically include the key of the class that contains the member (unless it is directly
+    disabled in the class properties).
+@end
+
+@article
+    @title=Special Case: Class defined in multiple files
+    @brief=The article describes how docgen handles classes declared in multiple files
+    @ingroup=sources
+    @key=classMultiFiles
+
+    While in most cases the content of one documentation object is defined in one text file,
+    the class content may be split between multiple files.
+
+    When the class with the same key is defined multiple times, the following rules apply:
+
+    1) The values for all attributes will be taken from the first occurrence of the class. The values from the other
+       occurrences will be ignored.
+
+    2) The members of the all next occurrences will be added to the class, unless they are defined earlier. The second
+       definition of a member with the same key will be ignored.
+
+    This feature is useful in two specific cases:
+
+    1) A class with large number of methods may be separated to multiple files for simpler modification and
+       handling.
+
+    2) If documentation is partially generated from the source code, the following trick may be used:
+
+    2.1) Put auto-generated code to the very end of the source list in the documentation project file. So, auto-generated
+         documentation will be used only in case when it is not manually refined.
+
+    2.2) To refine auto-generated description, create a class definition with the same key and put it before auto-generated
+         documentation in the source list in the project file.
+
+    2.3) Define only methods you want to refine. The rest of the methods will be taken from the auto-generated part.
+@end
+
+@article
+    @title=Formatting: Using Markdown-style formatting
+    @brief=The article describes markdown-style formatting
+    @ingroup=sources
+    @key=formattingTables
+
+@end

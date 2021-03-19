@@ -1,0 +1,615 @@
+@class
+    @name=XPath extensions
+    @brief=The list XPATH functions that may be used in output templates
+    @ingroup=authoringTemplates
+    @key=xpathFunctions
+    @type=functions
+    @membersToContent=true
+
+    Docgen XPATH extension functions are provided to overcome limits of
+    XSLT 1.0 specification, introduce variables concepts and
+    to overcome a natural XSLT limit that does not allow to create
+    multiple files from one model using one XSLT.
+
+    While some of these extensions (such as variables) may contradict
+    to XSLT concept, they greatly reduces the time to develop
+    complex templates.
+
+    All extension functions are located in [c]urn:gehtsoft-exslt[/c] namespace.
+    Refer the namespace in your XSLT file in order to be able to
+    use this functions.
+
+    @example
+        @show=always
+        @gray=yes
+        ```
+        <xsl:stylesheet
+            version="1.0"
+            [b]xmlns:ext="urn:gehtsoft-exslt"[/b]
+            xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+            <xsl:output method="html" />
+            <xsl:namespace-alias stylesheet-prefix="ext" result-prefix="#default"/>
+            <xsl:template match="/" >
+                <xsl:value-of select="[b]ext:let[/b]('root', /) "/>
+                ...
+            </xsl:template>
+        </xsl:stylesheet>
+        ```
+    @end
+
+
+
+
+
+
+    @member
+        @name=document
+        @brief=Loads XML document
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=name : string
+            @return=node
+        @end
+
+        @param
+            @name=name
+
+            Path to XML document
+
+            If path is relative, then the file will be searches relatively to the
+            current working directory.
+        @end
+    @end
+
+    @member
+        @name=let
+        @brief=Sets a local variable
+        @scope=class
+        @type=function
+
+        A local variable is visible only in
+        the currently running XSLT file.
+
+        @declaration
+            @language=xpath
+            @params=name : string, value : any
+            @return=void
+        @end
+
+        @param
+            @name=name
+            The name of the local variable
+        @end
+        @param
+            @name=value
+            The value
+        @end
+    @end
+
+    @member
+        @name=letglobal
+        @brief=Sets a global variable
+        @scope=class
+        @type=function
+
+        A global variable remains visible until
+        the whole template ends.
+
+        @declaration
+            @language=xpath
+            @params=name : string, value : any
+            @return=void
+        @end
+
+        @param
+            @name=name
+            The name of the local variable
+        @end
+        @param
+            @name=value
+            The value
+        @end
+    @end
+
+    @member
+        @name=get
+        @brief=Gets a value
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=name : string
+            @return=any
+        @end
+
+        @param
+            @name=name
+            The name of the variable
+        @end
+
+        The method searches global and then local variables.
+
+        If the value is not defined, a warning message will be displayed during
+        the template execution.
+    @end
+
+    @member
+        @name=caller
+        @brief=Gets a local value of the calling XSLT file
+        @scope=class
+        @type=function
+
+        You can use this method to pass parameters
+        when you call the template using
+        [clink=xpathFunctions.call]call[/clink]
+        extension function.
+
+        @declaration
+            @language=xpath
+            @params=name : string
+            @return=any
+        @end
+
+        @param
+            @name=name
+            The name of the variable.
+        @end
+    @end
+
+    @member
+        @name=call
+        @brief=Calls another XSLT file and return the transformation result as a string
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=xslt : string, target : node
+            @return=string
+        @end
+
+        @declaration
+            @language=xpath
+            @params=xslt : string, target : node, encoding : string
+            @return=string
+        @end
+
+        @param
+            @name=xslt
+            The path to the template to be called.
+
+            If the template address is relative, the doc compiler first check
+            the location relatively to the current work directory.
+
+            If there is no template with such name in the current work directory,
+            the doc compiler searches the template relatively to the
+            first XSLT file being called.
+
+            The feature allows you to "replace" some XSLT files
+            in the default default without need to copy
+            a template completely.
+        @end
+
+        @param
+            @name=target
+            The node to the node which will be used as the root
+            for the template executed.
+        @end
+
+        @param
+            @name=encoding
+            The name of the encoding. If encoding is not enforced, UTF-8 will be used.
+        @end
+
+        This function returns the transformation result as a text.
+
+        If you want to save it as a file, use another [clink=xpathFunctions.call1]call[/clink]
+        extension function.
+    @end
+
+    @member
+        @name=call
+        @key=call1
+        @brief=Calls another XSLT file and save the transformation result to a file
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=xslt : string, target : node, outputFile : string, encoding : string
+            @return=void
+        @end
+
+        @param
+            @name=xslt
+            The path to the template to be called.
+
+            If the template address is relative, the doc compiler first check
+            the location relatively to the current work directory.
+
+            If there is no template with such name in the current work directory,
+            the doc compiler searches the template relatively to the
+            first XSLT file being called.
+
+            The feature allows you to "replace" some XSLT files
+            in the default default without need to copy
+            a template completely.
+        @end
+
+        @param
+            @name=target
+            The node to the node which will be used as the root
+            for the template executed.
+        @end
+
+        @param
+            @name=outputFile
+            The name of the output file.
+
+            The name must be relative to the file specified in
+            the [c]output[/c] attribute of the [clink=docProjectFile1.output]output[/clink]
+            tag that calls the currently executed template.
+        @end
+
+        @param
+            @name=encoding
+            The name of the encoding.
+        @end
+    @end
+
+    @member
+        @name=exists
+        @brief=Checks whether the variable exists
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=name : string
+            @return=boolean
+        @end
+
+        @param
+            @name=name
+            The name of the variable to check
+        @end
+    @end
+
+    @member
+        @name=trace
+        @brief=Traces a string to console
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=value : string
+            @return=void
+        @end
+
+        @param
+            @name=value
+            Any value to be traced.
+        @end
+    @end
+
+    @member
+        @name=error
+        @brief=Terminates the template execution
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=message : string
+            @return=void
+        @end
+
+        @param
+            @name=message
+            The error message.
+        @end
+    @end
+
+    @member
+        @name=match
+        @brief=Checks whether a string matches a regular expression
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=pattern : string, value : string
+            @return=boolean
+        @end
+
+        @param
+            @name=pattern
+            The regular expression pattern
+        @end
+        @param
+            @name=value
+            The value to match
+        @end
+    @end
+
+    @member
+        @name=parse
+        @brief=Parses text using a regular expression.
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=pattern : string, value : string
+            @return=node
+        @end
+
+        @param
+            @name=pattern
+            The regular expression pattern
+        @end
+
+        @param
+            @name=value
+            The value to be parsed.
+        @end
+
+        The method returns an XML document with the results of parsing.
+        See the [link=parseDocument]document schema for more details[/link]
+
+    @end
+
+    @member
+        @name=parsebbcode
+        @brief=The method parses text that contains bbcode
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=value : string
+            @return=node
+        @end
+
+        @param
+            @name=value
+            The text to be parsed
+        @end
+
+        The structure of XML document follows the structure of [link=bbcode]bbcode[/link]
+        with the following additions:
+
+        * The root tag of the returned document will be [c]<r>[/c]
+        * All pieces of the text will be wrapped into [c]<t>[/c] tag
+        * Wherever the bbcode attribute has a value, it will be saved into [c]attr[/c] attribute.
+
+        Example
+
+        BBCode: [c]My [[nil]b]bold and [[nil]color=green]green[[nil]/color][[nil]/b] text[/c]
+
+        Will be parsed into:
+
+        XML
+        @example
+            @show=always
+            @gray=no
+            @highlight=xml
+            ```
+            <r>
+             <t>My </t>
+             <b>
+               <t>bold and </t>
+               <color attr="green">
+                 <t>italic</t>
+               </color>
+             </b>
+             <t>text</t>
+            </r>
+            ```
+        @end
+    @end
+
+    @member
+        @name=upper
+        @brief=Converts the text to uppercase
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=value : string
+            @return=string
+        @end
+
+    @end
+
+    @member
+        @name=lower
+        @brief=Converts the text to lowercase
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=value : string
+            @return=string
+        @end
+
+        @param
+            @name=
+        @end
+    @end
+
+    @member
+        @name=removehtml
+        @brief=Removes HTML tags from the text
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=value : string
+            @return=string
+        @end
+
+    @end
+
+    @member
+        @name=replaceentity
+        @brief=Replaces special characters in the text with HTML entities
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=value : string
+            @return=string
+        @end
+
+        @param
+            @name=
+        @end
+    @end
+
+    @member
+        @name=writeBase64
+        @brief=Writes the specified base64 string as a file
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=file : string, base64 : string, length : integer
+            @return=void
+        @end
+
+        @param
+            @name=file
+            The name of the file to save
+        @end
+        @param
+            @name=base64
+            A data encoded in base64
+        @end
+        @param
+            @name=length
+            The length of the encoded data in bytes
+        @end
+    @end
+
+    @member
+        @name=trim
+        @brief=Trims whitespace characters from the both sides of the text
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=value : string
+            @return=string
+        @end
+    @end
+
+    @member
+        @name=ltrim
+        @brief=Trims whitespace characters from the beginning of the text
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=value : string
+            @return=string
+        @end
+    @end
+
+    @member
+        @name=rtrim
+        @brief=Trims whitespace characters from the end of the text
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=value : string
+            @return=string
+        @end
+    @end
+
+    @member
+        @name=escape
+        @brief=Fully escapes HTML
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=html : string
+            @return=string
+        @end
+    @end
+@end
+
+@class
+    @name=Results of parsing call
+    @brief=The document returned by the parse function.
+    @ingroup=authoringTemplates
+    @key=parseDocument
+    @type=tags
+    @membersToContent=true
+
+    This schema describes a document returned by
+    [clink=xpathFunctions.parse]parse[/clink] XPath extension function.
+
+    The root tag of the returned document is
+    [clink=parseDocument.result]result[/clink]
+
+
+
+    @member
+        @type=property
+        @name=result
+        @brief=The root tag
+        @custom=xml-tag
+
+        The element consists zero or more
+        [clink=parseDocument.match]match[/clink] element
+        for each part of the text that matched
+        the regular expression.
+
+        @param
+            @name=count
+            The attribute contains the
+            number of matches found.
+        @end
+    @end
+
+    @member
+        @type=property
+        @name=match
+        @brief=A piece of the text matched to a regular expression.
+        @custom=xml-tag
+
+        The element consists of the captured text for the
+        whole match.
+
+        If the regular expression has groups,
+        a [clink=parseDocument.match]group[/clink] element
+        will be added for each capture group.
+    @end
+
+    @member
+        @type=property
+        @name=group
+        @brief=A piece of the text matched specific capture group.
+        @custom=xml-tag
+
+        The position of the group will match to the position
+        of the open bracket in the regular expression.
+    @end
+@end

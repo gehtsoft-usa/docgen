@@ -12,18 +12,29 @@
     @end
 
     @example
-        @title=example
+        @title=example 1
+        ```
         using System;
-       !namespace MyNamespace
-       !{
-       !    class MyClass
-       !    {
-       !    }
-       !}
 
+        namespace MyNamespace
+        {
+            class MyClass
+            {
+            }
+        }
+        ```
     @end
     @example
-        @title=example
+        @title=example 2
+        @highlight=cpp
+        ```
+        #include <stdio.h>
+
+        int main(int argc, char **argv[]) {}
+        ```
+    @end
+    @example
+        @title=example 3
         @tabs=yes
         @tab
             @title=cs
@@ -77,45 +88,85 @@
 
 @end
 
-@class
-    @key=class
-    @name=class
+@article
+    @title=list test
+    @key=listtest
     @ingroup=index
     @brief=
 
-    There is a list
+    >>  Tricky formatting
 
-    * Element 1
+    This is **Bold** and __italic__ text.
+    We can also do ^^superscript^^ or
+    <http://www.google.com> simple links.
 
-    - Element 2. But this element is
-    made in multiple lines!!!
+    We can also kind of **__mix__ tags**
 
-    Another List
+    [b]Simple list[/b]
 
-    # element
+    * Item 1
+    * Item 2
 
-    # another element
+    * Item 3
+    * Item 4
 
-    |{header,30%}name|value|
+    [b]Multiple list[/b]
 
-    |[c]value1[/c]|description|
+    * Item 1
+      And item 1
+      And Item1
 
-    There is a list
+    * Item 2
 
-    * Element 1
-    - Element 2
+    - Item Other Kind
+
+    * Item 3
+    * Item 4
+
+    Numbered list!
+
+    # My number list
+    * And item
+    * And...
+      multiline item
+    - and Last item
+
+    Here we should stop
+
+    * and `this` should go to a new list
 
 
-    Another List
+@end
 
-    # element
-    # another element
 
-    |{header,30%}name|value|
-    |[c]value1[/c]|description|
+@article
+    @title=table test
+    @key=tabletest
+    @ingroup=index
+    @brief=
 
-    @member
-        @name=member
-        @brief=
-    @end
+    >> Simple Table
+    |C1,1|C1,2|C1,3|
+    |C2,1|C2,2|C2,3|
+    |C3,1|C3,2|C3,3|
+    >> Header
+    |!,C1,1|C1,2|C1,3|
+    |C2,1|C2,2|C2,3|
+    |C3,1|C3,2|C3,3|
+    >> width
+    |50%,C1,1|C1,2|C1,3|
+    |C2,1|C2,2|C2,3|
+    |C3,1|C3,2|C3,3|
+    >> header
+    |!,C1,1|C1,2|C1,3|
+    |C2,1|C2,2|C2,3|
+    |C3,1|C3,2|C3,3|
+    >> header and width
+    |!50%,C1,1|10%,C1,2|C1,3|
+    |C2,1|C2,2|C2,3|
+    |C3,1|C3,2|C3,3|
+    >> header and width and 100%
+    |!50%,C1,1|10%,C1,2|C1,3|>
+    |C2,1|C2,2|C2,3|
+    |C3,1|C3,2|C3,3|
 @end

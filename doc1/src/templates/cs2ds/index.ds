@@ -1,0 +1,6 @@
+@group
+    @title=CS2DS template
+    @brief=The section describes the template that creates a documentation source using output of Assembly2Xml task and xml docs.
+    @ingroup=templates
+    @key=cs2dsTemplate
+@end

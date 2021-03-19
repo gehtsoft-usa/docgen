@@ -1,0 +1,6 @@
+@group
+    @title=NULL template
+    @brief=The section describes the template that simply saves the model to an XML file
+    @ingroup=templates
+    @key=nullTemplate
+@end

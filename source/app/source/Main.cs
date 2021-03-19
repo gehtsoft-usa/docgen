@@ -63,7 +63,7 @@ namespace GehtSoft.DocCreator
                         {
                             string file = s[j];
                             FileParserSource src = new FileParserSource(file, s.Encoding);
-                            parser.ParseFile(src, errors, null);
+                            parser.ParseFile(src, errors, null, project.CommonDefinitions);
                         }
                     }
                     if (errors.Count > 0)

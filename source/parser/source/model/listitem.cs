@@ -7,6 +7,8 @@ namespace GehtSoft.DocCreator.Parser
     /** The table. */
     public class ListItemItem : DocItem, IXmlItem
     {
+        public bool Simplified { get; set; } = false;
+
         internal ListItemItem(string file, int line) : base(file, line)
         {
         }

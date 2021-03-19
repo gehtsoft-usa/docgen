@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1252"?>
+﻿<?xml version="1.0" encoding="windows-1252"?>
 <!-- file defines grouping of the class members.
      note: groups w/o custom attribute means empty or unfilled custom field of the member -->
 <member-groups>
@@ -33,4 +33,5 @@
     <member-group scope="class" visibility="public" type="field" custom="const" name="Static Public Constant Fields"/>
     <member-group scope="class" visibility="public" type="property" custom="const" name="Public Constant Properties"/>
     <member-group scope="instance" visibility="public" type="property" custom="html-tag" name="Tags"/>
+    <member-group scope="instance" visibility="public" type="property" custom="xml-tag" name="Tags"/>
 </member-groups>

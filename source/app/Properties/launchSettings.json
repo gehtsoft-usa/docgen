@@ -3,7 +3,7 @@
     "docgen": {
       "commandName": "Project",
       "commandLineArgs": "project.xml",
-      "workingDirectory": "D:\\develop\\work\\docgen\\test"
+      "workingDirectory": "D:\\develop\\work\\tools\\docgen\\test\\compile\\"
     }
   }
 }

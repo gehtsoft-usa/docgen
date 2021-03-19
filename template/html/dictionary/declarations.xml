@@ -38,6 +38,8 @@
  <declaration language="javaScript" type="property" file="declaration/javaScript.xsl" />
  <declaration language="javaScript" type="method" file="declaration/javaScript.xsl" />
  <declaration language="javaScript" type="function" file="declaration/javaScript.xsl" />
+
+ <declaration language="xpath" type="function" file="declaration/xpath.xsl" />
  <!-- Report Engine: templates -->
  <declaration language="re" type="field" file="declaration/re.xsl" />
  <declaration language="re" type="property" file="declaration/re.xsl" />
@@ -53,6 +55,7 @@
 
  <declaration language="xml" type="property" custom="element" file="declaration/xml-element.xsl" />
  <declaration language="html" type="property" file="declaration/html-tag.xsl" />
+ <declaration language="xml" type="property" custok="xml-tag" file="declaration/xml-tag.xsl" />
 
  <declaration language="sql" type="field" file="declaration/sql-column.xsl" />
  <declaration language="sql" type="property" file="declaration/sql-key.xsl" />

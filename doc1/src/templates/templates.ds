@@ -1,0 +1,6 @@
+@group
+    @title=Templates
+    @brief=The section described the templates
+    @ingroup=index
+    @key=templates
+@end

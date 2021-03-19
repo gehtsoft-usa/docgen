@@ -1,0 +1,6 @@
+@group
+    @title=Authoring Templates
+    @brief=The section describes how to create your own template
+    @ingroup=templates
+    @key=authoringTemplates
+@end

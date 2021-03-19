@@ -12,6 +12,8 @@ namespace GehtSoft.DocCreator.Parser
         private List<DocItem> mItems = new List<DocItem>();
         private string mType = "dot";
 
+        internal bool Simplified { get; set; } = false;
+
         internal ListItem(string file, int line) : base(file, line)
         {
         }
@@ -69,6 +71,13 @@ namespace GehtSoft.DocCreator.Parser
                 default:
                     throw new UnknownTagError(file, line, sName, sValue);
             }
+        }
+
+        public ListItemItem LastListItem()
+        {
+            if (mItems.Count == 0)
+                return null;
+            return mItems[mItems.Count - 1] as ListItemItem;
         }
     }
 }

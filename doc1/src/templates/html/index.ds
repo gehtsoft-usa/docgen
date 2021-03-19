@@ -1,0 +1,6 @@
+@group
+    @title=HTML template
+    @brief=The section describes the template that creates HTML based documentation from the source files
+    @ingroup=templates
+    @key=htmlTemplate
+@end

@@ -1,0 +1,6 @@
+@group
+    @title=XMLDOC template
+    @brief=The section describes the template that creates XML doc file from the documentation for a C# project.
+    @ingroup=templates
+    @key=xmldocTemplate
+@end

@@ -1,0 +1,36 @@
+@class
+    @name=BBCode
+    @brief=The section describes BBCode that is used to format the source code
+    @key=bbcode
+    @ingroup=sources
+    @type=tags
+    @membersToContent=true
+
+    The BBCode is well-know formatting specification actively used
+    in phpbb forums and their descendants.
+
+    BBCode tags should be put in square brackets [c][][/c].
+
+    The opening bbcode tag has format [b][[i]tagName[/i]][/b]
+
+    The closing bbcode tag has format [b][[i]/tagName[/i]][/b]
+
+    Typically, bbcode with a few exceptions are applied to the text between opening
+    and closing bbcodes, e.g. [c]text [[nil]b]bold[[nil]/b] text[/c] will
+    be displayed as 'text [b]bold[/b] text'. Exceptions are tags [c][[nil]nil][/c], [c][[nil]br][/c],
+    [c][[nil]img][/c].
+
+    There is no special character to escape an opening square bracket because if it is not
+    recognized as a bbcode, the compiler simply adds it to the text. However, if
+    there is the text that is a correct bbcode, but you want to display it as is, for example
+    [c]myArray[[nil]i] + 1[/c] in C++ example will be displayed as
+    '[c]myArray[i] + 1[/i][/c]. To make example look correctly, add [c][[nil]nil][/c] tag
+    after opening square bracket 'breaking' the correct pattern: [c]myArray[[[nil]nil]i] + 1[/c],
+
+    If bbcode has a value, the value is set after [c]=[/c] character after the bbcode name, for example:
+    [c][[nil]color=red]red[[[nil]/color][/c].
+
+    BBCodes may be used inside other bbcodes, for example:
+    [c][[nil]b]myt[[nil]i]e[[nil]sub]xt[[nil]/sub] is [[nil]/i] heavi[[nil]/b]ly [[nil]u]for[[nil]color=gray]mat[[nil]/color]ted[[nil]/u][/c].
+    ('[b]myt[i]e[sub]xt[/sub] is [/i] heavi[/b]ly [u]for[color=gray]mat[/color]ted[/u]').
+@end

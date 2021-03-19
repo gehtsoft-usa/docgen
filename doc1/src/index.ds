@@ -1,0 +1,39 @@
+@group
+    @title=Gehtsoft Documentation Generator
+    @key=index
+    @ingroup=
+    @brief=
+
+    The Gehtsoft Documentation Generator is the tool to author and generate
+    cross-language and cross-format documentation primarely for API. 
+
+    The documentation source format is designed to allow:
+    * Describe complex structured matters, including user documentation, programmatic API and data structures;
+    * Provide rich text formatting abilities;
+    * Keep all documentation source independent from final format (e.g. CHM, Web documentation, PDF);
+    * Keep all documentation source is plain text files.
+@end
+
+@article
+    @title=Tools
+    @key=tools
+    @ingroup=index
+    @brief=The tools required to author the documentation
+
+    To generate the documentation using Gehtsoft Documentation Generator
+    you need to use [c]MSBuild[/c] or [c]dotnet build[/c] command. You need 
+    to have either Microsoft Visual Studio 15 or .NET Core 3.1 SDK (or above)
+    installed. The tool supports both Windows and Linux build and 
+    is compatible with Ubuntu-based GIT actions. 
+
+    Please read [link=projectFile]Project File[/link] section for details
+    on how MSBuild project file needs to be organized. 
+
+    You can use any text editor as an authoring tool, however we highly
+    recommend to use Microsoft Visual Studio Code with the latest version 
+    of [eurl=https://www.myget.org/feed/gehtsoft-public/package/vsix/docgen]DocGen support extension[/eurl]
+    Download the latest version of the extension and 
+    install it using the following command
+
+    [c][b]code[/b] --install-extension docgen-[i]version[/i].vsix[/c]
+@end

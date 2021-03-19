@@ -6,7 +6,7 @@ using System.Xml.Serialization;
 
 namespace AssemblyToXml
 {
-    class Program
+    static class Program
     {
         static void Main(string[] args)
         {

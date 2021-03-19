@@ -4,6 +4,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
 using System.Text;
+using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace GehtSoft.DocCreator.Parser
 {
@@ -35,8 +38,15 @@ namespace GehtSoft.DocCreator.Parser
         }
 
         private readonly char[] TRIM = " \t\n\r".ToCharArray();
+        private static Regex mTableRow = new Regex(@"\s*\|.+\|\>?\s*$", RegexOptions.Singleline);
+        private static Regex mTableColumn = new Regex(@"^((!?)(\d+%)?,)?(.*)$");
+        private static Regex mCode = new Regex("`([^`]+)`");
+        private static Regex mBold = new Regex("\\*\\*([^*]+)\\*\\*");
+        private static Regex mItalic = new Regex("__([^_]+)__");
+        private static Regex mSup = new Regex("\\^\\^([^_]+)\\^\\^");
+        private static Regex mLink = new Regex("<(https?://[^>+]+)>");
 
-        public void ParseFile(IParserSource source, List<Error> errors, Stack<DocItem> parseStack)
+        public void ParseFile(IParserSource source, List<Error> errors, Stack<DocItem> parseStack, IDefinitionList defs)
         {
             lock (mMutex)
             {
@@ -54,10 +64,43 @@ namespace GehtSoft.DocCreator.Parser
 
                     //read file line by line
                     string line;
+                    bool preformattedBlock = false;
+                    int preformattedBlockIndent = 0;
+                    bool simplifiedSyntax = defs?.Exists("simplified-text-syntax") ?? false;
+
                     while ((line = source.ReadLine()) != null)
                     {
                         ++iCurrLine;
-                        line = line.Trim(TRIM);
+
+                        var trimmedline = line.TrimStart(TRIM);
+
+                        if (!simplifiedSyntax)
+                            line = trimmedline;
+                        else
+                        {
+                            if (trimmedline.Trim(TRIM) == "```")
+                            {
+                                preformattedBlock = !preformattedBlock;
+                                if (preformattedBlock)
+                                    preformattedBlockIndent = Math.Max(0, line.Length - trimmedline.Length);
+                                continue;
+                            }
+                            else
+                            {
+                                if (!preformattedBlock)
+                                {
+                                    line = trimmedline;
+                                }
+                                else
+                                {
+                                    if (preformattedBlockIndent > 0 &&
+                                        line.Length > preformattedBlockIndent &&
+                                        line.Substring(0, preformattedBlockIndent).Trim().Length == 0)
+                                        line = line.Substring(preformattedBlockIndent);
+                                }
+                            }
+                        }
+
                         if (line.Length > 0 && line[0] == '!')
                         {
                             line = line.Remove(0, 1);
@@ -74,73 +117,176 @@ namespace GehtSoft.DocCreator.Parser
                         }
                         else
                         {
-                            if (line.Length > 0 && line[0] == '@')
+                            bool simplifiedHandled = false;
+                            string r;
+                            var peek = parseStack.Peek();
+
+                            if (peek != null && !(peek is ExampleItem) && !(peek is ExampleTabItem) && simplifiedSyntax)
                             {
-                                //process value
-                                string sValName;
-                                string sValue;
+                                if (line.Contains("`"))
+                                    line = mCode.Replace(line, m => $"[c]{m.Groups[1].Value}[/c]");
 
-                                parseValue(line, out sValName, out sValue);
+                                if (line.Contains("**"))
+                                    line = mBold.Replace(line, m => $"[b]{m.Groups[1].Value}[/b]");
 
-                                if (sValName == "end")
+                                if (line.Contains("__"))
+                                    line = mItalic.Replace(line, m => $"[i]{m.Groups[1].Value}[/i]");
+
+                                if (line.Contains("^^"))
+                                    line = mSup.Replace(line, m => $"[sup]{m.Groups[1].Value}[/sup]");
+
+                                if (line.Contains("<http"))
+                                    line = mLink.Replace(line, m => $"[eurl={m.Groups[1].Value}]{m.Groups[1].Value}[/eurl]");
+
+                                if (SSTool.StartsWith(line, "* ", out r) || SSTool.StartsWith(line, "- ", out r) || SSTool.StartsWith(line, "# ", out r))
                                 {
-                                    if (parseStack.Count == 1)
+                                    ListItem list;
+                                    if (!SSTool.IsInAutoList(peek, out list))
                                     {
-                                        errors.Add(new ParserError(file, iCurrLine, "@end is not balanced"));
+                                        list = peek.appendNamedValue("list", null, file, iCurrLine) as ListItem;
+                                        if (line[0] == '#')
+                                            list.appendNamedValue("type", "num", file, iCurrLine);
+                                        list.Simplified = true;
+                                    }
+
+                                    var listItem = list.appendNamedValue("list-item", null, file, iCurrLine) as ListItemItem;
+                                    listItem.Simplified = true;
+                                    
+                                    listItem.appendDescription(r, file, iCurrLine);
+                                    simplifiedHandled = true;
+                                }
+                                else if (SSTool.StartsWith(line, "|", out r))
+                                {
+                                    Match m = mTableRow.Match(line);
+                                    if (m.Success)
+                                    {
+                                        TableItem table;
+                                        if (!SSTool.IsInAutoTable(peek, out table))
+                                        {
+                                            table = peek.appendNamedValue("table", null, file, iCurrLine) as TableItem;
+                                            if (line.Trim(TRIM).EndsWith(">"))
+                                                table.appendNamedValue("width", "100%", file, iCurrLine);
+                                            table.Simplified = true;
+                                        }
+
+                                        string[] columns = line.Split('|');
+                                        var row = table.appendNamedValue("row", null, file, iCurrLine);
+                                        for (int i = 1; i < columns.Length - 1; i++)
+                                        {
+                                            Match m1 = mTableColumn.Match(columns[i]);
+                                            var col = row.appendNamedValue("col", null, file, iCurrLine);
+                                            if (m1.Groups[1].Value != null)
+                                            {
+                                                if (m1.Groups[2].Value == "!")
+                                                    row.appendNamedValue("header", "yes", file, iCurrLine);
+                                                if (m1.Groups[3].Value != "")
+                                                    col.appendNamedValue("width", m1.Groups[3].Value, file, iCurrLine);
+                                            }
+                                            col.appendDescription(m1.Groups[4].Value ?? "", file, iCurrLine);
+                                        }
+                                        simplifiedHandled = true;
+                                    }
+                                }
+                                else if (SSTool.StartsWith(line, ">> ", out r))
+                                {
+                                    peek.appendDescription($"[b]{r}[/b]", file, iCurrLine);
+                                    simplifiedHandled = true;
+                                }
+                            }
+
+                            if (!simplifiedHandled)
+                            {
+                                if (SSTool.IsInAutoTable(peek, out TableItem tableItem))
+                                    tableItem.Simplified = false;
+
+                                if (line.Length > 0 && line[0] == '@')
+                                {
+                                    //process value
+                                    string sValName;
+                                    string sValue;
+
+                                    parseValue(line, out sValName, out sValue);
+
+                                    if (sValName == "end")
+                                    {
+                                        if (parseStack.Count == 1)
+                                        {
+                                            errors.Add(new ParserError(file, iCurrLine, "@end is not balanced"));
+                                        }
+                                        else
+                                        {
+                                            DocItem lastItem = parseStack.Pop();
+                                            try
+                                            {
+                                                lastItem.validate(file, iCurrLine);
+                                            }
+                                            catch (Error e)
+                                            {
+                                                errors.Add(e);
+                                            }
+                                        }
+                                    }
+                                    else if (sValName == "include")
+                                    {
+                                        FileInfo si = new FileInfo(source.Name);
+                                        string includeName = Path.Combine(si.DirectoryName, sValue);
+                                        if (!File.Exists(includeName))
+                                            errors.Add(new ParserError(file, iCurrLine, string.Format("{0} file isn't found", includeName)));
+                                        else
+                                        {
+                                            FileParserSource src = new FileParserSource(includeName, source.Encoding);
+                                            ParseFile(src, errors, parseStack, defs);
+                                        }
                                     }
                                     else
                                     {
-                                        DocItem lastItem = parseStack.Pop();
+                                        DocItem currItem, newItem;
+                                        currItem = parseStack.Peek();
                                         try
                                         {
-                                            lastItem.validate(file, iCurrLine);
+                                            newItem = currItem.appendNamedValue(sValName, sValue, file, iCurrLine);
+                                            if (newItem != null)
+                                                parseStack.Push(newItem);
                                         }
                                         catch (Error e)
                                         {
                                             errors.Add(e);
+                                            if (sValue == null)
+                                                parseStack.Push(new UnexpectedItem(file, iCurrLine));
                                         }
-                                    }
-                                }
-                                else if (sValName == "include")
-                                {
-                                    FileInfo si = new FileInfo(source.Name);
-                                    string includeName = Path.Combine(si.DirectoryName, sValue);
-                                    if (!File.Exists(includeName))
-                                        errors.Add(new ParserError(file, iCurrLine, string.Format("{0} file isn't found", includeName)));
-                                    else
-                                    {
-                                        FileParserSource src = new FileParserSource(includeName, source.Encoding);
-                                        ParseFile(src, errors, parseStack);
                                     }
                                 }
                                 else
                                 {
-                                    DocItem currItem, newItem;
-                                    currItem = parseStack.Peek();
                                     try
                                     {
-                                        newItem = currItem.appendNamedValue(sValName, sValue, file, iCurrLine);
-                                        if (newItem != null)
-                                            parseStack.Push(newItem);
+                                        //process description
+                                        if (simplifiedSyntax && SSTool.IsInAutoList(parseStack.Peek(), out ListItem li))
+                                        {
+                                            bool empty = line.Trim(TRIM).Length == 0;
+                                            var lastItem = li.LastListItem();
+                                            if (empty)
+                                                lastItem.Simplified = false;
+                                            else
+                                            {
+                                                if (lastItem.Simplified)
+                                                    lastItem.appendDescription(line, file, iCurrLine);
+                                                else
+                                                {
+                                                    li.Simplified = false;
+                                                    parseStack.Peek().appendDescription(line, file, iCurrLine);
+                                                }
+                                            }
+                                        }
+                                        else
+                                        {
+                                            parseStack.Peek().appendDescription(line, file, iCurrLine);
+                                        }
                                     }
                                     catch (Error e)
                                     {
                                         errors.Add(e);
-                                        if (sValue == null)
-                                            parseStack.Push(new UnexpectedItem(file, iCurrLine));
                                     }
-                                }
-                            }
-                            else
-                            {
-                                try
-                                {
-                                    //process description
-                                    parseStack.Peek().appendDescription(line, file, iCurrLine);
-                                }
-                                catch (Error e)
-                                {
-                                    errors.Add(e);
                                 }
                             }
                         }
@@ -154,6 +300,7 @@ namespace GehtSoft.DocCreator.Parser
                 }
             }
         }
+
 
         /** Parse line in the form @name=value into name and value. */
         static void parseValue(string sLine, out string sName, out string sValue)
@@ -185,14 +332,14 @@ namespace GehtSoft.DocCreator.Parser
             return;
         }
 
-        public void UpdateFile(IParserSource source, List<Error> errors)
+        public void UpdateFile(IParserSource source, List<Error> errors, IDefinitionList defs)
         {
             lock (mMutex)
             {
                 if (source.Changed)
                 {
                     mRoot.RemoveByFile(source.Name);
-                    ParseFile(source, errors, null);
+                    ParseFile(source, errors, null, defs);
                     source.Changed = false;
                 }
             }

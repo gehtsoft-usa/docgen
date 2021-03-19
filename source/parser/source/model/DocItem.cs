@@ -110,6 +110,14 @@ namespace GehtSoft.DocCreator.Parser
             }
         }
 
+        internal object LastItem()
+        {
+            if (maDescription.Count == 0)
+                return null;
+
+            return maDescription[maDescription.Count - 1];
+        }
+
         /** Append new named value into the object.
 
             @param sName            Name of the value
@@ -191,144 +199,11 @@ namespace GehtSoft.DocCreator.Parser
 
         }
 
-        private static Regex mListRegex = new Regex(@"^\s*[\-\*]\s*(\S.*\S?)\s*$", RegexOptions.Singleline);
-        private static Regex mNumListRegex = new Regex(@"^\s*\#\s*(\S.*\S?)\s*$", RegexOptions.Singleline);
-        private static Regex mTableRow = new Regex(@"\s*\|.+\|\s*$",RegexOptions.Singleline);
-        //                                               1 2          3      4           5
-        private static Regex mTableColumn = new Regex(@"^({(header)?,?((\d+%?))?})?(.*)$");
-
-        private static char FirstChar(string s)
-        {
-            for (int i = 0; i < s.Length; i++)
-                if (s[i] != ' ' && s[i] != '\t')
-                    return s[i];
-            return ' ';
-        }
-
-        private void PreprocessBodyForSimplifiedSyntax()
-        {
-            for (int i = 0; i < maDescription.Count; i++)
-            {
-                if (maDescription[i] is StringBuilder sb)
-                    maDescription[i] = sb.ToString();
-
-                if (maDescription[i] is string s) 
-                {
-                    char fc = FirstChar(s);
-                    if ((fc == '*' || fc == '-' || fc == '#' || fc == '|') && s.IndexOf('\n') >= 0)
-                    {
-                        string[] all = s.Split('\n');
-                        bool allMatch = true;
-                        for (int k = 0; k < all.Length && allMatch; k++)
-                            allMatch &= (FirstChar(all[k]) == fc);
-
-                        if (allMatch)
-                        {
-                            maDescription.RemoveAt(i);
-                            for (int k = 0; k < all.Length; k++)
-                                maDescription.Insert(i + k, all[k]);
-                            i--;
-                            continue;
-                        }
-                    }
-
-                    
-                    Match m;
-                    m = mListRegex.Match(s);
-                    if (m.Success)
-                    {
-                        s = m.Groups[1].Value;
-                        if (i == 0 || !(maDescription[i - 1] is ListItem list))
-                        {
-                            list = new ListItem(mFile, mLine);
-                            list.appendNamedValue("type", "dot", mFile, mLine);
-                            maDescription[i] = list;
-                        }
-                        else
-                        {
-                            maDescription.RemoveAt(i);
-                            i--;
-                        }
-
-                        ListItemItem item = list.appendNamedValue("list-item", null, mFile, mLine) as ListItemItem;
-                        item.maDescription.Add(s);
-                        continue;
-                    }
-
-                    m = mNumListRegex.Match(s);
-                    if (m.Success)
-                    {
-                        s = m.Groups[1].Value;
-
-                        if (i == 0 || !(maDescription[i - 1] is ListItem list))
-                        {
-                            list = new ListItem(mFile, mLine);
-                            list.appendNamedValue("type", "num", mFile, mLine);
-                            maDescription[i] = list;
-                        }
-                        else
-                        {
-                                maDescription.RemoveAt(i);
-                                i--;
-                        }
-
-                        ListItemItem item = list.appendNamedValue("list-item", null, mFile, mLine) as ListItemItem;
-                        item.maDescription.Add(s);
-                        continue;
-                    }
-
-                    m = mTableRow.Match(s);
-                    if (m.Success)
-                    {
-                        if (i == 0 || !(maDescription[i - 1] is TableItem table))
-                        {
-                            table = new TableItem(mFile, mLine);
-                            table.appendNamedValue("width", "100%", mFile, mLine);
-                            maDescription[i] = table;
-                        }
-                        else
-                        {
-                            maDescription.RemoveAt(i);
-                            i--;
-                        }
-
-                        TableRowItem row = table.appendNamedValue("row", null, mFile, mLine) as TableRowItem;
-                        string[] cols = s.Split('|');
-                        for (int j = 1; j < cols.Length - 1; j++)
-                        {
-                            string content = "";
-                            string width = null;
-                            m = mTableColumn.Match(cols[j]);
-                            if (m.Success)
-                            {
-                                content = m.Groups[5].Value;
-                                width = m.Groups[4].Value;
-                                if (!string.IsNullOrEmpty(m.Groups[1].Value))
-                                {
-                                    row.appendNamedValue("header", "yes", mFile, mLine);
-                                }
-                            }
-                            else
-                                content = cols[j];
-
-                            TableColItem col = row.appendNamedValue("col", null, mFile, mLine) as TableColItem;
-                            if (!string.IsNullOrEmpty(width))
-                                col.appendNamedValue("width", width, mFile, mLine);
-                            col.appendDescription(content, mFile, mLine);
-                        }
-                        continue;
-                    }
-                }
-            }
-        }
-
         protected void DescriptionToXml(XmlNode parent, XmlDocument doc, IDefinitionList defs)
         {
             if (maDescription.Count != 0)
             {
-                if (defs.Exists("simplified-text-syntax") && !(this is ExampleItem) && !(this is ExampleTabItem))
-                    PreprocessBodyForSimplifiedSyntax();
-
+                
                 XmlNode body = doc.CreateNode(XmlNodeType.Element, "body", ""), item, content;
                 parent.AppendChild(body);
                 for (int i = 0; i < maDescription.Count; i++)
@@ -364,5 +239,4 @@ namespace GehtSoft.DocCreator.Parser
             }
         }
     }
-
 }

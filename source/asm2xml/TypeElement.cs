@@ -217,7 +217,6 @@ namespace AssemblyToXml
                 try
                 {
                     object v = member.Constant;
-                    memberElement.Value = null;
                     if (v != null)
                     {
                         if (v is string s)
@@ -232,6 +231,7 @@ namespace AssemblyToXml
                 }
                 catch (Exception )
                 {
+                    memberElement.Value = null;
                 }
 
                 Members.Add(memberElement);

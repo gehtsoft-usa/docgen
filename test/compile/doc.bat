@@ -1,9 +1,4 @@
 @echo off
-tasklist /FI "WINDOWTITLE eq Test Reference" > %temp%\hhtest.txt
-
-findstr /c:"hh.exe" %temp%\hhtest.txt >nul
-
-if %errorlevel% == 0 goto :closechm
 del %temp%\hhtest.txt
 if not exist dst mkdir dst
 if not exist dst\img mkdir dst\img
@@ -13,7 +8,7 @@ if not exist dst\highlighter mkdir dst\highlighter
 if not exist dst\pageImages mkdir dst\pageImages
 del dst\*.* /q /s >nul
 
-set docgenbin=..\source\app\bin\release\net45
+set docgenbin=..\..\source\app\bin\debug\net45
 
 "%docgenbin%\docgen.exe" project.xml
 

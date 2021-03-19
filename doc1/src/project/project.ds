@@ -1,0 +1,431 @@
+@group
+    @title=Documentation Project Files
+    @brief=The section described the documentation project files
+    @ingroup=index
+    @key=projectFile
+@end
+
+@group
+    @title=Documentation project
+    @brief=The section describes XML file defining the documentation project
+    @key=docProjectFile
+    @ingroup=projectFile
+
+    The documentation project file defines:
+
+    * The common properties of the project
+    * The location of the source files and compiler rules
+    * The output templates to be used and their parameters
+
+    Follow the project file scheme to define the project content.
+
+    The root element of the project file is [clink=docProjectFile1.help-project]help-project[/clink].
+@end
+
+@class
+    @name=project.xml file
+    @brief=The section describes XML file defining the documentation project
+    @key=docProjectFile1
+    @ingroup=docProjectFile
+    @type=tags
+    @membersToContent=true
+
+    The project file is an XML file that must
+    use the namespace [c]http://www.gehtsoft.com/docgen/project[/c]
+    The root tag of the project file must be [c]help-project[/c].
+
+    @member
+        @type=property
+        @name=help-project
+        @brief=The root element of the project document
+        @custom=xml-tag
+        @declaration
+            @language=xml
+            @params=
+        @end
+
+        Don't forget to add reference to the namespace
+        [c]http://www.gehtsoft.com/docgen/project[/c]
+        and, if a prefix is used, keep prefix use
+        consitent trough the whole project file.
+
+        @example
+            @show=yes
+            @title=Project file example
+            @highlight=xml
+            @tabs=yes
+            @tab
+                @title=Without namespace prefix
+                ```
+                <?xml version="1.0" encoding="utf-8"?>
+                 <help-project xmlns="http://www.gehtsoft.com/docgen/project">
+                 [i]... project content ...[/i]
+                </help-project>
+                ```
+                @end
+            @tab
+                @title=With namespace prefix
+                ```
+                <?xml version="1.0" encoding="utf-8"?>
+                 <dg:help-project xmlns:dg="http://www.gehtsoft.com/docgen/project">
+                 [i]... project content ...[/i]
+                </dg:help-project>
+                ```
+            @end
+        @end
+
+        The project may have three sections:
+
+        * Optional common definitions section (see [clink=docProjectFile1.common]common[/clink])
+        * One source section (see [clink=docProjectFile1.source]source[/clink])
+        * One or more output template sections (see [clink=docProjectFile1.output]output[/clink])
+    @end
+
+    @member
+        @type=property
+        @name=common
+        @brief=The tag consists of the definitions that are common for all templates and for the parser
+        @custom=xml-tag
+        @declaration
+            @language=xml
+            @params=
+        @end
+
+        The tag may be used once inside of
+        [clink=docProjectFile1.help-project]help-project[/clink] tag.
+
+        The tag may contain one or more
+        [clink=docProjectFile1.define]define[/clink] tags.
+    @end
+
+    @member
+        @type=property
+        @name=source
+        @brief=The tag consists of source files and folders
+        @custom=xml-tag
+        @declaration
+            @language=xml
+            @params=
+        @end
+        The tag should be used once inside of
+        [clink=docProjectFile1.help-project]help-project[/clink] tag.
+
+        The tag may contain one or more
+        [clink=docProjectFile1.file]file[/clink] and/or
+        [clink=docProjectFile1.folder]folder[/clink] tags.
+
+        The files and folders will be processed in the order
+        in which they are specified in the [c]source[/c]
+        tag.
+    @end
+
+    @member
+        @type=property
+        @name=output
+        @brief=The tags defines the output template to be used
+        @custom=xml-tag
+        @declaration
+            @language=xml
+            @params=template="[i]path[/i]" output="[i]file[/i]" encoding="[i]encoding[/i]"
+        @end
+
+        The tag should be used one or more time inside of
+        [clink=docProjectFile1.help-project]help-project[/clink] tag.
+
+        The section may contain one or more
+        [clink=docProjectFile1.define]define[/clink] tags.
+        for template-specific definitions.
+
+        Refer the template documentation of the list
+        of the templates available and for the
+        parameters specific for the template.
+
+        @param
+            @name=template
+            The name of the main file in the template.
+
+            If you build your help file with a standard template
+            and using nuget package (e.g. via MSBuild)
+            you can refer to a standard templates using
+            [c]%docgen%/template/[/c] as the base path.
+        @end
+
+        @param
+            @name=output
+            The name of the output file (for templates
+            that creates only one file).
+
+            For templates that creates multiple file use
+            this parameter to specify the output folder.
+            However, because the parameter requires a file,
+            add [c]null-file[/c] as a file name. The file
+            with such name will not be created, however, its
+            location will be used as base path to create
+            all other files by the template.
+        @end
+
+        @param
+            @name=encoding
+            The name of the encoding for output file(s) (e.g. 'ascii', 'utf-8', or 'windows-1252').
+        @end
+    @end
+
+    @member
+        @type=property
+        @name=define
+        @brief=The tag defines a constant.
+        @custom=xml-tag
+        @declaration
+            @language=xml
+            @params=name="[i]name[/i]" value="[i]value[/i]"
+        @end
+
+
+        The tag may be used inside
+        [clink=docProjectFile1.common]common[/clink] or
+        [clink=docProjectFile1.output]output[/clink] elements.
+
+        @param
+            @name=name
+            The name of the constant.
+        @end
+        @param
+            @name=value
+            The constant value.
+        @end
+    @end
+
+    @member
+        @type=property
+        @name=file
+        @brief=The tag defines an input file
+        @custom=xml-tag
+        @declaration
+            @language=xml
+            @params=name="[i]relative path[/i]" encoding="[i]encoding name[/i]"
+        @end
+
+        The tag may be used inside
+        [clink=docProjectFile1.source]source[/clink] tag.
+
+        @param
+            @name=name
+            The relative path to the file from the folder that contains [c]project.xml[/c] file.
+        @end
+        @param
+            @name=encoding
+            The name of the file encoding (e.g. 'ascii', 'utf-8', or 'windows-1252').
+        @end
+
+    @end
+
+    @member
+        @type=property
+        @name=folder
+        @brief=The tag defines a source folder.
+        @custom=xml-tag
+
+        All files with extension .ds in the folder specified will be included.
+        There is no warranty about the particular order in which the
+        files will be processed. If you need to handle your files
+        in particular order - use [clink=docProjectFile1.file]file[/clink]
+        tag to include each file individually.
+
+        The tag may be used inside
+        [clink=docProjectFile1.source]source[/clink] tag.
+
+        @declaration
+            @language=xml
+            @params=name="[i]relative path[/i]" encoding="[i]encoding name[/i]"
+        @end
+
+        @param
+            @name=name
+            The relative path to the folder from the folder that contains [c]project.xml[/c] file.
+        @end
+        @param
+            @name=encoding
+            The name of the file encoding (e.g. 'ascii', 'utf-8', or 'windows-1252').
+        @end
+    @end
+@end
+
+@group
+    @title=MSBuild Project File
+    @brief=The section describes MSBuild file defining the project compilation routing
+    @ingroup=projectFile
+    @key=msbuildProjectFile
+
+    The build file is a standard
+    [eurl=https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild]MSBuild[/eurl]
+    project file. This file may be compiled using either [c]msbuild.exe[/c]
+    or [c]dotnet build[/c] command.
+
+    The docgen relies on two nuget packages available
+    from Gehtsoft public nuget stream
+    [eurl=https://www.myget.org/F/gehtsoft-public/api]https://www.myget.org/F/gehtsoft-public/api/v3/index.json[/eurl]:
+
+    * Gehtsoft.Build.DocGen
+    * Gehtsoft.Build.ContentDelivery
+
+    You organizes the build process using
+    custom tasks defined in these packages. Refer to
+    project tags for details about the tasks.
+
+    You can also expand an example of a project files below
+    that uses all custom tasks:
+
+    @example
+        @title=Documentation Project File Example
+        @show=no
+        @tabs=yes
+        @tab
+            @title=project
+            @highlight=xml
+            ```
+            <?xml version="1.0" encoding="utf-8"?>
+            <Project Sdk="Microsoft.NET.Sdk">
+             <PropertyGroup>
+              <TargetFramework>netstandard2.0</TargetFramework>
+             </PropertyGroup>
+             <!-- Get required packages -->
+             <ItemGroup>
+              <!-- If you update the package version here,
+                   don't forget to update it as well below,
+                   In ContentFromPackage task parameters -->
+              <PackageReference Include="Gehtsoft.Build.DocGen" Version="0.1.12" IncludeAssets="build" />
+              <PackageReference Include="Gehtsoft.Build.ContentDelivery" Version="0.1.10" IncludeAssets="build" />
+             </ItemGroup>
+             <!-- Define folder location -->
+             <PropertyGroup>
+              <DocTargetDir>$(MSBuildProjectDirectory)/dst</DocTargetDir>
+             </PropertyGroup>
+             <!-- Define file groups and constants -->
+             <ItemGroup>
+              <!-- Images and raw HTML files to include into doc -->
+              <CustomFile Include="$(MSBuildProjectDirectory)/img/**/*.png;$(MSBuildProjectDirectory)/html/**/*.*" />
+              <!-- All files in target directory -->
+              <CurrentDocTargetDir Include="$(DocTargetDir)" />
+             </ItemGroup>
+             <!-- Target that removes results of compilation -->
+             <Target Name="CleanDoc">
+              <RemoveDir Directories="@(CurrentDocTargetDir)" />
+             </Target>
+             <!-- Target that creates the project -->
+             <Target Name="MakeDoc">
+              <!-- Remove previous output -->
+              <RemoveDir Directories="@(CurrentDocTargetDir)" />
+              <MakeDir Directories="$(DocTargetDir)" />
+              <!-- Compile documentation project -->
+              <DocGen Project="project.xml" />
+              <!-- Copy raw content to the output folder -->
+              <Copy SourceFiles="@(CustomFile)" DestinationFolder="$(DocTargetDir)" />
+              <!-- Copy content (e.g. web menu, icons, scripts) for HTML template output -->
+              <ContentFromPackage Package="Gehtsoft.Build.DocGen" Source="Content/template/html/res" Version="0.1.12" Destination="$(DocTargetDir)/res" />
+              <ContentFromPackage Package="Gehtsoft.Build.DocGen" Source="Content/template/html/highlighter" Version="0.1.12" Destination="$(DocTargetDir)/highlighter" />
+              <ContentFromPackage Package="Gehtsoft.Build.DocGen" Source="Content/template/html/menu" Version="0.1.12" Destination="$(DocTargetDir)/menu" />
+              <ContentFromPackage Package="Gehtsoft.Build.DocGen" Source="Content/template/html/pageImages" Version="0.1.12" Destination="$(DocTargetDir)/pageImages" />
+             </Target>
+            </Project>
+            ```
+        @end
+        @tab
+            @title=Command
+            ![c]dotnet build project.proj /t:CleanDoc,MakeDoc[/c]
+        @end
+    @end
+@end
+
+@class
+    @name=Tasks
+    @brief=The section describes custom MSBuild tasks
+    @key=msbuildTasks
+    @ingroup=msbuildProjectFile
+    @type=tags
+    @membersToContent=true
+
+    @member
+        @type=property
+        @custom=xml-tag
+        @name=ContentFromPackage
+        @brief=The custom task copies content from a package folder to the specified folder
+
+        @declaration
+            @language=xml
+            @params=Package="" Version="" Source=""  Destination=""
+        @end
+
+        @param
+            @name=Package
+            The name of the package, e.g. [c]gehtsoft.build.docgen[/c]
+
+            In order to make it operable in Linux make sure
+            that you use all lowercase in the package name!
+        @end
+        @param
+            @name=Version
+            The version of the package, e.g. [c]0.1.12[/c]
+
+            When you are copying from [c]gehtsoft.build.docgen[/c]
+            don't forget update the version in this task every time
+            when you update the version in project reference.
+        @end
+        @param
+            @name=Source
+            The folder inside the package to copy data from.
+
+            In order to make operable in Linux, use [c]/[/c]
+            as path separator.
+        @end
+        @param
+            @name=Destination
+            The folder to copy data to.
+
+            In order to make operable in Linux, use [c]/[/c]
+            as path separator.
+        @end
+    @end
+
+    @member
+        @type=property
+        @custom=xml-tag
+        @name=DocGen
+        @brief=The custom task that performs docgen project compilation
+
+        @declaration
+            @language=xml
+            @params=Project=""
+        @end
+
+        @param
+            @name=Project
+            The path to the project file to compile
+        @end
+    @end
+
+    @member
+        @type=property
+        @custom=xml-tag
+        @name=Asm2Xml
+        @brief=The custom task that scans .NET assemblies and creates an XML file with description of all types
+
+        @declaration
+            @language=xml
+            @params=Assemblies="" OutputXml="" Mode="net5.0"
+        @end
+
+        @param
+            @name=Assemblies
+            The list of the assemblies to compile.
+
+            Use MSBuild item list as the value of this parameter.
+        @end
+
+        @param
+            @name=OutputXml
+            The path to the output XML file with
+            assemblies content.
+
+        @end
+    @end
+@end
