@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1252"?>
+﻿<?xml version="1.0" encoding="windows-1252"?>
 <!-- writes body description
 
      @param ext:caller('curr-item') - a object which has description to write
@@ -56,7 +56,8 @@
                         <xsl:element name="a">
                             <xsl:attribute name="href">javascript: showdiv('close<xsl:value-of select="ext:get('g-example-serial')" />'); hidediv('open<xsl:value-of select="ext:get('g-example-serial')" />');</xsl:attribute>
                             <xsl:attribute name="onclick">javascript: showdiv('close<xsl:value-of select="ext:get('g-example-serial')" />'); hidediv('open<xsl:value-of select="ext:get('g-example-serial')" />');</xsl:attribute>
-                            <xsl:text>[show]</xsl:text>
+                            <xsl:attribute name="class">action</xsl:attribute>
+                            <xsl:text>show</xsl:text>
                         </xsl:element>
                     </xsl:element>
                 </xsl:element>
@@ -76,7 +77,8 @@
                         <xsl:element name="a">
                             <xsl:attribute name="href">javascript: showdiv('open<xsl:value-of select="ext:get('g-example-serial')" />'); hidediv('close<xsl:value-of select="ext:get('g-example-serial')" />');</xsl:attribute>
                             <xsl:attribute name="onclick">javascript: showdiv('open<xsl:value-of select="ext:get('g-example-serial')" />'); hidediv('close<xsl:value-of select="ext:get('g-example-serial')" />');</xsl:attribute>
-                            <xsl:text>[hide]</xsl:text>
+                            <xsl:attribute name="class">action</xsl:attribute>
+                            <xsl:text>hide</xsl:text>
                         </xsl:element>
                     </xsl:element>
                     <xsl:call-template name="write-example-content" />
@@ -114,10 +116,10 @@
                             </xsl:if>
                             <xsl:for-each select="ext:get('item')/example-tab" >
                                 <xsl:value-of select="ext:let('link-text-1', concat('javascript: ', ext:get('link-text'), 'showdiv(&quot;tab', ext:get('g-example-serial'), '_', position(), '&quot;);'))"/>
-                                <xsl:text disable-output-escaping="yes">&amp;nbsp;|&amp;nbsp;</xsl:text>
                                 <xsl:element name="a">
                                     <xsl:attribute name="href"><xsl:value-of select="ext:get('link-text-1')" disable-output-escaping="yes" /></xsl:attribute>
                                     <xsl:attribute name="onclick"><xsl:value-of select="ext:get('link-text-1')"  disable-output-escaping="yes" /></xsl:attribute>
+                                    <xsl:attribute name="class">actiontab</xsl:attribute>
                                     <xsl:choose>
                                         <xsl:when test="ext:get('curr-position') = position()">
                                           <xsl:choose>
@@ -141,7 +143,6 @@
                                         </xsl:otherwise>
                                     </xsl:choose>
                                 </xsl:element>
-                                <xsl:text disable-output-escaping="yes">&amp;nbsp;|&amp;nbsp;</xsl:text>
                             </xsl:for-each>
                         <xsl:call-template name="write-example-or-tab">
                             <xsl:with-param name="insideTag" select="'false'" />

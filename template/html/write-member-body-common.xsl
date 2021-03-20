@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1252"?>
+﻿<?xml version="1.0" encoding="windows-1252"?>
 <!-- common procedure for the member body
      param: ext:caller('curr-item') - a member to write
 
@@ -26,7 +26,7 @@
     <xsl:value-of select="ext:xmladdattribute('help-index', ext:get('hhk-node'), 'local', concat(../@key, '.', ./@key, '.html'))" />
 </xsl:if>
 <xsl:value-of select="ext:let('curr-member', .)" />
-<p><b><xsl:value-of select="ext:get('_string_brief')" /></b></p>
+<h2><xsl:value-of select="ext:get('_string_brief')" /></h2>
 <p><xsl:choose>
     <xsl:when test="ext:get('transform')='yes'"><xsl:value-of select="ext:call('write-bbcode.xsl', ext:parsebbcode(./@brief))" disable-output-escaping="yes"  /></xsl:when>
     <xsl:otherwise><xsl:value-of select="./@brief" /></xsl:otherwise>
@@ -84,7 +84,7 @@
 </xsl:if>
 <!-- details -->
 <xsl:if test="count(./body/*)>0">
-<p><b><xsl:value-of select="ext:get('_string_details')" /></b></p>
+<h2><xsl:value-of select="ext:get('_string_details')" /></h2>
 <xsl:value-of select="ext:let('curr-item', .)" />
 <xsl:value-of select="ext:call('write-description.xsl', /)" disable-output-escaping="yes" />
 </xsl:if>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1252"?>
+﻿<?xml version="1.0" encoding="windows-1252"?>
 <xsl:stylesheet
     version="1.0"
     xmlns:ext="urn:gehtsoft-exslt"
@@ -16,7 +16,7 @@
     /* Turn off list bullets */
     ul.mktree  li { list-style: none; }
     /* Control how "spaced out" the tree is */
-    ul.mktree, ul.mktree ul , ul.mktree li { margin-left:10px; padding:0px; font-family : Trebuchet MS, Arial; }
+    ul.mktree, ul.mktree ul , ul.mktree li { margin-left:10px; padding:0px; font-family : Verdana, Trebuchet MS, Arial; font-size: 12pt; }
     /* Provide space for our own "bullet" inside the LI */
     ul.mktree  li           .bullet { padding-left: 15px; }
     /* Show "bullets" in the links, depending on the class of the LI that the link's in */

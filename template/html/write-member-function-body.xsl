@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1252"?>
+﻿<?xml version="1.0" encoding="windows-1252"?>
 <!-- writes article
      param: ext:caller('article') - an article to write
 
@@ -26,7 +26,7 @@
 </head>
 <body>
 <xsl:value-of select="ext:let('title', concat(' &lt;b&gt;', ./@name, '&lt;/b&gt;'))" />
-<p><font size="+1"><code><xsl:value-of select="ext:get('title')" disable-output-escaping="yes" /></code></font></p>
+<h1><code><xsl:value-of select="ext:get('title')" disable-output-escaping="yes" /></code></h1>
         <xsl:value-of select="ext:let('curr-item', .)" />
         <xsl:value-of select="ext:let('content-node', ext:caller('content-node'))" />
         <xsl:value-of select="ext:let('help-index-keyword', ./@name)" />

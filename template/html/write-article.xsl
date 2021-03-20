@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1252"?>
+﻿<?xml version="1.0" encoding="windows-1252"?>
 <!-- writes article
      param: ext:caller('article') - an article to write
 
@@ -35,18 +35,18 @@
 <xsl:value-of select="ext:call('write-css.xsl', /)" disable-output-escaping="yes" />
 </head>
 <body>
-<p><font size="+1"><b><xsl:choose>
+<h1><xsl:choose>
     <xsl:when test="ext:get('transform')='yes'"><xsl:value-of select="ext:call('write-bbcode.xsl', ext:parsebbcode(./@title))" disable-output-escaping="yes"  /></xsl:when>
     <xsl:otherwise><xsl:value-of select="./@title" /></xsl:otherwise>
 </xsl:choose>
-</b></font></p>
+</h1>
 <xsl:if test="./@briefless='false'">
-<p><b><xsl:value-of select="ext:get('_string_brief')" /></b></p>
+<h2><xsl:value-of select="ext:get('_string_brief')" /></h2>
 <p><xsl:choose>
     <xsl:when test="ext:get('transform')='yes'"><xsl:value-of select="ext:call('write-bbcode.xsl', ext:parsebbcode(./@brief))" disable-output-escaping="yes"  /></xsl:when>
     <xsl:otherwise><xsl:value-of select="./@brief" /></xsl:otherwise>
 </xsl:choose></p>
-<p><b><xsl:value-of select="ext:get('_string_details')" /></b></p>
+<h2><xsl:value-of select="ext:get('_string_details')" /></h2>
 </xsl:if>
 <xsl:value-of select="ext:let('curr-item', .)" />
 <xsl:value-of select="ext:call('write-description.xsl', /)" disable-output-escaping="yes" />

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1252"?>
+﻿<?xml version="1.0" encoding="windows-1252"?>
 <!-- writes report engine member
      param: ext:caller('curr-member') - a member to write
 
@@ -25,7 +25,7 @@
 <xsl:value-of select="ext:call('write-css.xsl', /)" disable-output-escaping="yes" />
 </head>
 <body>
-<p><font size="+1"><code><xsl:value-of select="concat(./@custom, ' ', ./@name, ' in ', ../@name, '.xml')" disable-output-escaping="yes" /></code></font></p>
+<h1><code><xsl:value-of select="concat(./@custom, ' ', ./@name, ' in ', ../@name, '.xml')" disable-output-escaping="yes" /></code></h1>
         <xsl:value-of select="ext:let('curr-item', .)" />
         <xsl:value-of select="ext:let('content-node', ext:caller('content-node'))" />
         <xsl:value-of select="ext:let('help-index-keyword', concat(./@name, ' in ', ../@name))" />

@@ -503,6 +503,12 @@ namespace GehtSoft.DocCreator.Output
             }
         }
 
+        public string readAllText(string file)
+        {
+            file = FindName(file);
+            return File.ReadAllText(file);
+        }
+
         public string trim(string s) => s.Trim();
         public string ltrim(string s) => s.TrimStart();
         public string rtrim(string s) => s.TrimEnd();

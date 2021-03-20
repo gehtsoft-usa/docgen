@@ -1,26 +1,71 @@
+a, p, h1, h2, h3, h4, h5, h6, table, td, tr, li, ul, ol {
+    font-family: Verdana, Trebuchet MS, Arial;
+}
+
+a, p, td, tr, ul, ol, li {
+    font-size: 12pt;
+}
+
+h3 {
+    font-size: 13pt;
+}
+
+h2 {
+    font-size: 13pt;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 14pt;
+    font-weight: bold;
+}
+
 body {
     color: #444444;
     background-color: white;
-    font-family: Trebuchet MS, Arial;
-    font-size: 10pt;
 }
 
 A:link {
-    color: #0068be;
-    font-family: Trebuchet MS, Arial;
-    font-size: 10pt;
+    color: #0065b3;
     cursor: pointer;
 }
 
 A:visited {
-    color: #039CCF;
-    font-family: Trebuchet MS, Arial;
-    font-size: 10pt;
+    color: #0068be;
     cursor: pointer;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
-    font-family: Trebuchet MS, Arial;
+a.action {
+  background-color: #0065b3;
+  color: white;
+  font-size: 10pt;
+  padding: 5px 5px;
+  width: 30pt;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 3px;
+}
+
+a.actiontab {
+  font-size: 10pt;
+  padding: 5px 5px;
+  width: 30pt;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 3px 3px 0 0;
+}
+
+pre, code {
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+    font-size: 12pt;
+}
+
+code.ctag {
+    background-color: #f1f1f1;
+    padding: .1em .2em;
+    border-radius: 3px;
 }
 
 pre {
@@ -31,18 +76,14 @@ pre.example {
     background-color: #f1f1f1;
 }
 
-ul, ul.main {
+ul {
     list-style-type: disc;
     margin-left: 18pt;
 }
 
-ol, ol.main {
+ol {
     list-style-type: decimal;
     margin-left: 18pt;
-}
-
-li {
-    font-family: Trebuchet MS, Arial;
 }
 
 ul.hhc {
@@ -54,47 +95,97 @@ ul.hhc {
 }
 
 li.hhc {
-    font-family: Trebuchet MS, Arial;
     margin-left: 0;
     padding: 0;
     padding-left: 0;
     text-indent: 0;
 }
 
-table, table.tmain {
-    font-size: 10pt;
-    border-collapse: collapse;
-    border: 1px solid;
-    border-color: #dfe3e7;
+table {
+  border-spacing: 0;
+  border-color: #dfe3e7;
 }
 
+tr + tr td {
+   border-top: 0;
+}
+
+tr td + td {
+  border-left: 0;
+}
+
+td {
+  border: 1px solid;
+  border-color: #dfe3e7;
+}
+
+tr:first-child td:first-child {
+   border-radius: 0.2em 0 0 0;
+}
+
+tr:first-child td:last-child {
+  border-radius: 0 0.2em 0 0;
+}
+
+tr:first-child td:only-child {
+  border-radius: 0.2em 0.2em 0 0;
+}
+
+tr:last-child td:first-child {
+    border-radius: 0 0 0 0.2em;
+}
+
+tr:last-child td:last-child {
+    border-radius: 0 0 0.2em 0;
+}
+
+tr:last-child td:only-child {
+    border-radius: 0 0 0.2em 0.2em;
+}
+
+tr:only-child td:only-child {
+    border-radius: 0.2em 0.2em 0.2em 0.2em;
+}
+
+tr:only-child td:first-child {
+   border-radius: 0.2em 0 0 0.2em;
+}
+
+tr:only-child td:last-child {
+  border-radius: 0 0.2em 0.2em 0;
+}
+
+
 td.tmain, td.tmain_nw, td.thdr {
-    border: 1px solid;
-    border-color: #dfe3e7;
     background-color: rgb(255, 255, 255);
     vertical-align: top;
     padding: 3px;
-    font-family: Trebuchet MS, Arial;
 }
 
-    td.tmain p, td.tmain_nw p, td.thdr p {
-        margin-bottom: 6pt;
-    }
+td.tmain p, td.tmain_nw p, td.thdr p {
+    margin-top: 3pt;
+    margin-bottom: 3pt;
+}
 
 td.tmain_nw {
     white-space: nowrap;
 }
 
 td.thdr {
-    font-size: 10pt;
-    background-color: #f1f1f1;
+    background-color: #e3e3e3;
 }
 
 table.decl {
     border: 0px none;
+    border: collapse;
     background-color: rgb(192, 192, 192);
     vertical-align: top;
     padding: 3px;
-    font-family: Trebuchet MS, Arial;
     width: 100%;
+}
+
+table.decl td {
+    border: 0px none;
+    border: collapse;
+    background-color: rgb(192, 192, 192);
 }

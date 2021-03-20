@@ -16,7 +16,7 @@
         567
     @end
 
-
+    A `piece of code` is here.
 
     ```cs
     using System;
@@ -41,6 +41,7 @@
     @example
         @title=example 3
         @tabs=yes
+        @show=always
         @tab
             @title=cs
             @highlight=cs

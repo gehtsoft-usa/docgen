@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1252"?>
+﻿<?xml version="1.0" encoding="windows-1252"?>
 <!-- writes body description
 
      @param ext:caller('curr-item') - a object which has description to write
@@ -31,7 +31,7 @@
 
     <xsl:template match="sup"><sup><xsl:apply-templates select="./*" /></sup></xsl:template>
 
-    <xsl:template match="c"><code><xsl:apply-templates select="./*" /></code></xsl:template>
+    <xsl:template match="c"><code class="ctag"><xsl:apply-templates select="./*" /></code></xsl:template>
 
     <xsl:template match="gray"><font color="#7f7f7f"><xsl:apply-templates select="./*" /></font></xsl:template>
 

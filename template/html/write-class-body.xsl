@@ -49,27 +49,27 @@
     <xsl:value-of select="ext:call('write-css.xsl', /)" disable-output-escaping="yes" />
 </head>
 <body>
-<p><font size="+1"><code><xsl:value-of select="ext:caller('curr-item-type')" /><xsl:text xml:space="preserve"> </xsl:text><b><xsl:value-of select="ext:escape(./@decl-name)" disable-output-escaping="yes" /></b></code></font></p>
+<h1><code><xsl:value-of select="ext:caller('curr-item-type')" /><xsl:text xml:space="preserve"> </xsl:text><b><xsl:value-of select="ext:escape(./@decl-name)" disable-output-escaping="yes" /></b></code></h1>
 <!-- class parents -->
 <xsl:if test="count(./parent)>0">
   <p></p>
   <table class="tmain" width="100%">
   <tr><td colspan="2" class="thdr"><b><xsl:value-of select="ext:get('_string_parents')" /></b></td></tr>
   <xsl:for-each select="./parent">
-    <tr><td style="tmain" width="30"></td>
+    <tr><td class="tmain" width="30" style="border-right: none;"></td>
 <xsl:choose>
     <xsl:when test="ext:get('transform')='yes'">
-        <td style="tmain"><code><xsl:value-of select="ext:call('write-bbcode.xsl', ext:parsebbcode(./text()))" disable-output-escaping="yes"  /></code></td>
+        <td class="tmain"  style="border-left: none;"><p><code><xsl:value-of select="ext:call('write-bbcode.xsl', ext:parsebbcode(./text()))" disable-output-escaping="yes"  /></code></p></td>
     </xsl:when>
     <xsl:otherwise>
-        <td style="tmain"><code><xsl:value-of select="./text()" disable-output-escaping="yes" /></code></td>
+        <td class="tmain" style="border-left: none;"><p><code><xsl:value-of select="./text()" disable-output-escaping="yes" /></code></p></td>
     </xsl:otherwise>
 </xsl:choose>
     </tr>
   </xsl:for-each>
   </table>
 </xsl:if>
-<p><b><xsl:value-of select="ext:get('_string_brief')" /></b></p>
+<h2><xsl:value-of select="ext:get('_string_brief')" /></h2>
 <p><xsl:choose>
     <xsl:when test="ext:get('transform')='yes'"><xsl:value-of select="ext:call('write-bbcode.xsl', ext:parsebbcode(./@brief))" disable-output-escaping="yes"  /></xsl:when>
     <xsl:otherwise><xsl:value-of select="./@brief" /></xsl:otherwise>
@@ -77,7 +77,7 @@
 <xsl:value-of select="ext:let('curr-item', .)" />
 <xsl:value-of select="ext:call('write-params.xsl', /)" disable-output-escaping="yes" />
 <xsl:if test="count(./body/*)>0">
-<p><b><xsl:value-of select="ext:get('_string_details')" /></b></p>
+<h2><xsl:value-of select="ext:get('_string_details')" /></h2>
 <xsl:value-of select="ext:call('write-description.xsl', /)" disable-output-escaping="yes" />
 </xsl:if>
 <xsl:value-of select="ext:call('write-seealso.xsl', /)" disable-output-escaping="yes" />
