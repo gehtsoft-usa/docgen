@@ -8,21 +8,26 @@
     <xsl:template match="/" >
 <!--Sitemap 1.0-->
 <html><head><title>Content</title>
+<link rel="stylesheet" href="res/dripicons.css"></link>
 <style type="text/css">
 <xsl:text>
 <![CDATA[
 /* Put this inside a @media qualifier so Netscape 4 ignores it */
 @media screen, print {
+    ul.mktree { white-space:nowrap; }
     /* Turn off list bullets */
     ul.mktree  li { list-style: none; }
     /* Control how "spaced out" the tree is */
-    ul.mktree, ul.mktree ul , ul.mktree li { margin-left:10px; padding:0px; font-family : Verdana, Trebuchet MS, Arial; font-size: 12pt; }
+    ul.mktree, ul.mktree ul , ul.mktree li { margin-left:5px; padding:0px; font-family : Verdana, Trebuchet MS, Arial; font-size: 12pt; }
     /* Provide space for our own "bullet" inside the LI */
-    ul.mktree  li           .bullet { padding-left: 15px; }
     /* Show "bullets" in the links, depending on the class of the LI that the link's in */
-    ul.mktree  li.liOpen    .bullet { cursor: pointer; background: url(menu/minus.png)  center left no-repeat; }
-    ul.mktree  li.liClosed  .bullet { cursor: pointer; background: url(menu/plus.png)   center left no-repeat; }
-    ul.mktree  li.liBullet  .bullet { cursor: default; background: url(menu/bullet.png) center left no-repeat; }
+    ul.mktree  li.liOpen    .bullet { cursor: pointer; }
+    ul.mktree  li.liClosed  .bullet { cursor: pointer; }
+    ul.mktree  li.liBullet  .bullet { cursor: default; }
+    li .bullet:before { font-family: "dripicons-v2" !important; vertical-align: text-bottom; }
+    li.liOpen    .bullet:before { content: "\54"; }
+    li.liClosed  .bullet:before { content: "\56"; }
+    li.liBullet  .bullet:before { content: "\28"; }
     /* Sublists are visible or not based on class of parent LI */
     ul.mktree  li.liOpen    ul { display: block; }
     ul.mktree  li.liClosed  ul { display: none; }
@@ -131,16 +136,34 @@ function selectItem(fid, tid) {var id  = getFileFromURL(fid);var tid = tid || id
 </html>
     </xsl:template>
     <xsl:template match="node">
-        <xsl:choose>
-        <xsl:when test="count(./@local)>0">
-            <li><xsl:element name="a">
-                <xsl:attribute name="href"><xsl:value-of select="./@local" /></xsl:attribute>
-                <xsl:attribute name="target">docframe</xsl:attribute>
-                <xsl:value-of select="./@name" disable-output-escaping="yes" /></xsl:element><xsl:if test="count(./node)>0"><ul><xsl:apply-templates select="./node" /></ul></xsl:if></li>
-        </xsl:when>
-        <xsl:otherwise>
-            <li><xsl:value-of select="./@name" disable-output-escaping="yes" /><xsl:if test="count(./node)>0"><ul><xsl:apply-templates select="./node" /></ul></xsl:if></li>
-        </xsl:otherwise>
-        </xsl:choose>
+        <xsl:element name="li">
+            <xsl:choose>
+                <xsl:when test="count(./@local) > 0 and count(./node) = 0">
+                    <xsl:element name="a">
+                        <xsl:attribute name="href"><xsl:value-of select="./@local" /></xsl:attribute>
+                        <xsl:attribute name="target">docframe</xsl:attribute>
+                        <xsl:value-of select="./@name" disable-output-escaping="yes" />
+                    </xsl:element>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="./@name" disable-output-escaping="yes" />
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:if test="count(./node) > 0">
+                <xsl:element name="ul">
+                    <xsl:if test="count(./@local) > 0">
+                        <xsl:element name="li">
+                            <xsl:element name="a">
+                                <xsl:attribute name="href"><xsl:value-of select="./@local" /></xsl:attribute>
+                                <xsl:attribute name="target">docframe</xsl:attribute>
+                                <xsl:value-of select="./@name" disable-output-escaping="yes" />
+                            </xsl:element>
+                        </xsl:element>
+                    </xsl:if>
+                    <xsl:apply-templates select="./node" />
+                </xsl:element>
+
+            </xsl:if>
+        </xsl:element>
     </xsl:template>
 </xsl:stylesheet>

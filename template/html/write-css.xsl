@@ -20,6 +20,7 @@
 </style>
 </xsl:otherwise>
 </xsl:choose>
+<link rel="stylesheet" href="res/dripicons.css"></link>
     </xsl:template>
 </xsl:stylesheet>
 

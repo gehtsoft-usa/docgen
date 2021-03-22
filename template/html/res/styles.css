@@ -39,18 +39,38 @@ a.action {
   background-color: #0065b3;
   color: white;
   font-size: 10pt;
-  padding: 5px 5px;
-  width: 30pt;
+  padding: 2px 2px;
+  width: 50pt;
   text-align: center;
+  vertical-align: middle;
   text-decoration: none;
   display: inline-block;
   border-radius: 3px;
 }
 
+.side-icon {
+    float: left;
+}
+
+a.action [class*="dripicons-"]:before {
+    padding: 0 2px 0 0;
+    font-size: 12pt;
+    vertical-align: text-bottom;
+}
+
+.side-icon:after {
+  content: "";
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  border-left: 1.5px solid white;
+  transform: translate(-50%);
+}
+
 a.actiontab {
   font-size: 10pt;
   padding: 5px 5px;
-  width: 30pt;
   text-align: center;
   text-decoration: none;
   display: inline-block;

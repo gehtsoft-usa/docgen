@@ -3,9 +3,13 @@ if not exist dst mkdir dst
 if not exist dst\img mkdir dst\img
 if not exist dst\menu mkdir dst\menu
 if not exist dst\pageImages mkdir dst\pageImages
+if not exist dst\res mkdir dst\res
 del dst\*.* /q /s >nul
 
-"%docgen%\bin\docgen.exe" project.xml
+set docgenbin=..\..\source\app\bin\debug\net45
+
+"%docgenbin%\docgen.exe" project.xml
+
 
 if %errorlevel% == 0 goto make
 goto exit
@@ -15,5 +19,6 @@ copy img\*.png dst\img\*.*
 copy html\*.html dst\*.*
 copy "%docgen%\template\html\menu\*.*" dst\menu\*.*
 copy "%docgen%\template\html\pageImages\*.*" dst\pageImages\*.*
+copy "%docgen%\template\html\res\*.*" dst\res\*.*
 
 :exit

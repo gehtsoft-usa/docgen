@@ -3,16 +3,16 @@
  <PropertyGroup>
   <TargetFramework>netstandard2.0</TargetFramework>
  </PropertyGroup>
- <ItemGroup>
-  <PackageReference Include="Gehtsoft.Build.DocGen" Version="0.1.12" IncludeAssets="build" />
-  <PackageReference Include="Gehtsoft.Build.ContentDelivery" Version="0.1.10" IncludeAssets="build" />
- </ItemGroup>
  <PropertyGroup>
   <DocTargetDir>$(MSBuildProjectDirectory)/dst</DocTargetDir>
-  <RawDir>$(MSBuildProjectDirectory)/src/raw</RawDir>
+  <HtmlTemplateDir>$(docgen)/template/html</HtmlTemplateDir>
  </PropertyGroup>
  <ItemGroup>
   <CustomFile Include="$(MSBuildProjectDirectory)/img/**/*.png;$(MSBuildProjectDirectory)/html/**/*.*" />
+  <TemplateResources1 Include="$(HtmlTemplateDir)/res/**/*.*;" />
+  <TemplateResources2 Include="$(HtmlTemplateDir)/highlighter/**/*.*;" />
+  <TemplateResources3 Include="$(HtmlTemplateDir)/menu/**/*.*;" />
+  <TemplateResources4 Include="$(HtmlTemplateDir)/pageImages/**/*.*;" />
   <CurrentDocTargetDir Include="$(DocTargetDir)" />
   <CurrentRawDir Include="$(RawDir)" />
  </ItemGroup>
@@ -24,11 +24,11 @@
   <RemoveDir Directories="@(CurrentDocTargetDir)" />
   <MakeDir Directories="$(DocTargetDir)" />
   <!-- <DocGen Project="project.xml" /> -->
-  <Exec Command="..\source\app\bin\debug\net45\docgen.exe project.xml" />
+  <Exec Command="dotnet ../bin/docgen.dll project.xml" />
   <Copy SourceFiles="@(CustomFile)" DestinationFolder="$(DocTargetDir)" />
-  <ContentFromPackage Package="Gehtsoft.Build.DocGen" Source="Content/template/html/res" Version="0.1.12" Destination="$(DocTargetDir)/res" />
-  <ContentFromPackage Package="Gehtsoft.Build.DocGen" Source="Content/template/html/highlighter" Version="0.1.12" Destination="$(DocTargetDir)/highlighter" />
-  <ContentFromPackage Package="Gehtsoft.Build.DocGen" Source="Content/template/html/menu" Version="0.1.12" Destination="$(DocTargetDir)/menu" />
-  <ContentFromPackage Package="Gehtsoft.Build.DocGen" Source="Content/template/html/pageImages" Version="0.1.12" Destination="$(DocTargetDir)/pageImages" />
+  <Copy SourceFiles="@(TemplateResources1)" DestinationFolder="$(DocTargetDir)/res" />
+  <Copy SourceFiles="@(TemplateResources2)" DestinationFolder="$(DocTargetDir)/highlighter" />
+  <Copy SourceFiles="@(TemplateResources3)" DestinationFolder="$(DocTargetDir)/menu" />
+  <Copy SourceFiles="@(TemplateResources4)" DestinationFolder="$(DocTargetDir)/pageImages" />
  </Target>
 </Project>

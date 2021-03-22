@@ -32,15 +32,25 @@
     </xsl:template>
     <xsl:template match="member">
             <xsl:if test="./@exclude-from-list='false'" >
-                <tr><td class="tmain_nw"><p><xsl:element name="a"><xsl:attribute name="href"><xsl:value-of select="concat(../@key, '.', ./@key)" />.html</xsl:attribute><xsl:value-of select="./@name" disable-output-escaping="yes" /></xsl:element></p></td>
-                <td class="tmain" width="69%"><p><xsl:choose>
+                <tr><!--<td class="tmain_nw">--><td class="tmain">
+                <p>
+                <xsl:element name="a"><xsl:attribute name="href"><xsl:value-of select="concat(../@key, '.', ./@key)" />.html</xsl:attribute><xsl:value-of select="./@name" disable-output-escaping="yes" /></xsl:element>
+                <xsl:if test="ext:get('write-signature') and count(./declaration) > 0">
+                (<xsl:value-of select="./declaration/@params" />)
+                </xsl:if>
+                </p>
+                </td>
+                <td class="tmain" width="69%">
+                <!--
+                <xsl:if test="ext:get('write-signature') and count(./declaration) > 0">
+                <code class="ctag"><xsl:value-of select="./declaration/@return" /><xsl:text xml:space="preserve"> </xsl:text><b><xsl:value-of select="./@name" /></b>(<xsl:value-of select="./declaration/@params" />)</code>
+                </xsl:if>
+                -->
+                <p><xsl:choose>
                     <xsl:when test="ext:get('transform')='yes'"><xsl:value-of select="ext:call('write-bbcode.xsl', ext:parsebbcode(./@brief))" disable-output-escaping="yes"  /></xsl:when>
                     <xsl:otherwise><xsl:value-of select="./@brief" /></xsl:otherwise>
                     </xsl:choose>
                 </p>
-                <xsl:if test="ext:get('write-signature') and count(./declaration) > 0">
-                <code><xsl:value-of select="./declaration/@return" /><xsl:text xml:space="preserve"> </xsl:text><xsl:value-of select="./@name" />(<xsl:value-of select="./declaration/@params" />)</code>
-                </xsl:if>
                 </td></tr>
             </xsl:if>
             <xsl:value-of select="ext:let('curr-member', .)" />

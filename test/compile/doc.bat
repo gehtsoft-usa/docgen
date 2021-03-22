@@ -6,6 +6,7 @@ if not exist dst\res mkdir dst\res
 if not exist dst\menu mkdir dst\menu
 if not exist dst\highlighter mkdir dst\highlighter
 if not exist dst\pageImages mkdir dst\pageImages
+if not exist dst\res mkdir dst\res
 del dst\*.* /q /s >nul
 
 set docgenbin=..\..\source\app\bin\debug\net45
@@ -26,6 +27,7 @@ cd ..
 copy "%docgen%\template\html\highlighter\*.*" dst\highlighter\*.*
 copy "%docgen%\template\html\menu\*.*" dst\menu\*.*
 copy "%docgen%\template\html\pageImages\*.*" dst\pageImages\*.*
+copy "%docgen%\template\html\res\*.*" dst\res\*.*
 
 goto exit
 

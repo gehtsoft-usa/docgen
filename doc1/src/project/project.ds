@@ -4,8 +4,8 @@
     @ingroup=index
     @key=projectFile
 
-    There are two kind of the project files 
-    you need to create in order to successfully 
+    There are two kind of the project files
+    you need to create in order to successfully
     compile a documentation project:
 
     1) A msbuild project file that calls all required actions
@@ -61,10 +61,10 @@
         @example
             @show=yes
             @title=Project file example
-            @highlight=xml
             @tabs=yes
             @tab
                 @title=Without namespace prefix
+                @highlight=xml
                 ```
                 <?xml version="1.0" encoding="utf-8"?>
                  <help-project xmlns="http://www.gehtsoft.com/docgen/project">
@@ -74,6 +74,7 @@
                 @end
             @tab
                 @title=With namespace prefix
+                @highlight=xml
                 ```
                 <?xml version="1.0" encoding="utf-8"?>
                  <dg:help-project xmlns:dg="http://www.gehtsoft.com/docgen/project">
@@ -436,7 +437,7 @@
             assemblies content.
 
             You can use [clink=cs2dsTemplate]cs2ds[/clink] template
-            to create the documentation from this file. 
+            to create the documentation from this file.
         @end
     @end
 @end

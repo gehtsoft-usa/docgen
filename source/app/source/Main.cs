@@ -14,6 +14,10 @@ namespace GehtSoft.DocCreator
     {
         public static void Main(string[] args)
         {
+#if NETCOREAPP
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+#endif
+
             if (args.Length == 0)
             {
                 Console.WriteLine("usage: docgen project");

@@ -12,7 +12,7 @@
         <dg:define name="chm-file" value="..\Test.chm" />
         <dg:define name="advanced-web-content" value="yes" />
         <dg:define name="default-transform" value="yes" />
-        <!-- <dg:define name="add-signature-to-brief" value="yes" /> -->
+        <dg:define name="add-signature-to-brief" value="yes" />
     </dg:output>
 
     <dg:output template="%docgen%\template\null\null.xsl" file="model.xml" encoding="windows-1252" />

@@ -57,7 +57,8 @@
                             <xsl:attribute name="href">javascript: showdiv('close<xsl:value-of select="ext:get('g-example-serial')" />'); hidediv('open<xsl:value-of select="ext:get('g-example-serial')" />');</xsl:attribute>
                             <xsl:attribute name="onclick">javascript: showdiv('close<xsl:value-of select="ext:get('g-example-serial')" />'); hidediv('open<xsl:value-of select="ext:get('g-example-serial')" />');</xsl:attribute>
                             <xsl:attribute name="class">action</xsl:attribute>
-                            <xsl:text>show</xsl:text>
+                            <xsl:text>Show</xsl:text>
+                            <span class="side-icon dripicons-chevron-right"></span>
                         </xsl:element>
                     </xsl:element>
                 </xsl:element>
@@ -78,7 +79,8 @@
                             <xsl:attribute name="href">javascript: showdiv('open<xsl:value-of select="ext:get('g-example-serial')" />'); hidediv('close<xsl:value-of select="ext:get('g-example-serial')" />');</xsl:attribute>
                             <xsl:attribute name="onclick">javascript: showdiv('open<xsl:value-of select="ext:get('g-example-serial')" />'); hidediv('close<xsl:value-of select="ext:get('g-example-serial')" />');</xsl:attribute>
                             <xsl:attribute name="class">action</xsl:attribute>
-                            <xsl:text>hide</xsl:text>
+                            <xsl:text>Hide</xsl:text>
+                            <span class="side-icon dripicons-chevron-down"></span>
                         </xsl:element>
                     </xsl:element>
                     <xsl:call-template name="write-example-content" />
