@@ -77,7 +77,7 @@ a.actiontab {
   border-radius: 3px 3px 0 0;
 }
 
-pre, code {
+pre, code, code a {
     font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
     font-size: 12pt;
 }

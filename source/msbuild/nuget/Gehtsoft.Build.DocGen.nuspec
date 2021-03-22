@@ -2,12 +2,12 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Gehtsoft.Build.DocGen</id>
-        <version>0.1.12</version>
+        <version>0.1.14</version>
         <authors>Gehtsoft</authors>
-        <licenseUrl>http://asp.gehtsoftusa.com/doc/privatelicense.html</licenseUrl>
+        <license type="file">license.txt</license>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <releaseNotes>Fix by ref nullables, add support for c, code and para tags, add writing of signatures to method list, add saving detailed summary back to XML doc</releaseNotes>
-        <description>MSBuild task to compile Hime grammars</description>
+        <releaseNotes>Add support of readonly structures, add support of signatures in member list, modernize font and navigation tree</releaseNotes>
+        <description>MSBuild task to compile documentation sources</description>
     </metadata>
     <files>
         <file src="../build/Gehtsoft.Build.DocGen.props" target="build" />
@@ -25,6 +25,8 @@
         <file src=".\..\..\..\template\**\*.js" target="Content/template" />
         <file src=".\..\..\..\template\**\*.png" target="Content/template" />
         <file src=".\..\..\..\template\**\*.gif" target="Content/template" />
+        <file src=".\..\..\..\template\**\*.woff" target="Content/template" />
         <file src=".\..\..\asm2xml\bin\release\**\*.*" target="Content/asm2xml" />
+        <file src="license.txt" target="" />
     </files>
 </package>

@@ -88,5 +88,6 @@
                 <xsl:value-of select="ext:get('name')"/>
             </xsl:otherwise>
         </xsl:choose>
+        <xsl:if test="ext:get('type')/@array='true'">[]</xsl:if>
     </xsl:template>
 </xsl:stylesheet>

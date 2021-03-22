@@ -36,7 +36,8 @@
                 <p>
                 <xsl:element name="a"><xsl:attribute name="href"><xsl:value-of select="concat(../@key, '.', ./@key)" />.html</xsl:attribute><xsl:value-of select="./@name" disable-output-escaping="yes" /></xsl:element>
                 <xsl:if test="ext:get('write-signature') and count(./declaration) > 0">
-                (<xsl:value-of select="./declaration/@params" />)
+                <xsl:value-of select="ext:let('params',  ext:call('strip-bbcode.xsl', ext:parsebbcode(./declaration/@params)))" />
+                (<xsl:value-of select="ext:get('params')"  disable-output-escaping="yes" />)
                 </xsl:if>
                 </p>
                 </td>

@@ -1,11 +1,15 @@
 ﻿<?xml version="1.0" ?>
 <dg:help-project xmlns:dg="http://www.gehtsoft.com/docgen/project">
+    <dg:common>
+        <dg:define name="simplified-text-syntax" value="yes" />
+    </dg:common>
+
     <dg:source>
         <dg:file name="src\index.ds" encoding="windows-1252" />
         <dg:folder name="src\raw" encoding="windows-1252" />
     </dg:source>
 
-    <dg:output template="%docgen%\template\html\main.xsl" file="dst/null-file" encoding="windows-1252" >
+    <dg:output template="%docgen%\template\html\main.xsl" file="dst/null-file" encoding="utf-8" >
         <dg:define name="text-language" value="en" />
         <dg:define name="hhp-language" value="0x409 English (United States)" />
         <dg:define name="help-title" value="Test Reference" />
@@ -13,9 +17,10 @@
         <dg:define name="advanced-web-content" value="yes" />
         <dg:define name="default-transform" value="yes" />
         <dg:define name="add-signature-to-brief" value="yes" />
+        <dg:define name="external-resources" value="yes" />
     </dg:output>
 
-    <dg:output template="%docgen%\template\null\null.xsl" file="model.xml" encoding="windows-1252" />
+    <dg:output template="%docgen%\template\null\null.xsl" file="model.xml" encoding="utf-8" />
 
     <dg:output template="%docgen%/template/xmldoc/main.xsl" file="xmldoc.xml" encoding="utf-8">
         <dg:define name="assembly" value="Asm2XmlTester" />

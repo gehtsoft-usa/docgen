@@ -48,6 +48,8 @@ namespace AssemblyToXml
         public TypeReferenceElement[] Parameters { get; set; }
         public bool ShouldSerializeParameters() => Parameters?.Length > 0;
 
+        [XmlAttribute(AttributeName = "array")]
+        public bool IsArray { get; set; }
 
         public TypeReferenceElement()
         {
@@ -57,9 +59,21 @@ namespace AssemblyToXml
         public TypeReferenceElement(TypeReference type)
         {
             Signature = Namer.GetTypeName(type);
+
+            if (type is ArrayType arrayType)
+            {
+                IsArray = true;
+                type = arrayType.ElementType;
+            }
+            else if (type.IsArray)
+            {
+                IsArray = true;
+                type = type.GetElementType();
+            }
+
             Name = GetName(type);
             Namespace = type.Namespace;
-
+            
             if (type.IsByReference)
             {
                 if (type is ByReferenceType byRefType)
@@ -71,24 +85,22 @@ namespace AssemblyToXml
                 Suffix = "*";
 
 
-            if (type.IsArray)
+            if (IsArray)
                 BaseSignature = Namer.GetTypeName(type.GetElementType());
 
             if (type.IsGenericParameter)
                 Generic = "generic-parameter";
             else if (type is GenericInstanceType genericType)
             {
+                Generic = "true";
+                BaseSignature = Namer.GetTypeName(genericType.ElementType);
+                if (genericType.GenericArguments.Count > 0)
                 {
-                    Generic = "true";
-                    BaseSignature = Namer.GetTypeName(genericType.ElementType);
-                    if (genericType.GenericArguments.Count > 0)
-                    {
-                        var parameters = genericType.GenericArguments;
-                        Parameters = new TypeReferenceElement[parameters.Count];
-                        for (int i = 0; i < parameters.Count; i++)
-                            Parameters[i] = new TypeReferenceElement(parameters[i]);
+                    var parameters = genericType.GenericArguments;
+                    Parameters = new TypeReferenceElement[parameters.Count];
+                    for (int i = 0; i < parameters.Count; i++)
+                        Parameters[i] = new TypeReferenceElement(parameters[i]);
 
-                    }
                 }
             }
             else if (type.GenericParameters.Count > 0)

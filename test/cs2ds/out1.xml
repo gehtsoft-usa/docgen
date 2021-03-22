@@ -1,0 +1,1433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <namespaces>
+    <namespace>Gehtsoft.Measurements</namespace>
+  </namespaces>
+  <assemblies>
+    <assembly path="D:\develop\components\BusinessSpecificComponents\Gehtsoft.Measurements\Gehtsoft.Measurements\bin\Release\netstandard2.0\Gehtsoft.Measurements.dll" location="D:\develop\components\BusinessSpecificComponents\Gehtsoft.Measurements\Gehtsoft.Measurements\bin\Release\netstandard2.0" name="Gehtsoft.Measurements">
+      <type name="AccelerationUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AccelerationUnit" generic="false" type="enum" abstract="false">
+        <parents>
+          <type name="Enum" namespace="System" signature="T:System.Enum" generic="false" />
+        </parents>
+        <members>
+          <member name="Gal" signature="F:Gehtsoft.Measurements.AccelerationUnit.Gal" crc="8o5" member-type="field" member-scope="class" member-visibility="public" value="0">
+            <type name="AccelerationUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AccelerationUnit" generic="false" />
+          </member>
+          <member name="FeetPerSecondSquare" signature="F:Gehtsoft.Measurements.AccelerationUnit.FeetPerSecondSquare" crc="6IA" member-type="field" member-scope="class" member-visibility="public" value="1">
+            <type name="AccelerationUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AccelerationUnit" generic="false" />
+          </member>
+          <member name="MeterPerSecondSquare" signature="F:Gehtsoft.Measurements.AccelerationUnit.MeterPerSecondSquare" crc="MF" member-type="field" member-scope="class" member-visibility="public" value="2">
+            <type name="AccelerationUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AccelerationUnit" generic="false" />
+          </member>
+          <member name="EarthGravity" signature="F:Gehtsoft.Measurements.AccelerationUnit.EarthGravity" crc="FA4" member-type="field" member-scope="class" member-visibility="public" value="3">
+            <type name="AccelerationUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AccelerationUnit" generic="false" />
+          </member>
+        </members>
+      </type>
+      <type name="AngularUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AngularUnit" generic="false" type="enum" abstract="false">
+        <parents>
+          <type name="Enum" namespace="System" signature="T:System.Enum" generic="false" />
+        </parents>
+        <members>
+          <member name="Radian" signature="F:Gehtsoft.Measurements.AngularUnit.Radian" crc="Sn5" member-type="field" member-scope="class" member-visibility="public" value="0">
+            <type name="AngularUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AngularUnit" generic="false" />
+          </member>
+          <member name="Degree" signature="F:Gehtsoft.Measurements.AngularUnit.Degree" crc="VF3" member-type="field" member-scope="class" member-visibility="public" value="1">
+            <type name="AngularUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AngularUnit" generic="false" />
+          </member>
+          <member name="MOA" signature="F:Gehtsoft.Measurements.AngularUnit.MOA" crc="BxB" member-type="field" member-scope="class" member-visibility="public" value="2">
+            <type name="AngularUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AngularUnit" generic="false" />
+          </member>
+          <member name="Mil" signature="F:Gehtsoft.Measurements.AngularUnit.Mil" crc="6g" member-type="field" member-scope="class" member-visibility="public" value="3">
+            <type name="AngularUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AngularUnit" generic="false" />
+          </member>
+          <member name="MRad" signature="F:Gehtsoft.Measurements.AngularUnit.MRad" crc="VA4" member-type="field" member-scope="class" member-visibility="public" value="4">
+            <type name="AngularUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AngularUnit" generic="false" />
+          </member>
+          <member name="Thousand" signature="F:Gehtsoft.Measurements.AngularUnit.Thousand" crc="JP1" member-type="field" member-scope="class" member-visibility="public" value="5">
+            <type name="AngularUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AngularUnit" generic="false" />
+          </member>
+          <member name="InchesPer100Yards" signature="F:Gehtsoft.Measurements.AngularUnit.InchesPer100Yards" crc="wJ9" member-type="field" member-scope="class" member-visibility="public" value="6">
+            <type name="AngularUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AngularUnit" generic="false" />
+          </member>
+          <member name="CmPer100Meters" signature="F:Gehtsoft.Measurements.AngularUnit.CmPer100Meters" crc="UyA" member-type="field" member-scope="class" member-visibility="public" value="7">
+            <type name="AngularUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AngularUnit" generic="false" />
+          </member>
+          <member name="Percent" signature="F:Gehtsoft.Measurements.AngularUnit.Percent" crc="mp6" member-type="field" member-scope="class" member-visibility="public" value="8">
+            <type name="AngularUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AngularUnit" generic="false" />
+          </member>
+        </members>
+      </type>
+      <type name="AreaUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AreaUnit" generic="false" type="enum" abstract="false">
+        <parents>
+          <type name="Enum" namespace="System" signature="T:System.Enum" generic="false" />
+        </parents>
+        <members>
+          <member name="SquareMillimeter" signature="F:Gehtsoft.Measurements.AreaUnit.SquareMillimeter" crc="gK2" member-type="field" member-scope="class" member-visibility="public" value="0">
+            <type name="AreaUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AreaUnit" generic="false" />
+          </member>
+          <member name="SquareCentimeter" signature="F:Gehtsoft.Measurements.AreaUnit.SquareCentimeter" crc="rZ" member-type="field" member-scope="class" member-visibility="public" value="1">
+            <type name="AreaUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AreaUnit" generic="false" />
+          </member>
+          <member name="SquareMeter" signature="F:Gehtsoft.Measurements.AreaUnit.SquareMeter" crc="kI" member-type="field" member-scope="class" member-visibility="public" value="2">
+            <type name="AreaUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AreaUnit" generic="false" />
+          </member>
+          <member name="SquareKilometer" signature="F:Gehtsoft.Measurements.AreaUnit.SquareKilometer" crc="9WB" member-type="field" member-scope="class" member-visibility="public" value="3">
+            <type name="AreaUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AreaUnit" generic="false" />
+          </member>
+          <member name="SquareInch" signature="F:Gehtsoft.Measurements.AreaUnit.SquareInch" crc="v4G" member-type="field" member-scope="class" member-visibility="public" value="4">
+            <type name="AreaUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AreaUnit" generic="false" />
+          </member>
+          <member name="SquareFoot" signature="F:Gehtsoft.Measurements.AreaUnit.SquareFoot" crc="Ah1" member-type="field" member-scope="class" member-visibility="public" value="5">
+            <type name="AreaUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AreaUnit" generic="false" />
+          </member>
+          <member name="SquareYard" signature="F:Gehtsoft.Measurements.AreaUnit.SquareYard" crc="QB4" member-type="field" member-scope="class" member-visibility="public" value="6">
+            <type name="AreaUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AreaUnit" generic="false" />
+          </member>
+          <member name="SquareMile" signature="F:Gehtsoft.Measurements.AreaUnit.SquareMile" crc="oK4" member-type="field" member-scope="class" member-visibility="public" value="7">
+            <type name="AreaUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AreaUnit" generic="false" />
+          </member>
+          <member name="Acre" signature="F:Gehtsoft.Measurements.AreaUnit.Acre" crc="PW2" member-type="field" member-scope="class" member-visibility="public" value="8">
+            <type name="AreaUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AreaUnit" generic="false" />
+          </member>
+          <member name="Hectare" signature="F:Gehtsoft.Measurements.AreaUnit.Hectare" crc="TjG" member-type="field" member-scope="class" member-visibility="public" value="9">
+            <type name="AreaUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AreaUnit" generic="false" />
+          </member>
+        </members>
+      </type>
+      <type name="ConversionAttribute" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionAttribute" generic="false" type="class" abstract="false">
+        <parents>
+          <type name="Attribute" namespace="System" signature="T:System.Attribute" generic="false" />
+        </parents>
+        <members>
+          <member name="Operation" signature="P:Gehtsoft.Measurements.ConversionAttribute.Operation" crc="ko6" member-type="property" member-scope="instance">
+            <type name="ConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionOperation" generic="false" />
+            <getter name="get_Operation" signature="M:Gehtsoft.Measurements.ConversionAttribute.get_Operation" crc="7u7" member-type="method" member-scope="instance" member-visibility="public">
+              <type name="ConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionOperation" generic="false" />
+            </getter>
+            <setter name="set_Operation" signature="M:Gehtsoft.Measurements.ConversionAttribute.set_Operation(Gehtsoft.Measurements.ConversionOperation)" crc="hL2" member-type="method" member-scope="instance" member-visibility="public">
+              <type name="Void" namespace="System" signature="T:System.Void" generic="false" />
+              <parameters>
+                <parameter name="value" parameter-type="in">
+                  <type name="ConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionOperation" generic="false" />
+                </parameter>
+              </parameters>
+            </setter>
+          </member>
+          <member name="Factor" signature="P:Gehtsoft.Measurements.ConversionAttribute.Factor" crc="QR6" member-type="property" member-scope="instance">
+            <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+            <getter name="get_Factor" signature="M:Gehtsoft.Measurements.ConversionAttribute.get_Factor" crc="mV4" member-type="method" member-scope="instance" member-visibility="public">
+              <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+            </getter>
+            <setter name="set_Factor" signature="M:Gehtsoft.Measurements.ConversionAttribute.set_Factor(System.Double)" crc="53E" member-type="method" member-scope="instance" member-visibility="public">
+              <type name="Void" namespace="System" signature="T:System.Void" generic="false" />
+              <parameters>
+                <parameter name="value" parameter-type="in">
+                  <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+                </parameter>
+              </parameters>
+            </setter>
+          </member>
+          <member name="SecondOperation" signature="P:Gehtsoft.Measurements.ConversionAttribute.SecondOperation" crc="2P" member-type="property" member-scope="instance">
+            <type name="ConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionOperation" generic="false" />
+            <getter name="get_SecondOperation" signature="M:Gehtsoft.Measurements.ConversionAttribute.get_SecondOperation" crc="bn8" member-type="method" member-scope="instance" member-visibility="public">
+              <type name="ConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionOperation" generic="false" />
+            </getter>
+            <setter name="set_SecondOperation" signature="M:Gehtsoft.Measurements.ConversionAttribute.set_SecondOperation(Gehtsoft.Measurements.ConversionOperation)" crc="2z2" member-type="method" member-scope="instance" member-visibility="public">
+              <type name="Void" namespace="System" signature="T:System.Void" generic="false" />
+              <parameters>
+                <parameter name="value" parameter-type="in">
+                  <type name="ConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionOperation" generic="false" />
+                </parameter>
+              </parameters>
+            </setter>
+          </member>
+          <member name="SecondFactor" signature="P:Gehtsoft.Measurements.ConversionAttribute.SecondFactor" crc="BE3" member-type="property" member-scope="instance">
+            <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+            <getter name="get_SecondFactor" signature="M:Gehtsoft.Measurements.ConversionAttribute.get_SecondFactor" crc="u75" member-type="method" member-scope="instance" member-visibility="public">
+              <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+            </getter>
+            <setter name="set_SecondFactor" signature="M:Gehtsoft.Measurements.ConversionAttribute.set_SecondFactor(System.Double)" crc="VV2" member-type="method" member-scope="instance" member-visibility="public">
+              <type name="Void" namespace="System" signature="T:System.Void" generic="false" />
+              <parameters>
+                <parameter name="value" parameter-type="in">
+                  <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+                </parameter>
+              </parameters>
+            </setter>
+          </member>
+          <member name=".ctor" signature="M:Gehtsoft.Measurements.ConversionAttribute.#ctor(Gehtsoft.Measurements.ConversionOperation)" crc="qj6" member-type="constructor" member-scope="instance" member-visibility="public">
+            <type name="Void" namespace="System" signature="T:System.Void" generic="false" />
+            <parameters>
+              <parameter name="operation" parameter-type="in">
+                <type name="ConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionOperation" generic="false" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name=".ctor" signature="M:Gehtsoft.Measurements.ConversionAttribute.#ctor(Gehtsoft.Measurements.ConversionOperation,System.String)" crc="tdA" member-type="constructor" member-scope="instance" member-visibility="public">
+            <type name="Void" namespace="System" signature="T:System.Void" generic="false" />
+            <parameters>
+              <parameter name="operation" parameter-type="in">
+                <type name="ConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionOperation" generic="false" />
+              </parameter>
+              <parameter name="name" parameter-type="in">
+                <type name="String" namespace="System" signature="T:System.String" generic="false" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name=".ctor" signature="M:Gehtsoft.Measurements.ConversionAttribute.#ctor(Gehtsoft.Measurements.ConversionOperation,System.Double)" crc="9z1" member-type="constructor" member-scope="instance" member-visibility="public">
+            <type name="Void" namespace="System" signature="T:System.Void" generic="false" />
+            <parameters>
+              <parameter name="operation" parameter-type="in">
+                <type name="ConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionOperation" generic="false" />
+              </parameter>
+              <parameter name="factor" parameter-type="in">
+                <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name=".ctor" signature="M:Gehtsoft.Measurements.ConversionAttribute.#ctor(Gehtsoft.Measurements.ConversionOperation,System.Double,Gehtsoft.Measurements.ConversionOperation,System.Double)" crc="gDF" member-type="constructor" member-scope="instance" member-visibility="public">
+            <type name="Void" namespace="System" signature="T:System.Void" generic="false" />
+            <parameters>
+              <parameter name="operation" parameter-type="in">
+                <type name="ConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionOperation" generic="false" />
+              </parameter>
+              <parameter name="factor" parameter-type="in">
+                <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+              </parameter>
+              <parameter name="secondOperation" parameter-type="in">
+                <type name="ConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionOperation" generic="false" />
+              </parameter>
+              <parameter name="secondFactor" parameter-type="in">
+                <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+              </parameter>
+            </parameters>
+          </member>
+        </members>
+      </type>
+      <type name="ConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionOperation" generic="false" type="enum" abstract="false">
+        <parents>
+          <type name="Enum" namespace="System" signature="T:System.Enum" generic="false" />
+        </parents>
+        <members>
+          <member name="None" signature="F:Gehtsoft.Measurements.ConversionOperation.None" crc="0D6" member-type="field" member-scope="class" member-visibility="public" value="0">
+            <type name="ConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionOperation" generic="false" />
+          </member>
+          <member name="Base" signature="F:Gehtsoft.Measurements.ConversionOperation.Base" crc="l84" member-type="field" member-scope="class" member-visibility="public" value="1">
+            <type name="ConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionOperation" generic="false" />
+          </member>
+          <member name="Add" signature="F:Gehtsoft.Measurements.ConversionOperation.Add" crc="6pF" member-type="field" member-scope="class" member-visibility="public" value="2">
+            <type name="ConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionOperation" generic="false" />
+          </member>
+          <member name="Subtract" signature="F:Gehtsoft.Measurements.ConversionOperation.Subtract" crc="FG5" member-type="field" member-scope="class" member-visibility="public" value="3">
+            <type name="ConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionOperation" generic="false" />
+          </member>
+          <member name="SubtractFromFactor" signature="F:Gehtsoft.Measurements.ConversionOperation.SubtractFromFactor" crc="FR7" member-type="field" member-scope="class" member-visibility="public" value="4">
+            <type name="ConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionOperation" generic="false" />
+          </member>
+          <member name="Multiply" signature="F:Gehtsoft.Measurements.ConversionOperation.Multiply" crc="yR8" member-type="field" member-scope="class" member-visibility="public" value="5">
+            <type name="ConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionOperation" generic="false" />
+          </member>
+          <member name="Divide" signature="F:Gehtsoft.Measurements.ConversionOperation.Divide" crc="FW" member-type="field" member-scope="class" member-visibility="public" value="6">
+            <type name="ConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionOperation" generic="false" />
+          </member>
+          <member name="DivideFactor" signature="F:Gehtsoft.Measurements.ConversionOperation.DivideFactor" crc="qZC" member-type="field" member-scope="class" member-visibility="public" value="7">
+            <type name="ConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionOperation" generic="false" />
+          </member>
+          <member name="Negate" signature="F:Gehtsoft.Measurements.ConversionOperation.Negate" crc="7PC" member-type="field" member-scope="class" member-visibility="public" value="8">
+            <type name="ConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionOperation" generic="false" />
+          </member>
+          <member name="Atan" signature="F:Gehtsoft.Measurements.ConversionOperation.Atan" crc="Zu9" member-type="field" member-scope="class" member-visibility="public" value="9">
+            <type name="ConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionOperation" generic="false" />
+          </member>
+          <member name="Custom" signature="F:Gehtsoft.Measurements.ConversionOperation.Custom" crc="Ot3" member-type="field" member-scope="class" member-visibility="public" value="10">
+            <type name="ConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ConversionOperation" generic="false" />
+          </member>
+        </members>
+      </type>
+      <type name="DensityUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DensityUnit" generic="false" type="enum" abstract="false">
+        <parents>
+          <type name="Enum" namespace="System" signature="T:System.Enum" generic="false" />
+        </parents>
+        <members>
+          <member name="GramPerCubicCentimeter" signature="F:Gehtsoft.Measurements.DensityUnit.GramPerCubicCentimeter" crc="Xi8" member-type="field" member-scope="class" member-visibility="public" value="0">
+            <type name="DensityUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DensityUnit" generic="false" />
+          </member>
+          <member name="KilogramPerCubicMeter" signature="F:Gehtsoft.Measurements.DensityUnit.KilogramPerCubicMeter" crc="dPA" member-type="field" member-scope="class" member-visibility="public" value="1">
+            <type name="DensityUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DensityUnit" generic="false" />
+          </member>
+          <member name="PoundsPerCubicInch" signature="F:Gehtsoft.Measurements.DensityUnit.PoundsPerCubicInch" crc="Yr" member-type="field" member-scope="class" member-visibility="public" value="2">
+            <type name="DensityUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DensityUnit" generic="false" />
+          </member>
+          <member name="OuncesPerCubicFeet" signature="F:Gehtsoft.Measurements.DensityUnit.OuncesPerCubicFeet" crc="sA9" member-type="field" member-scope="class" member-visibility="public" value="3">
+            <type name="DensityUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DensityUnit" generic="false" />
+          </member>
+          <member name="PoundsPerCubicFoot" signature="F:Gehtsoft.Measurements.DensityUnit.PoundsPerCubicFoot" crc="JFF" member-type="field" member-scope="class" member-visibility="public" value="4">
+            <type name="DensityUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DensityUnit" generic="false" />
+          </member>
+        </members>
+      </type>
+      <type name="DistanceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DistanceUnit" generic="false" type="enum" abstract="false">
+        <parents>
+          <type name="Enum" namespace="System" signature="T:System.Enum" generic="false" />
+        </parents>
+        <members>
+          <member name="Line" signature="F:Gehtsoft.Measurements.DistanceUnit.Line" crc="qjB" member-type="field" member-scope="class" member-visibility="public" value="0">
+            <type name="DistanceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DistanceUnit" generic="false" />
+          </member>
+          <member name="RussianLine" signature="F:Gehtsoft.Measurements.DistanceUnit.RussianLine" crc="c2E" member-type="field" member-scope="class" member-visibility="public" value="1">
+            <type name="DistanceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DistanceUnit" generic="false" />
+          </member>
+          <member name="Inch" signature="F:Gehtsoft.Measurements.DistanceUnit.Inch" crc="vI" member-type="field" member-scope="class" member-visibility="public" value="2">
+            <type name="DistanceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DistanceUnit" generic="false" />
+          </member>
+          <member name="Foot" signature="F:Gehtsoft.Measurements.DistanceUnit.Foot" crc="ykF" member-type="field" member-scope="class" member-visibility="public" value="3">
+            <type name="DistanceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DistanceUnit" generic="false" />
+          </member>
+          <member name="Yard" signature="F:Gehtsoft.Measurements.DistanceUnit.Yard" crc="yWD" member-type="field" member-scope="class" member-visibility="public" value="4">
+            <type name="DistanceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DistanceUnit" generic="false" />
+          </member>
+          <member name="Mile" signature="F:Gehtsoft.Measurements.DistanceUnit.Mile" crc="K3C" member-type="field" member-scope="class" member-visibility="public" value="5">
+            <type name="DistanceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DistanceUnit" generic="false" />
+          </member>
+          <member name="NauticalMile" signature="F:Gehtsoft.Measurements.DistanceUnit.NauticalMile" crc="5k8" member-type="field" member-scope="class" member-visibility="public" value="6">
+            <type name="DistanceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DistanceUnit" generic="false" />
+          </member>
+          <member name="Millimeter" signature="F:Gehtsoft.Measurements.DistanceUnit.Millimeter" crc="8yA" member-type="field" member-scope="class" member-visibility="public" value="7">
+            <type name="DistanceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DistanceUnit" generic="false" />
+          </member>
+          <member name="Centimeter" signature="F:Gehtsoft.Measurements.DistanceUnit.Centimeter" crc="vW9" member-type="field" member-scope="class" member-visibility="public" value="8">
+            <type name="DistanceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DistanceUnit" generic="false" />
+          </member>
+          <member name="Meter" signature="F:Gehtsoft.Measurements.DistanceUnit.Meter" crc="kX8" member-type="field" member-scope="class" member-visibility="public" value="9">
+            <type name="DistanceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DistanceUnit" generic="false" />
+          </member>
+          <member name="Kilometer" signature="F:Gehtsoft.Measurements.DistanceUnit.Kilometer" crc="DXD" member-type="field" member-scope="class" member-visibility="public" value="10">
+            <type name="DistanceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DistanceUnit" generic="false" />
+          </member>
+        </members>
+      </type>
+      <type name="EnergyUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.EnergyUnit" generic="false" type="enum" abstract="false">
+        <parents>
+          <type name="Enum" namespace="System" signature="T:System.Enum" generic="false" />
+        </parents>
+        <members>
+          <member name="FootPound" signature="F:Gehtsoft.Measurements.EnergyUnit.FootPound" crc="A5G" member-type="field" member-scope="class" member-visibility="public" value="0">
+            <type name="EnergyUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.EnergyUnit" generic="false" />
+          </member>
+          <member name="Joule" signature="F:Gehtsoft.Measurements.EnergyUnit.Joule" crc="2y7" member-type="field" member-scope="class" member-visibility="public" value="1">
+            <type name="EnergyUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.EnergyUnit" generic="false" />
+          </member>
+          <member name="BTU" signature="F:Gehtsoft.Measurements.EnergyUnit.BTU" crc="PvG" member-type="field" member-scope="class" member-visibility="public" value="2">
+            <type name="EnergyUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.EnergyUnit" generic="false" />
+          </member>
+          <member name="HpH" signature="F:Gehtsoft.Measurements.EnergyUnit.HpH" crc="f89" member-type="field" member-scope="class" member-visibility="public" value="3">
+            <type name="EnergyUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.EnergyUnit" generic="false" />
+          </member>
+          <member name="Wh" signature="F:Gehtsoft.Measurements.EnergyUnit.Wh" crc="0CD" member-type="field" member-scope="class" member-visibility="public" value="4">
+            <type name="EnergyUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.EnergyUnit" generic="false" />
+          </member>
+          <member name="kWh" signature="F:Gehtsoft.Measurements.EnergyUnit.kWh" crc="4G1" member-type="field" member-scope="class" member-visibility="public" value="5">
+            <type name="EnergyUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.EnergyUnit" generic="false" />
+          </member>
+        </members>
+      </type>
+      <type name="ForceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ForceUnit" generic="false" type="enum" abstract="false">
+        <parents>
+          <type name="Enum" namespace="System" signature="T:System.Enum" generic="false" />
+        </parents>
+        <members>
+          <member name="Newton" signature="F:Gehtsoft.Measurements.ForceUnit.Newton" crc="LKB" member-type="field" member-scope="class" member-visibility="public" value="0">
+            <type name="ForceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ForceUnit" generic="false" />
+          </member>
+          <member name="Dyne" signature="F:Gehtsoft.Measurements.ForceUnit.Dyne" crc="Yq6" member-type="field" member-scope="class" member-visibility="public" value="1">
+            <type name="ForceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ForceUnit" generic="false" />
+          </member>
+          <member name="KilogramForce" signature="F:Gehtsoft.Measurements.ForceUnit.KilogramForce" crc="uzE" member-type="field" member-scope="class" member-visibility="public" value="2">
+            <type name="ForceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ForceUnit" generic="false" />
+          </member>
+          <member name="PoundForce" signature="F:Gehtsoft.Measurements.ForceUnit.PoundForce" crc="hu5" member-type="field" member-scope="class" member-visibility="public" value="3">
+            <type name="ForceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ForceUnit" generic="false" />
+          </member>
+          <member name="Poundal" signature="F:Gehtsoft.Measurements.ForceUnit.Poundal" crc="5nB" member-type="field" member-scope="class" member-visibility="public" value="4">
+            <type name="ForceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ForceUnit" generic="false" />
+          </member>
+        </members>
+      </type>
+      <type name="GasConsumptionUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.GasConsumptionUnit" generic="false" type="enum" abstract="false">
+        <parents>
+          <type name="Enum" namespace="System" signature="T:System.Enum" generic="false" />
+        </parents>
+        <members>
+          <member name="LiterPerKm" signature="F:Gehtsoft.Measurements.GasConsumptionUnit.LiterPerKm" crc="EUC" member-type="field" member-scope="class" member-visibility="public" value="0">
+            <type name="GasConsumptionUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.GasConsumptionUnit" generic="false" />
+          </member>
+          <member name="LiterPer100Km" signature="F:Gehtsoft.Measurements.GasConsumptionUnit.LiterPer100Km" crc="J7B" member-type="field" member-scope="class" member-visibility="public" value="1">
+            <type name="GasConsumptionUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.GasConsumptionUnit" generic="false" />
+          </member>
+          <member name="MilesPerGallon" signature="F:Gehtsoft.Measurements.GasConsumptionUnit.MilesPerGallon" crc="w38" member-type="field" member-scope="class" member-visibility="public" value="2">
+            <type name="GasConsumptionUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.GasConsumptionUnit" generic="false" />
+          </member>
+        </members>
+      </type>
+      <type name="ICustomConversionOperation" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.ICustomConversionOperation" generic="false" type="interface" abstract="true">
+        <members>
+          <member name="ToBase" signature="M:Gehtsoft.Measurements.ICustomConversionOperation.ToBase(System.Double)" crc="HmF" member-type="method" member-scope="instance" member-visibility="public">
+            <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+            <parameters>
+              <parameter name="value" parameter-type="in">
+                <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name="FromBase" signature="M:Gehtsoft.Measurements.ICustomConversionOperation.FromBase(System.Double)" crc="2L1" member-type="method" member-scope="instance" member-visibility="public">
+            <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+            <parameters>
+              <parameter name="value" parameter-type="in">
+                <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+              </parameter>
+            </parameters>
+          </member>
+        </members>
+      </type>
+      <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement`1" readonly="readonly" generic="definition" type="value" abstract="false">
+        <parameters>
+          <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+        </parameters>
+        <parents>
+          <type name="ValueType" namespace="System" signature="T:System.ValueType" generic="false" />
+          <type name="IEquatable" namespace="System" signature="T:System.IEquatable{Gehtsoft.Measurements.Measurement{`0}}" base-signature="T:System.IEquatable`1" generic="true">
+            <parameters>
+              <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                <parameters>
+                  <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                </parameters>
+              </type>
+            </parameters>
+          </type>
+          <type name="IComparable" namespace="System" signature="T:System.IComparable{Gehtsoft.Measurements.Measurement{`0}}" base-signature="T:System.IComparable`1" generic="true">
+            <parameters>
+              <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                <parameters>
+                  <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                </parameters>
+              </type>
+            </parameters>
+          </type>
+          <type name="IFormattable" namespace="System" signature="T:System.IFormattable" generic="false" />
+        </parents>
+        <members>
+          <member name="Value" signature="F:Gehtsoft.Measurements.Measurement`1.Value" crc="aN5" member-type="field" member-scope="instance" member-visibility="public" readonly="readonly">
+            <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+          </member>
+          <member name="Unit" signature="F:Gehtsoft.Measurements.Measurement`1.Unit" crc="MV1" member-type="field" member-scope="instance" member-visibility="public" readonly="readonly">
+            <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+          </member>
+          <member name="Text" signature="P:Gehtsoft.Measurements.Measurement`1.Text" crc="xQ3" member-type="property" member-scope="instance">
+            <type name="String" namespace="System" signature="T:System.String" generic="false" />
+            <getter name="get_Text" signature="M:Gehtsoft.Measurements.Measurement`1.get_Text" crc="gg4" member-type="method" member-scope="instance" member-visibility="public">
+              <type name="String" namespace="System" signature="T:System.String" generic="false" />
+            </getter>
+          </member>
+          <member name="BaseUnit" signature="P:Gehtsoft.Measurements.Measurement`1.BaseUnit" crc="jwE" member-type="property" member-scope="class">
+            <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+            <getter name="get_BaseUnit" signature="M:Gehtsoft.Measurements.Measurement`1.get_BaseUnit" crc="fCF" member-type="method" member-scope="class" member-visibility="public">
+              <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+            </getter>
+          </member>
+          <member name="ZERO" signature="P:Gehtsoft.Measurements.Measurement`1.ZERO" crc="5D1" member-type="property" member-scope="class">
+            <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+              <parameters>
+                <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+              </parameters>
+            </type>
+            <getter name="get_ZERO" signature="M:Gehtsoft.Measurements.Measurement`1.get_ZERO" crc="ou6" member-type="method" member-scope="class" member-visibility="public">
+              <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                <parameters>
+                  <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                </parameters>
+              </type>
+            </getter>
+          </member>
+          <member name=".ctor" signature="M:Gehtsoft.Measurements.Measurement`1.#ctor(System.Double,`0)" crc="MKC" member-type="constructor" member-scope="instance" member-visibility="public">
+            <type name="Void" namespace="System" signature="T:System.Void" generic="false" />
+            <parameters>
+              <parameter name="value" parameter-type="in">
+                <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+              </parameter>
+              <parameter name="unit" parameter-type="in">
+                <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name=".ctor" signature="M:Gehtsoft.Measurements.Measurement`1.#ctor(System.String)" crc="KR9" member-type="constructor" member-scope="instance" member-visibility="public">
+            <type name="Void" namespace="System" signature="T:System.Void" generic="false" />
+            <parameters>
+              <parameter name="text" parameter-type="in">
+                <type name="String" namespace="System" signature="T:System.String" generic="false" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name="ToString" signature="M:Gehtsoft.Measurements.Measurement`1.ToString" crc="Eh5" member-type="method" member-scope="instance" member-visibility="public">
+            <type name="String" namespace="System" signature="T:System.String" generic="false" />
+          </member>
+          <member name="ToString" signature="M:Gehtsoft.Measurements.Measurement`1.ToString(System.IFormatProvider)" crc="PS" member-type="method" member-scope="instance" member-visibility="public">
+            <type name="String" namespace="System" signature="T:System.String" generic="false" />
+            <parameters>
+              <parameter name="cultureInfo" parameter-type="in">
+                <type name="IFormatProvider" namespace="System" signature="T:System.IFormatProvider" generic="false" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name="In" signature="M:Gehtsoft.Measurements.Measurement`1.In(`0)" crc="dH2" member-type="method" member-scope="instance" member-visibility="public">
+            <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+            <parameters>
+              <parameter name="unit" parameter-type="in">
+                <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name="To" signature="M:Gehtsoft.Measurements.Measurement`1.To(`0)" crc="DhE" member-type="method" member-scope="instance" member-visibility="public">
+            <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+              <parameters>
+                <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+              </parameters>
+            </type>
+            <parameters>
+              <parameter name="unit" parameter-type="in">
+                <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name="Convert" signature="M:Gehtsoft.Measurements.Measurement`1.Convert(System.Double,`0,`0)" crc="us4" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+            <parameters>
+              <parameter name="value" parameter-type="in">
+                <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+              </parameter>
+              <parameter name="from" parameter-type="in">
+                <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+              </parameter>
+              <parameter name="to" parameter-type="in">
+                <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name="ToBase" signature="M:Gehtsoft.Measurements.Measurement`1.ToBase(System.Double,`0)" crc="Rq" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+            <parameters>
+              <parameter name="value" parameter-type="in">
+                <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+              </parameter>
+              <parameter name="unit" parameter-type="in">
+                <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name="FromBase" signature="M:Gehtsoft.Measurements.Measurement`1.FromBase(System.Double,`0)" crc="jNA" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+            <parameters>
+              <parameter name="value" parameter-type="in">
+                <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+              </parameter>
+              <parameter name="unit" parameter-type="in">
+                <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name="GetUnitNames" signature="M:Gehtsoft.Measurements.Measurement`1.GetUnitNames" crc="dm3" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Tuple" namespace="System" signature="T:System.Tuple`2[]" base-signature="T:System.Tuple`2" generic="false" />
+          </member>
+          <member name="GetUnitName" signature="M:Gehtsoft.Measurements.Measurement`1.GetUnitName(`0)" crc="5P2" member-type="method" member-scope="class" member-visibility="public">
+            <type name="String" namespace="System" signature="T:System.String" generic="false" />
+            <parameters>
+              <parameter name="unit" parameter-type="in">
+                <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name="GetUnitDefaultAccuracy" signature="M:Gehtsoft.Measurements.Measurement`1.GetUnitDefaultAccuracy(`0)" crc="RCA" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Int32" namespace="System" signature="T:System.Int32" generic="false" />
+            <parameters>
+              <parameter name="unit" parameter-type="in">
+                <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name="ParseUnitName" signature="M:Gehtsoft.Measurements.Measurement`1.ParseUnitName(System.String)" crc="i91" member-type="method" member-scope="class" member-visibility="public">
+            <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+            <parameters>
+              <parameter name="name" parameter-type="in">
+                <type name="String" namespace="System" signature="T:System.String" generic="false" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name="TryParse" signature="M:Gehtsoft.Measurements.Measurement`1.TryParse(System.String,Gehtsoft.Measurements.Measurement{`0}@)" crc="D78" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Boolean" namespace="System" signature="T:System.Boolean" generic="false" />
+            <parameters>
+              <parameter name="text" parameter-type="in">
+                <type name="String" namespace="System" signature="T:System.String" generic="false" />
+              </parameter>
+              <parameter name="value" parameter-type="out">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" prefix="ref" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+            </parameters>
+          </member>
+          <member name="TryParse" signature="M:Gehtsoft.Measurements.Measurement`1.TryParse(System.Globalization.CultureInfo,System.String,Gehtsoft.Measurements.Measurement{`0}@)" crc="lX1" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Boolean" namespace="System" signature="T:System.Boolean" generic="false" />
+            <parameters>
+              <parameter name="cultureInfo" parameter-type="in">
+                <type name="CultureInfo" namespace="System.Globalization" signature="T:System.Globalization.CultureInfo" generic="false" />
+              </parameter>
+              <parameter name="text" parameter-type="in">
+                <type name="String" namespace="System" signature="T:System.String" generic="false" />
+              </parameter>
+              <parameter name="value" parameter-type="out">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" prefix="ref" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+            </parameters>
+          </member>
+          <member name="GetHashCode" signature="M:Gehtsoft.Measurements.Measurement`1.GetHashCode" crc="cMC" member-type="method" member-scope="instance" member-visibility="public">
+            <type name="Int32" namespace="System" signature="T:System.Int32" generic="false" />
+          </member>
+          <member name="Equals" signature="M:Gehtsoft.Measurements.Measurement`1.Equals(System.Object)" crc="t1" member-type="method" member-scope="instance" member-visibility="public">
+            <type name="Boolean" namespace="System" signature="T:System.Boolean" generic="false" />
+            <parameters>
+              <parameter name="obj" parameter-type="in">
+                <type name="Object" namespace="System" signature="T:System.Object" generic="false" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name="op_Equality" signature="M:Gehtsoft.Measurements.Measurement`1.op_Equality(Gehtsoft.Measurements.Measurement{`0},Gehtsoft.Measurements.Measurement{`0})" crc="ZnF" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Boolean" namespace="System" signature="T:System.Boolean" generic="false" />
+            <parameters>
+              <parameter name="v1" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+              <parameter name="v2" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+            </parameters>
+          </member>
+          <member name="op_Inequality" signature="M:Gehtsoft.Measurements.Measurement`1.op_Inequality(Gehtsoft.Measurements.Measurement{`0},Gehtsoft.Measurements.Measurement{`0})" crc="CrB" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Boolean" namespace="System" signature="T:System.Boolean" generic="false" />
+            <parameters>
+              <parameter name="v1" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+              <parameter name="v2" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+            </parameters>
+          </member>
+          <member name="op_GreaterThan" signature="M:Gehtsoft.Measurements.Measurement`1.op_GreaterThan(Gehtsoft.Measurements.Measurement{`0},Gehtsoft.Measurements.Measurement{`0})" crc="WK7" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Boolean" namespace="System" signature="T:System.Boolean" generic="false" />
+            <parameters>
+              <parameter name="v1" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+              <parameter name="v2" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+            </parameters>
+          </member>
+          <member name="op_LessThan" signature="M:Gehtsoft.Measurements.Measurement`1.op_LessThan(Gehtsoft.Measurements.Measurement{`0},Gehtsoft.Measurements.Measurement{`0})" crc="k5E" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Boolean" namespace="System" signature="T:System.Boolean" generic="false" />
+            <parameters>
+              <parameter name="v1" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+              <parameter name="v2" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+            </parameters>
+          </member>
+          <member name="op_GreaterThanOrEqual" signature="M:Gehtsoft.Measurements.Measurement`1.op_GreaterThanOrEqual(Gehtsoft.Measurements.Measurement{`0},Gehtsoft.Measurements.Measurement{`0})" crc="fy2" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Boolean" namespace="System" signature="T:System.Boolean" generic="false" />
+            <parameters>
+              <parameter name="v1" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+              <parameter name="v2" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+            </parameters>
+          </member>
+          <member name="op_LessThanOrEqual" signature="M:Gehtsoft.Measurements.Measurement`1.op_LessThanOrEqual(Gehtsoft.Measurements.Measurement{`0},Gehtsoft.Measurements.Measurement{`0})" crc="QVE" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Boolean" namespace="System" signature="T:System.Boolean" generic="false" />
+            <parameters>
+              <parameter name="v1" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+              <parameter name="v2" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+            </parameters>
+          </member>
+          <member name="op_UnaryNegation" signature="M:Gehtsoft.Measurements.Measurement`1.op_UnaryNegation(Gehtsoft.Measurements.Measurement{`0})" crc="bQ5" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+              <parameters>
+                <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+              </parameters>
+            </type>
+            <parameters>
+              <parameter name="v1" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+            </parameters>
+          </member>
+          <member name="op_Addition" signature="M:Gehtsoft.Measurements.Measurement`1.op_Addition(Gehtsoft.Measurements.Measurement{`0},Gehtsoft.Measurements.Measurement{`0})" crc="bd3" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+              <parameters>
+                <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+              </parameters>
+            </type>
+            <parameters>
+              <parameter name="v1" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+              <parameter name="v2" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+            </parameters>
+          </member>
+          <member name="op_Subtraction" signature="M:Gehtsoft.Measurements.Measurement`1.op_Subtraction(Gehtsoft.Measurements.Measurement{`0},Gehtsoft.Measurements.Measurement{`0})" crc="ZJE" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+              <parameters>
+                <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+              </parameters>
+            </type>
+            <parameters>
+              <parameter name="v1" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+              <parameter name="v2" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+            </parameters>
+          </member>
+          <member name="op_Multiply" signature="M:Gehtsoft.Measurements.Measurement`1.op_Multiply(Gehtsoft.Measurements.Measurement{`0},System.Double)" crc="4r1" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+              <parameters>
+                <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+              </parameters>
+            </type>
+            <parameters>
+              <parameter name="v1" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+              <parameter name="v2" parameter-type="in">
+                <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name="op_Multiply" signature="M:Gehtsoft.Measurements.Measurement`1.op_Multiply(System.Double,Gehtsoft.Measurements.Measurement{`0})" crc="W81" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+              <parameters>
+                <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+              </parameters>
+            </type>
+            <parameters>
+              <parameter name="v1" parameter-type="in">
+                <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+              </parameter>
+              <parameter name="v2" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+            </parameters>
+          </member>
+          <member name="op_Division" signature="M:Gehtsoft.Measurements.Measurement`1.op_Division(Gehtsoft.Measurements.Measurement{`0},System.Double)" crc="Lp2" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+              <parameters>
+                <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+              </parameters>
+            </type>
+            <parameters>
+              <parameter name="v1" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+              <parameter name="v2" parameter-type="in">
+                <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name="op_Division" signature="M:Gehtsoft.Measurements.Measurement`1.op_Division(Gehtsoft.Measurements.Measurement{`0},Gehtsoft.Measurements.Measurement{`0})" crc="Bp" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+            <parameters>
+              <parameter name="v1" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+              <parameter name="v2" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{`0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:`0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+            </parameters>
+          </member>
+        </members>
+      </type>
+      <type name="MeasurementMath" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.MeasurementMath" generic="false" type="class" abstract="true">
+        <parents>
+          <type name="Object" namespace="System" signature="T:System.Object" generic="false" />
+        </parents>
+        <members>
+          <member name="Sin" signature="M:Gehtsoft.Measurements.MeasurementMath.Sin(Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.AngularUnit})" crc="ay1" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+            <parameters>
+              <parameter name="value" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.AngularUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="AngularUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AngularUnit" generic="false" />
+                  </parameters>
+                </type>
+              </parameter>
+            </parameters>
+          </member>
+          <member name="Cos" signature="M:Gehtsoft.Measurements.MeasurementMath.Cos(Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.AngularUnit})" crc="rh7" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+            <parameters>
+              <parameter name="value" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.AngularUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="AngularUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AngularUnit" generic="false" />
+                  </parameters>
+                </type>
+              </parameter>
+            </parameters>
+          </member>
+          <member name="Tan" signature="M:Gehtsoft.Measurements.MeasurementMath.Tan(Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.AngularUnit})" crc="QQC" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+            <parameters>
+              <parameter name="value" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.AngularUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="AngularUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AngularUnit" generic="false" />
+                  </parameters>
+                </type>
+              </parameter>
+            </parameters>
+          </member>
+          <member name="Asin" signature="M:Gehtsoft.Measurements.MeasurementMath.Asin(System.Double)" crc="y5D" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.AngularUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+              <parameters>
+                <type name="AngularUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AngularUnit" generic="false" />
+              </parameters>
+            </type>
+            <parameters>
+              <parameter name="value" parameter-type="in">
+                <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name="Acos" signature="M:Gehtsoft.Measurements.MeasurementMath.Acos(System.Double)" crc="Lz8" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.AngularUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+              <parameters>
+                <type name="AngularUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AngularUnit" generic="false" />
+              </parameters>
+            </type>
+            <parameters>
+              <parameter name="value" parameter-type="in">
+                <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name="Atan" signature="M:Gehtsoft.Measurements.MeasurementMath.Atan(System.Double)" crc="E35" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.AngularUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+              <parameters>
+                <type name="AngularUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AngularUnit" generic="false" />
+              </parameters>
+            </type>
+            <parameters>
+              <parameter name="value" parameter-type="in">
+                <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name="Sqrt" signature="M:Gehtsoft.Measurements.MeasurementMath.Sqrt``1(Gehtsoft.Measurements.Measurement{``0})" crc="y6F" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{``0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+              <parameters>
+                <type name="T" namespace="" signature="T:``0" generic="generic-parameter" />
+              </parameters>
+            </type>
+            <parameters>
+              <parameter name="value" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{``0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:``0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+            </parameters>
+            <generic-parameters>
+              <type name="T" namespace="" signature="T:``0" generic="generic-parameter" />
+            </generic-parameters>
+          </member>
+          <member name="Pow" signature="M:Gehtsoft.Measurements.MeasurementMath.Pow``1(Gehtsoft.Measurements.Measurement{``0},System.Double)" crc="kwB" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{``0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+              <parameters>
+                <type name="T" namespace="" signature="T:``0" generic="generic-parameter" />
+              </parameters>
+            </type>
+            <parameters>
+              <parameter name="value" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{``0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:``0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+              <parameter name="exp" parameter-type="in">
+                <type name="Double" namespace="System" signature="T:System.Double" generic="false" />
+              </parameter>
+            </parameters>
+            <generic-parameters>
+              <type name="T" namespace="" signature="T:``0" generic="generic-parameter" />
+            </generic-parameters>
+          </member>
+          <member name="Abs" signature="M:Gehtsoft.Measurements.MeasurementMath.Abs``1(Gehtsoft.Measurements.Measurement{``0})" crc="7w9" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{``0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+              <parameters>
+                <type name="T" namespace="" signature="T:``0" generic="generic-parameter" />
+              </parameters>
+            </type>
+            <parameters>
+              <parameter name="value" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{``0}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="T" namespace="" signature="T:``0" generic="generic-parameter" />
+                  </parameters>
+                </type>
+              </parameter>
+            </parameters>
+            <generic-parameters>
+              <type name="T" namespace="" signature="T:``0" generic="generic-parameter" />
+            </generic-parameters>
+          </member>
+          <member name="Velocity" signature="M:Gehtsoft.Measurements.MeasurementMath.Velocity(Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.DistanceUnit},System.TimeSpan)" crc="CIA" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.VelocityUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+              <parameters>
+                <type name="VelocityUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VelocityUnit" generic="false" />
+              </parameters>
+            </type>
+            <parameters>
+              <parameter name="distance" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.DistanceUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="DistanceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DistanceUnit" generic="false" />
+                  </parameters>
+                </type>
+              </parameter>
+              <parameter name="time" parameter-type="in">
+                <type name="TimeSpan" namespace="System" signature="T:System.TimeSpan" generic="false" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name="Velocity" signature="M:Gehtsoft.Measurements.MeasurementMath.Velocity(Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.AccelerationUnit},System.TimeSpan)" crc="ac8" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.VelocityUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+              <parameters>
+                <type name="VelocityUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VelocityUnit" generic="false" />
+              </parameters>
+            </type>
+            <parameters>
+              <parameter name="acceleration" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.AccelerationUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="AccelerationUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AccelerationUnit" generic="false" />
+                  </parameters>
+                </type>
+              </parameter>
+              <parameter name="time" parameter-type="in">
+                <type name="TimeSpan" namespace="System" signature="T:System.TimeSpan" generic="false" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name="KineticEnergy" signature="M:Gehtsoft.Measurements.MeasurementMath.KineticEnergy(Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.WeightUnit},Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.VelocityUnit})" crc="NvA" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.EnergyUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+              <parameters>
+                <type name="EnergyUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.EnergyUnit" generic="false" />
+              </parameters>
+            </type>
+            <parameters>
+              <parameter name="weight" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.WeightUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="WeightUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.WeightUnit" generic="false" />
+                  </parameters>
+                </type>
+              </parameter>
+              <parameter name="velocity" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.VelocityUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="VelocityUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VelocityUnit" generic="false" />
+                  </parameters>
+                </type>
+              </parameter>
+            </parameters>
+          </member>
+          <member name="RectangleArea" signature="M:Gehtsoft.Measurements.MeasurementMath.RectangleArea(Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.DistanceUnit},Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.DistanceUnit})" crc="1T7" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.AreaUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+              <parameters>
+                <type name="AreaUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AreaUnit" generic="false" />
+              </parameters>
+            </type>
+            <parameters>
+              <parameter name="width" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.DistanceUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="DistanceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DistanceUnit" generic="false" />
+                  </parameters>
+                </type>
+              </parameter>
+              <parameter name="height" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.DistanceUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="DistanceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DistanceUnit" generic="false" />
+                  </parameters>
+                </type>
+              </parameter>
+            </parameters>
+          </member>
+          <member name="RecangularPrismVolume" signature="M:Gehtsoft.Measurements.MeasurementMath.RecangularPrismVolume(Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.AreaUnit},Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.DistanceUnit})" crc="4xD" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.VolumeUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+              <parameters>
+                <type name="VolumeUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VolumeUnit" generic="false" />
+              </parameters>
+            </type>
+            <parameters>
+              <parameter name="area" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.AreaUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="AreaUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AreaUnit" generic="false" />
+                  </parameters>
+                </type>
+              </parameter>
+              <parameter name="depth" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.DistanceUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="DistanceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DistanceUnit" generic="false" />
+                  </parameters>
+                </type>
+              </parameter>
+            </parameters>
+          </member>
+          <member name="Pressure" signature="M:Gehtsoft.Measurements.MeasurementMath.Pressure(Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.WeightUnit},Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.AreaUnit})" crc="PqE" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.PressureUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+              <parameters>
+                <type name="PressureUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.PressureUnit" generic="false" />
+              </parameters>
+            </type>
+            <parameters>
+              <parameter name="weight" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.WeightUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="WeightUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.WeightUnit" generic="false" />
+                  </parameters>
+                </type>
+              </parameter>
+              <parameter name="area" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.AreaUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="AreaUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AreaUnit" generic="false" />
+                  </parameters>
+                </type>
+              </parameter>
+            </parameters>
+          </member>
+          <member name="TravelTime" signature="M:Gehtsoft.Measurements.MeasurementMath.TravelTime(Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.DistanceUnit},Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.VelocityUnit})" crc="sY4" member-type="method" member-scope="class" member-visibility="public">
+            <type name="TimeSpan" namespace="System" signature="T:System.TimeSpan" generic="false" />
+            <parameters>
+              <parameter name="distance" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.DistanceUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="DistanceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DistanceUnit" generic="false" />
+                  </parameters>
+                </type>
+              </parameter>
+              <parameter name="velocity" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.VelocityUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="VelocityUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VelocityUnit" generic="false" />
+                  </parameters>
+                </type>
+              </parameter>
+            </parameters>
+          </member>
+          <member name="DistanceTraveled" signature="M:Gehtsoft.Measurements.MeasurementMath.DistanceTraveled(Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.VelocityUnit},System.TimeSpan)" crc="et" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.DistanceUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+              <parameters>
+                <type name="DistanceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DistanceUnit" generic="false" />
+              </parameters>
+            </type>
+            <parameters>
+              <parameter name="velocity" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.VelocityUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="VelocityUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VelocityUnit" generic="false" />
+                  </parameters>
+                </type>
+              </parameter>
+              <parameter name="travelTime" parameter-type="in">
+                <type name="TimeSpan" namespace="System" signature="T:System.TimeSpan" generic="false" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name="DistanceTraveled" signature="M:Gehtsoft.Measurements.MeasurementMath.DistanceTraveled(Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.AccelerationUnit},System.TimeSpan)" crc="8j8" member-type="method" member-scope="class" member-visibility="public">
+            <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.DistanceUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+              <parameters>
+                <type name="DistanceUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.DistanceUnit" generic="false" />
+              </parameters>
+            </type>
+            <parameters>
+              <parameter name="acceleration" parameter-type="in">
+                <type name="Measurement" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.Measurement{Gehtsoft.Measurements.AccelerationUnit}" base-signature="T:Gehtsoft.Measurements.Measurement`1" generic="true">
+                  <parameters>
+                    <type name="AccelerationUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.AccelerationUnit" generic="false" />
+                  </parameters>
+                </type>
+              </parameter>
+              <parameter name="travelTime" parameter-type="in">
+                <type name="TimeSpan" namespace="System" signature="T:System.TimeSpan" generic="false" />
+              </parameter>
+            </parameters>
+          </member>
+        </members>
+      </type>
+      <type name="PowerUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.PowerUnit" generic="false" type="enum" abstract="false">
+        <parents>
+          <type name="Enum" namespace="System" signature="T:System.Enum" generic="false" />
+        </parents>
+        <members>
+          <member name="Watt" signature="F:Gehtsoft.Measurements.PowerUnit.Watt" crc="vr1" member-type="field" member-scope="class" member-visibility="public" value="0">
+            <type name="PowerUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.PowerUnit" generic="false" />
+          </member>
+          <member name="MetricHoursePower" signature="F:Gehtsoft.Measurements.PowerUnit.MetricHoursePower" crc="UN5" member-type="field" member-scope="class" member-visibility="public" value="1">
+            <type name="PowerUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.PowerUnit" generic="false" />
+          </member>
+          <member name="MechanicalHoursePower" signature="F:Gehtsoft.Measurements.PowerUnit.MechanicalHoursePower" crc="34F" member-type="field" member-scope="class" member-visibility="public" value="2">
+            <type name="PowerUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.PowerUnit" generic="false" />
+          </member>
+          <member name="FootPound" signature="F:Gehtsoft.Measurements.PowerUnit.FootPound" crc="8z3" member-type="field" member-scope="class" member-visibility="public" value="3">
+            <type name="PowerUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.PowerUnit" generic="false" />
+          </member>
+        </members>
+      </type>
+      <type name="PressureUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.PressureUnit" generic="false" type="enum" abstract="false">
+        <parents>
+          <type name="Enum" namespace="System" signature="T:System.Enum" generic="false" />
+        </parents>
+        <members>
+          <member name="Pascal" signature="F:Gehtsoft.Measurements.PressureUnit.Pascal" crc="mc4" member-type="field" member-scope="class" member-visibility="public" value="0">
+            <type name="PressureUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.PressureUnit" generic="false" />
+          </member>
+          <member name="KiloPascal" signature="F:Gehtsoft.Measurements.PressureUnit.KiloPascal" crc="zDF" member-type="field" member-scope="class" member-visibility="public" value="1">
+            <type name="PressureUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.PressureUnit" generic="false" />
+          </member>
+          <member name="Bar" signature="F:Gehtsoft.Measurements.PressureUnit.Bar" crc="FU1" member-type="field" member-scope="class" member-visibility="public" value="2">
+            <type name="PressureUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.PressureUnit" generic="false" />
+          </member>
+          <member name="Atmosphere" signature="F:Gehtsoft.Measurements.PressureUnit.Atmosphere" crc="ZB" member-type="field" member-scope="class" member-visibility="public" value="3">
+            <type name="PressureUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.PressureUnit" generic="false" />
+          </member>
+          <member name="MillimetersOfMercury" signature="F:Gehtsoft.Measurements.PressureUnit.MillimetersOfMercury" crc="Sw2" member-type="field" member-scope="class" member-visibility="public" value="4">
+            <type name="PressureUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.PressureUnit" generic="false" />
+          </member>
+          <member name="InchesOfMercury" signature="F:Gehtsoft.Measurements.PressureUnit.InchesOfMercury" crc="DFB" member-type="field" member-scope="class" member-visibility="public" value="5">
+            <type name="PressureUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.PressureUnit" generic="false" />
+          </member>
+          <member name="PoundsPerSquareInch" signature="F:Gehtsoft.Measurements.PressureUnit.PoundsPerSquareInch" crc="r02" member-type="field" member-scope="class" member-visibility="public" value="6">
+            <type name="PressureUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.PressureUnit" generic="false" />
+          </member>
+        </members>
+      </type>
+      <type name="TemperatureUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.TemperatureUnit" generic="false" type="enum" abstract="false">
+        <parents>
+          <type name="Enum" namespace="System" signature="T:System.Enum" generic="false" />
+        </parents>
+        <members>
+          <member name="Fahrenheit" signature="F:Gehtsoft.Measurements.TemperatureUnit.Fahrenheit" crc="L05" member-type="field" member-scope="class" member-visibility="public" value="0">
+            <type name="TemperatureUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.TemperatureUnit" generic="false" />
+          </member>
+          <member name="Celsius" signature="F:Gehtsoft.Measurements.TemperatureUnit.Celsius" crc="5t9" member-type="field" member-scope="class" member-visibility="public" value="1">
+            <type name="TemperatureUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.TemperatureUnit" generic="false" />
+          </member>
+          <member name="Kelvin" signature="F:Gehtsoft.Measurements.TemperatureUnit.Kelvin" crc="ZeC" member-type="field" member-scope="class" member-visibility="public" value="2">
+            <type name="TemperatureUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.TemperatureUnit" generic="false" />
+          </member>
+          <member name="Rankin" signature="F:Gehtsoft.Measurements.TemperatureUnit.Rankin" crc="Vj" member-type="field" member-scope="class" member-visibility="public" value="3">
+            <type name="TemperatureUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.TemperatureUnit" generic="false" />
+          </member>
+        </members>
+      </type>
+      <type name="UnitAttribute" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.UnitAttribute" generic="false" type="class" abstract="false">
+        <parents>
+          <type name="Attribute" namespace="System" signature="T:System.Attribute" generic="false" />
+        </parents>
+        <members>
+          <member name="Name" signature="P:Gehtsoft.Measurements.UnitAttribute.Name" crc="X4F" member-type="property" member-scope="instance">
+            <type name="String" namespace="System" signature="T:System.String" generic="false" />
+            <getter name="get_Name" signature="M:Gehtsoft.Measurements.UnitAttribute.get_Name" crc="4z3" member-type="method" member-scope="instance" member-visibility="public">
+              <type name="String" namespace="System" signature="T:System.String" generic="false" />
+            </getter>
+            <setter name="set_Name" signature="M:Gehtsoft.Measurements.UnitAttribute.set_Name(System.String)" crc="Gd6" member-type="method" member-scope="instance" member-visibility="public">
+              <type name="Void" namespace="System" signature="T:System.Void" generic="false" />
+              <parameters>
+                <parameter name="value" parameter-type="in">
+                  <type name="String" namespace="System" signature="T:System.String" generic="false" />
+                </parameter>
+              </parameters>
+            </setter>
+          </member>
+          <member name="AlterantiveName" signature="P:Gehtsoft.Measurements.UnitAttribute.AlterantiveName" crc="5t6" member-type="property" member-scope="instance">
+            <type name="String" namespace="System" signature="T:System.String" generic="false" />
+            <getter name="get_AlterantiveName" signature="M:Gehtsoft.Measurements.UnitAttribute.get_AlterantiveName" crc="a8" member-type="method" member-scope="instance" member-visibility="public">
+              <type name="String" namespace="System" signature="T:System.String" generic="false" />
+            </getter>
+            <setter name="set_AlterantiveName" signature="M:Gehtsoft.Measurements.UnitAttribute.set_AlterantiveName(System.String)" crc="1h1" member-type="method" member-scope="instance" member-visibility="public">
+              <type name="Void" namespace="System" signature="T:System.Void" generic="false" />
+              <parameters>
+                <parameter name="value" parameter-type="in">
+                  <type name="String" namespace="System" signature="T:System.String" generic="false" />
+                </parameter>
+              </parameters>
+            </setter>
+          </member>
+          <member name="HasAlternativeName" signature="P:Gehtsoft.Measurements.UnitAttribute.HasAlternativeName" crc="wC1" member-type="property" member-scope="instance">
+            <type name="Boolean" namespace="System" signature="T:System.Boolean" generic="false" />
+            <getter name="get_HasAlternativeName" signature="M:Gehtsoft.Measurements.UnitAttribute.get_HasAlternativeName" crc="ow4" member-type="method" member-scope="instance" member-visibility="public">
+              <type name="Boolean" namespace="System" signature="T:System.Boolean" generic="false" />
+            </getter>
+          </member>
+          <member name="DefaultAccuracy" signature="P:Gehtsoft.Measurements.UnitAttribute.DefaultAccuracy" crc="1XE" member-type="property" member-scope="instance">
+            <type name="Int32" namespace="System" signature="T:System.Int32" generic="false" />
+            <getter name="get_DefaultAccuracy" signature="M:Gehtsoft.Measurements.UnitAttribute.get_DefaultAccuracy" crc="sjC" member-type="method" member-scope="instance" member-visibility="public">
+              <type name="Int32" namespace="System" signature="T:System.Int32" generic="false" />
+            </getter>
+            <setter name="set_DefaultAccuracy" signature="M:Gehtsoft.Measurements.UnitAttribute.set_DefaultAccuracy(System.Int32)" crc="xr3" member-type="method" member-scope="instance" member-visibility="public">
+              <type name="Void" namespace="System" signature="T:System.Void" generic="false" />
+              <parameters>
+                <parameter name="value" parameter-type="in">
+                  <type name="Int32" namespace="System" signature="T:System.Int32" generic="false" />
+                </parameter>
+              </parameters>
+            </setter>
+          </member>
+          <member name=".ctor" signature="M:Gehtsoft.Measurements.UnitAttribute.#ctor(System.String,System.Int32)" crc="psF" member-type="constructor" member-scope="instance" member-visibility="public">
+            <type name="Void" namespace="System" signature="T:System.Void" generic="false" />
+            <parameters>
+              <parameter name="name" parameter-type="in">
+                <type name="String" namespace="System" signature="T:System.String" generic="false" />
+              </parameter>
+              <parameter name="defaultAccuracy" parameter-type="in">
+                <type name="Int32" namespace="System" signature="T:System.Int32" generic="false" />
+              </parameter>
+            </parameters>
+          </member>
+          <member name=".ctor" signature="M:Gehtsoft.Measurements.UnitAttribute.#ctor(System.String,System.String,System.Int32)" crc="w34" member-type="constructor" member-scope="instance" member-visibility="public">
+            <type name="Void" namespace="System" signature="T:System.Void" generic="false" />
+            <parameters>
+              <parameter name="name" parameter-type="in">
+                <type name="String" namespace="System" signature="T:System.String" generic="false" />
+              </parameter>
+              <parameter name="alternativeName" parameter-type="in">
+                <type name="String" namespace="System" signature="T:System.String" generic="false" />
+              </parameter>
+              <parameter name="defaultAccuracy" parameter-type="in">
+                <type name="Int32" namespace="System" signature="T:System.Int32" generic="false" />
+              </parameter>
+            </parameters>
+          </member>
+        </members>
+      </type>
+      <type name="VelocityUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VelocityUnit" generic="false" type="enum" abstract="false">
+        <parents>
+          <type name="Enum" namespace="System" signature="T:System.Enum" generic="false" />
+        </parents>
+        <members>
+          <member name="MetersPerSecond" signature="F:Gehtsoft.Measurements.VelocityUnit.MetersPerSecond" crc="lXD" member-type="field" member-scope="class" member-visibility="public" value="0">
+            <type name="VelocityUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VelocityUnit" generic="false" />
+          </member>
+          <member name="KilometersPerHour" signature="F:Gehtsoft.Measurements.VelocityUnit.KilometersPerHour" crc="bk2" member-type="field" member-scope="class" member-visibility="public" value="1">
+            <type name="VelocityUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VelocityUnit" generic="false" />
+          </member>
+          <member name="FeetPerSecond" signature="F:Gehtsoft.Measurements.VelocityUnit.FeetPerSecond" crc="Y05" member-type="field" member-scope="class" member-visibility="public" value="2">
+            <type name="VelocityUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VelocityUnit" generic="false" />
+          </member>
+          <member name="MilesPerHour" signature="F:Gehtsoft.Measurements.VelocityUnit.MilesPerHour" crc="BzE" member-type="field" member-scope="class" member-visibility="public" value="3">
+            <type name="VelocityUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VelocityUnit" generic="false" />
+          </member>
+          <member name="Knot" signature="F:Gehtsoft.Measurements.VelocityUnit.Knot" crc="pzE" member-type="field" member-scope="class" member-visibility="public" value="4">
+            <type name="VelocityUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VelocityUnit" generic="false" />
+          </member>
+        </members>
+      </type>
+      <type name="VolumeUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VolumeUnit" generic="false" type="enum" abstract="false">
+        <parents>
+          <type name="Enum" namespace="System" signature="T:System.Enum" generic="false" />
+        </parents>
+        <members>
+          <member name="Milliliter" signature="F:Gehtsoft.Measurements.VolumeUnit.Milliliter" crc="016" member-type="field" member-scope="class" member-visibility="public" value="0">
+            <type name="VolumeUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VolumeUnit" generic="false" />
+          </member>
+          <member name="Liter" signature="F:Gehtsoft.Measurements.VolumeUnit.Liter" crc="uV4" member-type="field" member-scope="class" member-visibility="public" value="1">
+            <type name="VolumeUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VolumeUnit" generic="false" />
+          </member>
+          <member name="CubicMeter" signature="F:Gehtsoft.Measurements.VolumeUnit.CubicMeter" crc="6U4" member-type="field" member-scope="class" member-visibility="public" value="2">
+            <type name="VolumeUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VolumeUnit" generic="false" />
+          </member>
+          <member name="CubicInch" signature="F:Gehtsoft.Measurements.VolumeUnit.CubicInch" crc="lF7" member-type="field" member-scope="class" member-visibility="public" value="3">
+            <type name="VolumeUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VolumeUnit" generic="false" />
+          </member>
+          <member name="CubicFeet" signature="F:Gehtsoft.Measurements.VolumeUnit.CubicFeet" crc="Dh6" member-type="field" member-scope="class" member-visibility="public" value="4">
+            <type name="VolumeUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VolumeUnit" generic="false" />
+          </member>
+          <member name="CubicYard" signature="F:Gehtsoft.Measurements.VolumeUnit.CubicYard" crc="CsA" member-type="field" member-scope="class" member-visibility="public" value="5">
+            <type name="VolumeUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VolumeUnit" generic="false" />
+          </member>
+          <member name="ImperialPint" signature="F:Gehtsoft.Measurements.VolumeUnit.ImperialPint" crc="1GE" member-type="field" member-scope="class" member-visibility="public" value="6">
+            <type name="VolumeUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VolumeUnit" generic="false" />
+          </member>
+          <member name="ImperialQuart" signature="F:Gehtsoft.Measurements.VolumeUnit.ImperialQuart" crc="187" member-type="field" member-scope="class" member-visibility="public" value="7">
+            <type name="VolumeUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VolumeUnit" generic="false" />
+          </member>
+          <member name="ImperialGallon" signature="F:Gehtsoft.Measurements.VolumeUnit.ImperialGallon" crc="fU1" member-type="field" member-scope="class" member-visibility="public" value="8">
+            <type name="VolumeUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VolumeUnit" generic="false" />
+          </member>
+          <member name="Ounce" signature="F:Gehtsoft.Measurements.VolumeUnit.Ounce" crc="q4E" member-type="field" member-scope="class" member-visibility="public" value="9">
+            <type name="VolumeUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VolumeUnit" generic="false" />
+          </member>
+          <member name="Pint" signature="F:Gehtsoft.Measurements.VolumeUnit.Pint" crc="btD" member-type="field" member-scope="class" member-visibility="public" value="10">
+            <type name="VolumeUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VolumeUnit" generic="false" />
+          </member>
+          <member name="Quart" signature="F:Gehtsoft.Measurements.VolumeUnit.Quart" crc="ck2" member-type="field" member-scope="class" member-visibility="public" value="11">
+            <type name="VolumeUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VolumeUnit" generic="false" />
+          </member>
+          <member name="Gallon" signature="F:Gehtsoft.Measurements.VolumeUnit.Gallon" crc="VO3" member-type="field" member-scope="class" member-visibility="public" value="12">
+            <type name="VolumeUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.VolumeUnit" generic="false" />
+          </member>
+        </members>
+      </type>
+      <type name="WeightUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.WeightUnit" generic="false" type="enum" abstract="false">
+        <parents>
+          <type name="Enum" namespace="System" signature="T:System.Enum" generic="false" />
+        </parents>
+        <members>
+          <member name="Grain" signature="F:Gehtsoft.Measurements.WeightUnit.Grain" crc="jJ9" member-type="field" member-scope="class" member-visibility="public" value="0">
+            <type name="WeightUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.WeightUnit" generic="false" />
+          </member>
+          <member name="Ounce" signature="F:Gehtsoft.Measurements.WeightUnit.Ounce" crc="Xj4" member-type="field" member-scope="class" member-visibility="public" value="1">
+            <type name="WeightUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.WeightUnit" generic="false" />
+          </member>
+          <member name="Gram" signature="F:Gehtsoft.Measurements.WeightUnit.Gram" crc="pm5" member-type="field" member-scope="class" member-visibility="public" value="2">
+            <type name="WeightUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.WeightUnit" generic="false" />
+          </member>
+          <member name="Pound" signature="F:Gehtsoft.Measurements.WeightUnit.Pound" crc="e42" member-type="field" member-scope="class" member-visibility="public" value="3">
+            <type name="WeightUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.WeightUnit" generic="false" />
+          </member>
+          <member name="Kilogram" signature="F:Gehtsoft.Measurements.WeightUnit.Kilogram" crc="Mv4" member-type="field" member-scope="class" member-visibility="public" value="4">
+            <type name="WeightUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.WeightUnit" generic="false" />
+          </member>
+          <member name="Neuton" signature="F:Gehtsoft.Measurements.WeightUnit.Neuton" crc="rL4" member-type="field" member-scope="class" member-visibility="public" value="5">
+            <type name="WeightUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.WeightUnit" generic="false" />
+          </member>
+          <member name="Dram" signature="F:Gehtsoft.Measurements.WeightUnit.Dram" crc="dDF" member-type="field" member-scope="class" member-visibility="public" value="6">
+            <type name="WeightUnit" namespace="Gehtsoft.Measurements" signature="T:Gehtsoft.Measurements.WeightUnit" generic="false" />
+          </member>
+        </members>
+      </type>
+    </assembly>
+  </assemblies>
+</collection>

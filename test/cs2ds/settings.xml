@@ -1,8 +1,9 @@
 ﻿<settings>
-    <assembly name="Asm2XmlTester" xmldoc="..\..\..\Asm2XmlTester.xml" />
+    <assembly name="Gehtsoft.Measurements" xmldoc="..\..\doc.xml" />
     <!--<assembly name="Gehtsoft.EF.Db.SqlDb" skip="true" /> -->
 
-    <namespace name="Asm2XmlTester" group="index" />
+    <namespace name="Gehtsoft.Measurements" group="index" />
 
     <strip-namespace name="System" />
+    <strip-namespace name="Gehtsoft.Measurements" />
 </settings>
