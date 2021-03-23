@@ -115,6 +115,22 @@
         @end
         @row
             @col
+                `add-custom-script`
+            @end
+            @col
+                The relative file name or URL for a script to be added
+            @end
+        @end
+        @row
+            @col
+                `add-custom-style`
+            @end
+            @col
+                The relative file name or URL for a custom stylesheet to be added
+            @end
+        @end
+        @row
+            @col
                 `write-hhp`
             @end
             @col

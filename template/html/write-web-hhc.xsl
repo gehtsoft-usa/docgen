@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1252"?>
+﻿<?xml version="1.0" encoding="windows-1252"?>
 <xsl:stylesheet
     version="1.0"
     xmlns:ext="urn:gehtsoft-exslt"
@@ -10,25 +10,7 @@
 <html><head><title>Content</title>
     <xsl:value-of select="ext:call('write-css.xsl', /)" disable-output-escaping="yes" />
 </head>
-<script language="javascript" type="text/javascript">
-function getQueryParam(name) {
-<xsl:text disable-output-escaping="yes">
-<![CDATA[
-  var query = window.parent.location.search.substring(1);
-  var params = query.split("&");
-  for (var i = 0;i < params.length; i++) {
-    var pair = params[i].split("=");
-    if (pair[0] == name) {
-      return pair[1];
-    }
-  }
-  return null;
-}
-var src = getQueryParam('key') || 'index.html';
-top.docframe.location = src;
-]]>
-</xsl:text>
-</script>
+<script type="text/javascript" src="res/content1.js"></script>
 <body>
 <p><b><xsl:value-of select="ext:get('help-title')" /></b></p>
 <ul class="hhc">

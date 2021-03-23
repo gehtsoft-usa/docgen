@@ -1,5 +1,7 @@
-function initializeHighlighter() {
-    if (!window.location.href.indexOf('mk:') == 0) {
+function loadStarted() {
+    window.onload = loadCompleted;
+
+    if (highlighterEnabled && !window.location.href.indexOf('mk:') == 0) {
         var head = document.getElementsByTagName('head')[0];
 
         var script1 = document.createElement('script');
@@ -11,18 +13,21 @@ function initializeHighlighter() {
         script2.type = 'text/javascript';
         script2.src = './highlighter/highlight.cshtml.js';
         head.appendChild(script2);
-
-        window.onload=function() {
-            hljs.registerLanguage('cshtml-razor', window.hljsDefineCshtmlRazor);
-            x = document.querySelectorAll('pre code');
-            for (var i = 0; i < x.length; i++) {
-                if (x[i].hasAttribute('class')) {
-                    hljs.highlightBlock(x[i]);
-                }
-            }
-        };
     }
 }
+
+function loadCompleted() {
+    if (highlighterEnabled && !window.location.href.indexOf('mk:') == 0) {
+        hljs.registerLanguage('cshtml-razor', window.hljsDefineCshtmlRazor);
+        x = document.querySelectorAll('pre code');
+        for (var i = 0; i < x.length; i++) {
+            if (x[i].hasAttribute('class')) {
+                hljs.highlightBlock(x[i]);
+            }
+        }
+    }
+}
+
 
 function hidediv(divname) {
     document.getElementById(divname).style.display = 'none';

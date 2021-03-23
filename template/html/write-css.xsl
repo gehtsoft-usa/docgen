@@ -21,6 +21,12 @@
 </xsl:otherwise>
 </xsl:choose>
 <link rel="stylesheet" href="res/dripicons.css"></link>
+<xsl:if test="ext:exist('add-custom-style') ">
+    <xsl:element name="link">
+        <xsl:attribute name="rel">stylesheet</xsl:attribute>
+        <xsl:attribute name="href"><xsl:value-of select="ext:get('add-custom-style')" /></xsl:attribute>
+    </xsl:element>
+</xsl:if>
     </xsl:template>
 </xsl:stylesheet>
 
