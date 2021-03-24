@@ -1,7 +1,7 @@
 @group
     @title=Source
     @brief=The section described the documentation source
-    @ingroup=index
+    @ingroup=main
     @key=sources
 
     Read articles below to understand how to write a documentation using docgen markup language.
@@ -138,12 +138,12 @@
     @ingroup=sources
     @key=formattingTables
 
-    The docgen also partially supports using of 
-    MarkDown-style formatting. 
+    The docgen also partially supports using of
+    MarkDown-style formatting.
 
     Te enable markdown style formatting add
-    define with the name `simplified-text-syntax` to 
-    common section of the project file. 
+    define with the name `simplified-text-syntax` to
+    common section of the project file.
 
     #### Text formatting
 
@@ -152,7 +152,7 @@
     |`_[nil]_text_[nil]_`|Make text __italic__|
     |`^[nil]^text^[nil]^`|Make text ^^superscript^^|
     |`<[nil]http://link>`|This is a link <https://www.gehtsoftusa.com>|
-    
+
     To make the text `code` put it between back quotes [c]`[/c].
 
     #### Code Samples
@@ -163,7 +163,7 @@
 
     ```text
        [nil]```csharp
-        if (a > b) 
+        if (a > b)
             Console.WriteLine("A is bigger");
        [nil]```
     ```
@@ -171,7 +171,7 @@
     Will be displayed as:
 
     ```csharp
-        if (a > b) 
+        if (a > b)
             Console.WriteLine("A is bigger");
     ```
 
@@ -193,12 +193,12 @@
     ## Header Level 2
     ### Header Level 3
     #### Header Level 4
-    
+
     #### Simple lists
 
-    To make a simple list use `*`, `-` as the first character of the line. 
-    The list lines follows the same rule a paragraph - the next item starts after 
-    the empty line or with the next line starts with list character. 
+    To make a simple list use `*`, `-` as the first character of the line.
+    The list lines follows the same rule a paragraph - the next item starts after
+    the empty line or with the next line starts with list character.
 
     @table
         @width=100%
@@ -214,7 +214,7 @@
                         * Item 3
                           is a multi-line line
                         * Item 4
-                    ```    
+                    ```
                 @end
             @end
             @col
@@ -229,7 +229,7 @@
 
     #### Numbered Lists
 
-    The numbered lists similar to bullet list, the only difference is that 
+    The numbered lists similar to bullet list, the only difference is that
     the symbol `0` should be used in first item. The rest items may have
     either `0`, `*`, or `-`.
 
@@ -246,7 +246,7 @@
                         0 Item 2
                         * And this is numbered list too
                         * Item 4
-                    ```    
+                    ```
                 @end
             @end
             @col
@@ -261,7 +261,7 @@
     #### Tables
 
     To format the table use `|` character a column delimiter. Markdown
-    based tables cannot have values longer than 1 line. `|` character must 
+    based tables cannot have values longer than 1 line. `|` character must
     be the first character in the line.
 
     Example: `|cell1|cell2|cell3|`
@@ -281,8 +281,8 @@
 
     |cell1|cell2|cell3| >
 
-    To define the width of the column put size in percents after `|` character followed 
-    by `,`. 
+    To define the width of the column put size in percents after `|` character followed
+    by `,`.
 
     |50%,cell1|25%,cell2|25%,cell3| >
 
@@ -290,7 +290,7 @@
 
     |!50%,cell1|25%,cell2|25%,cell3| >
 
-    To add more lines put them right after the first line. You can 
+    To add more lines put them right after the first line. You can
     also use formatting inside the table
 
     @example

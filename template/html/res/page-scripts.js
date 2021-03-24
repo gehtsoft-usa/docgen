@@ -39,7 +39,7 @@ function showdiv(divname) {
 
 function syncList() {
     if(window.parent.frames[0]) {
-        window.parent.frames[0].selectItem(window.location.href);
+        window.parent.frames[0].selectItem(window.location.href, null);
     }
 }
 

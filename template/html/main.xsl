@@ -12,7 +12,7 @@
 <xsl:value-of select="ext:letglobal('g-declarations', ext:document('dictionary/declarations.xml'))" />
 <xsl:value-of select="ext:letglobal('g-help-index-root', ext:xmlcreate('help-index', 'root'))" />
 <xsl:value-of select="ext:let('content-node', ext:xmlcreate('help-content', 'root'))" />
-<xsl:value-of select="ext:let('group', /root/group[./@key='index'])" />
+<xsl:value-of select="ext:let('group', /root/group[./@is-root='true'])" />
 <!-- load localization strings -->
 <xsl:value-of select="ext:let('localization', ext:document('dictionary/translation.xml'))" />
 <xsl:value-of select="ext:let('default-language', ext:get('localization')/dictionary/@default-language)" />
@@ -41,16 +41,21 @@
     <xsl:value-of select="ext:letglobal(ext:get('loc-name'), ext:get('loc-value')) "/>
 </xsl:for-each>
 
-<xsl:value-of select="ext:call('write-group.xsl', /, 'index.html', ext:get('codepage')) " />
+<xsl:value-of select="ext:call('write-group.xsl', /, concat(ext:get('group')/@key, '.html'), ext:get('codepage')) " />
 <xsl:if test="ext:get('write-web', 'yes')='yes'">
     <xsl:value-of select="ext:call('write-web-content.xsl', /, 'web-content-main.html', ext:get('codepage')) " />
-    <xsl:value-of select="ext:call('write-web-main.xsl', /, 'web-content.html', ext:get('codepage')) " />
+    <xsl:value-of select="ext:let('web-content', ext:get('web-content-file-name', 'web-content'))" />
+    <xsl:value-of select="ext:call('write-web-main.xsl', /, concat(ext:get('web-content'), '.html'), ext:get('codepage')) " />
+    <xsl:if test="ext:get('web-content-file-name-backward-compatibility', 'no') = 'yes'">
+        <xsl:value-of select="ext:call('write-web-main.xsl', /, 'web-content.html', ext:get('codepage')) " />
+    </xsl:if>
 </xsl:if>
 <xsl:if test="ext:get('write-hhp', 'yes')='yes'">
     <xsl:value-of select="ext:call('write-hhc.xsl', ext:xmlgetdocument('help-content'), 'index.hhc', ext:get('codepage')) " />
     <xsl:value-of select="ext:call('write-hhk.xsl', ext:xmlgetdocument('help-index'), 'index.hhk', ext:get('codepage')) " />
     <xsl:value-of select="ext:call('write-hhp.xsl', /, 'project.hhp', ext:get('hhp-codepage', 'windows-1252')) " />
 </xsl:if>
+<xsl:value-of select="ext:call('write-script-settings.xsl', /, 'settings.js', ext:get('codepage')) " />
 <xsl:value-of select="ext:checkkeys()" />
     </xsl:template>
 </xsl:stylesheet>

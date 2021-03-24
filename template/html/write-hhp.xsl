@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1252"?>
+﻿<?xml version="1.0" encoding="windows-1252"?>
 <xsl:stylesheet
     version="1.0"
     xmlns:ext="urn:gehtsoft-exslt"
@@ -13,7 +13,7 @@ Compatibility=1.1 or later
 Compiled file=<xsl:value-of select="ext:get('chm-file')" />
 Contents file=index.hhc
 Create CHI file=Yes
-Default topic=index.html
+Default topic=<xsl:value-of select="ext:caller('group')/@key" />.html
 Display compile progress=No
 Full-text search=Yes
 Language=<xsl:value-of select="ext:get('hhp-language')" />

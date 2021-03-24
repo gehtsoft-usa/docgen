@@ -97,14 +97,7 @@
 
 <!-- back -->
 <p><center><xsl:element name="a"><xsl:attribute name="href"><xsl:value-of select="../@key" />.html</xsl:attribute><xsl:value-of select="ext:get('_string_back')" /></xsl:element></center></p>
-<xsl:choose>
-<xsl:when test="ext:exist('external-resources') and ext:get('external-resources') = 'yes'">
 <script language="javascript" type="text/javascript">syncList1('<xsl:value-of select="../@key" />');</script>
-</xsl:when>
-<xsl:otherwise>
-<script language="javascript" type="text/javascript">if(window.parent.frames[0]) window.parent.frames[0].selectItem(window.location.href, '<xsl:value-of select="../@key" />.html');</script>
-</xsl:otherwise>
-</xsl:choose>
 </xsl:template>
 </xsl:stylesheet>
 

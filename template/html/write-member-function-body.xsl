@@ -19,12 +19,8 @@
         <xsl:value-of select="ext:let('transform', ./@transform)" />
     </xsl:if>
 </xsl:for-each>
-<html>
-<head><title><xsl:value-of select="./@name" /></title>
-<xsl:value-of select="ext:call('write-scripts.xsl', /)" disable-output-escaping="yes" />
-<xsl:value-of select="ext:call('write-css.xsl', /)" disable-output-escaping="yes" />
-</head>
-<body>
+<xsl:value-of select="ext:let('p-title', ./@name)" />
+<xsl:value-of select="ext:call('write-html-prolog.xsl', /)" disable-output-escaping="yes" />
 <xsl:value-of select="ext:let('title', concat(' &lt;b&gt;', ./@name, '&lt;/b&gt;'))" />
 <h1><code><xsl:value-of select="ext:get('title')" disable-output-escaping="yes" /></code></h1>
         <xsl:value-of select="ext:let('curr-item', .)" />
@@ -32,8 +28,7 @@
         <xsl:value-of select="ext:let('help-index-keyword', ./@name)" />
         <xsl:value-of select="ext:let('help-index-name', ./@name)" />
         <xsl:value-of select="ext:call('write-member-body-common.xsl', /, ext:get('codepage'))" disable-output-escaping="yes" />
-</body>
-</html>
+<xsl:value-of select="ext:call('write-html-epilog.xsl', /)" disable-output-escaping="yes" />
     </xsl:template>
 </xsl:stylesheet>
 

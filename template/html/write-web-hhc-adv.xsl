@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="res/dripicons.css"></link>
 <link rel="stylesheet" href="res/content.css"></link>
 <script type="text/javascript" src="res/mktree.js"></script>
+<script type="text/javascript" src="settings.js"></script>
 <script type="text/javascript" src="res/content.js"></script>
 <script type="text/javascript" src="res/content1.js"></script>
 </head>

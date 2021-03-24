@@ -232,6 +232,7 @@ namespace GehtSoft.DocCreator.Parser
 
                                 if (line.Length > 0 && line[0] == '@')
                                 {
+                                    line = line.TrimEnd(TRIM);
                                     //process value
                                     string sValName;
                                     string sValue;

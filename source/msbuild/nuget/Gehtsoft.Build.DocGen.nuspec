@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Gehtsoft.Build.DocGen</id>
-        <version>0.1.14</version>
+        <version>0.1.16</version>
         <authors>Gehtsoft</authors>
         <license type="file">license.txt</license>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <releaseNotes>Add support of readonly structures, add support of signatures in member list, modernize font and navigation tree</releaseNotes>
+        <releaseNotes>Add html injection options, make default page name configurable</releaseNotes>
         <description>MSBuild task to compile documentation sources</description>
     </metadata>
     <files>

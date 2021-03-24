@@ -99,6 +99,19 @@
         @end
         @row
             @col
+                `add-signature-to-brief`
+            @end
+            @col
+                `yes` or `no`
+
+                The flag indicating whether the parameters needs to be added
+                to the name of the methods and to constructors in the member lists.
+                The option is useful for libraries with a lot of overrides. See also
+                [link=modelDS.class]`@class/@writeSignatures`[/link] property.
+            @end
+        @end
+        @row
+            @col
                 `external-resources`
             @end
             @col
@@ -166,6 +179,117 @@
             @end
         @end
     @end
+@end
+
+@article
+    @title=Adding Custom Content
+    @brief=The article describes how to add custom content/make minor customizations
+    @key=htmlCustomContent
+    @ingroup=htmlTemplate
+
+    #### Copying Content into Result
+
+    The easiest way to add custom content or customize the content is simply add images, html files into
+    output folder and then reference them from your content.
+
+    For example, all you need to add the icon the documentation is to put
+    `favicon.ico` file into the root of the compiled documentation.
+
+    #### Adding Custom Pages to Content Tree/Index
+
+    In order to add your HTML files into a content tree and index you should
+
+    1) Prepare content specification for a tree. It is a very simple format that has
+    a root tag `help-content` and one or more tags `node` organized into a tree.
+
+    A tag `node` shall have attribute `name` and may have attribute `local` that
+    points to the html file.
+
+    ```xml
+    <help-content>
+        <node name="Lua 5.1 Reference Manual" local="lua/lua_51_reference_manual.html">
+            <node name="1 - Introduction" local="lua/1.html"/>
+            <node name="2 - The Language" local="lua/2.html"/>
+            <node name="2.1 - Lexical Conventions" local="lua/2.1.html"/>
+            <node name="2.2 - Values and Types" local="lua/2.2.html">
+             <node name="2.2.1 - Coercion" local="lua/2.2.1.html" />
+            </node>
+        </node>
+        ...
+    </help-content>
+    ```
+
+    2) Prepare a content specification for an index.
+
+    The index is a plain list of `key` tags which has three obligatory attributes: `keyword`, `name` and `local`.
+
+    ```xml
+    <help-index>
+     <key keyword="Lua 5.1 Reference Manual" name="Lua 5.1 Reference Manual" local="lua/lua_51_reference_manual.html" />
+     <key keyword="Lua: 1 - Introduction" name="Lua: 1 - Introduction" local="lua/1.html" />
+     <key keyword="Lua: 2 - The Language" name="Lua: 2 - The Language" local="lua/2.html" />
+    </help-index>
+    ```
+
+    3) Choose a group that will be the parent node for the content and specify
+    the XML files using `@importhhc` (content) and `@importhhk` (keywords index)
+    attributes.
+
+
+    #### Customizing Styles
+
+    You can also take the standard styles from the HTML template
+    (if you use nuget, the template is located at
+     `%USERPROFILE%\.nuget\packages\gehtsoft.build.docgen\__docgen version__\Content\template\html\res`
+
+    You can modify these templates and then overwrite them in `res` folder inside of
+    the compiled documentation.
+
+    Don't forget set `external-resources` definition in the template properties to `yes` if you
+    want to override styles.
+
+    Alternatively you can override styles using `add-custom-style` option.
+
+    #### Customizing header and footer
+
+    You can add a piece of HTML to: `head` tag, right after `body` tag and right before closing `body` tag.
+
+    Use the following properties of the template `add-to-prolog-head`, `add-to-prolog-body` and
+    `add-to-epilog`. The values must be a file name, the content of the specified file
+    will be written into corresponding location of the HTML files for articles, groups, and members.
+
+    #### Customizing the frame container
+
+    You can add your own code to the header of the container page using
+    `add-to-container-prolog-head` property of the template or
+    replace a table cell (including `<td>` tag) that contains
+    the header text using `replace-container-prolog-title` property. Both property
+    points at a text file that contains a fragment of the HTML to be inserted.
+
+    #### Github Pages Default File
+
+    Default configuration of the html template has following settings:
+
+    - The root group has `index` key and so named `index.html`.
+    - The web content files has `web-content.html` name.
+
+    In some environments, e.g. in github pages, it is not possible to
+    change the default file. In such environments, the following course of
+    actions is suggested:
+
+    - Make the root group key other than `index`, e.g. `main`.
+    - Force the naming of the web content file to `index.html` using
+      `web-content-file-name` property of the HTML template (set only
+      file name, without extension!).
+    - If need to support old links directed to `web-content.html`
+      add property `web-content-file-name-backward-compatibility`
+      and set it to `yes`.
+
+
+
+    #### Customize Template
+
+    For the "heavy lifting" customization modify the the template and use your own custom template.
 @end
 
 @group

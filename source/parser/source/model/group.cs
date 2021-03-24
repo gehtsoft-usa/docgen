@@ -88,6 +88,10 @@ namespace GehtSoft.DocCreator.Parser
             XmlNode groupNode = doc.CreateNode(XmlNodeType.Element, "group", "");
             XmlAttribute attr;
 
+            attr = doc.CreateAttribute("is-root");
+            attr.Value = string.IsNullOrEmpty(msInGroup) ? "true" : "false";
+            groupNode.Attributes.Append(attr);
+
             attr = doc.CreateAttribute("title");
             attr.Value = msTitle;
             groupNode.Attributes.Append(attr);

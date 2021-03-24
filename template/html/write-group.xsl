@@ -28,15 +28,10 @@
 </xsl:for-each>
 <xsl:if test="./@import-hhc!=''"><xsl:value-of select="ext:call('copy-import.xsl', ext:document(./@import-hhc))" /></xsl:if>
 <xsl:if test="./@import-hhk!=''"><xsl:value-of select="ext:call('copy-import-keys.xsl', ext:document(./@import-hhk))" /></xsl:if>
-<html>
-<head>
-<title><xsl:value-of select="ext:removehtml(./@title)" /></title>
-<xsl:value-of select="ext:call('write-scripts.xsl', /)" disable-output-escaping="yes" />
-<xsl:value-of select="ext:call('write-css.xsl', /)" disable-output-escaping="yes" />
-</head>
+<xsl:value-of select="ext:let('p-title', ./@title)" />
+<xsl:value-of select="ext:call('write-html-prolog.xsl', /)" disable-output-escaping="yes" />
 <xsl:value-of select="ext:let('curr-group', ./@key)" />
 <!-- write title and brief (if group is not briefless) -->
-<body>
 <h1><xsl:choose>
     <xsl:when test="ext:get('transform')='yes'"><xsl:value-of select="ext:call('write-bbcode.xsl', ext:parsebbcode(./@title))" disable-output-escaping="yes"  /></xsl:when>
     <xsl:otherwise><xsl:value-of select="./@title" /></xsl:otherwise>
@@ -125,8 +120,7 @@
 
 <xsl:if test="ext:strcmp(./@in-group, '')!=0"><p><center><xsl:element name="a"><xsl:attribute name="href"><xsl:value-of select="./@in-group" />.html</xsl:attribute><xsl:value-of select="ext:get('_string_back')" /></xsl:element></center></p></xsl:if>
 <xsl:value-of select="ext:call('write-tail-scripts.xsl', /)" disable-output-escaping="yes" />
-</body>
-</html>
+<xsl:value-of select="ext:call('write-html-epilog.xsl', /)" disable-output-escaping="yes" />
     </xsl:template>
 </xsl:stylesheet>
 

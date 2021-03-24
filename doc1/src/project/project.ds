@@ -1,7 +1,7 @@
 @group
     @title=Documentation Project Files
     @brief=The section described the documentation project files
-    @ingroup=index
+    @ingroup=main
     @key=projectFile
 
     There are two kind of the project files

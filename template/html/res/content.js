@@ -11,6 +11,6 @@ function getQueryParam(name) {
 }
 
 addEvent(window, "load", convertTrees);
-var src = getQueryParam('key') || 'index.html';
+var src = getQueryParam('key') || maintopic + '.html';
 parent.docframe.location = src;
 

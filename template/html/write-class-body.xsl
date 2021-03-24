@@ -41,14 +41,8 @@
 </xsl:otherwise>
 </xsl:choose>
 
-
-<html>
-<head>
-    <title><xsl:value-of select="ext:escape(./@name)" disable-output-escaping="yes" /></title>
-    <xsl:value-of select="ext:call('write-scripts.xsl', /)" disable-output-escaping="yes" />
-    <xsl:value-of select="ext:call('write-css.xsl', /)" disable-output-escaping="yes" />
-</head>
-<body>
+<xsl:value-of select="ext:let('p-title', ext:escape(./@name))" />
+<xsl:value-of select="ext:call('write-html-prolog.xsl', /)" disable-output-escaping="yes" />
 <h1><code><xsl:value-of select="ext:caller('curr-item-type')" /><xsl:text xml:space="preserve"> </xsl:text><b><xsl:value-of select="ext:escape(./@decl-name)" disable-output-escaping="yes" /></b></code></h1>
 <!-- class parents -->
 <xsl:if test="count(./parent)>0">
@@ -109,8 +103,7 @@
 </xsl:for-each>
 <p><center><xsl:element name="a"><xsl:attribute name="href"><xsl:value-of select="./@in-group" />.html</xsl:attribute><xsl:value-of select="ext:get('_string_back')" /></xsl:element></center></p>
 <xsl:value-of select="ext:call('write-tail-scripts.xsl', /)" disable-output-escaping="yes" />
-</body>
-</html>
+<xsl:value-of select="ext:call('write-html-epilog.xsl', /)" disable-output-escaping="yes" />
     </xsl:template>
 </xsl:stylesheet>
 

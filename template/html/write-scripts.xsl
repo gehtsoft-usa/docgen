@@ -7,19 +7,18 @@
     <xsl:output method="html" />
     <xsl:namespace-alias stylesheet-prefix="ext" result-prefix="#default"/>
     <xsl:template match="/" >
-<script>
-    var highlighterEnabled = <xsl:choose><xsl:when test="ext:exist('enable-highlighter') and ext:get('enable-highlighter') = 'yes'">true</xsl:when><xsl:otherwise>false</xsl:otherwise></xsl:choose>;
-</script>
 <xsl:if test="ext:exist('enable-highlighter') and ext:get('enable-highlighter') = 'yes'">
     <script type="text/javascript" src="highlighter/highlight.pack.js" />
     <script type="text/javascript" src="highlighter/highlight.cshtml.js" />
 </xsl:if>
 <xsl:choose>
 <xsl:when test="ext:exist('external-resources') and ext:get('external-resources') = 'yes'">
+    <script type="text/javascript" src="settings.js" />
     <script type="text/javascript" src="res/page-scripts.js" />
 </xsl:when>
 <xsl:otherwise>
     <script type="text/javascript">
+       <xsl:value-of select="ext:call('write-script-settings.xsl', /)" />
        <xsl:value-of select="ext:readAllText('res/page-scripts.js')" disable-output-escaping="yes" />
     </script>
 </xsl:otherwise>

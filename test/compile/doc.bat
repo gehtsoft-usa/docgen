@@ -9,29 +9,12 @@ if not exist dst\pageImages mkdir dst\pageImages
 if not exist dst\res mkdir dst\res
 del dst\*.* /q /s >nul
 
-set docgenbin=..\..\source\app\bin\debug\net45
-
-"%docgenbin%\docgen.exe" project.xml
-
-if %errorlevel% == 0 goto make
-goto exit
-
-:make
+"%docgen%\bin\docgen.exe" project.xml
 
 copy img\*.png dst\img\*.*
 copy html\*.html dst\*.*
-copy "%docgen%\template\html\res\*.*" dst\res\*.*
-cd dst
-"%HTMLHelpDir%\hhc.exe" project.hhp
-cd ..
-copy "%docgen%\template\html\highlighter\*.*" dst\highlighter\*.*
-copy "%docgen%\template\html\menu\*.*" dst\menu\*.*
-copy "%docgen%\template\html\pageImages\*.*" dst\pageImages\*.*
-copy "%docgen%\template\html\res\*.*" dst\res\*.*
+copy "%docgen%\template\html\highlighter\*.*" dst\highlighter\*.* > nul
+copy "%docgen%\template\html\menu\*.*" dst\menu\*.* > nul
+copy "%docgen%\template\html\pageImages\*.*" dst\pageImages\*.* > nul
+copy "%docgen%\template\html\res\*.*" dst\res\*.* > nul
 
-goto exit
-
-:closechm
-del %temp%\hhtest.txt
-echo The chm file is opened. Close it before compiling
-goto exit

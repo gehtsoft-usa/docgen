@@ -15,6 +15,6 @@ function getQueryParam(name)
   return null;
 }
 
-var src = getHash() || getQueryParam('key') || 'index.html';
+var src = getHash() || getQueryParam('key') || maintopic + '.html';
 var iframe = document.getElementById("webcontent");
 iframe.src = "web-content-main.html?key=" + src;

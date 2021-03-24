@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1252"?>
+﻿<?xml version="1.0" encoding="windows-1252"?>
 <xsl:stylesheet
     version="1.0"
     xmlns:ext="urn:gehtsoft-exslt"
@@ -11,7 +11,10 @@
     <xsl:value-of select="ext:call('write-css.xsl', /)" disable-output-escaping="yes" />
 <frameset cols="30%, *" border="1" frameborder="no" framespacing="4" >
     <frame src="web-hhc.html" />
-    <frame src="index.html" name="docframe" />
+    <xsl:element name="frame">
+        <xsl:attribute name="src"><xsl:value-of select="ext:caller('group')/@key"/>.html</xsl:attribute>
+        <xsl:attribute name="name">docframe</xsl:attribute>
+    </xsl:element>
 </frameset>
 </html>
 <xsl:choose>

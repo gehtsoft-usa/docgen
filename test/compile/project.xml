@@ -9,7 +9,7 @@
         <dg:folder name="src\raw" encoding="utf-8" />
     </dg:source>
 
-    <dg:output template="%docgen%\template\html\main.xsl" file="dst/null-file" encoding="windows-1252" >
+    <dg:output template="%docgen%\template\html\main.xsl" file="dst/null-file" encoding="utf-8" >
         <dg:define name="text-language" value="en" />
         <dg:define name="hhp-language" value="0x409 English (United States)" />
         <dg:define name="help-title" value="WebApp API Reference" />
@@ -18,6 +18,13 @@
         <dg:define name="default-transform" value="yes" />
         <dg:define name="enable-highlighter" value="yes" />
         <dg:define name="external-resources" value="yes" />
+
+        <dg:define name="add-to-prolog-head" value="src/html/prolog-header.html" />
+        <dg:define name="add-to-prolog-body" value="src/html/prolog-body.html" />
+        <dg:define name="add-to-epilog" value="src/html/epilog.html" />
+
+        <dg:define name="add-to-container-prolog-head" value="src/html/container-head.html" />
+        <dg:define name="replace-container-prolog-title" value="src/html/container-title.html" />
     </dg:output>
 </dg:help-project>
 

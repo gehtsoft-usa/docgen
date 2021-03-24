@@ -469,7 +469,7 @@
 
     @member
         @name=writeBase64
-        @brief=Writes the specified base64 string as a file
+        @brief=Writes the binary content of specified base64 string as a file
         @scope=class
         @type=function
 
@@ -544,10 +544,23 @@
             @return=string
         @end
     @end
+
+    @member
+        @name=readAllText
+        @brief=Reads the text from the file specified
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=fileName : string
+            @return=string
+        @end
+    @end
 @end
 
 @class
-    @name=Results of parsing call
+    @name=Results of RegExp parsing call
     @brief=The document returned by the parse function.
     @ingroup=authoringTemplates
     @key=parseDocument

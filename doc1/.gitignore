@@ -1,3 +1,4 @@
 obj/
 dst/
 prepare/model/out/
+model.xml
