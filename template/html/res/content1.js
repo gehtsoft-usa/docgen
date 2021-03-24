@@ -35,7 +35,7 @@ function selectLink(lnk) {
     selectedItem = lnk;
 }
 
-function selectItem(fid, tid) {
+function selectItem(fid, tid, title) {
     var id1 = getFileFromURL(fid);
     var id = null;
 
@@ -48,6 +48,7 @@ function selectItem(fid, tid) {
 
     expandToItem('hhc_tree', id);
     window.parent.parent.location.hash = id;
+    window.parent.parent.document.title = helptitle + ' : ' + title;
     var childs = document.getElementById(id).childNodes;
     for (var ci = 0; ci < childs.length; ci++) {
         if (childs[ci].nodeName == "A") {

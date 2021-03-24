@@ -39,12 +39,12 @@ function showdiv(divname) {
 
 function syncList() {
     if(window.parent.frames[0]) {
-        window.parent.frames[0].selectItem(window.location.href, null);
+        window.parent.frames[0].selectItem(window.location.href, null, document.title);
     }
 }
 
 function syncList1(key) {
     if(window.parent.frames[0]) {
-        window.parent.frames[0].selectItem(window.location.href, key + '.html');
+        window.parent.frames[0].selectItem(window.location.href, key + '.html', document.title);
     }
 }
