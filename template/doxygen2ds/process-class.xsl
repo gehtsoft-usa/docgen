@@ -92,6 +92,7 @@
         @name=<xsl:value-of select="ext:get('member-name')" />
         @divisor=.
         @brief=
+        @key=<xsl:value-of select="ext:get('member-name')" />.<xsl:value-of select="ext:methodkey(ext:get('sig'))" />
         @sig=<xsl:value-of select="ext:get('sig')" />
 
         @declaration

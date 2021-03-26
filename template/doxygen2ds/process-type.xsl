@@ -10,8 +10,16 @@
         <xsl:apply-templates />
     </xsl:template>
     <xsl:template match="ref" >
+        <xsl:value-of select="ext:remove('link-key')" />
+        <xsl:if test="ext:match('class.+', ./@refid)">
+            <xsl:value-of select="ext:let('file', concat(ext:get('xml-path'), ./@refid, '.xml'))" />
+            <xsl:if test="ext:fileexists(ext:get('file'))">
+                <xsl:value-of select="ext:let('reference', ext:document(ext:get('file')))" />
+                <xsl:value-of select="ext:let('link-key', ext:replace(ext:get('reference')/doxygen/compounddef/compoundname/text(), '::', '.')) "/>
+            </xsl:if>
+        </xsl:if>
         <xsl:choose>
-            <xsl:when test="ext:match('class.+', ./@refid)"><xsl:value-of select="ext:let('reference', ext:document(concat(ext:get('xml-path'), ./@refid, '.xml')))" />[link=<xsl:value-of select="ext:replace(ext:get('reference')/doxygen/compounddef/compoundname/text(), '::', '.')" />]<xsl:apply-templates />[/link]</xsl:when>
+            <xsl:when test="ext:exist('link-key')">[link=<xsl:value-of select="ext:get('link-key')" />]<xsl:apply-templates />[/link]</xsl:when>
             <xsl:otherwise>
         <xsl:apply-templates />
             </xsl:otherwise>

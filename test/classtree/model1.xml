@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <class name="AccelerationUnit" sig="T:Gehtsoft.Measurements.AccelerationUnit" key="Gehtsoft.Measurements.AccelerationUnit" brief="Acceleration" type="enum" prefix="" in-group="Gehtsoft.Measurements" decl-name="AccelerationUnit" sort="true" class-name-in-key="true" transform="def" members-to-content="false" write-signatures="def">
+    <member name="Gal" visibility="public" scope="class" brief="Gals or cm/s²" key="Gal.8o5" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AccelerationUnit" class-name="AccelerationUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="Gal" prefix="" suffix=" = 0" name-suffix="" return="[link=Gehtsoft.Measurements.AccelerationUnit]AccelerationUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AccelerationUnit.Gal</sig>
+    </member>
+    <member name="FeetPerSecondSquare" visibility="public" scope="class" brief="Feet per second in second" key="FeetPerSecondSquare.6IA" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AccelerationUnit" class-name="AccelerationUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="FeetPerSecondSquare" prefix="" suffix=" = 1" name-suffix="" return="[link=Gehtsoft.Measurements.AccelerationUnit]AccelerationUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AccelerationUnit.FeetPerSecondSquare</sig>
+    </member>
+    <member name="MeterPerSecondSquare" visibility="public" scope="class" brief="Meters per second in second" key="MeterPerSecondSquare.MF" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AccelerationUnit" class-name="AccelerationUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="MeterPerSecondSquare" prefix="" suffix=" = 2" name-suffix="" return="[link=Gehtsoft.Measurements.AccelerationUnit]AccelerationUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AccelerationUnit.MeterPerSecondSquare</sig>
+    </member>
+    <member name="EarthGravity" visibility="public" scope="class" brief="Earth gravity" key="EarthGravity.FA4" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AccelerationUnit" class-name="AccelerationUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="EarthGravity" prefix="" suffix=" = 3" name-suffix="" return="[link=Gehtsoft.Measurements.AccelerationUnit]AccelerationUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AccelerationUnit.EarthGravity</sig>
+    </member>
+    <parent>Enum</parent>
+  </class>
+  <class name="AngularUnit" sig="T:Gehtsoft.Measurements.AngularUnit" key="Gehtsoft.Measurements.AngularUnit" brief="Units for angular measurements" type="enum" prefix="" in-group="Gehtsoft.Measurements" decl-name="AngularUnit" sort="true" class-name-in-key="true" transform="def" members-to-content="false" write-signatures="def">
+    <member name="EarthGravity" visibility="public" scope="class" brief="Earth gravity" key="EarthGravity.FA4" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AccelerationUnit" class-name="AccelerationUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="EarthGravity" prefix="" suffix=" = 3" name-suffix="" return="[link=Gehtsoft.Measurements.AccelerationUnit]AccelerationUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AccelerationUnit.EarthGravity</sig>
+    </member>
+    <parent>Enum</parent>
+    <member name="Radian" visibility="public" scope="class" brief="Radians (2π radians per full circle)" key="Radian.Sn5" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AngularUnit" class-name="AngularUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="Radian" prefix="" suffix=" = 0" name-suffix="" return="[link=Gehtsoft.Measurements.AngularUnit]AngularUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AngularUnit.Radian</sig>
+    </member>
+    <member name="Degree" visibility="public" scope="class" brief="Degrees (360 degrees per full circle)" key="Degree.VF3" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AngularUnit" class-name="AngularUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="Degree" prefix="" suffix=" = 1" name-suffix="" return="[link=Gehtsoft.Measurements.AngularUnit]AngularUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AngularUnit.Degree</sig>
+    </member>
+    <member name="MOA" visibility="public" scope="class" brief="Minutes of angle (1/60 of a degree)" key="MOA.BxB" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AngularUnit" class-name="AngularUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="MOA" prefix="" suffix=" = 2" name-suffix="" return="[link=Gehtsoft.Measurements.AngularUnit]AngularUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AngularUnit.MOA</sig>
+    </member>
+    <member name="Mil" visibility="public" scope="class" brief="Military mil (1/6400 of a circle)" key="Mil.6g" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AngularUnit" class-name="AngularUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="Mil" prefix="" suffix=" = 3" name-suffix="" return="[link=Gehtsoft.Measurements.AngularUnit]AngularUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AngularUnit.Mil</sig>
+    </member>
+    <member name="MRad" visibility="public" scope="class" brief="Milliradian (1/1000 of a radian)" key="MRad.VA4" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AngularUnit" class-name="AngularUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="MRad" prefix="" suffix=" = 4" name-suffix="" return="[link=Gehtsoft.Measurements.AngularUnit]AngularUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AngularUnit.MRad</sig>
+    </member>
+    <member name="Thousand" visibility="public" scope="class" brief="A thousand (Soviet/Russian or Finish military unit, 1/3000 of a circle)" key="Thousand.JP1" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AngularUnit" class-name="AngularUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="Thousand" prefix="" suffix=" = 5" name-suffix="" return="[link=Gehtsoft.Measurements.AngularUnit]AngularUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AngularUnit.Thousand</sig>
+    </member>
+    <member name="InchesPer100Yards" visibility="public" scope="class" brief="Inches per 100 yards" key="InchesPer100Yards.wJ9" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AngularUnit" class-name="AngularUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="InchesPer100Yards" prefix="" suffix=" = 6" name-suffix="" return="[link=Gehtsoft.Measurements.AngularUnit]AngularUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AngularUnit.InchesPer100Yards</sig>
+    </member>
+    <member name="CmPer100Meters" visibility="public" scope="class" brief="Centimeters per 100 meters" key="CmPer100Meters.UyA" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AngularUnit" class-name="AngularUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="CmPer100Meters" prefix="" suffix=" = 7" name-suffix="" return="[link=Gehtsoft.Measurements.AngularUnit]AngularUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AngularUnit.CmPer100Meters</sig>
+    </member>
+    <member name="Percent" visibility="public" scope="class" brief="The incline measured in percents" key="Percent.mp6" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AngularUnit" class-name="AngularUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="Percent" prefix="" suffix=" = 8" name-suffix="" return="[link=Gehtsoft.Measurements.AngularUnit]AngularUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AngularUnit.Percent</sig>
+    </member>
+    <parent>Enum</parent>
+  </class>
+</root>

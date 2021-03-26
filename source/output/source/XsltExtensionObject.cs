@@ -551,5 +551,9 @@ namespace GehtSoft.DocCreator.Output
         public bool isnull(string name) => get(name) == null;
 
         public string escape(string toEscape) => WebUtility.HtmlEncode(toEscape);
+
+        public string methodkey(string signature) => Crc.GetCrc(signature);
+
+        public bool fileexists(string file) => File.Exists(file);
     }
 }

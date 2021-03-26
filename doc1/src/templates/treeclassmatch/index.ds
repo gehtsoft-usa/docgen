@@ -1,0 +1,103 @@
+@group
+    @title=TREECLASSMATCH template
+    @brief=The section describes the template that compares two classes set in different docgen models
+    @ingroup=templates
+    @key=treeclassmatch
+
+    The template is useful when the documentation is created using [link=cs2dsTemplate]C# to docgen[/link]
+    or [link=doxigen2dsTemplate]Doxygen to docgen[/link] to create the documentation skeleton which then
+    was modified by the documentation writer. When code changes the task to find which classes and methods
+    are added or removed or which signatures are changed may become challenging. This template allows to compare
+    the documentation source and auto-generated tree in order to find these situations.
+
+    Please not that this assembly does NOT use [link=modelXML]DocGen XML document[/link]
+    as a source. It opens and processes the document specified
+    in the template parameters. However, because it is still required to have
+    any DocGen XML document, you have to create a source file with an
+    empty index group, e.g. and specify it as a source for your
+    [link=docProjectFile]docgen project[/link].
+
+    To provide initial data for the template you should parse two sets of docgen source files and
+    save them using [clink=nullTemplate]nullTemplate[/clink] as XML files. You will need two
+    separate docgen projects to do that.
+
+    @example
+        @show=always
+        @gray=yes
+    !@group
+    !    @title=Index
+    !    @brief=
+    !    @key=main
+    !    @ingroup=
+    !@end
+    @end
+
+    The template is located at
+    `%docgen%/template/treeclassmatch/main.xsl`
+
+    ```xml
+    <dg:output template="%docgen%/template/treeclassmatch/main.xsl" file="comparison.xml" encoding="utf-8">
+    ```
+
+    The template has following parameters:
+
+    @table
+        @width=100%
+        @row
+            @header=yes
+            @col
+                @width=30%
+                Parameter
+            @end
+            @col
+                Description
+            @end
+        @end
+        @row
+            @col
+                `model1`
+            @end
+            @col
+                The first XML model to compare
+            @end
+        @end
+        @row
+            @col
+                `model2`
+            @end
+            @col
+                The second XML model to compare
+            @end
+        @end
+        @row
+            @col
+                `member-find-mode`
+            @end
+            @col
+                `name` or `key`.
+
+                The flag defines the method how the template finds the methods by the name or by the key.
+
+                If the documentation is build using newer templates (post 1.10 for C# and post 1.17 for C++ and Java)
+                the key for the member is build from the member signature and it is suggested to use the `key` option.
+
+                Earlier documentation may have key which does not depend on the member signature so `name` option
+                would be more efficient.
+            @end
+        @end
+        @row
+            @col
+                `compare-parameters`
+            @end
+            @col
+                `yes` or `no`.
+
+                If methods are found using `key`, the key itself already reflects the whole signature, so you don't have
+                to compare parameters separately. However, if the methods are found using `name` you may
+                want to use this option to detect the situation when the parameter set is changed.
+            @end
+        @end
+    @end
+
+    The template is introduced in docgen 0.1.17.
+@end

@@ -604,6 +604,42 @@
 
         The function introduced in docgen 0.1.17.
     @end
+
+    @member
+        @name=fileexists
+        @brief=Checks whether the file exists
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=file : string
+            @return=boolean
+        @end
+
+        The function introduced in docgen 0.1.17.
+    @end
+
+    @member
+        @name=methodkey
+        @brief=Generates a 3-character unique value for the specified string
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=text : string
+            @return=string
+        @end
+
+        The method is typically used to generate an unique suffix method key depending
+        on the method signature.
+
+        The returned value is a CRC32 of the text in UTF-8 encoding in base62
+        (upper and lower case plus numbers) encoding.
+
+        The function introduced in docgen 0.1.17.
+    @end
 @end
 
 @class

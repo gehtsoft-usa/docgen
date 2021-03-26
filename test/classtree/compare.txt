@@ -1,0 +1,5 @@
+﻿
+Class Gehtsoft.Measurements.AccelerationUnit exists in model1 but not in model2
+Member Gehtsoft.Measurements.AngularUnit.EarthGravity.FA4 exists in model1 but not in model2
+Member Gehtsoft.Measurements.AngularUnit.Ar.Py2 exists in model2 but not in model1
+Class Gehtsoft.Measurements.AreaUnit exists in model2 but not in model1

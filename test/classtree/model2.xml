@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <class name="AngularUnit" sig="T:Gehtsoft.Measurements.AngularUnit" key="Gehtsoft.Measurements.AngularUnit" brief="Units for angular measurements" type="enum" prefix="" in-group="Gehtsoft.Measurements" decl-name="AngularUnit" sort="true" class-name-in-key="true" transform="def" members-to-content="false" write-signatures="def">
+    <member name="Radian" visibility="public" scope="class" brief="Radians (2π radians per full circle)" key="Radian.Sn5" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AngularUnit" class-name="AngularUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="Radian" prefix="" suffix=" = 0" name-suffix="" return="[link=Gehtsoft.Measurements.AngularUnit]AngularUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AngularUnit.Radian</sig>
+    </member>
+    <member name="Degree" visibility="public" scope="class" brief="Degrees (360 degrees per full circle)" key="Degree.VF3" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AngularUnit" class-name="AngularUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="Degree" prefix="" suffix=" = 1" name-suffix="" return="[link=Gehtsoft.Measurements.AngularUnit]AngularUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AngularUnit.Degree</sig>
+    </member>
+    <member name="MOA" visibility="public" scope="class" brief="Minutes of angle (1/60 of a degree)" key="MOA.BxB" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AngularUnit" class-name="AngularUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="MOA" prefix="" suffix=" = 2" name-suffix="" return="[link=Gehtsoft.Measurements.AngularUnit]AngularUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AngularUnit.MOA</sig>
+    </member>
+    <member name="Mil" visibility="public" scope="class" brief="Military mil (1/6400 of a circle)" key="Mil.6g" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AngularUnit" class-name="AngularUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="Mil" prefix="" suffix=" = 3" name-suffix="" return="[link=Gehtsoft.Measurements.AngularUnit]AngularUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AngularUnit.Mil</sig>
+    </member>
+    <member name="MRad" visibility="public" scope="class" brief="Milliradian (1/1000 of a radian)" key="MRad.VA4" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AngularUnit" class-name="AngularUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="MRad" prefix="" suffix=" = 4" name-suffix="" return="[link=Gehtsoft.Measurements.AngularUnit]AngularUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AngularUnit.MRad</sig>
+    </member>
+    <member name="Thousand" visibility="public" scope="class" brief="A thousand (Soviet/Russian or Finish military unit, 1/3000 of a circle)" key="Thousand.JP1" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AngularUnit" class-name="AngularUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="Thousand" prefix="" suffix=" = 5" name-suffix="" return="[link=Gehtsoft.Measurements.AngularUnit]AngularUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AngularUnit.Thousand</sig>
+    </member>
+    <member name="InchesPer100Yards" visibility="public" scope="class" brief="Inches per 100 yards" key="InchesPer100Yards.wJ9" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AngularUnit" class-name="AngularUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="InchesPer100Yards" prefix="" suffix=" = 6" name-suffix="" return="[link=Gehtsoft.Measurements.AngularUnit]AngularUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AngularUnit.InchesPer100Yards</sig>
+    </member>
+    <member name="CmPer100Meters" visibility="public" scope="class" brief="Centimeters per 100 meters" key="CmPer100Meters.UyA" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AngularUnit" class-name="AngularUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="CmPer100Meters" prefix="" suffix=" = 7" name-suffix="" return="[link=Gehtsoft.Measurements.AngularUnit]AngularUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AngularUnit.CmPer100Meters</sig>
+    </member>
+    <member name="Percent" visibility="public" scope="class" brief="The incline measured in percents" key="Percent.mp6" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AngularUnit" class-name="AngularUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="Percent" prefix="" suffix=" = 8" name-suffix="" return="[link=Gehtsoft.Measurements.AngularUnit]AngularUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AngularUnit.Percent</sig>
+    </member>
+    <parent>Enum</parent>
+    <member name="Ar" visibility="public" scope="class" brief="Ar (1/100 of hectare, &quot;sotka&quot;)" key="Ar.Py2" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AreaUnit" class-name="AreaUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="Ar" prefix="" suffix=" = 10" name-suffix="" return="[link=Gehtsoft.Measurements.AreaUnit]AreaUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AreaUnit.Ar</sig>
+    </member>
+  </class>
+  <class name="AreaUnit" sig="T:Gehtsoft.Measurements.AreaUnit" key="Gehtsoft.Measurements.AreaUnit" brief="Units of volume" type="enum" prefix="" in-group="Gehtsoft.Measurements" decl-name="AreaUnit" sort="true" class-name-in-key="true" transform="def" members-to-content="false" write-signatures="def">
+    <member name="SquareMillimeter" visibility="public" scope="class" brief="Square millimeter" key="SquareMillimeter.gK2" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AreaUnit" class-name="AreaUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="SquareMillimeter" prefix="" suffix=" = 0" name-suffix="" return="[link=Gehtsoft.Measurements.AreaUnit]AreaUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AreaUnit.SquareMillimeter</sig>
+    </member>
+    <member name="SquareCentimeter" visibility="public" scope="class" brief="Square centimeter" key="SquareCentimeter.rZ" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AreaUnit" class-name="AreaUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="SquareCentimeter" prefix="" suffix=" = 1" name-suffix="" return="[link=Gehtsoft.Measurements.AreaUnit]AreaUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AreaUnit.SquareCentimeter</sig>
+    </member>
+    <member name="SquareMeter" visibility="public" scope="class" brief="Square meter" key="SquareMeter.kI" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AreaUnit" class-name="AreaUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="SquareMeter" prefix="" suffix=" = 2" name-suffix="" return="[link=Gehtsoft.Measurements.AreaUnit]AreaUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AreaUnit.SquareMeter</sig>
+    </member>
+    <member name="SquareKilometer" visibility="public" scope="class" brief="Square kilometer" key="SquareKilometer.9WB" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AreaUnit" class-name="AreaUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="SquareKilometer" prefix="" suffix=" = 3" name-suffix="" return="[link=Gehtsoft.Measurements.AreaUnit]AreaUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AreaUnit.SquareKilometer</sig>
+    </member>
+    <member name="SquareInch" visibility="public" scope="class" brief="Square inch" key="SquareInch.v4G" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AreaUnit" class-name="AreaUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="SquareInch" prefix="" suffix=" = 4" name-suffix="" return="[link=Gehtsoft.Measurements.AreaUnit]AreaUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AreaUnit.SquareInch</sig>
+    </member>
+    <member name="SquareFoot" visibility="public" scope="class" brief="Square foot" key="SquareFoot.Ah1" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AreaUnit" class-name="AreaUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="SquareFoot" prefix="" suffix=" = 5" name-suffix="" return="[link=Gehtsoft.Measurements.AreaUnit]AreaUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AreaUnit.SquareFoot</sig>
+    </member>
+    <member name="SquareYard" visibility="public" scope="class" brief="Square yard" key="SquareYard.QB4" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AreaUnit" class-name="AreaUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="SquareYard" prefix="" suffix=" = 6" name-suffix="" return="[link=Gehtsoft.Measurements.AreaUnit]AreaUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AreaUnit.SquareYard</sig>
+    </member>
+    <member name="SquareMile" visibility="public" scope="class" brief="Square mile" key="SquareMile.oK4" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AreaUnit" class-name="AreaUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="SquareMile" prefix="" suffix=" = 7" name-suffix="" return="[link=Gehtsoft.Measurements.AreaUnit]AreaUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AreaUnit.SquareMile</sig>
+    </member>
+    <member name="Acre" visibility="public" scope="class" brief="Acre" key="Acre.PW2" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AreaUnit" class-name="AreaUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="Acre" prefix="" suffix=" = 8" name-suffix="" return="[link=Gehtsoft.Measurements.AreaUnit]AreaUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AreaUnit.Acre</sig>
+    </member>
+    <member name="Hectare" visibility="public" scope="class" brief="Hectare" key="Hectare.TjG" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AreaUnit" class-name="AreaUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="Hectare" prefix="" suffix=" = 9" name-suffix="" return="[link=Gehtsoft.Measurements.AreaUnit]AreaUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AreaUnit.Hectare</sig>
+    </member>
+    <member name="Ar" visibility="public" scope="class" brief="Ar (1/100 of hectare, &quot;sotka&quot;)" key="Ar.Py2" type="field" transform="def" custom="" divisor="." class="Gehtsoft.Measurements.AreaUnit" class-name="AreaUnit" exclude-from-list="false">
+      <return />
+      <declaration language="cs" name="Ar" prefix="" suffix=" = 10" name-suffix="" return="[link=Gehtsoft.Measurements.AreaUnit]AreaUnit[/link]" params="" custom="" />
+      <sig>F:Gehtsoft.Measurements.AreaUnit.Ar</sig>
+    </member>
+    <parent>Enum</parent>
+  </class>
+</root>
