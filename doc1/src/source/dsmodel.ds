@@ -142,7 +142,7 @@
             [c]yes[/c], [c]no[/c], [c]def[/c]
 
             The flag indicating whether the signatures (aka name plus parameters)
-            of the methods will be added to the list of the 
+            of the methods will be added to the list of the
             methods and constructors in the class.
 
             The option is useful for classes with lot of overloads.
@@ -232,8 +232,12 @@
             A name of the definition to be set in the doc project file in order to include the object into the documentation. The value is optional. If no value is set, the object will be always included
         @end
 
-        The element may contain the following elements:
-        [clink=modelDS.example]example[/clink], [clink=modelDS.headline]headline[/clink], [clink=modelDS.list]list[/clink], [clink=modelDS.table]table[/clink]
+        @note
+            @type=warning
+            NOTE: The `example` tag must have the attribute `tabs` set to true
+            in order to use `tab` tag.
+        @end
+
 
     @end
 
@@ -273,7 +277,10 @@
             @name=tabs
             A flag indicating whether the example tag contains the text in its body or has one or more tab.
 
-   Please note that if tabs are enabled all the content must be in the tabs!
+            @note
+                @type=warning
+                NOTE: If tabs are enabled all the content must be in the tabs!
+            @end
         @end
 
         @param
@@ -613,6 +620,30 @@
         The element may contain the following elements:
         [clink=modelDS.col]col[/clink]
 
+    @end
+
+    @member
+        @type=property
+        @name=note
+        @brief=A note (highlighted piece of text)
+        @custom=xml-tag
+
+
+        @param
+            @name=type
+            The type of the note
+
+            Check for the template specification for
+            details on the list of the supported types.
+
+            For example `html` template supports
+            `note`, `warning` and `quote`.
+        @end
+
+        @param
+            @name=if
+            A name of the definition to be set in the doc project file in order to include the object into the documentation. The value is optional. If no value is set, the object will be always included
+        @end
     @end
 
 @end

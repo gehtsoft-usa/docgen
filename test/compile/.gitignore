@@ -1,0 +1,8 @@
+src/raw/
+dst/
+out.xml
+*.chi
+*.chm
+*.bak
+xmldoc.xml
+model.xml

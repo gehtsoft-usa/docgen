@@ -4,11 +4,11 @@ import { getProjectList } from './extension';
 
 var tagDictionary = [
     {context : null, options : ["class", "group", "article"] },
-    {context : "group", options : ["end", "see", "example", "table", "list", "header",
+    {context : "group", options : ["end", "see", "example", "table", "list", "header", "note",
                                    "key", "ingroup", "if", "transform", "title", "brief",
                                    "sortarticles", "sortclasses", "sortgroups", "importhhk", "importhhc", "order"
                                 ] },
-    {context : "article", options : ["end", "see", "example", "table", "list", "header",
+    {context : "article", options : ["end", "see", "example", "table", "list", "header", "note",
                                      "key", "ingroup", "if", "transform", "title", "brief",
                                      "aliasId", "excludeFromList"
                                     ] },
@@ -20,20 +20,21 @@ var tagDictionary = [
     {context : "example", options : ["end", "tab",
                                      "if", "title", "show", "tabs", "gray", "highlight"] },
     {context : "tab", options : ["end", "if", "title", "highlight"]},                                    
-    {context : "class", options : ["end", "see", "example", "table", "list", "param", "member", "header",
+    {context : "class", options : ["end", "see", "example", "table", "list", "param", "member", "header", "note",
                                    "key", "ingroup", "if", "transform", "name", "brief",
                                    "sig", "parent", "declname", "prefix", "type", "sort", "classnameinkey", 
                                    "import", "membersToContent", "writeSignatures"
                                 ] },
-    {context : "member", options : ["end", "see", "example", "table", "list", "param", "return", "exception", "declaration", "header",
+    {context : "member", options : ["end", "see", "example", "table", "list", "param", "return", "exception", "declaration", "header", "note",
                                     "if", "key", "name", "transform", "brief",
                                     "custom", "sig", "divisor", "index", "type", "visibility", "scope", "excludeFromList"
                                    ] },
-    {context : "param", options : ["end", "see", "example", "table", "list", "name"] },
+    {context : "param", options : ["end", "see", "example", "table", "list", "note", "name"] },
     {context : "exception", options : ["end", "see", "example", "table", "list", "name"] },
     {context : "return", options : ["end", "see", "example", "table", "list"] },
     {context : "declaration", options : ["end", "if", "language", "prefix", "name", "suffix", "namesuffix", "custom", "return", "params"] },
-    {context : "header", options : ["end", "level"]}
+    {context : "header", options : ["end", "level"]},
+    {context : "note", options : ["end", "type", "table", "list"]},
 ];
 
 var propertyDictionary = [
@@ -63,6 +64,7 @@ var propertyDictionary = [
     {tag : "list", property : "type", options : ["num", "dot"]},
     {tag : "row", property : "header", options : ["yes", "no"]},
     {tag : "col", property : "gray", options : ["yes", "no"]},
+    {tag : "note", property : "type", options : ["note", "quote", "warning"]},
 ]
 
 var bbCodes = ["b", "i", "u", "s", "c", "red", "green", "blue", "gray", "size", "color", "sup", "sub", "link", "clink", "url", "nil", "br", "eurl", "img"]

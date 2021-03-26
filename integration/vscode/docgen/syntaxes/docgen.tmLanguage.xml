@@ -4,13 +4,13 @@
 <!-- Generated via Iro -->
 <dict>
   <key>fileTypes</key>
-  <array>
+  <array> 
     <string>ds</string>
    </array>
   <key>name</key>
   <string>docsource</string>
   <key>patterns</key>
-  <array>
+  <array> 
     <dict>
       <key>include</key>
       <string>#main</string>
@@ -25,7 +25,7 @@
     <key>main</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>begin</key>
           <string>^(\s*)(@group)(\s*)$</string>
@@ -48,7 +48,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#main__1</string>
@@ -97,7 +97,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#main__2</string>
@@ -146,7 +146,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#main__3</string>
@@ -178,7 +178,7 @@
     <key>article</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>match</key>
           <string>^(\s*)(@aliasId)(\s*)(=)(\s*)(\S?.*)$</string>
@@ -308,7 +308,7 @@
     <key>briefprop</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>begin</key>
           <string>^(\s*)(@brief)(\s*)(=)</string>
@@ -336,7 +336,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#briefprop__1</string>
@@ -358,7 +358,7 @@
     <key>briefprop__1</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#text</string>
@@ -368,7 +368,7 @@
     <key>classbody</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#keyprop</string>
@@ -919,7 +919,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#classbody__1</string>
@@ -955,7 +955,7 @@
     <key>classbody__1</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#memberbody</string>
@@ -965,7 +965,7 @@
     <key>commoncontent</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>begin</key>
           <string>^(\s*)(@see)(\s*)$</string>
@@ -988,7 +988,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#commoncontent__1</string>
@@ -1037,7 +1037,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#commoncontent__2</string>
@@ -1086,10 +1086,59 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#commoncontent__3</string>
+            </dict>
+           </array>
+          <key>end</key>
+          <string>^(\s*)(@end)(\s*)$</string>
+          <key>endCaptures</key>
+          <dict>
+            <key>1</key>
+            <dict>
+              <key>name</key>
+              <string>text.docsource</string>
+            </dict>
+            <key>2</key>
+            <dict>
+              <key>name</key>
+              <string>keyword.docsource</string>
+            </dict>
+            <key>3</key>
+            <dict>
+              <key>name</key>
+              <string>text.docsource</string>
+            </dict>
+          </dict>
+        </dict>
+        <dict>
+          <key>begin</key>
+          <string>^(\s*)(@note)(\s*)$</string>
+          <key>beginCaptures</key>
+          <dict>
+            <key>1</key>
+            <dict>
+              <key>name</key>
+              <string>text.docsource</string>
+            </dict>
+            <key>2</key>
+            <dict>
+              <key>name</key>
+              <string>keyword.docsource</string>
+            </dict>
+            <key>3</key>
+            <dict>
+              <key>name</key>
+              <string>text.docsource</string>
+            </dict>
+          </dict>
+          <key>patterns</key>
+          <array> 
+            <dict>
+              <key>include</key>
+              <string>#commoncontent__4</string>
             </dict>
            </array>
           <key>end</key>
@@ -1135,10 +1184,10 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
-              <string>#commoncontent__4</string>
+              <string>#commoncontent__5</string>
             </dict>
            </array>
           <key>end</key>
@@ -1184,10 +1233,10 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
-              <string>#commoncontent__5</string>
+              <string>#commoncontent__6</string>
             </dict>
            </array>
           <key>end</key>
@@ -1220,7 +1269,7 @@
     <key>commoncontent__1</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#see</string>
@@ -1230,7 +1279,7 @@
     <key>commoncontent__2</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#list</string>
@@ -1240,7 +1289,7 @@
     <key>commoncontent__3</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#header</string>
@@ -1250,17 +1299,27 @@
     <key>commoncontent__4</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
-          <string>#table</string>
+          <string>#note</string>
         </dict>
        </array>
     </dict>
     <key>commoncontent__5</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
+        <dict>
+          <key>include</key>
+          <string>#table</string>
+        </dict>
+       </array>
+    </dict>
+    <key>commoncontent__6</key>
+    <dict>
+      <key>patterns</key>
+      <array> 
         <dict>
           <key>include</key>
           <string>#example</string>
@@ -1270,7 +1329,7 @@
     <key>commonprops</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#keyprop</string>
@@ -1300,7 +1359,7 @@
     <key>declaration</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>begin</key>
           <string>^(\s*)(@declaration)(\s*)$</string>
@@ -1323,7 +1382,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#declaration__1</string>
@@ -1355,7 +1414,7 @@
     <key>declaration__1</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#declarationbody</string>
@@ -1365,7 +1424,7 @@
     <key>declarationbody</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#ifprop</string>
@@ -1619,7 +1678,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#declarationbody__1</string>
@@ -1663,7 +1722,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#declarationbody__2</string>
@@ -1697,7 +1756,7 @@
     <key>declarationbody__1</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#text</string>
@@ -1707,7 +1766,7 @@
     <key>declarationbody__2</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#text</string>
@@ -1717,7 +1776,7 @@
     <key>example</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#ifprop</string>
@@ -1918,7 +1977,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#example__1</string>
@@ -1954,7 +2013,7 @@
     <key>example__1</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#tab</string>
@@ -1964,7 +2023,7 @@
     <key>exception</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>begin</key>
           <string>^(\s*)(@exception)(\s*)$</string>
@@ -1987,7 +2046,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#exception__1</string>
@@ -2019,7 +2078,7 @@
     <key>exception__1</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#exceptioncontent</string>
@@ -2029,7 +2088,7 @@
     <key>exceptioncontent</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#nameprop</string>
@@ -2043,7 +2102,7 @@
     <key>grayprop</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>match</key>
           <string>^(\s*)(@gray)(\s*)(=)(\s*)(yes|no)(\s*)$</string>
@@ -2128,7 +2187,7 @@
     <key>group</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>match</key>
           <string>^(\s*)(@sortarticles)(\s*)(=)(\s*)(yes|no)(\s*)$</string>
@@ -2532,7 +2591,7 @@
     <key>header</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>match</key>
           <string>^(\s*)(@level)(\s*)(=)(\s*)([0-6])(\s*)$</string>
@@ -2621,7 +2680,7 @@
     <key>highlighprop</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>match</key>
           <string>^(\s*)(@highlight)(\s*)(=)(\s*)(\S?.*)$</string>
@@ -2664,7 +2723,7 @@
     <key>ifprop</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>match</key>
           <string>^(\s*)(@if)(\s*)(=)(\s*)(\S?.*)$</string>
@@ -2707,7 +2766,7 @@
     <key>ingroupprop</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>match</key>
           <string>^(\s*)(@ingroup)(\s*)(=)(\s*)(\S?.*)$</string>
@@ -2750,7 +2809,7 @@
     <key>keyprop</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>match</key>
           <string>^(\s*)(@key)(\s*)(=)(\s*)(\S?.*)$</string>
@@ -2793,7 +2852,7 @@
     <key>list</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>match</key>
           <string>^(\s*)(@type)(\s*)(=)(\s*)(num|dot)(\s*)$</string>
@@ -2895,7 +2954,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#list__1</string>
@@ -2944,7 +3003,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#list__2</string>
@@ -2976,7 +3035,7 @@
     <key>list__1</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#list</string>
@@ -2986,7 +3045,7 @@
     <key>list__2</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#listitem</string>
@@ -2996,7 +3055,7 @@
     <key>listitem</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#ifprop</string>
@@ -3010,7 +3069,7 @@
     <key>main__1</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#group</string>
@@ -3020,7 +3079,7 @@
     <key>main__2</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#article</string>
@@ -3030,7 +3089,7 @@
     <key>main__3</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#classbody</string>
@@ -3040,7 +3099,7 @@
     <key>memberbody</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#ifprop</string>
@@ -3550,7 +3609,7 @@
     <key>nameprop</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>match</key>
           <string>^(\s*)(@name)(\s*)(=)(\s*)(\S?.*)$</string>
@@ -3590,10 +3649,62 @@
         </dict>
        </array>
     </dict>
+    <key>note</key>
+    <dict>
+      <key>patterns</key>
+      <array> 
+        <dict>
+          <key>match</key>
+          <string>^(\s*)(@type)(\s*)(=)(\s*)(\w+)(\s*)$</string>
+          <key>captures</key>
+          <dict>
+            <key>1</key>
+            <dict>
+              <key>name</key>
+              <string>text.docsource</string>
+            </dict>
+            <key>2</key>
+            <dict>
+              <key>name</key>
+              <string>keyword.docsource</string>
+            </dict>
+            <key>3</key>
+            <dict>
+              <key>name</key>
+              <string>text.docsource</string>
+            </dict>
+            <key>4</key>
+            <dict>
+              <key>name</key>
+              <string>punctuation.docsource</string>
+            </dict>
+            <key>5</key>
+            <dict>
+              <key>name</key>
+              <string>text.docsource</string>
+            </dict>
+            <key>6</key>
+            <dict>
+              <key>name</key>
+              <string>punctuation.docsource</string>
+            </dict>
+            <key>7</key>
+            <dict>
+              <key>name</key>
+              <string>text.docsource</string>
+            </dict>
+          </dict>
+        </dict>
+        <dict>
+          <key>include</key>
+          <string>#commoncontent</string>
+        </dict>
+       </array>
+    </dict>
     <key>param</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>begin</key>
           <string>^(\s*)(@param)(\s*)$</string>
@@ -3616,7 +3727,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#param__1</string>
@@ -3648,7 +3759,7 @@
     <key>param__1</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#parambody</string>
@@ -3658,7 +3769,7 @@
     <key>parambody</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>match</key>
           <string>^(\s*)(@name)(\s*)(=)(\s*)(\S?.*)$</string>
@@ -3705,7 +3816,7 @@
     <key>return</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>begin</key>
           <string>^(\s*)(@return)(\s*)$</string>
@@ -3728,7 +3839,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#return__1</string>
@@ -3760,7 +3871,7 @@
     <key>return__1</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#commoncontent</string>
@@ -3770,7 +3881,7 @@
     <key>see</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#keyprop</string>
@@ -3792,7 +3903,7 @@
     <key>tab</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#ifprop</string>
@@ -3814,7 +3925,7 @@
     <key>table</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#ifprop</string>
@@ -3845,7 +3956,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#table__1</string>
@@ -3883,7 +3994,7 @@
     <key>table__1</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#tablerow</string>
@@ -3893,7 +4004,7 @@
     <key>tablecol</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#grayprop</string>
@@ -3911,7 +4022,7 @@
     <key>tablerow</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#ifprop</string>
@@ -4017,7 +4128,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#tablerow__1</string>
@@ -4055,7 +4166,7 @@
     <key>tablerow__1</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#tablecol</string>
@@ -4065,7 +4176,7 @@
     <key>text</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>begin</key>
           <string>(\[b\])</string>
@@ -4078,7 +4189,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#text__1</string>
@@ -4107,7 +4218,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#text__2</string>
@@ -4136,7 +4247,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#text__3</string>
@@ -4165,7 +4276,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#text__4</string>
@@ -4194,7 +4305,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#text__5</string>
@@ -4223,7 +4334,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#text__6</string>
@@ -4252,7 +4363,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#text__7</string>
@@ -4281,7 +4392,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#text__8</string>
@@ -4310,7 +4421,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#text__9</string>
@@ -4339,7 +4450,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#text__10</string>
@@ -4368,7 +4479,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#text__11</string>
@@ -4407,7 +4518,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#text__12</string>
@@ -4446,7 +4557,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#text__13</string>
@@ -4485,7 +4596,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#text__14</string>
@@ -4524,7 +4635,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#text__15</string>
@@ -4563,7 +4674,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#text__16</string>
@@ -4602,7 +4713,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#text__17</string>
@@ -4696,7 +4807,7 @@
     <key>text__1</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#text</string>
@@ -4706,7 +4817,7 @@
     <key>text__10</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#text</string>
@@ -4716,7 +4827,7 @@
     <key>text__11</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#text</string>
@@ -4726,7 +4837,7 @@
     <key>text__12</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#text</string>
@@ -4736,7 +4847,7 @@
     <key>text__13</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#text</string>
@@ -4746,7 +4857,7 @@
     <key>text__14</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#text</string>
@@ -4756,7 +4867,7 @@
     <key>text__15</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#text</string>
@@ -4766,7 +4877,7 @@
     <key>text__16</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#text</string>
@@ -4776,7 +4887,7 @@
     <key>text__17</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#text</string>
@@ -4786,7 +4897,7 @@
     <key>text__2</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#text</string>
@@ -4796,7 +4907,7 @@
     <key>text__3</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#text</string>
@@ -4806,7 +4917,7 @@
     <key>text__4</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#text</string>
@@ -4816,7 +4927,7 @@
     <key>text__5</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#text</string>
@@ -4826,7 +4937,7 @@
     <key>text__6</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#text</string>
@@ -4836,7 +4947,7 @@
     <key>text__7</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#text</string>
@@ -4846,7 +4957,7 @@
     <key>text__8</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#text</string>
@@ -4856,7 +4967,7 @@
     <key>text__9</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#text</string>
@@ -4866,7 +4977,7 @@
     <key>titleprop</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>begin</key>
           <string>^(\s*)(@title)(\s*)(=)</string>
@@ -4894,7 +5005,7 @@
             </dict>
           </dict>
           <key>patterns</key>
-          <array>
+          <array> 
             <dict>
               <key>include</key>
               <string>#titleprop__1</string>
@@ -4916,7 +5027,7 @@
     <key>titleprop__1</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>include</key>
           <string>#text</string>
@@ -4926,7 +5037,7 @@
     <key>transformprop</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>match</key>
           <string>^(\s*)(@transform)(\s*)(=)(\s*)(yes|no|def)(\s*)$</string>
@@ -5011,7 +5122,7 @@
     <key>widthprop</key>
     <dict>
       <key>patterns</key>
-      <array>
+      <array> 
         <dict>
           <key>match</key>
           <string>^(\s*)(@width)(\s*)(=)(\s*)(\S?.*)$</string>
@@ -5054,4 +5165,3 @@
   </dict>
 </dict>
 </plist>
-

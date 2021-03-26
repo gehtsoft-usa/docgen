@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Gehtsoft.Build.DocGen</id>
-        <version>0.1.16</version>
+        <version>0.1.17</version>
         <authors>Gehtsoft</authors>
         <license type="file">license.txt</license>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <releaseNotes>Add html injection options, make default page name configurable</releaseNotes>
+        <releaseNotes>Add @note object and markdown for strike through, underline. HTML template: Make title also change when an article is selected.</releaseNotes>
         <description>MSBuild task to compile documentation sources</description>
     </metadata>
     <files>

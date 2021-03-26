@@ -19,7 +19,6 @@
         @brief=The root element of the documentation model
         @custom=xml-tag
 
-
         The element may contain the following elements:
         [clink=modelXML.article]article[/clink], [clink=modelXML.class]class[/clink], [clink=modelXML.group]group[/clink]
     @end
@@ -73,7 +72,7 @@
         @end
 
         The element may contain the following elements:
-        [clink=modelXML.example]example[/clink], [clink=modelXML.header]header[/clink], [clink=modelXML.list]list[/clink], [clink=modelXML.see-also]see-also[/clink], [clink=modelXML.table]table[/clink]
+        [clink=modelXML.example]example[/clink], [clink=modelXML.header]header[/clink], [clink=modelXML.list]list[/clink], [clink=modelXML.note]note[/clink], [clink=modelXML.see-also]see-also[/clink], [clink=modelXML.table]table[/clink]
 
     @end
 
@@ -142,13 +141,13 @@
         @param
             @name=write-signatures
             The flag indicating whether the signatures (aka name plus parameters)
-   of the methods will be added to the list of the methods and constructors in the class.
+            of the methods will be added to the list of the methods and constructors in the class.
 
-   The option is useful for classes with lot of overloads.
+            The option is useful for classes with lot of overloads.
         @end
 
         The element may contain the following elements:
-        [clink=modelXML.declaration]declaration[/clink], [clink=modelXML.example]example[/clink], [clink=modelXML.header]header[/clink], [clink=modelXML.list]list[/clink], [clink=modelXML.member]member[/clink], [clink=modelXML.param]param[/clink], [clink=modelXML.see-also]see-also[/clink], [clink=modelXML.table]table[/clink]
+        [clink=modelXML.declaration]declaration[/clink], [clink=modelXML.example]example[/clink], [clink=modelXML.header]header[/clink], [clink=modelXML.list]list[/clink], [clink=modelXML.member]member[/clink], [clink=modelXML.note]note[/clink], [clink=modelXML.param]param[/clink], [clink=modelXML.see-also]see-also[/clink], [clink=modelXML.table]table[/clink]
 
     @end
 
@@ -232,7 +231,6 @@
         @brief=An example.
         @custom=xml-tag
 
-
         @param
             @name=title
             The title of the object
@@ -256,8 +254,6 @@
         @param
             @name=tabs
             A flag indicating whether the example tag contains the text in its body or has one or more tab.
-
-   Please note that if tabs are enabled all the content must be in the tabs!
         @end
 
         @param
@@ -275,7 +271,6 @@
         @name=exception
         @brief=A description of the exception thrown by the method
         @custom=xml-tag
-
 
         @param
             @name=name
@@ -361,7 +356,7 @@
         @end
 
         The element may contain the following elements:
-        [clink=modelXML.example]example[/clink], [clink=modelXML.header]header[/clink], [clink=modelXML.list]list[/clink], [clink=modelXML.see-also]see-also[/clink], [clink=modelXML.table]table[/clink]
+        [clink=modelXML.example]example[/clink], [clink=modelXML.header]header[/clink], [clink=modelXML.list]list[/clink], [clink=modelXML.note]note[/clink], [clink=modelXML.see-also]see-also[/clink], [clink=modelXML.table]table[/clink]
 
     @end
 
@@ -590,4 +585,16 @@
 
     @end
 
+    @member
+        @type=property
+        @name=note
+        @brief=A note
+        @custom=xml-tag
+
+
+        @param
+            @name=type
+            The type of the note
+        @end
+    @end
 @end

@@ -5,7 +5,6 @@ using System.Xml;
 namespace GehtSoft.DocCreator.Parser
 {
 
-
     /** The table. */
     public class ListItem : DocItem, IXmlItem
     {
@@ -81,3 +80,4 @@ namespace GehtSoft.DocCreator.Parser
         }
     }
 }
+

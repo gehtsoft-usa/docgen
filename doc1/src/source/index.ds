@@ -149,7 +149,9 @@
 
     |!30%,Markdown Tag|Description| >
     |`*[nil]*text*[nil]*`|Make text **bold**|
-    |`_[nil]_text_[nil]_`|Make text __italic__|
+    |`/[nil]/text/[nil]/`|Make text //italic//|
+    |`_[nil]_text_[nil]_`|Make text __underline__|
+    |`~[nil]~text~[nil]~`|Make text ~~strikedthrough~~|
     |`^[nil]^text^[nil]^`|Make text ^^superscript^^|
     |`<[nil]http://link>`|This is a link <https://www.gehtsoftusa.com>|
 
@@ -171,6 +173,21 @@
     Will be displayed as:
 
     ```csharp
+        if (a > b)
+            Console.WriteLine("A is bigger");
+    ```
+
+    You can make the example collapsible by adding a plus (`+`) sign
+    to make it expanded or a (`-`) sign to make it collapsed. 
+
+    ```text
+       [nil]```[b]+[/b]csharp
+        if (a > b)
+            Console.WriteLine("A is bigger");
+       [nil]```
+    ```
+
+    ```+csharp
         if (a > b)
             Console.WriteLine("A is bigger");
     ```
@@ -300,9 +317,9 @@
         !|!50%,cell1|25%,cell2|25%,cell3| >
         !|[[nil]b]cell4[[nil]/b]|[[nil]i]cell5[[nil]/i]|[[nil]sup]cell6[[nil]sub]|
         !|*[nil]*cell4*[nil]*|_[nil]_cell5_[nil]_|^[nil]^cell6^[nil]^|
-        @end
+    @end
 
     |!50%,cell1|25%,cell2|25%,cell3| >
-    |[b]cell4[/b]|[i]cell5[/i]|[sup]cell6[sub]|
+    |[b]cell4[/b]|[i]cell5[/i]|[sup]cell6[/sup]|
     |**cell4**|__cell5__|^^cell6^^|
 @end

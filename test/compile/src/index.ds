@@ -29,6 +29,19 @@
     }
     ```
 
+    the same code as an example
+
+    ```-cs
+    using System;
+
+    namespace MyNamespace
+    {
+        class MyClass
+        {
+        }
+    }
+    ```
+
     @example
         @title=example 2
         @highlight=cpp
@@ -92,6 +105,37 @@
         !</x-form>
     @end
 
+    @note
+        @type=note
+        The note text
+
+        Another note text
+
+        Formatting in note `code` link <https://www.gehtsoftusa.com>
+    @end
+    @note
+        @type=warning
+        The note text
+
+        Another note text
+
+        Formatting in note `code` link <https://www.gehtsoftusa.com>
+    @end
+
+    @note
+        @type=quote
+        The note text
+
+        Another note text
+
+        @note
+            @type=quote
+            Quote in quote
+        @end
+
+
+        Formatting in note `code` link <https://www.gehtsoftusa.com>
+    @end
 @end
 
 @article

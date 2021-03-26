@@ -19,16 +19,16 @@ export class DocsourceContext {
 
 }
 
-var tagRegex = /^\s*@(end|article|group|class|member|table|row|col|example|list|list-item|return|exception|see|declaration|param|tab|header)\s*$/
+var tagRegex = /^\s*@(end|article|group|class|member|table|row|col|example|list|list-item|return|exception|see|declaration|param|tab|header|note)\s*$/
 var propRegex = /^\s*@(\w+)\s*=(.*)$"/
 var preTypedRegex = /^\s*@(\w*)/
 
 //The function scans the document from the beginning to the current position
 //and finds the tag and the property at the cursor position
 export function findContext(document: vscode.TextDocument, position: vscode.Position) : DocsourceContext  {
-    
+
     var rc = new DocsourceContext();
-   
+
     var tagStack = new Array();
 
     var i, line;
@@ -49,10 +49,10 @@ export function findContext(document: vscode.TextDocument, position: vscode.Posi
             }
             continue;
         }
-        
+
         if (i == position.line) {
             test = propRegex.exec(line);
-            
+
             if (test != null) {
             rc.CurrentProperty = test[1];
             rc.CurrentValue = test[2];
@@ -72,7 +72,7 @@ export function findContext(document: vscode.TextDocument, position: vscode.Posi
     }
 
 
-    if (rc.CurrentTag != null && rc.CurrentProperty == null || 
+    if (rc.CurrentTag != null && rc.CurrentProperty == null ||
         rc.CurrentProperty == "brief" ||
         (rc.CurrentTag == "declaration" && rc.CurrentProperty == "params") ||
         (rc.CurrentTag == "declaration" && rc.CurrentProperty == "return"))
@@ -81,7 +81,7 @@ export function findContext(document: vscode.TextDocument, position: vscode.Posi
 }
 
 var bbCodeRegex = /\[([/]?\w+)(=[^\]]*)?\](.*)$/
- 
+
 //The function scans the document from current position back as long as the text may
 //contain bb codes at this location and finds the currently open bbcode tag
 export function findOpenBbcode(document: vscode.TextDocument, position: vscode.Position) : string | null {
@@ -101,9 +101,9 @@ export function findOpenBbcode(document: vscode.TextDocument, position: vscode.P
         }
         i0 = i0 - 1;
     }
-    
+
     var bbCodeStack = new Array();
-    
+
     for (var i = i0; i <= position.line; i++) {
         line = document.lineAt(i).text;
         if (i == position.line && line.length > position.character){

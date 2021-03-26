@@ -46,6 +46,12 @@
     @end
     @member
         @type=property
+        @name=s
+        @brief=Make text strikedthrough
+        @custom=xml-tag
+    @end
+    @member
+        @type=property
         @name=i
         @brief=Make text italic
         @custom=xml-tag

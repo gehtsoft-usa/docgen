@@ -209,3 +209,36 @@ table.decl td {
     border: collapse;
     background-color: rgb(192, 192, 192);
 }
+
+div.note-quote {
+    border-left: 10px solid #ccc;
+    padding: 1em 10px .1em 10px;
+    margin: 1.5em 10px;
+    background-color: rgb(224, 224, 224);
+}
+
+div.note-note {
+    position: relative;
+    padding: .0rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+div.note-warning {
+    position: relative;
+    padding: .0rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+
+    color: #fff;
+    background-color: #ff6358;
+}
+div.note-warning code.ctag {
+    color: black;
+}

@@ -226,6 +226,16 @@ commoncontent : context {
    }
 
    : inline_push {
+      regex \= ^(\s*)(@note)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace;
+      : pop {
+         regex \= ^(\s*)(@end)(\s*)$
+         styles[] = .whitespace,.keyword,.whitespace;
+      }
+      : include "note";
+   }
+
+   : inline_push {
       regex \= ^(\s*)(@table)(\s*)$
       styles[] = .whitespace,.keyword,.whitespace;
       : pop {
@@ -255,6 +265,15 @@ see : context {
    : include "ifprop";
 
    : include "text";
+}
+
+note : context {
+    : pattern {
+      regex \= ^(\s*)(@type)(\s*)(=)(\s*)(\w+)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name,.whitespace;
+    }
+
+    : include "commoncontent";
 }
 
 header : context {

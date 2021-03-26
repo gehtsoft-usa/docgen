@@ -42,8 +42,10 @@ namespace GehtSoft.DocCreator.Parser
         private static Regex mTableColumn = new Regex(@"^((!?)(\d+%)?,)?(.*)$");
         private static Regex mCode = new Regex("`([^`]+)`");
         private static Regex mBold = new Regex("\\*\\*([^*]+)\\*\\*");
-        private static Regex mItalic = new Regex("__([^_]+)__");
-        private static Regex mSup = new Regex("\\^\\^([^_]+)\\^\\^");
+        private static Regex mItalic = new Regex("\\/\\/([^/]+)\\/\\/");
+        private static Regex mUnderline = new Regex("__([^_]+)__");
+        private static Regex mStrike = new Regex("\\~\\~([^~]+)\\~\\~");
+        private static Regex mSup = new Regex("\\^\\^([^\\^]+)\\^\\^");
         private static Regex mLink = new Regex("<(https?://[^>+]+)>");
 
         public void ParseFile(IParserSource source, List<Error> errors, Stack<DocItem> parseStack, IDefinitionList defs)
@@ -93,8 +95,25 @@ namespace GehtSoft.DocCreator.Parser
                                             var ee = parseStack.Peek().appendNamedValue("example", null, file, iCurrLine);
                                             parseStack.Push(ee);
                                             (ee as ExampleItem).Simplified = true;
-                                            ee.appendNamedValue("show", "always", file, iCurrLine);
-                                            ee.appendNamedValue("highlight", trimmedline.Substring(3), file, iCurrLine);
+                                            string syntax;
+                                            if (trimmedline.Substring(3, 1) == "+")
+                                            {
+                                                ee.appendNamedValue("title", "Example", file, iCurrLine);
+                                                ee.appendNamedValue("show", "yes", file, iCurrLine);
+                                                syntax = trimmedline.Substring(4);
+                                            }
+                                            else if (trimmedline.Substring(3, 1) == "-")
+                                            {
+                                                ee.appendNamedValue("title", "Example", file, iCurrLine);
+                                                ee.appendNamedValue("show", "no", file, iCurrLine);
+                                                syntax = trimmedline.Substring(4);
+                                            }
+                                            else
+                                            {
+                                                ee.appendNamedValue("show", "always", file, iCurrLine);
+                                                syntax = trimmedline.Substring(3);
+                                            }
+                                            ee.appendNamedValue("highlight", syntax, file, iCurrLine);
                                         }
                                         else if (parseStack.Peek() is ExampleItem)
                                         {
@@ -153,8 +172,14 @@ namespace GehtSoft.DocCreator.Parser
                                 if (line.Contains("**"))
                                     line = mBold.Replace(line, m => $"[b]{m.Groups[1].Value}[/b]");
 
-                                if (line.Contains("__"))
+                                if (line.Contains("//"))
                                     line = mItalic.Replace(line, m => $"[i]{m.Groups[1].Value}[/i]");
+
+                                if (line.Contains("__"))
+                                    line = mUnderline.Replace(line, m => $"[u]{m.Groups[1].Value}[/u]");
+
+                                if (line.Contains("~~"))
+                                    line = mStrike.Replace(line, m => $"[s]{m.Groups[1].Value}[/s]");
 
                                 if (line.Contains("^^"))
                                     line = mSup.Replace(line, m => $"[sup]{m.Groups[1].Value}[/sup]");
@@ -175,7 +200,7 @@ namespace GehtSoft.DocCreator.Parser
 
                                     var listItem = list.appendNamedValue("list-item", null, file, iCurrLine) as ListItemItem;
                                     listItem.Simplified = true;
-                                    
+
                                     listItem.appendDescription(r, file, iCurrLine);
                                     simplifiedHandled = true;
                                 }
@@ -361,7 +386,6 @@ namespace GehtSoft.DocCreator.Parser
                 sValue = value.ToString();
             else
                 sValue = null;
-            return;
         }
 
         public void UpdateFile(IParserSource source, List<Error> errors, IDefinitionList defs)

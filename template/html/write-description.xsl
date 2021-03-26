@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1252"?>
+﻿<?xml version="1.0" encoding="windows-1252"?>
 <!-- writes body description
 
      @param ext:caller('curr-item') - a object which has description to write
@@ -52,6 +52,9 @@
             </xsl:when>
             <xsl:when test="ext:strcmp(name(.), 'example')=0">
                 <xsl:value-of select="ext:call('write-example.xsl', /)" disable-output-escaping="yes" />
+            </xsl:when>
+            <xsl:when test="ext:strcmp(name(.), 'note')=0">
+                <xsl:value-of select="ext:call('write-note.xsl', /)" disable-output-escaping="yes" />
             </xsl:when>
             <xsl:when test="ext:strcmp(name(.), 'table')=0">
                 <xsl:value-of select="ext:call('write-table.xsl', /)" disable-output-escaping="yes" />

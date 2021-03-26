@@ -156,6 +156,13 @@ namespace GehtSoft.DocCreator.Parser
                 maDescription.Add(ex);
                 return ex;
             }
+            else if (sName == "note")
+            {
+                NoteItem ex = new NoteItem(file, line);
+                lastobject = ex;
+                maDescription.Add(ex);
+                return ex;
+            }
             return null;
         }
 

@@ -487,6 +487,13 @@
             <inherit scheme="text" />
         </scheme>
 
+        <scheme name="note" >
+            <regexp match="/^\s*(@type)(=)\s*(.*)$/"
+                    region1="keyword" region2="sym" region3="service" />
+
+            <inherit scheme="text" />
+        </scheme>
+
         <scheme name="header" >
             <regexp match="/^\s*(@level)(=)\s*([1-6])\s*$/"
                     region1="keyword" region2="sym" region3="service" />
@@ -512,6 +519,13 @@
 
             <block start="/^\s*((@headline))\s*$/" end="/^\s*((@end))\s*$/"
                    scheme="header"
+                   region02="def:PairStart"
+                   region12="def:PairEnd"
+                   region01="keyword"
+                   region11="keyword" />
+
+            <block start="/^\s*((@note))\s*$/" end="/^\s*((@end))\s*$/"
+                   scheme="note"
                    region02="def:PairStart"
                    region12="def:PairEnd"
                    region01="keyword"
