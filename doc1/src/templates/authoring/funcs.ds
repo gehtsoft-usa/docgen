@@ -557,6 +557,53 @@
             @return=string
         @end
     @end
+
+    @member
+        @name=replace
+        @brief=Replaces the text in a string specified
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=value : string, searchText : string, replaceText : string
+            @return=string
+        @end
+
+        The function introduced in docgen 0.1.17.
+    @end
+
+    @member
+        @name=files
+        @brief=Finds all files that matches the specified pattern
+        @scope=class
+        @type=function
+
+        @declaration
+            @language=xpath
+            @params=folder : string, pattern : string
+            @return=node-iterator
+        @end
+
+        @param
+            @name=folder
+            The folder to find the files in
+        @end
+
+        @param
+            @name=pattern
+            The pattern to search.
+
+            If the pattern starts and ends with `/` character, the pattern
+            is recognized as a regular expression.
+
+            Otherwise it is recognized as a filename pattern.
+        @end
+
+        The method returns an iterator of `file` nodes. Each node has a `name` attribute.
+
+        The function introduced in docgen 0.1.17.
+    @end
 @end
 
 @class

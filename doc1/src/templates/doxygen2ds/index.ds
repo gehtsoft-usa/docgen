@@ -1,0 +1,117 @@
+@group
+    @title=Doxygen2Ds template
+    @brief=The section describes the template that converts a doxygen XML output to document source
+    @ingroup=templates
+    @key=doxigen2dsTemplate
+
+    To prepare the source data for the template use the [eurl=https://www.doxygen.nl/index.html]doxygen[/eurl] of version
+    1.8 or above. Make sure that XML output is enabled (`GENERATE_XML = YES` in doxygen configuration file).
+
+    Please not that this assembly does NOT use [link=modelXML]DocGen XML document[/link]
+    as a source. It opens and processes the document specified
+    in the template parameters. However, because it is still required to have
+    any DocGen XML document, you have to create a source file with an
+    empty index group, e.g. and specify it as a source for your
+    [link=docProjectFile]docgen project[/link].
+
+    @example
+        @show=always
+        @gray=yes
+    !@group
+    !    @title=Index
+    !    @brief=
+    !    @key=main
+    !    @ingroup=
+    !@end
+    @end
+
+    The template is located at
+    `%docgen%/template/doxygen2ds/main.xsl`
+
+    This template creates multiple output files, so use `file` parameter
+    of the [clink=docProjectFile1.output]output[/clink] element of the project file
+    to specify the destination folder:
+
+    Example:
+
+    ```xml
+    <dg:output template="%docgen%/template/doxygen2ds/main.xsl" file="src/raw/null-file" encoding="utf-8">
+    ```
+
+    The template has following parameters:
+
+    @table
+        @width=100%
+        @row
+            @header=yes
+            @col
+                @width=30%
+                Parameter
+            @end
+            @col
+                Description
+            @end
+        @end
+        @row
+            @col
+                `xml-path`
+            @end
+            @col
+                The folder where Doxygen XML output is located.
+            @end
+        @end
+        @row
+            @col
+                `ds-path`
+            @end
+            @col
+                The folder to write output docgen source files.
+            @end
+        @end
+        @row
+            @col
+                `codepage`
+            @end
+            @col
+                The codepage for the output files (use `65001` for UTF-8)
+            @end
+        @end
+        @row
+            @col
+                `group`
+            @end
+            @col
+                The group name into which all namespaces must be included.
+            @end
+        @end
+        @row
+            @col
+                `language`
+            @end
+            @col
+                The programming language for declarations
+            @end
+        @end
+        @row
+            @col
+                `divisor`
+            @end
+            @col
+                The divisor to be used in class and namespace names instead of default
+                doxygen's `::`. For example, you may want to set it `.` for Java.
+            @end
+        @end
+        @row
+            @col
+                `exclude-namespace`
+            @end
+            @col
+                The regexp for namespace doxygen identifiers to be excluded from the documentation.
+                For example you may want to exclude `java:.+` for Java or
+                `^std$` for C++.
+            @end
+        @end
+    @end
+
+    The template is fully refactored in docgen 0.1.17. Check your projects.
+@end

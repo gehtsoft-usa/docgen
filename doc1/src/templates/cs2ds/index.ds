@@ -42,6 +42,7 @@
     The template has following parameters:
 
     @table
+        @width=100%
         @row
             @header=yes
             @col

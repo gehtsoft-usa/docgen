@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1252"?>
+﻿<?xml version="1.0" encoding="windows-1252"?>
 <xsl:stylesheet
     version="1.0"
     xmlns:ext="urn:gehtsoft-exslt"
@@ -10,31 +10,35 @@
         <xsl:apply-templates select="ext:caller('class-xml')/doxygen/compounddef" />
     </xsl:template>
     <xsl:template match="compounddef">
-    <xsl:value-of select="ext:let('class-name', ./compoundname/text())" />
+    <xsl:variable name="class-org-name"><xsl:value-of select="/doxygen/compounddef/compoundname/text()"/></xsl:variable>
+    <xsl:variable name="class-key"><xsl:value-of select="ext:replace($class-org-name, '::', '.')"/></xsl:variable>
+    <xsl:variable name="class-name"><xsl:choose><xsl:when test="ext:get('divisor', '::') != '::'"><xsl:value-of select="ext:replace($class-org-name, '::', ext:get('divisor'))"/></xsl:when><xsl:otherwise><xsl:value-of select="$class-org-name"/></xsl:otherwise></xsl:choose></xsl:variable>
 @class
-    @name=<xsl:value-of select="ext:get('class-name')" />
+    @name=<xsl:value-of select="$class-name" />
     @brief=
     @type=<xsl:value-of select="./@kind" />
-    @ingroup=<xsl:value-of select="ext:get('group')" /><xsl:text>&#013;&#010;</xsl:text>
-    <xsl:for-each select="./basecompoundref">    @parent=[link=<xsl:value-of select="./text()" />]<xsl:value-of select="./text()" />[/link]<xsl:text>&#013;&#010;</xsl:text></xsl:for-each>
-
+    @ingroup=<xsl:value-of select="ext:caller('namespace-key')" /><xsl:text>&#013;&#010;</xsl:text>
+    <xsl:for-each select="./basecompoundref">    @parent=<xsl:value-of select="./text()" /><xsl:text>&#013;&#010;</xsl:text></xsl:for-each>
     <xsl:call-template name="process-members">
         <xsl:with-param name="kind">public-attrib</xsl:with-param>
         <xsl:with-param name="scope">instance</xsl:with-param>
         <xsl:with-param name="type">property</xsl:with-param>
         <xsl:with-param name="visibility">public</xsl:with-param>
+        <xsl:with-param name="class-name"><xsl:value-of select="$class-name"/></xsl:with-param>
     </xsl:call-template>
     <xsl:call-template name="process-members">
         <xsl:with-param name="kind">public-func</xsl:with-param>
         <xsl:with-param name="scope">instance</xsl:with-param>
         <xsl:with-param name="type">method</xsl:with-param>
         <xsl:with-param name="visibility">public</xsl:with-param>
+        <xsl:with-param name="class-name"><xsl:value-of select="$class-name"/></xsl:with-param>
     </xsl:call-template>
     <xsl:call-template name="process-members">
         <xsl:with-param name="kind">public-static-func</xsl:with-param>
         <xsl:with-param name="scope">class</xsl:with-param>
         <xsl:with-param name="type">method</xsl:with-param>
         <xsl:with-param name="visibility">public</xsl:with-param>
+        <xsl:with-param name="class-name"><xsl:value-of select="$class-name"/></xsl:with-param>
     </xsl:call-template>
 
 @end
@@ -45,11 +49,12 @@
         <xsl:param name="scope" />
         <xsl:param name="type" />
         <xsl:param name="visibility" />
+        <xsl:param name="class-name" />
         <xsl:for-each select="./sectiondef[@kind=$kind]/memberdef">
             <xsl:value-of select="ext:let('ret', normalize-space(ext:call('process-type.xsl', ./type)))" />
             <xsl:value-of select="ext:let('param', '')" />
             <xsl:value-of select="ext:let('member-name', ./name/text())" />
-            <xsl:value-of select="ext:let('sig', concat(ext:get('class-name'), '.', ext:get('member-name'), '('))" />
+            <xsl:value-of select="ext:let('sig', concat($class-name, '.', ext:get('member-name'), '('))" />
             <xsl:value-of select="ext:let('i', 0)" />
             <xsl:for-each select="./param">
                 <xsl:if test="ext:get('i')!=0">
@@ -66,7 +71,7 @@
             <xsl:choose>
                 <xsl:when test="ext:exist('exclude-doc')">
                     <xsl:choose>
-                        <xsl:when test="count(ext:get('exclude-doc')/root/class[@name=ext:get('class-name')]/member[@name=ext:get('member-name')]/sig[text()=ext:get('sig')]) > 0">
+                        <xsl:when test="count(ext:get('exclude-doc')/root/class[@name=ext:get($class-name)]/member[@name=ext:get('member-name')]/sig[text()=ext:get('sig')]) > 0">
                             <xsl:value-of select="ext:let('process', 0)" />
                         </xsl:when>
                         <xsl:otherwise>
@@ -89,7 +94,7 @@
         @sig=<xsl:value-of select="ext:get('sig')" />
 
         @declaration
-            @language=cpp
+            @language=<xsl:value-of select="ext:get('language')" />
             @return=<xsl:value-of select="ext:get('ret')" />
             @prefix=<xsl:if test="$scope='class'">static </xsl:if><xsl:if test="./@virt='virtual' or ./@virt='pure-virtual'">virtual </xsl:if>
             @suffix=<xsl:if test="./@virt='pure-virtual'"> = 0</xsl:if>

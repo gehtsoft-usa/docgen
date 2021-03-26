@@ -12,6 +12,7 @@
   <dg:folder name="src/templates/authoring" encoding="utf-8" />
   <dg:folder name="src/templates/html" encoding="utf-8" />
   <dg:folder name="src/templates/cs2ds" encoding="utf-8" />
+  <dg:folder name="src/templates/doxygen2ds" encoding="utf-8" />
   <dg:folder name="src/templates/null" encoding="utf-8" />
   <dg:folder name="src/templates/xmldoc" encoding="utf-8" />
  </dg:source>

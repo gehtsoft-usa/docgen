@@ -422,6 +422,11 @@ namespace GehtSoft.DocCreator.Output
             return tmp;
         }
 
+        public string replace(string text, string pattern, string value)
+        {
+            return text.Replace(pattern, value);
+        }
+
         public void registerlink(string link)
         {
             object _links = null;
@@ -507,6 +512,36 @@ namespace GehtSoft.DocCreator.Output
         {
             file = FindName(file);
             return File.ReadAllText(file);
+        }
+
+        public XPathNodeIterator files(string folder, string mask)
+        {
+            Regex re = null;
+            if (mask.StartsWith("/"))
+            {
+                re = new Regex(mask.Substring(1, mask.Length - 2));
+                mask = "*.*";
+            }
+
+            string[] files = Directory.GetFiles(folder, mask);
+
+            XmlDocument r = new XmlDocument();
+            XmlElement root = r.CreateElement("files");
+            r.AppendChild(root);
+
+            foreach (string file in files)
+            {
+                if (re != null && !re.IsMatch(file))
+                    continue;
+
+                XmlElement f = r.CreateElement("file");
+                XmlAttribute a = r.CreateAttribute("name");
+                a.Value = file;
+                f.Attributes.Append(a);
+                root.AppendChild(f);
+            }
+
+            return r.CreateNavigator().Select("/files/file");
         }
 
         public string trim(string s) => s.Trim();

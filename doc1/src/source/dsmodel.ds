@@ -628,7 +628,6 @@
         @brief=A note (highlighted piece of text)
         @custom=xml-tag
 
-
         @param
             @name=type
             The type of the note
@@ -644,6 +643,8 @@
             @name=if
             A name of the definition to be set in the doc project file in order to include the object into the documentation. The value is optional. If no value is set, the object will be always included
         @end
+
+        The element is supported in docgen 0.1.17+
     @end
 
 @end
