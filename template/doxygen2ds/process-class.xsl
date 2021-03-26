@@ -16,6 +16,7 @@
 @class
     @name=<xsl:value-of select="$class-name" />
     @brief=
+    @key=<xsl:value-of select="$class-key" />
     @type=<xsl:value-of select="./@kind" />
     @ingroup=<xsl:value-of select="ext:caller('namespace-key')" /><xsl:text>&#013;&#010;</xsl:text>
     <xsl:for-each select="./basecompoundref">    @parent=<xsl:value-of select="./text()" /><xsl:text>&#013;&#010;</xsl:text></xsl:for-each>
