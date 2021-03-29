@@ -38,9 +38,9 @@ namespace GehtSoft.DocCreator.Output
                         encoding = Encoding.GetEncoding(codepage);
                 }
             }
-            catch (Exception )
+            catch (Exception ie)
             {
-                throw new XsltExceptionEx("Can't load encoding :" + codepage, xslt);
+                throw new XsltExceptionEx("Can't load encoding :" + codepage, xslt, ie);
             }
 
             XslCompiledTransform transform;
@@ -73,12 +73,14 @@ namespace GehtSoft.DocCreator.Output
                 else
                     writer = XmlWriter.Create(output, settings);
             }
-            catch (Exception )
+            catch (Exception ie)
             {
-                throw new XsltExceptionEx("Can't create output :" + output, xslt);
+                throw new XsltExceptionEx("Can't create output :" + output, xslt, ie);
             }
             XsltArgumentList args = new XsltArgumentList();
-            args.AddExtensionObject("urn:gehtsoft-exslt", new XsltExtensionObject(caller));
+            var extension = new XsltExtensionObject(caller);
+            extension.let("currently-running-script", xslt);
+            args.AddExtensionObject("urn:gehtsoft-exslt", extension);
             try
             {
                 transform.Transform(doc, args, writer);
@@ -108,9 +110,9 @@ namespace GehtSoft.DocCreator.Output
                         encoding = Encoding.GetEncoding(codepage);
                 }
             }
-            catch (Exception )
+            catch (Exception ie)
             {
-                throw new XsltExceptionEx("Can't load encoding :" + codepage, xslt);
+                throw new XsltExceptionEx("Can't load encoding :" + codepage, xslt, ie);
             }
 
 
@@ -146,7 +148,9 @@ namespace GehtSoft.DocCreator.Output
                 throw new XsltExceptionEx("Can't create output :" + output, xslt, e);
             }
             XsltArgumentList args = new XsltArgumentList();
-            args.AddExtensionObject("urn:gehtsoft-exslt", new XsltExtensionObject(caller));
+            var extension = new XsltExtensionObject(caller);
+            extension.let("currently-running-script", xslt);
+            args.AddExtensionObject("urn:gehtsoft-exslt", extension);
             try
             {
                 transform.Transform(doc, args, writer);

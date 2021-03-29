@@ -3,7 +3,7 @@
     "docgen": {
       "commandName": "Project",
       "commandLineArgs": "project.xml",
-      "workingDirectory": "D:\\develop\\work\\tools\\docgen\\test\\compile\\"
+      "workingDirectory": "D:\\develop\\fxcm\\p4\\FXCM\\indicore\\indicore\\doc\\usrguideLua\\"
     }
   }
 }

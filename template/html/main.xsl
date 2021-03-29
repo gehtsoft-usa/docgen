@@ -13,6 +13,9 @@
 <xsl:value-of select="ext:letglobal('g-help-index-root', ext:xmlcreate('help-index', 'root'))" />
 <xsl:value-of select="ext:let('content-node', ext:xmlcreate('help-content', 'root'))" />
 <xsl:value-of select="ext:let('group', /root/group[./@is-root='true'])" />
+<xsl:if test="count(ext:get('group')) != 1">
+<xsl:value-of select="ext:error('The number of root groups is not equal to 1')" />
+</xsl:if>
 <!-- load localization strings -->
 <xsl:value-of select="ext:let('localization', ext:document('dictionary/translation.xml'))" />
 <xsl:value-of select="ext:let('default-language', ext:get('localization')/dictionary/@default-language)" />
@@ -40,7 +43,6 @@
     </xsl:choose>
     <xsl:value-of select="ext:letglobal(ext:get('loc-name'), ext:get('loc-value')) "/>
 </xsl:for-each>
-
 <xsl:value-of select="ext:call('write-group.xsl', /, concat(ext:get('group')/@key, '.html'), ext:get('codepage')) " />
 <xsl:if test="ext:get('write-web', 'yes')='yes'">
     <xsl:value-of select="ext:call('write-web-content.xsl', /, 'web-content-main.html', ext:get('codepage')) " />
