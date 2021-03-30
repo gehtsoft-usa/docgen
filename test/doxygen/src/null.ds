@@ -1,0 +1,6 @@
+@group
+    @key=index
+    @title=index
+    @brief=index
+    @ingroup=
+@end

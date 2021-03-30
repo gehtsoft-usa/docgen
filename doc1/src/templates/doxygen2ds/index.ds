@@ -114,4 +114,15 @@
     @end
 
     The template is fully refactored in docgen 0.1.17. Check your projects.
+
+    The template picks up comment docs as well for brief and detailed description of the classes
+    and methods and for parameter description.
+
+    There is limited support of Doxygen markdown (see [eurl=https://www.doxygen.nl/manual/markdown.html]documentation[/eurl] for details) formatting:
+
+    * Bold, strike-through and code
+    * code block with syntax highlighting
+    * table, but without row and col span
+    * one-level bullet lists
+    * links (both to other classes and to URLs) and images
 @end

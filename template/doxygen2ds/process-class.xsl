@@ -15,11 +15,16 @@
     <xsl:variable name="class-name"><xsl:choose><xsl:when test="ext:get('divisor', '::') != '::'"><xsl:value-of select="ext:replace($class-org-name, '::', ext:get('divisor'))"/></xsl:when><xsl:otherwise><xsl:value-of select="$class-org-name"/></xsl:otherwise></xsl:choose></xsl:variable>
 @class
     @name=<xsl:value-of select="$class-name" />
-    @brief=
+    @brief=<xsl:if test="count(/doxygen/compounddef/briefdescription/para[position()=1]) > 0"><xsl:value-of select="ext:call('process-para.xsl', /doxygen/compounddef/briefdescription/para[position()=1])" /></xsl:if>
     @key=<xsl:value-of select="$class-key" />
     @type=<xsl:value-of select="./@kind" />
     @ingroup=<xsl:value-of select="ext:caller('namespace-key')" /><xsl:text>&#013;&#010;</xsl:text>
     <xsl:for-each select="./basecompoundref">    @parent=<xsl:value-of select="./text()" /><xsl:text>&#013;&#010;</xsl:text></xsl:for-each>
+
+    <xsl:for-each select="/doxygen/compounddef/detaileddescription/para">
+        <xsl:text>&#013;&#010;</xsl:text><xsl:value-of select="concat('    ', ext:call('process-para.xsl', .))" /><xsl:text>&#013;&#010;</xsl:text>
+    </xsl:for-each>
+
     <xsl:call-template name="process-members">
         <xsl:with-param name="kind">public-attrib</xsl:with-param>
         <xsl:with-param name="scope">instance</xsl:with-param>
@@ -91,9 +96,15 @@
         @type=<xsl:value-of select="$type" />
         @name=<xsl:value-of select="ext:get('member-name')" />
         @divisor=.
-        @brief=
+        @brief=<xsl:if test="count(./briefdescription/para[position()=1]) > 0"><xsl:value-of select="ext:call('process-para.xsl', ./briefdescription/para[position()=1])" /></xsl:if>
+        <xsl:value-of select="./briefdescription/para/text()" />
         @key=<xsl:value-of select="ext:get('member-name')" />.<xsl:value-of select="ext:methodkey(ext:get('sig'))" />
         @sig=<xsl:value-of select="ext:get('sig')" />
+
+        <xsl:for-each select="./detaileddescription/para[count(./parameterlist) = 0]">
+            <xsl:text>&#013;&#010;</xsl:text><xsl:value-of select="concat('        ', ext:call('process-para.xsl', .))" /><xsl:text>&#013;&#010;</xsl:text>
+        </xsl:for-each>
+
 
         @declaration
             @language=<xsl:value-of select="ext:get('language')" />
@@ -102,17 +113,21 @@
             @suffix=<xsl:if test="./@virt='pure-virtual'"> = 0</xsl:if>
             @params=<xsl:value-of select="ext:get('param')" />
         @end
-
+            <xsl:value-of select="ext:let('curr-member', .)" />
             <xsl:for-each select="./param">
+            <xsl:value-of select="ext:let('curr-param-name', ./declname/text())" />
+            <xsl:value-of select="ext:let('curr-param-description', ext:get('curr-member')/detaileddescription/para/parameterlist[@kind='param']/parameteritem[./parameternamelist/parametername/text() = ext:get('curr-param-name')])" />
         @param
-            @name=<xsl:value-of select="./declname/text()" />
+            @name=<xsl:value-of select="ext:get('curr-param-name')" />
+            <xsl:if test="count(ext:get('curr-param-description')) > 0 and count(ext:get('curr-param-description')/parameterdescription/para[position() = 1])">
+                <xsl:text>&#013;&#010;</xsl:text><xsl:value-of select="concat('            ', ext:call('process-para.xsl', ext:get('curr-param-description')/parameterdescription/para[position() = 1]))" />
+            </xsl:if>
         @end
             </xsl:for-each>
     @end
             </xsl:if>
     </xsl:for-each>
 </xsl:template>
-
 
 </xsl:stylesheet>
 
