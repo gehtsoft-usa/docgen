@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1252"?>
+﻿<?xml version="1.0" encoding="windows-1252"?>
 <xsl:stylesheet
     version="1.0"
     xmlns:ext="urn:gehtsoft-exslt"
@@ -19,7 +19,7 @@
                 <xsl:value-of select="ext:let('prefix', concat(ext:get('prefix'), 'ref '))" />
             </xsl:if>
             <xsl:value-of select="ext:let('p-type', ./type)" />
-            <xsl:value-of select="concat(ext:get('prefix'), ext:trim(ext:call('process-type-reference.xsl', /)), ' ', ./@name) "/><xsl:if test="count(./value) > 0"> = <xsl:value-of select="./value/text()" /></xsl:if>
+            <xsl:value-of select="concat(ext:get('prefix'), normalize-space(ext:call('process-type-reference.xsl', /)), ' ', ./@name) "/><xsl:if test="count(./value) > 0"> = <xsl:value-of select="./value/text()" /></xsl:if>
 
         </xsl:for-each>
     </xsl:template>

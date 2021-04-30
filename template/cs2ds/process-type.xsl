@@ -32,7 +32,7 @@
     </xsl:choose>
     <xsl:for-each select="ext:get('type')/parents/type">
         <xsl:value-of select="ext:let('p-type', .) "/>
-    @parent=<xsl:value-of select="ext:trim(ext:call('process-type-reference.xsl', /))" />
+    @parent=<xsl:value-of select="normalize-space(ext:call('process-type-reference.xsl', /))" />
     </xsl:for-each>
     <xsl:value-of select="ext:let('p-target', ext:get('type'))" />
     <xsl:value-of select="ext:let('p-mode', 'summary-class')" />
@@ -93,7 +93,7 @@
                 @language=cs
                 @name=<xsl:value-of select="./@name" />
                 <xsl:value-of select="ext:let('p-type', ./type) "/>
-                @return=<xsl:value-of select="ext:trim(ext:call('process-type-reference.xsl', /))" />
+                @return=<xsl:value-of select="normalize-space(ext:call('process-type-reference.xsl', /))" />
                 <xsl:if test="count(./@value) > 0">
                 @suffix=<xsl:value-of select="concat(' = ', ./@value)" />
                 </xsl:if>
@@ -106,7 +106,7 @@
             @declaration
                 @language=cs
                 <xsl:value-of select="ext:let('p-type', ./type) "/>
-                @return=<xsl:value-of select="ext:trim(ext:call('process-type-reference.xsl', /))" />
+                @return=<xsl:value-of select="normalize-space(ext:call('process-type-reference.xsl', /))" />
                 <xsl:choose>
                 <xsl:when test="./@name='Item'">
                 @name=this
@@ -137,7 +137,7 @@
                 @language=cs
                 @name=<xsl:value-of select="./@name" /><xsl:if test="count(./generic-parameters/type) > 0">&lt;<xsl:for-each select="./generic-parameters/type"><xsl:if test="position() > 1">, </xsl:if><xsl:value-of select="./@name"/></xsl:for-each>&gt;</xsl:if>
                 <xsl:value-of select="ext:let('p-type', ./type) "/>
-                @return=<xsl:value-of select="ext:trim(ext:call('process-type-reference.xsl', /))" />
+                @return=<xsl:value-of select="normalize-space(ext:call('process-type-reference.xsl', /))" />
                 <xsl:value-of select="ext:let('p-method', .)" />
                 @params=<xsl:value-of select="ext:trim(ext:call('process-params.xsl', /))"/>
             @end
@@ -148,7 +148,7 @@
                 @language=cs
                 @name=<xsl:value-of select="./@name" />
                 <xsl:value-of select="ext:let('p-type', ./type) "/>
-                @return=<xsl:value-of select="ext:trim(ext:call('process-type-reference.xsl', /))" />
+                @return=<xsl:value-of select="normalize-space(ext:call('process-type-reference.xsl', /))" />
                 @prefix=event
             @end
             </xsl:when>

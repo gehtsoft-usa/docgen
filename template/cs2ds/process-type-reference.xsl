@@ -55,7 +55,7 @@
         </xsl:when>
         <xsl:when test="ext:get('type')/@namespace='System' and ext:get('type')/@name='Nullable'">
             <xsl:value-of select="ext:let('p-type', ext:get('type')/parameters/type[1])" />
-            <xsl:value-of select="ext:let('name', concat(ext:trim(ext:call('process-type-reference.xsl', /)), '?')) "/>
+            <xsl:value-of select="ext:let('name', concat(normalize-space(ext:call('process-type-reference.xsl', /)), '?')) "/>
         </xsl:when>
         <xsl:otherwise>
         <xsl:choose>
@@ -75,7 +75,7 @@
                     <xsl:value-of select="ext:let('name', concat(ext:get('name'), ',')) "/>
                 </xsl:if>
                 <xsl:value-of select="ext:let('p-type', .)" />
-                <xsl:value-of select="ext:let('name', concat(ext:get('name'), ext:trim(ext:call('process-type-reference.xsl', /)))) "/>
+                <xsl:value-of select="ext:let('name', concat(ext:get('name'), normalize-space(ext:call('process-type-reference.xsl', /)))) "/>
             </xsl:for-each>
             <xsl:value-of select="ext:let('name', concat(ext:get('name'), '&gt;')) "/>
         </xsl:if>
