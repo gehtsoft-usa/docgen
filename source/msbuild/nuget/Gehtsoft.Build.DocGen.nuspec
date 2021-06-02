@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Gehtsoft.Build.DocGen</id>
-        <version>0.1.18</version>
+        <version>0.1.19</version>
         <authors>Gehtsoft</authors>
         <license type="file">license.txt</license>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <releaseNotes>Fix [] suffix went to next line when generating doc for C#</releaseNotes>
+        <releaseNotes>Fix nested classes support</releaseNotes>
         <description>MSBuild task to compile documentation sources</description>
     </metadata>
     <files>

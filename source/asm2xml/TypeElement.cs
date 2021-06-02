@@ -72,7 +72,15 @@ namespace AssemblyToXml
             }
 
             Name = GetName(type);
-            Namespace = type.Namespace;
+            if (type.IsNested)
+            {
+                var t = type;
+                while (t.IsNested)
+                    t = t.DeclaringType;
+                Namespace = t.Namespace;
+            }
+            else
+                Namespace = type.Namespace;
             
             if (type.IsByReference)
             {

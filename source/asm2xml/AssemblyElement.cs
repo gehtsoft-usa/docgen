@@ -28,7 +28,6 @@ namespace AssemblyToXml
 
         public AssemblyElement()
         {
-
         }
 
         public AssemblyElement(string assembly)
@@ -48,12 +47,20 @@ namespace AssemblyToXml
 
             List<TypeElement> types = new List<TypeElement>();
             foreach (var type in module.GetTypes())
-            {
-                if (type.IsPublic)
-                    types.Add(new TypeElement(type));
-            }
+                AddTypes(types, type);
             Types = types.ToArray();
 
+        }
+
+        private static void AddTypes(ICollection<TypeElement> types, TypeDefinition type)
+        {
+            if (type.IsPublic || type.IsNestedPublic)
+            {
+                types.Add(new TypeElement(type));
+                if (type.NestedTypes != null)
+                    foreach (var ntype in type.NestedTypes)
+                        AddTypes(types, ntype);
+            }
         }
     }
 }
