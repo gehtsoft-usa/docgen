@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Gehtsoft.Build.DocGen</id>
-        <version>0.1.19</version>
+        <version>0.1.20</version>
         <authors>Gehtsoft</authors>
         <license type="file">license.txt</license>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <releaseNotes>Fix nested classes support</releaseNotes>
+        <releaseNotes>Update dependencies, fix default values for enums, add md-style internal links</releaseNotes>
         <description>MSBuild task to compile documentation sources</description>
     </metadata>
     <files>

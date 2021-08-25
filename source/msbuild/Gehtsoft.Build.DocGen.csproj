@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net46;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>net472;netstandard2.0</TargetFrameworks>
     <BuildOutputTargetFolder>tasks</BuildOutputTargetFolder>
   </PropertyGroup>
 
@@ -14,7 +14,7 @@
     <Content Include="build\Gehtsoft.Build.DocGen.props" PackagePath="build\" />
     <Content Include="buildMultiTargeting\Gehtsoft.Build.DocGen.props" PackagePath="buildMultiTargeting\" />
   </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
     <Reference Include="System.IO.Compression" />
   </ItemGroup>
 
@@ -28,5 +28,7 @@
     <ProjectReference Include="..\output\docgen2.output.csproj" />
     <ProjectReference Include="..\parser\docgen2.parser.csproj" />
     <PackageReference Update="@(PackageReference)" PrivateAssets="All" />
+    <PackageReference Update="Microsoft.Build.Framework" Version="16.11.0" />
+    <PackageReference Update="Microsoft.Build.Utilities.Core" Version="16.11.0" />
   </ItemGroup>
 </Project>

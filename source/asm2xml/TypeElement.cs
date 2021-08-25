@@ -331,7 +331,21 @@ namespace AssemblyToXml
                     else if (value is string s)
                         paramElement.Value = "\"" + s + "\"";
                     else
+                    {
+                        var td = param.ParameterType.Resolve();
+                        if (td.IsEnum && value is int i)
+                        {
+                            foreach (var f in td.Fields)
+                            {
+                                if (f.IsStatic && (int)f.Constant == i)
+                                {
+                                    value = $"{td.Name}.{f.Name}";
+                                    break;
+                                }
+                            }
+                        }                       
                         paramElement.Value = value.ToString();
+                    }
                 }
 
                 memberElement.Parameters.Add(paramElement);

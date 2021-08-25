@@ -46,7 +46,9 @@ namespace GehtSoft.DocCreator.Parser
         private static Regex mUnderline = new Regex("__([^_]+)__");
         private static Regex mStrike = new Regex("\\~\\~([^~]+)\\~\\~");
         private static Regex mSup = new Regex("\\^\\^([^\\^]+)\\^\\^");
+        private static Regex mRef = new Regex(@"\[<([^\>]+)>\]\<([^\>]+)\>");
         private static Regex mLink = new Regex("<(https?://[^>+]+)>");
+        
 
         public void ParseFile(IParserSource source, List<Error> errors, Stack<DocItem> parseStack, IDefinitionList defs)
         {
@@ -183,6 +185,9 @@ namespace GehtSoft.DocCreator.Parser
 
                                 if (line.Contains("^^"))
                                     line = mSup.Replace(line, m => $"[sup]{m.Groups[1].Value}[/sup]");
+
+                                if (line.Contains(">]<"))
+                                    line = mRef.Replace(line, m => $"[link={m.Groups[2].Value}]{m.Groups[1].Value}[/link]");
 
                                 if (line.Contains("<http"))
                                     line = mLink.Replace(line, m => $"[eurl={m.Groups[1].Value}]{m.Groups[1].Value}[/eurl]");

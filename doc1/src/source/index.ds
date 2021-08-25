@@ -153,6 +153,7 @@
     |`_[nil]_text_[nil]_`|Make text __underline__|
     |`~[nil]~text~[nil]~`|Make text ~~strikedthrough~~|
     |`^[nil]^text^[nil]^`|Make text ^^superscript^^|
+    |`[[nil]<text>]<keyword>`|Make a link to internal article|
     |`<[nil]http://link>`|This is a link <https://www.gehtsoftusa.com>|
 
     To make the text `code` put it between back quotes [c]`[/c].
@@ -178,7 +179,7 @@
     ```
 
     You can make the example collapsible by adding a plus (`+`) sign
-    to make it expanded or a (`-`) sign to make it collapsed. 
+    to make it expanded or a (`-`) sign to make it collapsed.
 
     ```text
        [nil]```[b]+[/b]csharp

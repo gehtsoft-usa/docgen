@@ -2,7 +2,7 @@
   "profiles": {
     "AssemblyToXml": {
       "commandName": "Project",
-      "commandLineArgs": "D:\\develop\\components\\Gehtsoft.Tools\\Gehtsoft.Tools\\CommandLine\\bin\\Release\\netstandard2.0\\Gehtsoft.Tools.CommandLine.dll "
+      "commandLineArgs": "D:\\develop\\components\\DB\\Gehtsoft.EF\\Gehtsoft.EF.Entities\\bin\\Debug\\netstandard2.0\\Gehtsoft.EF.Entities.dll "
     }
   }
 }

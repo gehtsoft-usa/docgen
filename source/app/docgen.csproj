@@ -2,16 +2,12 @@
 
   <PropertyGroup>
    <OutputType>Exe</OutputType>
-    <TargetFrameworks>net45;netcoreapp3.1;net50</TargetFrameworks>
+    <TargetFramework>net50</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="../output/docgen2.output.csproj" />
     <ProjectReference Include="../parser/docgen2.parser.csproj" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
-    <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp5.0'">
@@ -26,7 +22,7 @@
     <CompiledResult Include="$(TargetDir)/*.*" />
   </ItemGroup>
 
-  <Target Name="CopyLastBuild" AfterTargets="AfterBuild" Condition="$(TargetFramework) == 'net50'" >
+  <Target Name="CopyLastBuild" AfterTargets="AfterBuild" Condition="$(TargetFramework) == 'net50'">
     <Copy SourceFiles="@(CompiledResult)" DestinationFolder="$(TargetAppDir)" />
 </Target>
 </Project>
