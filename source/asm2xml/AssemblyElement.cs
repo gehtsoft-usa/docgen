@@ -10,6 +10,27 @@ using System.Collections.Generic;
 
 namespace AssemblyToXml
 {
+    class AssemblyResolver : DefaultAssemblyResolver
+    {
+        public AssemblyResolver(string[] allAssembliesToProcess)
+        {
+            foreach (string assemblyName in allAssembliesToProcess)
+            {
+                if (File.Exists(assemblyName))
+                {
+                    var assembly = AssemblyDefinition.ReadAssembly(assemblyName);
+                    RegisterAssembly(assembly);
+                }
+            }
+        }
+
+        public override AssemblyDefinition Resolve(AssemblyNameReference name)
+        {
+            ;
+            return base.Resolve(name);
+        }
+    }
+
     public class AssemblyElement 
     {
         private readonly Assembly mAssembly;
@@ -30,7 +51,7 @@ namespace AssemblyToXml
         {
         }
 
-        public AssemblyElement(string assembly)
+        public AssemblyElement(string assembly, string[] allAssemblies)
         {
             if (!Path.IsPathRooted(assembly))
                 assembly = Path.GetFullPath(assembly);
@@ -43,7 +64,11 @@ namespace AssemblyToXml
             Location = fi.DirectoryName;
             Name = fi.Name.Substring(0, fi.Name.Length - fi.Extension.Length);
 
-            ModuleDefinition module = ModuleDefinition.ReadModule(assembly);
+            var readParameters = new ReaderParameters()
+            {
+                AssemblyResolver = new AssemblyResolver(allAssemblies)
+            };
+            ModuleDefinition module = ModuleDefinition.ReadModule(assembly, readParameters);
 
             List<TypeElement> types = new List<TypeElement>();
             foreach (var type in module.GetTypes())

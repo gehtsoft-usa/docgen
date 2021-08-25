@@ -19,7 +19,7 @@ namespace AssemblyToXml
                     if (arg.StartsWith("/out:"))
                         outputFile = arg.Substring(5);
                     else
-                        collection.Assemblies.Add(new AssemblyElement(arg));
+                        collection.Assemblies.Add(new AssemblyElement(arg, args));
                 }
 
                 foreach (AssemblyElement assembly in collection.Assemblies)

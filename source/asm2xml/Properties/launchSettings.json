@@ -2,7 +2,7 @@
   "profiles": {
     "AssemblyToXml": {
       "commandName": "Project",
-      "commandLineArgs": "D:\\develop\\components\\DB\\Gehtsoft.EF\\Gehtsoft.EF.Entities\\bin\\Debug\\netstandard2.0\\Gehtsoft.EF.Entities.dll "
+      "commandLineArgs": "D:\\develop\\components\\DB\\Gehtsoft.EF\\Gehtsoft.EF.Db.SqlDb\\bin\\Debug\\netstandard2.0\\Gehtsoft.EF.Entities.dll D:\\develop\\components\\DB\\Gehtsoft.EF\\Gehtsoft.EF.Db.SqlDb\\bin\\Debug\\netstandard2.0\\Gehtsoft.EF.Db.SqlDb.dll"
     }
   }
 }
