@@ -7,6 +7,7 @@ using System.Text;
 using System.Xml.Serialization;
 using Mono.Cecil;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AssemblyToXml
 {
@@ -81,10 +82,13 @@ namespace AssemblyToXml
         {
             if (type.IsPublic || type.IsNestedPublic)
             {
-                types.Add(new TypeElement(type));
-                if (type.NestedTypes != null)
-                    foreach (var ntype in type.NestedTypes)
-                        AddTypes(types, ntype);
+                if (type.CustomAttributes.FirstOrDefault(ci => ci.AttributeType.Name == "DocgenIgnoreAttribute") == null)
+                {
+                    types.Add(new TypeElement(type));
+                    if (type.NestedTypes != null)
+                        foreach (var ntype in type.NestedTypes)
+                            AddTypes(types, ntype);
+                }
             }
         }
     }

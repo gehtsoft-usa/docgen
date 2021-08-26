@@ -212,6 +212,9 @@ namespace AssemblyToXml
                 if (type.IsEnum && !member.IsStatic)
                     continue;
 
+                if (member.CustomAttributes.FirstOrDefault(ci => ci.AttributeType.Name == "DocgenIgnoreAttribute") != null)
+                    continue;
+
                 MemberElement memberElement = new MemberElement();
                 memberElement.Name = member.Name;
                 memberElement.Signature = Namer.GetMemberName(member);
@@ -265,6 +268,9 @@ namespace AssemblyToXml
                     !(member.GetMethod?.IsFamily ?? false) &&
                     !(member.SetMethod?.IsPublic ?? false) &&
                     !(member.SetMethod?.IsFamily ?? false))
+                    continue;
+
+                if (member.CustomAttributes.FirstOrDefault(ci => ci.AttributeType.Name == "DocgenIgnoreAttribute") != null)
                     continue;
 
                 if (member.DeclaringType != type && 
@@ -401,6 +407,9 @@ namespace AssemblyToXml
                 if (member.DeclaringType != type)
                     continue;
 
+                if (member.CustomAttributes.FirstOrDefault(ci => ci.AttributeType.Name == "DocgenIgnoreAttribute") != null)
+                    continue;
+
                 if (!(member.IsPublic || member.IsFamily))
                     continue;
 
@@ -418,6 +427,9 @@ namespace AssemblyToXml
             foreach (var member in type.Events)
             {
                 if (member.DeclaringType != type)
+                    continue;
+
+                if (member.CustomAttributes.FirstOrDefault(ci => ci.AttributeType.Name == "DocgenIgnoreAttribute") != null)
                     continue;
 
                 MemberElement memberElement = new MemberElement();

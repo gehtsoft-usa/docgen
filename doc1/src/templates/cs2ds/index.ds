@@ -106,7 +106,8 @@
         @custom=xml-tag
 
         The element may contain one or more
-        [clink=cs2dsTemplateSettings.assembly]assembly[/clink]
+        [clink=cs2dsTemplateSettings.assembly]assembly[/clink],
+        [clink=cs2dsTemplateSettings.include]include[/clink],
         and
         [clink=cs2dsTemplateSettings.strip-namespace]strip-namespace[/clink]
         elements.
@@ -135,6 +136,20 @@
             This value is optional. If no XML doc location is set,
             the documentation will be generated for the structure,
             without any descriptions included.
+        @end
+    @end
+
+    @member
+        @type=property
+        @name=include
+        @brief=Filters methods by visibility.
+        @custom=xml-tag
+
+        The element defines which methods
+
+        @param
+            @name=type
+            Which visibility to include. The possible values are `all` or `public`.
         @end
     @end
 
