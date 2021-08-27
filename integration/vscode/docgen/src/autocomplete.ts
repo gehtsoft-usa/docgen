@@ -76,7 +76,7 @@ export function initializeAutocomplete(context: vscode.ExtensionContext) {
     const bbCodeProvider = vscode.languages.registerCompletionItemProvider(
         'docgen',
         {
-            provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token : vscode.CancellationToken, context : vscode.CompletionContext) : vscode.CompletionList {
+            provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token : vscode.CancellationToken, context1 : vscode.CompletionContext) : vscode.CompletionList {
                 var docSourceContext = findContext(document, position);
                 var rc : vscode.CompletionList = new vscode.CompletionList;
                 var i;
@@ -100,7 +100,7 @@ export function initializeAutocomplete(context: vscode.ExtensionContext) {
     const dsTagProvider = vscode.languages.registerCompletionItemProvider(
         'docgen',
         {
-			provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token : vscode.CancellationToken, context : vscode.CompletionContext) : vscode.CompletionList {
+			provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token : vscode.CancellationToken, context1 : vscode.CompletionContext) : vscode.CompletionList {
                 var docSourceContext = findContext(document, position);
                 var i, j;
                 var rc : vscode.CompletionList = new vscode.CompletionList;
@@ -132,7 +132,7 @@ export function initializeAutocomplete(context: vscode.ExtensionContext) {
     const dsValueProvider = vscode.languages.registerCompletionItemProvider(
         'docgen',
         {
-            async provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token : vscode.CancellationToken, context : vscode.CompletionContext) : Promise<vscode.CompletionList> {
+            async provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token : vscode.CancellationToken, context1 : vscode.CompletionContext) : Promise<vscode.CompletionList> {
                 var currentLine = document.lineAt(position.line).text;
                 if (currentLine.length > position.character) {
                     currentLine = currentLine.substring(0, position.character);
@@ -157,10 +157,13 @@ export function initializeAutocomplete(context: vscode.ExtensionContext) {
                         key = test[1];
                     }
                 }
-                if (isKey) {
+                if (isKey && key != null) {
                     var project = await getProjectList().findOrCreateProject(document.fileName);
+                    var range = new vscode.Range(new vscode.Position(position.line, position.character - key.length), 
+                                                 new vscode.Position(position.line, position.character));
+                    
                     if (project != null) {
-                        var doc = project.belongsToProject(document.fileName);
+                        project.belongsToProject(document.fileName);
                         for (i = 0; i < project.Files.length; i++) {
                             var docFile = project.Files[i];
 
@@ -177,6 +180,8 @@ export function initializeAutocomplete(context: vscode.ExtensionContext) {
                                     }
                                 }
                                 var item = new vscode.CompletionItem(docKey.Key, vscode.CompletionItemKind.Text);
+                                if (range != null)
+                                    item.range = range;
                                 if (docKey.Key.length > 49) {
                                     item.label = '…' + docKey.Key.substring(docKey.Key.length - 49);
                                     item.sortText = docKey.Key;
@@ -201,7 +206,7 @@ export function initializeAutocomplete(context: vscode.ExtensionContext) {
                                 if (docSourceContext.CurrentValue != null && !propertyDictionary[i].options[j].startsWith(docSourceContext.CurrentValue)) {
                                         continue;
                                     }
-                                var item = new vscode.CompletionItem(propertyDictionary[i].options[j], vscode.CompletionItemKind.Text);
+                                item = new vscode.CompletionItem(propertyDictionary[i].options[j], vscode.CompletionItemKind.Text);
                                 rc.items.push(item);
                             }
                             break;

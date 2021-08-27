@@ -56,7 +56,6 @@ export function findContext(document: vscode.TextDocument, position: vscode.Posi
             if (test != null) {
             rc.CurrentProperty = test[1];
             rc.CurrentValue = test[2];
-            line = test[2];
             } else {
                 test = preTypedRegex.exec(line);
                 if (test != null) {

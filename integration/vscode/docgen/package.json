@@ -3,7 +3,7 @@
     "displayName": "DocGen Support",
     "publisher": "Gehtsoft",
     "description": "Gehtsoft Documentation Source Code",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "repository": {
         "type": "git",
         "url": "https://github.com/gehtsoft-usa/docgen"

@@ -1,7 +1,6 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
 import * as fs from 'fs';
-import { createSecureContext } from 'tls';
 
 var readlines = require('n-readlines');
 var iconv = require('iconv-lite');
@@ -93,7 +92,7 @@ export class DocSourceFile {
             }
             
             if (currentTag == "group" || currentTag == "article" || currentTag == "class" || currentTag == "member") {
-                var res = keyRegex.exec(text);
+                res = keyRegex.exec(text);
                 if (res != null && res[1].length > 0) {
                     var key = res[1];
                     
@@ -120,7 +119,7 @@ export class DocSourceFile {
             }
 
             if (currentTag == "class") {
-                var res = nameRegex.exec(text);
+                res = nameRegex.exec(text);
                 if (res != null && res[1].length > 0) {
                     if (classKey == null) {
                         classKey = res[1];
@@ -130,7 +129,7 @@ export class DocSourceFile {
             }
 
             if (currentTag == "member") {
-                var res = nameRegex.exec(text);
+                res = nameRegex.exec(text);
                 if (res != null && res[1].length > 0) {
                     if (memberKey == null) {
                         memberKey = res[1];
@@ -189,13 +188,12 @@ export class DocProject {
                             continue;
                         }
                         var folder = path.join(dir, ch.getAttribute('name'));
-                        var encoding = ch.getAttribute('encoding');
                         var files = fs.readdirSync(folder);
                         for (var k = 0; k < files.length; k++) {
                             var file = files[k];
                             if (file.toLowerCase().endsWith('.ds')) {
                                 name = file;
-                                var fileObj = new DocSourceFile(path.join(folder, name), ch.getAttribute('encoding'));
+                                fileObj = new DocSourceFile(path.join(folder, name), ch.getAttribute('encoding'));
                                 fileObj.initialize();
                                 this.Files.push(fileObj);
                             }
@@ -240,15 +238,14 @@ export class DocProjectList {
                 title: "parsing project...",
                 cancellable: false
             }, (progress, token) => {
-                var p = new Promise(resolve => {
+                return new Promise(resolve => {
                     if (root != null) {
                         rc = new DocProject(root, this);
                         this.Projects.push(rc);
                         rc.initialize();
                     }
-                    resolve();
+                    resolve(undefined);
                 });
-                return p;
             });
             await promise;
             return rc;
@@ -266,7 +263,7 @@ export class DocProjectList {
             var line : any;
             for (var l = 0; l < 3; l++) {
                 line = liner.next();
-                if (line == false) {
+                if (!line) {
                     return false;
                 }
                 line = line.toString('utf8');
@@ -310,13 +307,12 @@ export class DocProjectList {
                         title: "parsing project...",
                         cancellable: false
                     }, (progress, token) => {
-                        var p = new Promise(resolve => {
-                        project = new DocProject(file, this);
-                        this.Projects.push(project);
-                        project.initialize();
-                        resolve();
+                        return new Promise(resolve => {
+                            project = new DocProject(file, this);
+                            this.Projects.push(project);
+                            project.initialize();
+                            resolve(undefined);
                         });
-                        return p;
                     });
             }
             

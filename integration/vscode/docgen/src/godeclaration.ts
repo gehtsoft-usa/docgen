@@ -1,6 +1,5 @@
 import * as vscode from 'vscode';
 import { getProjectList } from './extension';
-import { DocProject } from './docProjects';
 
 async function provideDeclaration(document : vscode.TextDocument, 
     position : vscode.Position, 
@@ -22,25 +21,52 @@ async function provideDeclaration(document : vscode.TextDocument,
                 var project  = await projectList.findOrCreateProject(document.fileName);
                 if (project != null) {
                     var i, j
-                    for (i = 0; i < project.Files.length; i++) {
+                    var foundFile = null;
+                    var foundKey = null;
+
+                    for (i = 0; i < project.Files.length && foundKey === null; i++) {
                         var docFile = project.Files[i];
-                        for (j = 0; j < docFile.Keys.length; j++) {
+                        for (j = 0; j < docFile.Keys.length && foundKey === null; j++) {
                             var docKey = docFile.Keys[j];
                             if (docKey.Key == word) {
-                                var file = docFile.File
-                                var folder = vscode.workspace.rootPath
-                                if (folder != null && folder != undefined) {
-                                    var file1 = file.toLowerCase();
-                                    var folder1 = folder.toLowerCase();
-                                    if (file1.indexOf(folder1) == 0) {
-                                        file = folder + file.substring(folder.length);
-                                    }
+                                foundFile = docFile;
+                                foundKey = docKey;
+                            }  
+                        }
+                    }
+
+                    if (foundKey == null) {
+                        for (i = 0; i < project.Files.length; i++) {
+                            docFile = project.Files[i];
+                            for (j = 0; j < docFile.Keys.length; j++) {
+                                docKey = docFile.Keys[j];
+                                if (docKey.Key.length > word.length &&
+                                    docKey.Key.substr(0, word.length) == word) {
+                                    if (foundKey == null || 
+                                        docKey.Key.length > foundKey.Key.length) {
+                                        foundFile = docFile;
+                                        foundKey = docKey;
+                                    }  
                                 }
-                                return new vscode.Location(vscode.Uri.file(file), new vscode.Position(docKey.Line, 0));
                             }
                         }
-                    } 
-                }
+                    }
+                    
+                    if (foundKey != null && foundFile != null &&
+                        vscode.workspace.workspaceFolders != null &&
+                        vscode.workspace.workspaceFolders.length >= 1) {
+                        var file = foundFile.File
+                        var folder = vscode.workspace.workspaceFolders[0].uri.path;
+                        if (folder != null && folder != undefined) {
+                            var file1 = file.toLowerCase();
+                            var folder1 = folder.toLowerCase();
+                            if (file1.indexOf(folder1) == 0) {
+                                file = folder + file.substring(folder.length);
+                            }
+                        }
+                        return new vscode.Location(vscode.Uri.file(file), new vscode.Position(foundKey.Line, 0));
+                    }
+                } 
             }
             catch (e) {
                 return null;

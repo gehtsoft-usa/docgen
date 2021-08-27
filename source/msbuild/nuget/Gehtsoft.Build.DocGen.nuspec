@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Gehtsoft.Build.DocGen</id>
-        <version>0.1.23</version>
+        <version>0.1.24</version>
         <authors>Gehtsoft</authors>
         <license type="file">license.txt</license>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <releaseNotes>Add support for DocgenIgnore attribute and include flag in cs2ds settings</releaseNotes>
+        <releaseNotes>Add option to collect all methods with the same name into one additional page.</releaseNotes>
         <description>MSBuild task to compile documentation sources</description>
     </metadata>
     <files>

@@ -102,6 +102,22 @@
     </xsl:if>
 </xsl:for-each>
 <p><center><xsl:element name="a"><xsl:attribute name="href"><xsl:value-of select="./@in-group" />.html</xsl:attribute><xsl:value-of select="ext:get('_string_back')" /></xsl:element></center></p>
+<xsl:if test="ext:get('create-group-for-members-with-same-name') = 'yes'">
+    <xsl:value-of select="ext:let('names', ext:get('curr-item')/member[@type='method'])" />
+    <xsl:for-each select="ext:get('names')">
+        <xsl:value-of select="ext:let(concat(./@name, '-handled'), '0')" />
+    </xsl:for-each>
+    <xsl:for-each select="ext:get('names')">
+        <xsl:value-of select="ext:let('curr-name', ./@name)" />
+        <xsl:value-of select="ext:let('subset', ext:get('curr-item')/member[@name=ext:get('curr-name') and @type='method'])" />
+        <xsl:if test="count(ext:get('subset')) > 1 and ext:get(concat(ext:get('curr-name'), '-handled')) = '0'">
+            <xsl:value-of select="ext:let('group-key', concat(ext:get('curr-item')/@key, '.', ext:get('curr-name')))" />
+            <xsl:value-of select="ext:registerkey(ext:get('group-key'))" />
+            <xsl:value-of select="ext:call('write-members-same-name.xsl', /, concat(ext:get('group-key'), '.html'), ext:get('codepage'))" />
+        </xsl:if>
+        <xsl:value-of select="ext:let(concat(ext:get('curr-name'), '-handled'), '1')" />
+    </xsl:for-each>
+</xsl:if>
 <xsl:value-of select="ext:call('write-tail-scripts.xsl', /)" disable-output-escaping="yes" />
 <xsl:value-of select="ext:call('write-html-epilog.xsl', /)" disable-output-escaping="yes" />
     </xsl:template>
