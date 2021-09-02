@@ -151,6 +151,10 @@
             @name=type
             Which visibility to include. The possible values are `all` or `public`.
         @end
+        @param
+            @name=signature
+            Include a method by signature. Use it to include protected methods individually.
+        @end
     @end
 
     @member

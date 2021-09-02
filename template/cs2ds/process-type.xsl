@@ -41,7 +41,8 @@
     <xsl:value-of select="ext:call('xmldoc.xsl', /)" />
 
     <xsl:for-each select="ext:get('type')/members/member" >
-        <xsl:if test="./@member-type='event' or ./@member-visibility='public' or ./getter/@member-visibility='public' or ./setter/@member-visibility='public' or count(ext:get('g-settings')/settings/include) = 0 or ext:get('g-settings')/settings/include/@type = 'all'">
+        <xsl:value-of select="ext:let('this-member', .)" />
+        <xsl:if test="./@member-type='event' or ./@member-visibility='public' or ./getter/@member-visibility='public' or ./setter/@member-visibility='public' or count(ext:get('g-settings')/settings/include) = 0 or ext:get('g-settings')/settings/include/@type = 'all' or count(ext:get('g-settings')/settings/include[@signature=ext:get('this-member')/@signature]) > 0">
     @member
         <xsl:choose>
         <xsl:when test="./@member-type='event'">

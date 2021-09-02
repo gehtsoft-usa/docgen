@@ -13,6 +13,9 @@
 <xsl:value-of select="ext:letglobal('g-help-index-root', ext:xmlcreate('help-index', 'root'))" />
 <xsl:value-of select="ext:let('content-node', ext:xmlcreate('help-content', 'root'))" />
 <xsl:value-of select="ext:let('group', /root/group[./@is-root='true'])" />
+<xsl:if test="not(ext:exist('create-group-for-members-with-same-name'))">
+    <xsl:value-of select="ext:letglobal('create-group-for-members-with-same-name', 'no')"/>
+</xsl:if>
 <xsl:if test="count(ext:get('group')) != 1">
 <xsl:value-of select="ext:error('The number of root groups is not equal to 1')" />
 </xsl:if>
