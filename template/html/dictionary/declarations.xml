@@ -33,6 +33,8 @@
  <declaration language="lua" type="field" file="declaration/lua.xsl" />
  <declaration language="lua" type="property" file="declaration/lua.xsl" />
  <declaration language="lua" type="method" file="declaration/lua.xsl" />
+ <declaration language="luax" type="property" file="declaration/luax.xsl" />
+ <declaration language="luax" type="method" file="declaration/luax.xsl" />
  <!-- JavaScript -->
  <declaration language="javaScript" type="field" file="declaration/javaScript.xsl" />
  <declaration language="javaScript" type="property" file="declaration/javaScript.xsl" />

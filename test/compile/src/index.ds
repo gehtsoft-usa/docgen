@@ -195,6 +195,37 @@
 
 @end
 
+@article
+    @title=language test
+    @key=langtest
+    @ingroup=index
+    @brief=
+
+    ```cshml
+    <!-- comment -- >
+    !<@
+        if (a == b)
+            return c;
+    !@>
+    ```
+
+    ```lua
+    function a()
+        return 'abc';
+    end
+    ```
+
+    ```luax
+    !@Fact()
+    class test
+        var a : int;
+        public function x() : void
+            return a;
+        end
+    end
+    ```
+@end
+
 
 @article
     @title=table test
@@ -226,4 +257,43 @@
     |!50%,C1,1|10%,C1,2|C1,3|>
     |C2,1|C2,2|C2,3|
     |C3,1|C3,2|C3,3|
+@end
+
+@class
+    @key=testclass
+    @type=class
+    @brief=test class
+    @name=testclass
+
+    @member
+        @visibility=public
+        @scope=class
+        @type=method
+        @name=m1
+        @brief=method
+
+        @declaration
+            @language=luax
+            @return=string
+            @prefix=static
+            @params=a : int, b : real
+        @end
+
+    @end
+
+    @member
+        @visibility=public
+        @scope=class
+        @type=property
+        @name=m2
+        @brief=property
+
+        @declaration
+            @language=luax
+            @return=datetime
+            @prefix=static
+        @end
+
+    @end
+
 @end

@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Gehtsoft.Build.DocGen</id>
-        <version>0.1.24</version>
+        <version>0.1.26</version>
         <authors>Gehtsoft</authors>
         <license type="file">license.txt</license>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <releaseNotes>Add option to collect all methods with the same name into one additional page.</releaseNotes>
+        <releaseNotes>Update to highlighter.js v11, add luaX.</releaseNotes>
         <description>MSBuild task to compile documentation sources</description>
     </metadata>
     <files>

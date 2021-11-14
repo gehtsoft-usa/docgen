@@ -404,16 +404,23 @@ namespace AssemblyToXml
         {
             foreach (var member in type.Methods)
             {
+                bool ignore = false;
                 if (member.DeclaringType != type)
-                    continue;
+                    ignore = true;
 
                 if (member.CustomAttributes.FirstOrDefault(ci => ci.AttributeType.Name == "DocgenIgnoreAttribute") != null)
-                    continue;
+                    ignore = true;
 
                 if (!(member.IsPublic || member.IsFamily))
-                    continue;
+                    ignore = true;
 
-                if (member.IsSetter || member.IsGetter || member.IsAddOn || member.IsRemoveOn || member.IsFire || member.IsFinal)
+                if (member.IsSetter || member.IsGetter || member.IsAddOn || member.IsRemoveOn || member.IsFire || (member.IsFinal && !member.IsPublic))
+                    ignore = true;
+
+                if (ignore && member.CustomAttributes.FirstOrDefault(ci => ci.AttributeType.Name == "DocgenIncludeAttribute") != null)
+                    ignore = false;
+
+                if (ignore)
                     continue;
 
                 MemberElement element = MethodToMemberElement(member);
