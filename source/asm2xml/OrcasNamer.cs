@@ -86,8 +86,7 @@ namespace AssemblyToXml
             string name = method.Name.TrimTemplate();
             if (name == ".ctor")
                 name = "#ctor";
-            if (name == "TryParse")
-                ;
+
             WriteType(method.DeclaringType, writer);
             writer.Write(".{0}", name);
 
