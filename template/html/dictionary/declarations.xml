@@ -66,4 +66,9 @@
  <declaration language="python" type="field" file="declaration/python.xsl" />
  <declaration language="python" type="property" file="declaration/python.xsl" />
  <declaration language="python" type="method" file="declaration/python.xsl" />
+ <!-- abstact -->
+ <declaration language="bnf" type="field" file="declaration/bnf.xsl" />
+ <declaration language="bnf" type="property" file="declaration/bnf.xsl" />
+ <declaration language="bnf" type="method" file="declaration/bnf.xsl" />
+
 </declarations>
