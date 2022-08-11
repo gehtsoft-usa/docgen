@@ -9,7 +9,7 @@
         "url": "https://github.com/gehtsoft-usa/docgen"
     },
     "engines": {
-        "vscode": "^1.37.0"
+        "vscode": "^1.70.0"
     },
     "categories": [
         "Other"
@@ -46,15 +46,14 @@
         "compile": "tsc -p ./",
         "tslint": "tslint ./src/**/*.ts",
         "watch": "tsc -w -p ./",
-        "package": "vsce package",
-        "postinstall": "node ./node_modules/vscode/bin/install"
+        "package": "vsce package"
     },
     "devDependencies": {
         "@types/node": "^10.12.18",
         "tslint": "^5.16.0",
         "typescript": "^3.5.1",
         "vsce": "^1.61.0",
-        "vscode": "^1.1.36"
+        "@types/vscode": "^1.70.0"
     },
     "dependencies": {
         "xmldom": "^0.1.27",

@@ -14,8 +14,6 @@ dst
 *.vsix
 *.zip
 *.nupkg
-*/vscode/docgen/node_modules
-*/vscode/docgen/out
 source/msbuild.test/dst
 source/msbuild.test/src/raw
 test/compile/dst
