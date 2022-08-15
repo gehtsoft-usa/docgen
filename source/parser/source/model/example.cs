@@ -98,8 +98,6 @@ namespace GehtSoft.DocCreator.Parser
             if (mTitle == null)
                 throw new ValidationError(file, line, "tab", "@title");
         }
-
-
     }
 
     /** The table. */

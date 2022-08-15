@@ -29,6 +29,7 @@
 <xsl:if test="./@import-hhc!=''"><xsl:value-of select="ext:call('copy-import.xsl', ext:document(./@import-hhc))" /></xsl:if>
 <xsl:if test="./@import-hhk!=''"><xsl:value-of select="ext:call('copy-import-keys.xsl', ext:document(./@import-hhk))" /></xsl:if>
 <xsl:value-of select="ext:let('p-title', ./@title)" />
+<xsl:value-of select="ext:let('p-curr-node', .)" />
 <xsl:value-of select="ext:call('write-html-prolog.xsl', /)" disable-output-escaping="yes" />
 <xsl:value-of select="ext:let('curr-group', ./@key)" />
 <!-- write title and brief (if group is not briefless) -->

@@ -12,6 +12,7 @@
     <xsl:template match="/" >
 
         <xsl:value-of select="ext:let('p-title', concat(ext:escape(ext:caller('curr-item')/@name), '.', ext:escape(ext:caller('curr-name'))))" />
+        <xsl:value-of select="ext:let('p-curr-node', .)" />
         <xsl:value-of select="ext:call('write-html-prolog.xsl', /)" disable-output-escaping="yes" />
 
         <h1>Method group <code><b><xsl:value-of select="ext:get('p-title')" disable-output-escaping="yes" /></b></code></h1>

@@ -295,5 +295,58 @@
         @end
 
     @end
+@end
 
+@article
+    @title=diagrams test
+    @key=testdiagrams
+    @ingroup=index
+    @brief=
+
+    @example
+        @highlight=diagram
+        @show=yes
+        !stateDiagram-v2
+        !    [*] --> Still
+        !    Still --> [*]
+        !
+        !    Still --> Moving
+        !    Moving --> Still
+        !    Moving --> Crash
+        !    Crash --> [*]
+    @end
+@end
+
+@article
+    @title=decliaration in example
+    @key=declarationinexample
+    @ingroup=index
+    @brief=
+
+    @example
+        @title=Declaration
+        @show=always
+        @tabs=yes
+
+        @tab
+            @title=prototype
+            @highlight=luax
+            function x (a : int) : void
+        @end
+        @tab
+            @title=javascript
+            @highlight=javascript
+            function y (a)
+        @end
+        @tab
+            @title=c++
+            @highlight=cpp
+            void y(const int a);
+        @end
+        @tab
+            @title=java
+            @highlight=java
+            void y(int a);
+        @end
+    @end
 @end

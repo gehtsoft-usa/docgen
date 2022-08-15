@@ -14,6 +14,7 @@
     </xsl:template>
     <xsl:template match="article" >
 <xsl:value-of select="ext:let('p-title', ext:removehtml(./@title))" />
+<xsl:value-of select="ext:let('p-curr-node', .)" />
 <xsl:value-of select="ext:call('write-html-prolog.xsl', /)" disable-output-escaping="yes" />
 <xsl:value-of select="ext:let('transform', ext:get('default-transform', 'no'))" />
 <xsl:for-each select="ancestor-or-self::*">

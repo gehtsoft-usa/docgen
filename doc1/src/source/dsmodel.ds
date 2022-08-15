@@ -286,6 +286,14 @@
         @param
             @name=highlight
             The name of the programming language to do the syntax highlighting (if supported by the output template)
+
+            Starting from version 0.1.30 the value may also be a `diagram`. 
+            In this case the diagram in [eurl=https://mermaid-js.github.io/]mermaid[/eurl] format
+            will be displayed instead of a source code. 
+
+            Please note that mermaid does not handle correctly the elements which aren't
+            displayed initially, so use `highlight=diagram` only together with `show=yes` or `show=always`
+            properties. 
         @end
 
         The element may contain the following elements:

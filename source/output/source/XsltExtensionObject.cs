@@ -422,6 +422,12 @@ namespace GehtSoft.DocCreator.Output
             return tmp;
         }
 
+        public string unreplaceentity(string text)
+        {
+            string tmp = text.Replace("&amp;", "&&").Replace("&lt;", "<").Replace("&gt;", ">").Replace("&quot;", "\"");
+            return tmp;
+        }
+
         public string replace(string text, string pattern, string value)
         {
             return text.Replace(pattern, value);

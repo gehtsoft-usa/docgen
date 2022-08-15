@@ -11,6 +11,9 @@
     <script type="text/javascript" src="highlighter/highlight.pack.js" />
     <script type="text/javascript" src="highlighter/highlight.cshtml.js" />
 </xsl:if>
+<xsl:if test="ext:exist('p-has-diagrams') and ext:caller('p-has-diagrams')">
+    <script type="text/javascript" src="res/mermaid.min.js" />
+</xsl:if>
 <xsl:choose>
 <xsl:when test="ext:exist('external-resources') and ext:get('external-resources') = 'yes'">
     <script type="text/javascript" src="settings.js" />
@@ -34,7 +37,9 @@
 <script type="text/javascript">
     loadStarted();
 </script>
-
+<xsl:if test="ext:exist('p-has-diagrams') and ext:caller('p-has-diagrams')">
+    <script>mermaid.initialize({startOnLoad:true});</script>
+</xsl:if>
 </xsl:template>
 </xsl:stylesheet>
 

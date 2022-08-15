@@ -42,6 +42,7 @@
 </xsl:choose>
 
 <xsl:value-of select="ext:let('p-title', ext:escape(./@name))" />
+<xsl:value-of select="ext:let('p-curr-node', .)" />
 <xsl:value-of select="ext:call('write-html-prolog.xsl', /)" disable-output-escaping="yes" />
 <h1><code><xsl:value-of select="ext:caller('curr-item-type')" /><xsl:text xml:space="preserve"> </xsl:text><b><xsl:value-of select="ext:escape(./@decl-name)" disable-output-escaping="yes" /></b></code></h1>
 <!-- class parents -->

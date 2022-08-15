@@ -20,6 +20,7 @@
     </xsl:if>
 </xsl:for-each>
 <xsl:value-of select="ext:let('p-title', ext:escape(concat(../@decl-name, ./@divisor, ./@name)))" />
+<xsl:value-of select="ext:let('p-curr-node', .)" />
 <xsl:value-of select="ext:call('write-html-prolog.xsl', /)" disable-output-escaping="yes" />
 <xsl:value-of select="ext:let('title', '')" />
 <xsl:if test="./@scope='class'">

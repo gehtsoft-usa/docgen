@@ -1,4 +1,5 @@
 @echo off
+set docgen=..\..
 del %temp%\hhtest.txt
 if not exist dst mkdir dst
 if not exist dst\img mkdir dst\img

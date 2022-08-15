@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Gehtsoft.Build.DocGen</id>
-        <version>0.1.29</version>
+        <version>0.1.30</version>
         <authors>Gehtsoft</authors>
         <license type="file">license.txt</license>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <releaseNotes>Add BNF notation.</releaseNotes>
+        <releaseNotes>Add mermaid support.</releaseNotes>
         <description>MSBuild task to compile documentation sources</description>
     </metadata>
     <files>
