@@ -10,7 +10,7 @@
     are added or removed or which signatures are changed may become challenging. This template allows to compare
     the documentation source and auto-generated tree in order to find these situations.
 
-    Please not that this assembly does NOT use [link=modelXML]DocGen XML document[/link]
+    Please note that this template does NOT use [link=modelXML]DocGen XML document[/link]
     as a source. It opens and processes the document specified
     in the template parameters. However, because it is still required to have
     any DocGen XML document, you have to create a source file with an

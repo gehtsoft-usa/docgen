@@ -9,6 +9,8 @@
     At the top level of the documentation file only following elements may be used
     [clink=modelDS.article]article[/clink], [clink=modelDS.class]class[/clink], [clink=modelDS.group]group[/clink]
 
+    The diagram below shows the hierarchical structure of the model.
+
     @member
         @type=property
         @name=article
@@ -159,6 +161,9 @@
         @brief=A specification of a method for a language specific declaration
         @custom=xml-tag
 
+        The tag is deprecated for new documentation.
+
+        The current style suggests using [<example>]<modelDS.example> tag instead.
 
         @param
             @name=language

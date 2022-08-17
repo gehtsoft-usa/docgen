@@ -302,11 +302,11 @@
     To define the width of the column put size in percents after `|` character followed
     by `,`.
 
-    |50%,cell1|25%,cell2|25%,cell3| >
+    Example: `|50%,cell1|25%,cell2|25%,cell3| >`
 
     You can specify both, the width and the header flag
 
-    |!50%,cell1|25%,cell2|25%,cell3| >
+    Example: `|!50%,cell1|25%,cell2|25%,cell3| >`
 
     To add more lines put them right after the first line. You can
     also use formatting inside the table

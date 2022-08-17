@@ -303,31 +303,28 @@
     @ingroup=index
     @brief=
 
-    @example
-        @highlight=diagram
-        @show=yes
-        !stateDiagram-v2
-        !    [*] --> Still
-        !    Still --> [*]
-        !
-        !    Still --> Moving
-        !    Moving --> Still
-        !    Moving --> Crash
-        !    Crash --> [*]
-    @end
+    ```diagram
+        stateDiagram-v2
+            [*] --> Still
+            Still --> [*]
+
+            Still --> Moving
+            Moving --> Still
+            Moving --> Crash
+            Crash --> [*]
+    ```
 @end
 
 @article
-    @title=decliaration in example
+    @title=declaration in example
     @key=declarationinexample
     @ingroup=index
     @brief=
 
     @example
-        @title=Declaration
+        @title=[b]Declaration[/b]
         @show=always
         @tabs=yes
-
         @tab
             @title=prototype
             @highlight=luax
