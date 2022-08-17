@@ -315,35 +315,151 @@
     ```
 @end
 
-@article
-    @title=declaration in example
-    @key=declarationinexample
+@class
+    @name=myclass
     @ingroup=index
-    @brief=
+    @brief=My class
+    @type=interface
+    @writeSignatures=yes
 
-    @example
-        @title=[b]Declaration[/b]
-        @show=always
-        @tabs=yes
-        @tab
-            @title=prototype
-            @highlight=luax
-            function x (a : int) : void
+    @member
+        @type=method
+        @name=a
+        @brief=My method
+
+        @example
+            @declaration=yes
+            @tab
+                @title=prototype
+                @highlight=luax
+                function x (a : int) : void
+            @end
+            @tab
+                @highlight=javascript
+                function y (a)
+            @end
+            @tab
+                @highlight=cpp
+                void y(const int a);
+            @end
+            @tab
+                @highlight=java
+                void y(int a);
+            @end
         @end
-        @tab
-            @title=javascript
-            @highlight=javascript
-            function y (a)
+
+        @param
+            @name=a
+            A is a parameter
         @end
-        @tab
-            @title=c++
-            @highlight=cpp
-            void y(const int a);
+
+        Description is here
+
+        ```diagram
+            stateDiagram-v2
+                [*] --> Still
+                Still --> [*]
+
+                Still --> Moving
+                Moving --> Still
+                Moving --> Crash
+                Crash --> [*]
+        ```
+
+    @end
+    @member
+        @type=method
+        @name=a
+        @key=a1
+        @brief=My property
+        @type=property
+
+        @example
+            @declaration=yes
+            @tab
+                @title=prototype
+                @highlight=luax
+                function x (a : int) : void
+            @end
+            @tab
+                @highlight=javascript
+                function y (a)
+            @end
+            @tab
+                @highlight=cpp
+                void y(const int a);
+            @end
+            @tab
+                @highlight=java
+                void y(int a);
+            @end
         @end
-        @tab
-            @title=java
-            @highlight=java
-            void y(int a);
+
+        @param
+            @name=a
+            A is a parameter
         @end
+
+        Description is here
+    @end
+
+    @member
+        @type=method
+        @name=b
+        @brief=Another method
+
+        @declaration
+            @language=luax
+            @params=a : int
+            @return=void
+        @end
+
+        @param
+            @name=a
+            A is a parameter
+        @end
+
+        Description is here
+    @end
+
+    @member
+        @type=method
+        @name=c
+        @key=c1
+        @brief=Another method
+
+        @example
+            @declaration=yes
+            @tab
+                @highlight=luax
+                function c(x : int) : int
+            @end
+        @end
+
+        @param
+            @name=a
+            A is a parameter
+        @end
+
+        Description is here
+    @end
+    @member
+        @type=method
+        @name=c
+        @key=c2
+        @brief=Another method
+
+        @declaration
+            @language=luax
+            @params=x : double
+            @return=int
+        @end
+
+        @param
+            @name=a
+            A is a parameter
+        @end
+
+        Description is here
     @end
 @end

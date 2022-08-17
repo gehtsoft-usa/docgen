@@ -60,6 +60,11 @@
  </xsl:for-each>
  </table>
 </xsl:if>
+<xsl:if test="count(.//new-declaration)>0">
+  <xsl:value-of select="ext:let('curr-item', .//new-declaration[1])" />
+  <xsl:value-of select="ext:call('write-example.xsl', /)" disable-output-escaping="yes" />
+</xsl:if>
+
 <!-- parameters -->
 <xsl:value-of select="ext:let('curr-item', .)" />
 <xsl:value-of select="ext:call('write-params.xsl', /)" disable-output-escaping="yes" />

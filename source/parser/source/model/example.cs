@@ -10,6 +10,7 @@ namespace GehtSoft.DocCreator.Parser
         private string mTitle = "";
         private string mHighlight = null;
         private string mIf = null;
+        private readonly ExampleItem mExample;
 
         public string If
         {
@@ -19,8 +20,9 @@ namespace GehtSoft.DocCreator.Parser
             }
         }
 
-        public ExampleTabItem(string file, int line) : base(file, line)
+        public ExampleTabItem(ExampleItem example, string file, int line) : base(file, line)
         {
+            mExample = example;
             trim = false;
         }
 
@@ -77,6 +79,8 @@ namespace GehtSoft.DocCreator.Parser
                     if (sValue == null)
                         throw new ValueError(file, line, "tab", sName, "(null)");
                     mHighlight = sValue;
+                    if (mExample.Declaration == "yes" && string.IsNullOrEmpty(mTitle))
+                        mTitle = mHighlight;
                     return null;
                 case "if":
                     if (sValue == null)
@@ -90,7 +94,7 @@ namespace GehtSoft.DocCreator.Parser
 
         /** Validate the content of the item.
 
-            @exception EParseValidate   In case of validation is not succesful
+            @exception EParseValidate   In case of validation is not successful
          */
         override internal void validate(string file, int line)
         {
@@ -113,6 +117,7 @@ namespace GehtSoft.DocCreator.Parser
         private string mIf = null;
         private string mGray = "yes";
         private string mHighlight = null;
+        private string mDeclaration = "no";
         private bool mTabs = false;
         private List<DocItem> maTabs;           //!< list of the see also items
         public bool Simplified { get; set; } = false;
@@ -124,6 +129,7 @@ namespace GehtSoft.DocCreator.Parser
                 return mIf;
             }
         }
+        public string Declaration => mDeclaration;
 
         public ExampleItem(string file, int line) : base(file, line)
         {
@@ -138,7 +144,7 @@ namespace GehtSoft.DocCreator.Parser
         */
         public XmlNode ItemToXml(XmlDocument doc, IDefinitionList defs)
         {
-            XmlNode exampleNode = doc.CreateNode(XmlNodeType.Element, "example", "");
+            XmlNode exampleNode = doc.CreateNode(XmlNodeType.Element, mDeclaration == "yes" ? "new-declaration" : "example", "");
             XmlAttribute attr;
 
             attr = doc.CreateAttribute("title");
@@ -151,6 +157,10 @@ namespace GehtSoft.DocCreator.Parser
 
             attr = doc.CreateAttribute("show");
             attr.Value = mShow;
+            exampleNode.Attributes.Append(attr);
+
+            attr = doc.CreateAttribute("declaration");
+            attr.Value = mDeclaration;
             exampleNode.Attributes.Append(attr);
 
             attr = doc.CreateAttribute("gray");
@@ -208,6 +218,23 @@ namespace GehtSoft.DocCreator.Parser
                         throw new ValueError(file, line, "example", sName, "(null)");
                     mShow = sValue;
                     return null;
+                case "declaration":
+                    if (sValue == null)
+                        throw new ValueError(file, line, "example", sName, "(null)");
+                    mDeclaration = sValue;
+                    if (mDeclaration == "yes")
+                    {
+                        if (string.IsNullOrEmpty(mTitle))
+                            mTitle = "[b]Declaration[/b]";
+                    }
+                    if (mShow == "no")
+                        mShow = "always";
+                    if (!mTabs)
+                    {
+                        mTabs = true;
+                        maTabs = new List<DocItem>();
+                    }
+                    return null;
                 case "if":
                     if (sValue == null)
                         throw new ValueError(file, line, "example", sName, "(null)");
@@ -233,7 +260,7 @@ namespace GehtSoft.DocCreator.Parser
                     return null;
                 case "tab":
                     {
-                        ExampleTabItem item = new ExampleTabItem(file, line);
+                        ExampleTabItem item = new ExampleTabItem(this, file, line);
                         maTabs.Add(item);
                         return item;
                     }

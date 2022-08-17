@@ -10,8 +10,8 @@
     <xsl:variable name="body"><![CDATA[<body>]]></xsl:variable>
     <xsl:variable name="head1"><![CDATA[<head>]]></xsl:variable>
     <xsl:variable name="head2"><![CDATA[</head>]]></xsl:variable>
-    <xsl:value-of select="ext:let('p-has-diagrams', count(ext:caller('p-curr-node')//example[@highlight='diagram']) > 0 or count(ext:caller('p-curr-node')//example-tab[@highlight='diagram']) > 0)" />
 <xsl:value-of select="$html" disable-output-escaping="yes" />
+    <xsl:value-of select="ext:let('p-has-diagrams', count(ext:caller('p-curr-node')//example[@highlight='diagram']) > 0 or count(ext:caller('p-curr-node')//example-tab[@highlight='diagram']) > 0)" />
 <xsl:value-of select="$head1" disable-output-escaping="yes" />
     <xsl:value-of select="concat('&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=', ext:get('codepage'), '&quot; /&gt;')" disable-output-escaping="yes" />
     <xsl:value-of select="'&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;'" disable-output-escaping="yes" />

@@ -4,10 +4,11 @@ function loadStarted() {
     if (highlighterEnabled && !window.location.href.indexOf('mk:') == 0) {
         var head = document.getElementsByTagName('head')[0];
 
-        var script1 = document.createElement('script');
-        script1.type = 'text/javascript';
-        script1.src = './highlighter/highlight.pack.js';
-        head.appendChild(script1);
+        var script4 = document.createElement('script');
+        script4.type = 'text/javascript';
+        script4.src = './highlighter/highlight.min.js';
+        head.appendChild(script4);
+
 
         var script2 = document.createElement('script');
         script2.type = 'text/javascript';

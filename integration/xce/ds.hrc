@@ -467,6 +467,8 @@
                     region1="keyword" region2="sym" region3="service" />
             <regexp match="/^\s*(@transform)(=)\s*((yes|no|def)|(.*))\s*$/"
                     region1="keyword" region2="sym" region4="keyword" region5="error" />
+            <regexp match="/^\s*(@declaration)(=)\s*((yes|no)|(.*))\s*$/"
+                    region1="keyword" region2="sym" region4="keyword" region5="error" />
             <regexp match="/^\s*(@show)(=)\s*((yes|no|always)|(.*))\s*$/"
                     region1="keyword" region2="sym" region4="keyword" region5="error" />
             <regexp match="/^\s*(@gray)(=)\s*((yes|no)|(.*))\s*$/"

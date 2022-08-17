@@ -313,6 +313,16 @@ example : context {
    }
 
    : pattern {
+      regex \= ^(\s*)(@declaration)(\s*)(=)(\s*)(yes|no)(\s*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name,.whitespace;
+   }
+
+   : pattern {
+      regex \= ^(\s*)(@declaration)(\s*)(=)(\s*)(\S?.*)$
+      styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.illegal;
+   }
+
+   : pattern {
       regex \= ^(\s*)(@tabs)(\s*)(=)(\s*)(yes|no)(\s*)$
       styles[] = .whitespace,.keyword,.whitespace,.punctuation,.whitespace,.entity.name,.whitespace;
    }

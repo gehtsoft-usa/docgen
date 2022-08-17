@@ -34,7 +34,7 @@
 <xsl:value-of select="ext:let('body-template', ext:caller('body-template'))" />
 <xsl:choose>
 <xsl:when test="count(./@write-signatures) > 0 and ./@write-signatures != 'def'">
-<xsl:value-of select="ext:let('write-signatures', ./@write-signatures) = 'yes'"/>
+<xsl:value-of select="ext:let('write-signatures', ./@write-signatures = 'yes')"/>
 </xsl:when>
 <xsl:otherwise>
 <xsl:value-of select="ext:let('write-signatures', ext:get('add-signature-to-brief', 'no') = 'yes')"/>

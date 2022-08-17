@@ -12,8 +12,20 @@
     <xsl:template match="/" >
         <xsl:apply-templates select="ext:caller('curr-item')" />
     </xsl:template>
-    <xsl:template match="example" >
+    <xsl:template match="example">
+        <xsl:call-template name="process-example">
+            <xsl:with-param name="node" select="." />
+        </xsl:call-template>
+    </xsl:template>
+    <xsl:template match="new-declaration">
+        <xsl:call-template name="process-example">
+            <xsl:with-param name="node" select="." />
+        </xsl:call-template>
+    </xsl:template>
+    <xsl:template name="process-example" >
+        <xsl:param name="node" />
         <xsl:value-of select="ext:let('transform', ext:get('default-transform', 'no'))" />
+        <xsl:for-each select="$node">
         <xsl:for-each select="ancestor-or-self::*">
             <xsl:if test="count(./@transform) > 0 and ./@transform!='def'">
                 <xsl:value-of select="ext:let('transform', ./@transform)" />
@@ -87,6 +99,7 @@
                 </xsl:element>
             </xsl:otherwise>
         </xsl:choose>
+        </xsl:for-each>
     </xsl:template>
 
     <xsl:template name="write-example-content">
