@@ -11,8 +11,6 @@
 
 <xsl:template match="/" >
     <xsl:value-of select="ext:let('transform', ext:caller('transform'))" />
-    <xsl:value-of select="ext:let('body-template', ext:caller('body-template'))" />
-    <xsl:value-of select="ext:let('content-node', ext:caller('content-node'))" />
     <xsl:value-of select="ext:let('write-signature', ext:caller('write-signature'))" />
 
    <xsl:variable name="declarations" select="ext:caller('curr-node')/declaration" />

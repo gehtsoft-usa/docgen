@@ -18,6 +18,7 @@
         <dg:define name="default-transform" value="yes" />
         <dg:define name="enable-highlighter" value="yes" />
         <dg:define name="external-resources" value="yes" />
+	<dg:define name="create-group-for-members-with-same-name" value="yes" />
 
         <dg:define name="add-to-prolog-head" value="src/html/prolog-header.html" />
         <dg:define name="add-to-prolog-body" value="src/html/prolog-body.html" />
