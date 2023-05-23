@@ -1,4 +1,4 @@
 if not exist obj nuget restore project.proj
-msbuild project.proj /t:CleanDoc
-msbuild project.proj /t:Scan,Raw
-msbuild project.proj /t:MakeDoc
+dotnet build project.proj /t:CleanDoc
+dotnet build project.proj /t:Scan,Raw
+dotnet build project.proj /t:MakeDoc

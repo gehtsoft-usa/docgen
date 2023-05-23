@@ -1,11 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-    <TargetFramework>net46</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Gehtsoft.Build.DocGen" Version="0.1.3" IncludeAssets="build" />
-    <PackageReference Include="Gehtsoft.Build.ContentDelivery" Version="0.1.9" IncludeAssets="build" />
+    <PackageReference Include="Gehtsoft.Build.DocGen" Version="0.1.32" IncludeAssets="build" />
+    <PackageReference Include="Gehtsoft.Build.ContentDelivery" Version="0.1.10" IncludeAssets="build" />
   </ItemGroup>
 
  <ItemGroup>
@@ -24,19 +24,21 @@
   <MakeDir Directories="@(TargetDir)" />
   <DocGen Project="project.xml" />
   <Copy SourceFiles="@(MySourceFiles)" DestinationFolder="$(MSBuildProjectDirectory)/dst" />
-  <ContentFromPackage Package="Gehtsoft.Build.DocGen" Source="Content\template\html\res" Version="0.1.2" Destination="$(MSBuildProjectDirectory)/dst/res" />
-  <ContentFromPackage Package="Gehtsoft.Build.DocGen" Source="Content\template\html\highlighter" Version="0.1.2" Destination="$(MSBuildProjectDirectory)/dst/highlighter" />
-  <ContentFromPackage Package="Gehtsoft.Build.DocGen" Source="Content\template\html\menu" Version="0.1.2" Destination="$(MSBuildProjectDirectory)/dst/menu" />
-  <ContentFromPackage Package="Gehtsoft.Build.DocGen" Source="Content\template\html\pageImages" Version="0.1.2" Destination="$(MSBuildProjectDirectory)/dst/pageImages" />
+  <ContentFromPackage Package="Gehtsoft.Build.DocGen" Source="Content\template\html\res" Version="0.1.32" Destination="$(MSBuildProjectDirectory)/dst/res" />
+  <ContentFromPackage Package="Gehtsoft.Build.DocGen" Source="Content\template\html\highlighter" Version="0.1.32" Destination="$(MSBuildProjectDirectory)/dst/highlighter" />
+  <ContentFromPackage Package="Gehtsoft.Build.DocGen" Source="Content\template\html\menu" Version="0.1.32" Destination="$(MSBuildProjectDirectory)/dst/menu" />
+  <ContentFromPackage Package="Gehtsoft.Build.DocGen" Source="Content\template\html\pageImages" Version="0.1.32" Destination="$(MSBuildProjectDirectory)/dst/pageImages" />
  </Target>
 
  <ItemGroup>
-    <DocSource Include="D:\develop\components\BusinessSpecificComponents\Questionnaire\Gehtsoft.DynamicValidation\bin\Release\netcoreapp2.0\Gehtsoft.DynamicValidation.dll" />
-    <DocSource Include="D:\develop\components\BusinessSpecificComponents\Questionnaire\Gehtsoft.DynamicValidation.Parser\bin\Release\netcoreapp2.0\Gehtsoft.DynamicValidation.Parser.dll" />
+    <DocSource
+        Include="D:\develop\components\BusinessSpecificComponents\Questionnaire\Gehtsoft.DynamicValidation\bin\Release\netstandard2.0\Gehtsoft.DynamicValidation.dll" />
+    <DocSource
+        Include="D:\develop\components\BusinessSpecificComponents\Questionnaire\Gehtsoft.DynamicValidation.Parser\bin\Release\netstandard2.0\Gehtsoft.DynamicValidation.Parser.dll" />
  </ItemGroup>
 
  <Target Name="Scan">
-    <Asm2Xml Assemblies="@(DocSource)" OutputXml="obj/lib.xml" Mode="netcoreapp3.1" />
+    <Asm2Xml Assemblies="@(DocSource)" OutputXml="obj/lib.xml" Mode="net60" />
  </Target>
 
  <Target Name="Raw">

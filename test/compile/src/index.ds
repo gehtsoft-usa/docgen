@@ -376,6 +376,7 @@
 
         @example
             @declaration=yes
+            @tabs=yes
             @tab
                 @title=prototype
                 @highlight=luax
@@ -430,6 +431,7 @@
 
         @example
             @declaration=yes
+            @tabs=yes
             @tab
                 @highlight=luax
                 function c(x : int) : int

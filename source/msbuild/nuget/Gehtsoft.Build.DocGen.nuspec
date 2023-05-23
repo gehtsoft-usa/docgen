@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Gehtsoft.Build.DocGen</id>
-        <version>0.1.31</version>
+        <version>0.1.32</version>
         <authors>Gehtsoft</authors>
         <license type="file">license.txt</license>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -12,9 +12,9 @@
     <files>
         <file src="../build/Gehtsoft.Build.DocGen.props" target="build" />
         <file src="../buildMultiTargeting/Gehtsoft.Build.DocGen.props" target="buildMultiTargeting" />
-        <file src="../bin/Release/net46/Gehtsoft.Build.DocGen.dll" target="tasks/net46" />
-        <file src="../bin/Release/net46/docgen2.output.dll" target="tasks/net46" />
-        <file src="../bin/Release/net46/docgen2.parser.dll" target="tasks/net46" />
+        <file src="../bin/Release/net472/Gehtsoft.Build.DocGen.dll" target="tasks/net472" />
+        <file src="../bin/Release/net472/docgen2.output.dll" target="tasks/net472" />
+        <file src="../bin/Release/net472/docgen2.parser.dll" target="tasks/net472" />
         <file src="../bin/Release/netstandard2.0/Gehtsoft.Build.DocGen.dll" target="tasks/netstandard2.0" />
         <file src="../bin/Release/netstandard2.0/docgen2.output.dll" target="tasks/netstandard2.0" />
         <file src="../bin/Release/netstandard2.0/docgen2.parser.dll" target="tasks/netstandard2.0" />
