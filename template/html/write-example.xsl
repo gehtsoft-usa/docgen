@@ -193,7 +193,8 @@
         <xsl:choose>
             <xsl:when test="count(./@highlight) > 0 and ./@highlight='diagram'">
                 <div class="mermaid">
-                    <xsl:value-of select="ext:unreplaceentity(ext:get('item-text'))" disable-output-escaping="yes" />
+                    <!-- <xsl:value-of select="ext:unreplaceentity(ext:get('item-text'))" disable-output-escaping="yes" /> -->
+                    <xsl:value-of select="ext:get('item-text')" disable-output-escaping="yes" />
                 </div>
             </xsl:when>
             <xsl:when test="$insideTag='false'">

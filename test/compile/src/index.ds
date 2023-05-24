@@ -313,6 +313,12 @@
             Moving --> Crash
             Crash --> [*]
     ```
+
+    ```diagram
+        classDiagram
+        class A
+        <<interface>> A
+    ```
 @end
 
 @class
