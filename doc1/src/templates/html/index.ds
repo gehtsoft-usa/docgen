@@ -223,8 +223,7 @@
             <node name="2 - The Language" local="lua/2.html"/>
             <node name="2.1 - Lexical Conventions" local="lua/2.1.html"/>
             <node name="2.2 - Values and Types" local="lua/2.2.html">
-             <node name="2.2.1 - Coercion" local="lua/2.2.1.html" />
-            </node>
+            <node name="2.2.1 - Coercion" local="lua/2.2.1.html" />
         </node>
         ...
     </help-content>

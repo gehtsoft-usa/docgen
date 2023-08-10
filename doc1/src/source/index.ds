@@ -43,7 +43,7 @@
         @gray=yes
         @highlight=ds
         !@article
-        !    @title=My tile
+        !    @title=My title
         !    Article content.
         !    Still first paragraph.
         !
@@ -62,7 +62,7 @@
     @ingroup=sources
     @key=structure
 
-    The are four tags that defines the structural elements of the documentation:
+    There are four tags that define the structural elements of the documentation:
 
     1) Groups.
 
@@ -141,7 +141,7 @@
     The docgen also partially supports using of
     MarkDown-style formatting.
 
-    Te enable markdown style formatting add
+    The enable markdown style formatting add
     define with the name `simplified-text-syntax` to
     common section of the project file.
 
