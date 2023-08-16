@@ -29,6 +29,7 @@
         @brief=The article
         @custom=xml-tag
 
+        The tag is placed at the beginning of each article. The article ends with the tag `end`.
 
         @param
             @name=title
