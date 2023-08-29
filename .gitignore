@@ -19,3 +19,5 @@ source/msbuild.test/src/raw
 test/compile/dst
 test/compile/src/raw
 test/cs2ds/**/out.xml
+
+.fake
