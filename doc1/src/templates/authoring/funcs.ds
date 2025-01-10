@@ -181,7 +181,7 @@
             first XSLT file being called.
 
             The feature allows you to "replace" some XSLT files
-            in the default default without need to copy
+            in the default without need to copy
             a template completely.
         @end
 
@@ -227,7 +227,7 @@
             first XSLT file being called.
 
             The feature allows you to "replace" some XSLT files
-            in the default default without need to copy
+            in the default without need to copy
             a template completely.
         @end
 
