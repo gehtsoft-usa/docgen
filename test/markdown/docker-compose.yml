@@ -1,0 +1,6 @@
+# docker-compose.yml
+services:
+  web:
+    image: dannyben/madness
+    volumes: ["./dst:/docs"]
+    ports: ["3000:3000"]

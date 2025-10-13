@@ -111,7 +111,7 @@
                 <xsl:if test="string-length(./@return) > 0">
                     <xsl:choose>
                         <xsl:when test="ext:get('transform') = 'yes' and string-length(./@return) > 0">
-                            <xsl:value-of select="ext:call('bbcode-to-markdown.xsl', ext:parsebbcode(./@return))" />
+                            <xsl:value-of select="ext:call('bbcode-to-plaintext.xsl', ext:parsebbcode(./@return))" />
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:value-of select="./@return" />
@@ -127,7 +127,7 @@
                     <xsl:text>(</xsl:text>
                     <xsl:choose>
                         <xsl:when test="ext:get('transform') = 'yes' and string-length(./@params) > 0">
-                            <xsl:value-of select="ext:call('bbcode-to-markdown.xsl', ext:parsebbcode(./@params))" />
+                            <xsl:value-of select="ext:call('bbcode-to-plaintext.xsl', ext:parsebbcode(./@params))" />
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:value-of select="./@params" />

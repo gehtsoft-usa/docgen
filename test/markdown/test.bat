@@ -1,1 +1,0 @@
-docker run -d --name Markdown-Preview -p 3000:4321 -v D:\develop\work\tools\docgen\test\markdown\dst\:/app/src/content/md toabr/mdp

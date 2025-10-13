@@ -5,7 +5,7 @@
     </dg:common>
 
     <dg:source>
-        <dg:xml-file name="../model.xml" />
+        <dg:xml-file name="./model.xml" />
     </dg:source>
 
     <dg:output template="../../template/markdown/main.xsl" file="dst/index.md" encoding="utf-8" >
