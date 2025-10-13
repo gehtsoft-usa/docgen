@@ -47,11 +47,38 @@ namespace GehtSoft.DocCreator
                 return ;
             }
 
-            DsFileParser parser = new DsFileParser();
+            XmlDocument modelDoc = null;
             int i, l;
 
-            if (project.Sources.Count > 0)
+            if (project.Sources.Count == 0)
             {
+                Console.WriteLine("Project contains no files");
+                Environment.ExitCode = -6;
+                return ;
+            }
+
+            if (project.IsXmlFileSource)
+            {
+                // Load pre-compiled XML model
+                Console.WriteLine("Loading pre-compiled model from XML...");
+                try
+                {
+                    string xmlFile = project.Sources[0][0];
+                    modelDoc = new XmlDocument();
+                    modelDoc.Load(xmlFile);
+                    Console.WriteLine("Model loaded successfully from {0}", xmlFile);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("unexpected exception while loading XML model\n{0}", e.ToString());
+                    Environment.ExitCode = -4;
+                    return ;
+                }
+            }
+            else
+            {
+                // Parse DS source files
+                DsFileParser parser = new DsFileParser();
                 Console.WriteLine("Parse project...");
                 try
                 {
@@ -85,50 +112,45 @@ namespace GehtSoft.DocCreator
                     Environment.ExitCode = -5;
                     return ;
                 }
-            }
-            else
-            {
-                Console.WriteLine("Project contains no files");
-                Environment.ExitCode = -6;
-                return ;
-            }
 
-
-
-            if (parser.Root.Content.Count == 0)
-            {
-                Console.WriteLine("Project source contains no objects");
-                Environment.ExitCode = -6;
-                return ;
-            }
-
-            {
-                List<Error> errors = new List<Error>();
-                parser.Root.PostProcess(errors);
-                if (errors.Count > 0)
+                if (parser.Root.Content.Count == 0)
                 {
-                    Console.WriteLine("Processing imports errors");
-                    foreach (Error e in errors)
-                        Console.WriteLine("{0}", e.Message);
-                    Environment.ExitCode = -7;
+                    Console.WriteLine("Project source contains no objects");
+                    Environment.ExitCode = -6;
                     return ;
                 }
+
+                {
+                    List<Error> errors = new List<Error>();
+                    parser.Root.PostProcess(errors);
+                    if (errors.Count > 0)
+                    {
+                        Console.WriteLine("Processing imports errors");
+                        foreach (Error e in errors)
+                            Console.WriteLine("{0}", e.Message);
+                        Environment.ExitCode = -7;
+                        return ;
+                    }
+                }
+
+                // Convert parsed model to XML
+                modelDoc = new XmlDocument();
+                XmlNode root = parser.Root.ItemToXml(modelDoc, project.CommonDefinitions);
+                modelDoc.AppendChild(root);
             }
 
+            // Generate outputs
             l = project.Outputs.Count;
             for (i = 0; i < l; i++)
             {
                 DsProjectOutput output = project.Outputs[i];
                 Console.WriteLine("Writing {0} using {1}", output.File, output.Template);
-                XmlDocument doc = new XmlDocument();
-                XmlNode root = parser.Root.ItemToXml(doc, output.Definitions);
-                doc.AppendChild(root);
                 Dictionary<string, object> settings = output.Definitions.CreateDictionary();
 
                 try
                 {
                     XsltTransform.Reset();
-                    XsltTransform.Transform(output.Template, doc.CreateNavigator(), output.File, output.Encoding.WebName, settings);
+                    XsltTransform.Transform(output.Template, modelDoc.CreateNavigator(), output.File, output.Encoding.WebName, settings);
                 }
                 catch (XsltExceptionEx e)
                 {

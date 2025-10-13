@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.gehtsoft.com/docgen/ds-document"
+            xmlns:ds="http://www.gehtsoft.com/docgen/ds-document"
+            elementFormDefault="qualified" >
+
+    <!-- Body content elements that can appear in descriptions -->
+
+    <xs:complexType name="Paragraph">
+        <xs:simpleContent>
+            <xs:extension base="xs:string"/>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="Header">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+            <xs:element name="body" type="ds:Body"/>
+        </xs:sequence>
+        <xs:attribute name="level" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="Note">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+            <xs:element name="body" type="ds:Body"/>
+        </xs:sequence>
+        <xs:attribute name="type" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="TableCol">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+            <xs:element name="body" type="ds:Body"/>
+        </xs:sequence>
+        <xs:attribute name="width" type="xs:string" default="" />
+    </xs:complexType>
+
+    <xs:complexType name="TableRow">
+        <xs:sequence minOccurs="1" maxOccurs="unbounded">
+            <xs:element name="table-col" type="ds:TableCol"/>
+        </xs:sequence>
+        <xs:attribute name="is-header" type="xs:boolean" default="false" />
+    </xs:complexType>
+
+    <xs:complexType name="Table">
+        <xs:sequence minOccurs="1" maxOccurs="unbounded">
+            <xs:element name="table-row" type="ds:TableRow"/>
+        </xs:sequence>
+        <xs:attribute name="width" type="xs:string" default="" />
+    </xs:complexType>
+
+    <xs:complexType name="ListItemItem">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+            <xs:element name="body" type="ds:Body"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="List">
+        <xs:sequence minOccurs="1" maxOccurs="unbounded">
+            <xs:choice>
+                <xs:element name="list-item" type="ds:ListItemItem"/>
+                <xs:element name="list" type="ds:List"/>
+            </xs:choice>
+        </xs:sequence>
+        <xs:attribute name="type" type="xs:string" default="dot" />
+    </xs:complexType>
+
+    <xs:complexType name="ExampleTab">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+            <xs:element name="body" type="ds:Body"/>
+        </xs:sequence>
+        <xs:attribute name="title" type="xs:string" use="required" />
+        <xs:attribute name="highlight" type="xs:string" />
+    </xs:complexType>
+
+    <xs:complexType name="Example">
+        <xs:choice minOccurs="0">
+            <xs:element name="body" type="ds:Body"/>
+            <xs:element name="example-tab" type="ds:ExampleTab" maxOccurs="unbounded"/>
+        </xs:choice>
+        <xs:attribute name="title" type="xs:string" default="" />
+        <xs:attribute name="transform" type="xs:string" default="def" />
+        <xs:attribute name="show" type="xs:string" default="no" />
+        <xs:attribute name="declaration" type="xs:string" default="no" />
+        <xs:attribute name="gray" type="xs:string" default="yes" />
+        <xs:attribute name="tabs" type="xs:boolean" default="false" />
+        <xs:attribute name="highlight" type="xs:string" />
+    </xs:complexType>
+
+    <xs:complexType name="NewDeclaration">
+        <xs:choice minOccurs="0">
+            <xs:element name="body" type="ds:Body"/>
+            <xs:element name="example-tab" type="ds:ExampleTab" maxOccurs="unbounded"/>
+        </xs:choice>
+        <xs:attribute name="title" type="xs:string" default="" />
+        <xs:attribute name="transform" type="xs:string" default="def" />
+        <xs:attribute name="show" type="xs:string" default="no" />
+        <xs:attribute name="declaration" type="xs:string" default="no" />
+        <xs:attribute name="gray" type="xs:string" default="yes" />
+        <xs:attribute name="tabs" type="xs:boolean" default="false" />
+        <xs:attribute name="highlight" type="xs:string" />
+    </xs:complexType>
+
+    <xs:complexType name="Body">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:choice>
+                <xs:element name="p" type="ds:Paragraph"/>
+                <xs:element name="table" type="ds:Table"/>
+                <xs:element name="example" type="ds:Example"/>
+                <xs:element name="new-declaration" type="ds:NewDeclaration"/>
+                <xs:element name="list" type="ds:List"/>
+                <xs:element name="header" type="ds:Header"/>
+                <xs:element name="note" type="ds:Note"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Documentation item elements -->
+
+    <xs:complexType name="SeeAlso">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+            <xs:element name="body" type="ds:Body"/>
+        </xs:sequence>
+        <xs:attribute name="title" type="xs:string" use="required" />
+        <xs:attribute name="key" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="Param">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+            <xs:element name="body" type="ds:Body"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required" />
+        <xs:attribute name="gray" type="xs:boolean" default="false" />
+    </xs:complexType>
+
+    <xs:complexType name="Return">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+            <xs:element name="body" type="ds:Body"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Exception">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+            <xs:element name="body" type="ds:Body"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="Declaration">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+            <xs:element name="body" type="ds:Body"/>
+        </xs:sequence>
+        <xs:attribute name="language" type="xs:string" use="required" />
+        <xs:attribute name="name" type="xs:string" use="required" />
+        <xs:attribute name="prefix" type="xs:string" default="" />
+        <xs:attribute name="suffix" type="xs:string" default="" />
+        <xs:attribute name="name-suffix" type="xs:string" default="" />
+        <xs:attribute name="return" type="xs:string" default="" />
+        <xs:attribute name="params" type="xs:string" default="" />
+        <xs:attribute name="custom" type="xs:string" default="" />
+    </xs:complexType>
+
+    <xs:complexType name="StringElement">
+        <xs:simpleContent>
+            <xs:extension base="xs:string"/>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="Member">
+        <xs:sequence>
+            <xs:element name="body" type="ds:Body" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="return" type="ds:Return" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="param" type="ds:Param" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="declaration" type="ds:Declaration" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="sig" type="ds:StringElement" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required" />
+        <xs:attribute name="visibility" type="xs:string" default="public" />
+        <xs:attribute name="scope" type="xs:string" default="instance" />
+        <xs:attribute name="brief" type="xs:string" use="required" />
+        <xs:attribute name="key" type="xs:string" use="required" />
+        <xs:attribute name="type" type="xs:string" default="method" />
+        <xs:attribute name="custom" type="xs:string" default="" />
+        <xs:attribute name="divisor" type="xs:string" default="." />
+        <xs:attribute name="class" type="xs:string" use="required" />
+        <xs:attribute name="class-name" type="xs:string" use="required" />
+        <xs:attribute name="exclude-from-list" type="xs:boolean" default="false" />
+        <xs:attribute name="transform" type="xs:string" default="def" />
+    </xs:complexType>
+
+    <xs:complexType name="Class">
+        <xs:sequence>
+            <xs:element name="body" type="ds:Body" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="member" type="ds:Member" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="param" type="ds:Param" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="parent" type="ds:StringElement" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required" />
+        <xs:attribute name="sig" type="xs:string" default="" />
+        <xs:attribute name="key" type="xs:string" use="required" />
+        <xs:attribute name="brief" type="xs:string" use="required" />
+        <xs:attribute name="type" type="xs:string" default="ref class" />
+        <xs:attribute name="prefix" type="xs:string" default="" />
+        <xs:attribute name="in-group" type="xs:string" default="index" />
+        <xs:attribute name="decl-name" type="xs:string" />
+        <xs:attribute name="sort" type="xs:boolean" default="true" />
+        <xs:attribute name="class-name-in-key" type="xs:string" default="true" />
+        <xs:attribute name="transform" type="xs:string" default="def" />
+        <xs:attribute name="members-to-content" type="xs:string" default="false" />
+        <xs:attribute name="write-signatures" type="xs:string" default="def" />
+    </xs:complexType>
+
+    <xs:complexType name="Article">
+        <xs:sequence>
+            <xs:element name="body" type="ds:Body" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="title" type="xs:string" use="required" />
+        <xs:attribute name="key" type="xs:string" use="required" />
+        <xs:attribute name="in-group" type="xs:string" default="index" />
+        <xs:attribute name="brief" type="xs:string" use="required" />
+        <xs:attribute name="alias-id" type="xs:string" />
+        <xs:attribute name="exclude-from-list" type="xs:boolean" default="false" />
+        <xs:attribute name="briefless" type="xs:boolean" default="false" />
+        <xs:attribute name="transform" type="xs:string" default="def" />
+    </xs:complexType>
+
+    <xs:complexType name="Group">
+        <xs:sequence>
+            <xs:element name="body" type="ds:Body" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="is-root" type="xs:boolean" use="required" />
+        <xs:attribute name="title" type="xs:string" use="required" />
+        <xs:attribute name="key" type="xs:string" use="required" />
+        <xs:attribute name="brief" type="xs:string" use="required" />
+        <xs:attribute name="in-group" type="xs:string" use="required" />
+        <xs:attribute name="sort-articles" type="xs:string" default="no" />
+        <xs:attribute name="sort-groups" type="xs:string" default="no" />
+        <xs:attribute name="sort-classes" type="xs:string" default="yes" />
+        <xs:attribute name="import-hhc" type="xs:string" default="" />
+        <xs:attribute name="import-hhk" type="xs:string" default="" />
+        <xs:attribute name="briefless" type="xs:boolean" default="false" />
+        <xs:attribute name="order" type="xs:string" default="sorted" />
+        <xs:attribute name="transform" type="xs:string" default="def" />
+    </xs:complexType>
+
+    <xs:complexType name="Root">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:choice>
+                <xs:element name="group" type="ds:Group"/>
+                <xs:element name="article" type="ds:Article"/>
+                <xs:element name="class" type="ds:Class"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="root" type="ds:Root"/>
+</xs:schema>

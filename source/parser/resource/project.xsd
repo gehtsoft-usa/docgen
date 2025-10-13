@@ -36,13 +36,20 @@
         <xs:attribute name="encoding" type="xs:string" default="windows-1252" />
     </xs:complexType>
 
+    <xs:complexType name="SourceXmlFile">
+        <xs:attribute name="name" type="xs:string" use="required" />
+    </xs:complexType>
+
     <xs:complexType name="Source">
-        <xs:sequence minOccurs="1" maxOccurs="unbounded">
-            <xs:choice>
-                <xs:element name="file" type="dg:SourceFile"/>
-                <xs:element name="folder" type="dg:SourceFolder"/>
-            </xs:choice>
-        </xs:sequence>
+        <xs:choice>
+            <xs:element name="xml-file" type="dg:SourceXmlFile"/>
+            <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                <xs:choice>
+                    <xs:element name="file" type="dg:SourceFile"/>
+                    <xs:element name="folder" type="dg:SourceFolder"/>
+                </xs:choice>
+            </xs:sequence>
+        </xs:choice>
     </xs:complexType>
 
     <xs:complexType name="Project">

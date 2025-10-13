@@ -334,6 +334,41 @@ namespace GehtSoft.DocCreator.Parser
         }
     }
 
+    internal class DsProjectXmlFileSource : DsProjectSource
+    {
+        override public bool Contains(string file)
+        {
+            return file.Equals(Name, StringComparison.CurrentCultureIgnoreCase);
+        }
+
+        override public int Count
+        {
+            get
+            {
+                return 1;
+            }
+        }
+
+        override public string this[int index]
+        {
+            get
+            {
+                if (index != 0)
+                    throw new ArgumentOutOfRangeException("index");
+                return Name;
+            }
+        }
+
+        override public void Refresh()
+        {
+            return ;
+        }
+
+        internal DsProjectXmlFileSource(string projectPath, SourceXmlFile xmlFile) : base(projectPath, false, xmlFile.name, "utf-8")
+        {
+        }
+    }
+
     public class DsProjectOutput
     {
         private DsProjectDefineCollection mDefinitions;
@@ -486,6 +521,14 @@ namespace GehtSoft.DocCreator.Parser
             }
         }
 
+        public bool IsXmlFileSource
+        {
+            get
+            {
+                return mSources != null && mSources.Count > 0 && mSources[0] is DsProjectXmlFileSource;
+            }
+        }
+
         public DsProject()
         {
         }
@@ -555,20 +598,34 @@ namespace GehtSoft.DocCreator.Parser
 
                 mSources = new DsProjectSourceCollection();
 
-                if (mProject.source != null && mProject.source.Items != null)
+                if (mProject.source != null && mProject.source.Item != null)
                 {
-                    for (int i = 0; i < mProject.source.Items.Length; i++)
+                    if (mProject.source.Item is SourceXmlFile)
                     {
                         try
                         {
-                            if (mProject.source.Items[i] is SourceFile)
-                                mSources.Add(new DsProjectFileSource(projectPath, mProject.source.Items[i] as SourceFile));
-                            else if (mProject.source.Items[i] is SourceFolder)
-                                mSources.Add(new DsProjectFolderSource(projectPath, mProject.source.Items[i] as SourceFolder));
+                            mSources.Add(new DsProjectXmlFileSource(projectPath, mProject.source.Item as SourceXmlFile));
                         }
                         catch (Error e)
                         {
                             errors.Add(e);
+                        }
+                    }
+                    else if (mProject.source.Items != null)
+                    {
+                        for (int i = 0; i < mProject.source.Items.Length; i++)
+                        {
+                            try
+                            {
+                                if (mProject.source.Items[i] is SourceFile)
+                                    mSources.Add(new DsProjectFileSource(projectPath, mProject.source.Items[i] as SourceFile));
+                                else if (mProject.source.Items[i] is SourceFolder)
+                                    mSources.Add(new DsProjectFolderSource(projectPath, mProject.source.Items[i] as SourceFolder));
+                            }
+                            catch (Error e)
+                            {
+                            errors.Add(e);
+                            }
                         }
                     }
                 }
