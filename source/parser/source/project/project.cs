@@ -598,7 +598,7 @@ namespace GehtSoft.DocCreator.Parser
 
                 mSources = new DsProjectSourceCollection();
 
-                if (mProject.source != null && mProject.source.Item != null)
+                if (mProject.source != null)
                 {
                     if (mProject.source.Item is SourceXmlFile)
                     {
