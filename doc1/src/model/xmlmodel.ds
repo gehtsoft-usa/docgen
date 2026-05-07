@@ -1,0 +1,582 @@
+
+@class
+    @name=Documentation XML Model
+    @brief=The section describes XML model that is passed to the output templates
+    @key=modelXML
+    @ingroup=authoringTemplates
+    @type=tags
+    @membersToContent=true
+
+    @member
+        @type=property
+        @name=root
+        @brief=The root element of the documentation model
+        @custom=xml-tag
+
+        
+        The element may contain the following elements:
+        [clink=modelXML.article]article[/clink], [clink=modelXML.class]class[/clink], [clink=modelXML.group]group[/clink]
+    @end
+
+    
+    @member
+        @type=property
+        @name=article
+        @brief=The article
+        @custom=xml-tag
+
+        
+        @param
+            @name=title
+            The title of the object
+        @end
+    
+        @param
+            @name=key
+            The unique key of the article (must be unique among articles, groups and classes)
+        @end
+    
+        @param
+            @name=in-group
+            
+        @end
+    
+        @param
+            @name=brief
+            A brief (one-two sentence) summary of the object
+        @end
+    
+        @param
+            @name=transform
+            A flag indicating whether the content contains BB-codes
+        @end
+    
+        @param
+            @name=alias-id
+            The alias of article for HtmlHelp topic list
+        @end
+    
+        @param
+            @name=exclude-from-list
+            The flag indicating whether the article should not be displayed in the list of the articles in the group and content tree
+        @end
+    
+        @param
+            @name=briefless
+            
+        @end
+    
+        The element may contain the following elements:
+        [clink=modelXML.example]example[/clink], [clink=modelXML.header]header[/clink], [clink=modelXML.list]list[/clink], [clink=modelXML.see-also]see-also[/clink], [clink=modelXML.table]table[/clink]
+
+    @end
+    
+    @member
+        @type=property
+        @name=class
+        @brief=The class specification
+        @custom=xml-tag
+
+        
+        @param
+            @name=name
+            The name of the object
+        @end
+    
+        @param
+            @name=sig
+            A signature of the class
+        @end
+    
+        @param
+            @name=key
+            The unique key of the article (must be unique among articles, groups and classes)
+        @end
+    
+        @param
+            @name=brief
+            A brief (one-two sentence) summary of the object
+        @end
+    
+        @param
+            @name=type
+            A type of the class. The types interpretation depends on the template used. 
+        @end
+    
+        @param
+            @name=prefix
+            A prefix for the class name
+        @end
+    
+        @param
+            @name=in-group
+            The key of the group to which the object belongs to. All objects except the index group must belong to some group
+        @end
+    
+        @param
+            @name=decl-name
+            The name of the class to be used in declarations (the same as the class name by default)
+        @end
+    
+        @param
+            @name=sort
+            The flag indicating whether the members needs to be sorted by the name ("yes" by default)
+        @end
+    
+        @param
+            @name=transform
+            A flag indicating whether the content contains BB-codes
+        @end
+    
+        @param
+            @name=members-to-content
+            The flag indicating whether members of the class needs to be exposed in the content tree
+        @end
+    
+        @param
+            @name=write-signatures
+            The flag indicating whether the signatures (aka name plus parameters)
+   of the methods will be added to the list of the methods and constructors in the class.
+
+   The option is useful for classes with lot of overloads.
+        @end
+    
+        The element may contain the following elements:
+        [clink=modelXML.declaration]declaration[/clink], [clink=modelXML.example]example[/clink], [clink=modelXML.header]header[/clink], [clink=modelXML.list]list[/clink], [clink=modelXML.member]member[/clink], [clink=modelXML.param]param[/clink], [clink=modelXML.see-also]see-also[/clink], [clink=modelXML.table]table[/clink]
+
+    @end
+    
+    @member
+        @type=property
+        @name=declaration
+        @brief=A specification of a method for a language specific declaration
+        @custom=xml-tag
+
+        
+        @param
+            @name=language
+            The programming language
+        @end
+    
+        @param
+            @name=name
+            The name of the object
+        @end
+    
+        @param
+            @name=prefix
+            The prefix to put before the declaration
+        @end
+    
+        @param
+            @name=suffix
+            A suffix to put after the declaration
+        @end
+    
+        @param
+            @name=name-suffix
+            A suffix to add to the name of the member in declaration
+        @end
+    
+        @param
+            @name=return
+            The return value
+        @end
+    
+        @param
+            @name=params
+            The parameter list
+        @end
+    
+        @param
+            @name=custom
+            A fully custom declaration
+        @end
+    
+        The element may contain the following elements:
+        
+
+    @end
+    
+    @member
+        @type=property
+        @name=example-tab
+        @brief=A tab in the example item. 
+        @custom=xml-tag
+
+        
+        @param
+            @name=title
+            The title of the object
+        @end
+    
+        @param
+            @name=highlight
+            The name of the programming language to do the syntax highlighting (if supported by the output template)
+        @end
+    
+        The element may contain the following elements:
+        [clink=modelXML.example]example[/clink], [clink=modelXML.header]header[/clink], [clink=modelXML.list]list[/clink], [clink=modelXML.table]table[/clink]
+
+    @end
+    
+    @member
+        @type=property
+        @name=example
+        @brief=An example.
+        @custom=xml-tag
+
+        
+        @param
+            @name=title
+            The title of the object
+        @end
+    
+        @param
+            @name=transform
+            A flag indicating whether the content contains BB-codes
+        @end
+    
+        @param
+            @name=show
+            A flag indicating if the example must be fully displayed by default (for output templates that supports collapsing of the examples)
+        @end
+    
+        @param
+            @name=gray
+            A flag indicating whether the example must be displayed on gray background
+        @end
+    
+        @param
+            @name=tabs
+            A flag indicating whether the example tag contains the text in its body or has one or more tab.
+
+   Please note that if tabs are enabled all the content must be in the tabs!
+        @end
+    
+        @param
+            @name=highlight
+            The name of the programming language to do the syntax highlighting (if supported by the output template)
+        @end
+    
+        The element may contain the following elements:
+        [clink=modelXML.example-tab]example-tab[/clink], [clink=modelXML.example]example[/clink], [clink=modelXML.header]header[/clink], [clink=modelXML.list]list[/clink], [clink=modelXML.table]table[/clink]
+
+    @end
+    
+    @member
+        @type=property
+        @name=exception
+        @brief=A description of the exception thrown by the method
+        @custom=xml-tag
+
+        
+        @param
+            @name=name
+            The name of the object
+        @end
+    
+        The element may contain the following elements:
+        [clink=modelXML.example]example[/clink], [clink=modelXML.header]header[/clink], [clink=modelXML.list]list[/clink], [clink=modelXML.table]table[/clink]
+
+    @end
+    
+    @member
+        @type=property
+        @name=group
+        @brief=A group of articles, classes and other groups
+        @custom=xml-tag
+
+        
+        @param
+            @name=title
+            The title of the object
+        @end
+    
+        @param
+            @name=key
+            The unique key of the article (must be unique among articles, groups and classes)
+        @end
+    
+        @param
+            @name=brief
+            A brief (one-two sentence) summary of the object
+        @end
+    
+        @param
+            @name=in-group
+            The key of the group to which the object belongs to. All objects except the index group must belong to some group
+        @end
+    
+        @param
+            @name=sort-articles
+            A flag indicating whether articles needs to be sorted by the name
+        @end
+    
+        @param
+            @name=transform
+            A flag indicating whether the content contains BB-codes
+        @end
+    
+        @param
+            @name=sort-groups
+            A flag indicating whether groups needs to be sorted by the name
+        @end
+    
+        @param
+            @name=sort-classes
+            A flag indicating whether classes needs to be sorted by the name
+        @end
+    
+        @param
+            @name=import-hhc
+            A name of the custom HTML HELP content file to be added to the group content
+        @end
+    
+        @param
+            @name=import-hhk
+            A name of the custom HTML HELP keywords file to be added to the group content
+        @end
+    
+        @param
+            @name=briefless
+            
+        @end
+    
+        @param
+            @name=order
+            If the value is set to "custom" the documentation won't do any grouping or sorting of the objects inside the group
+        @end
+    
+        The element may contain the following elements:
+        [clink=modelXML.example]example[/clink], [clink=modelXML.header]header[/clink], [clink=modelXML.list]list[/clink], [clink=modelXML.see-also]see-also[/clink], [clink=modelXML.table]table[/clink]
+
+    @end
+    
+    @member
+        @type=property
+        @name=header
+        @brief=A header in the description
+        @custom=xml-tag
+
+        
+        @param
+            @name=level
+            The level of the header (1 to 4)
+        @end
+    
+        The element may contain the following elements:
+        [clink=modelXML.example]example[/clink], [clink=modelXML.header]header[/clink], [clink=modelXML.list]list[/clink], [clink=modelXML.table]table[/clink]
+
+    @end
+    
+    @member
+        @type=property
+        @name=list
+        @brief=A list
+        @custom=xml-tag
+
+        
+        @param
+            @name=type
+            The type of the list (e.g. num). If type isn't set, the list will be a bulleted list
+        @end
+    
+        The element may contain the following elements:
+        [clink=modelXML.list]list[/clink], [clink=modelXML.list-item]list-item[/clink]
+
+    @end
+    
+    @member
+        @type=property
+        @name=list-item
+        @brief=An element of a list
+        @custom=xml-tag
+
+        
+        The element may contain the following elements:
+        [clink=modelXML.example]example[/clink], [clink=modelXML.header]header[/clink], [clink=modelXML.list]list[/clink], [clink=modelXML.table]table[/clink]
+
+    @end
+    
+    @member
+        @type=property
+        @name=member
+        @brief=A member of a class
+        @custom=xml-tag
+
+        
+        @param
+            @name=name
+            The name of the object
+        @end
+    
+        @param
+            @name=visibility
+            Visibility of the member (e.g. public, protected)
+        @end
+    
+        @param
+            @name=scope
+            The scope of the member (static or instance)
+        @end
+    
+        @param
+            @name=brief
+            A brief (one-two sentence) summary of the object
+        @end
+    
+        @param
+            @name=key
+            The unique key of the article (must be unique among articles, groups and classes)
+        @end
+    
+        @param
+            @name=type
+            The type of the member (e.g. field, property, method)
+        @end
+    
+        @param
+            @name=transform
+            A flag indicating whether the content contains BB-codes
+        @end
+    
+        @param
+            @name=custom
+            
+        @end
+    
+        @param
+            @name=divisor
+            A divisor between the class name and method name to be used (a dot (.) by default)
+        @end
+    
+        @param
+            @name=class
+            
+        @end
+    
+        @param
+            @name=class-name
+            
+        @end
+    
+        @param
+            @name=exclude-from-list
+            The flag indicating whether the member must be excluded from list of members in the class
+        @end
+    
+        The element may contain the following elements:
+        [clink=modelXML.declaration]declaration[/clink], [clink=modelXML.example]example[/clink], [clink=modelXML.exception]exception[/clink], [clink=modelXML.header]header[/clink], [clink=modelXML.list]list[/clink], [clink=modelXML.param]param[/clink], [clink=modelXML.return]return[/clink], [clink=modelXML.see-also]see-also[/clink], [clink=modelXML.table]table[/clink]
+
+    @end
+    
+    @member
+        @type=property
+        @name=param
+        @brief=A parameter of a member of a class or of a generic class
+        @custom=xml-tag
+
+        
+        @param
+            @name=name
+            The name of the object
+        @end
+    
+        @param
+            @name=gray
+            The flag indicating that the parameter must be displayed on highlighted background
+        @end
+    
+        The element may contain the following elements:
+        [clink=modelXML.example]example[/clink], [clink=modelXML.header]header[/clink], [clink=modelXML.list]list[/clink], [clink=modelXML.table]table[/clink]
+
+    @end
+    
+    @member
+        @type=property
+        @name=return
+        @brief=A value returned from a class
+        @custom=xml-tag
+
+        
+        The element may contain the following elements:
+        [clink=modelXML.example]example[/clink], [clink=modelXML.header]header[/clink], [clink=modelXML.list]list[/clink], [clink=modelXML.table]table[/clink]
+
+    @end
+    
+    @member
+        @type=property
+        @name=see-also
+        @brief=A see-also reference to another topic
+        @custom=xml-tag
+
+        
+        @param
+            @name=title
+            The title of the object
+        @end
+    
+        @param
+            @name=key
+            The unique key of the article (must be unique among articles, groups and classes)
+        @end
+    
+        The element may contain the following elements:
+        [clink=modelXML.example]example[/clink], [clink=modelXML.header]header[/clink], [clink=modelXML.list]list[/clink], [clink=modelXML.table]table[/clink]
+
+    @end
+    
+    @member
+        @type=property
+        @name=table
+        @brief=A table
+        @custom=xml-tag
+
+        
+        @param
+            @name=width
+            The width of the table in percents
+        @end
+    
+        The element may contain the following elements:
+        [clink=modelXML.table-row]table-row[/clink]
+
+    @end
+    
+    @member
+        @type=property
+        @name=table-col
+        @brief=A table column
+        @custom=xml-tag
+
+        
+        @param
+            @name=width
+            The width of the column in percents
+        @end
+    
+        The element may contain the following elements:
+        [clink=modelXML.example]example[/clink], [clink=modelXML.header]header[/clink], [clink=modelXML.list]list[/clink], [clink=modelXML.table]table[/clink]
+
+    @end
+    
+    @member
+        @type=property
+        @name=table-row
+        @brief=A table row
+        @custom=xml-tag
+
+        
+        @param
+            @name=is-header
+            
+        @end
+    
+        The element may contain the following elements:
+        [clink=modelXML.table-col]table-col[/clink]
+
+    @end
+    
+@end
+    

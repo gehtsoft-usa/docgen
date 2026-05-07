@@ -18,7 +18,7 @@
     <CompiledResult Include="$(TargetDir)/*.*" />
   </ItemGroup>
 
-  <Target Name="CopyLastBuild" AfterTargets="AfterBuild" Condition="$(TargetFramework) == 'net50'">
+  <Target Name="CopyLastBuild" AfterTargets="AfterBuild" Condition="$(TargetFramework) == 'net80'">
     <Copy SourceFiles="@(CompiledResult)" DestinationFolder="$(TargetAppDir)" />
 </Target>
 </Project>
