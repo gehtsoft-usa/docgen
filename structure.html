@@ -1,0 +1,32 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><title>Define Documentation Structure</title><link rel="stylesheet" href="highlighter/default.css">
+<link rel="stylesheet" href="res/styles.css">
+<link rel="stylesheet" href="res/dripicons.css"></head><body><script type="text/javascript" src="highlighter/highlight.pack.js"></script><script type="text/javascript" src="highlighter/highlight.cshtml.js"></script><script type="text/javascript" src="settings.js"></script><script type="text/javascript" src="res/page-scripts.js"></script><script type="text/javascript">
+    loadStarted();
+</script><h1>Define Documentation Structure</h1>
+<h2>Brief</h2>
+<p>The article describes the group definition and behavior</p>
+<h2>Details</h2><p>There are four tags that define the structural elements of the documentation:</p>
+<p>1) Groups.</p>
+<p>Groups is the key element of the organization of the documentation structure. All groups are organized in a <b>tree</b>.
+One group is always a root (index) group. All other elements (groups, articles, classes) must belong to
+one of groups.</p>
+<p>2) Articles</p>
+<p>Articles are intended to provide a plain text explanation which does not have any sub-levels and is not
+connected to the programming code.</p>
+<p>3) Classes</p>
+<p>Classes are intended to provide documentation of code-related things. While they are called &quot;classes&quot; they may represent
+many different constructors: classes themselves, SQL tables, XML schemas, sets of functions for non-OOP languages and many
+others.</p>
+<p>Groups, Articles and Classes are only three documentation objects that may appear on the top level. All other elements must
+be used inside one of these objects.</p>
+<p>These three objects must clearly define to which group they are belong to. There is only one exception - an index group which
+does not belong to any other groups. This group makes the root of the documentation content tree and is displayed first.</p>
+<p>4) Members</p>
+<p>Members is another level of hierarchy that defines one element of a class. An examples of members could be fields, methods,
+properties, functions, tags, table columns. Members are always used inside of a class.</p>
+<p>Each element of the structure has an unique key. The key must be unique among ALL documentation objects. The key
+is used to refer the element in contents or in link bbcode tags.</p>
+<p>The key of members typically automatically include the key of the class that contains the member (unless it is directly
+disabled in the class properties).</p><p>
+  <center><a href="sources.html">back</a></center>
+</p><script language="javascript" type="text/javascript">syncList();</script></body></html>

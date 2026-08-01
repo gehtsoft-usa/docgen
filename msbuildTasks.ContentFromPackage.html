@@ -1,0 +1,51 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><title>ContentFromPackage in Tasks</title><link rel="stylesheet" href="highlighter/default.css">
+<link rel="stylesheet" href="res/styles.css">
+<link rel="stylesheet" href="res/dripicons.css"></head><body><script type="text/javascript" src="highlighter/highlight.pack.js"></script><script type="text/javascript" src="highlighter/highlight.cshtml.js"></script><script type="text/javascript" src="settings.js"></script><script type="text/javascript" src="res/page-scripts.js"></script><script type="text/javascript">
+    loadStarted();
+</script><h1><code>tag <b>ContentFromPackage</b> in Tasks</code></h1><h2>Brief</h2>
+<p>The custom task copies content from a package folder to the specified folder</p>
+<table class="tmain" width="100%">
+  <tr>
+    <td class="thdr"><b>Declaration</b></td>
+  </tr>
+  <tr>
+    <td class="tmain"><table class="decl">
+  <tr>
+    <td><code>&lt;<b>ContentFromPackage</b> Package=&quot;&quot; Version=&quot;&quot; Source=&quot;&quot;  Destination=&quot;&quot; /&gt;</code></td>
+  </tr>
+</table></td>
+  </tr>
+</table><p></p>
+<table class="tmain" width="100%">
+  <tr>
+    <td colspan="2" class="thdr"><b>Parameters</b></td>
+  </tr>
+  <tr>
+    <td class="tmain_nw" width="31%"><code>Package</code></td>
+    <td class="tmain" width="69%"><p>The name of the package, e.g. <code class="ctag">gehtsoft.build.docgen</code></p>
+<p>In order to make it operable in Linux make sure
+that you use all lowercase in the package name!</p></td>
+  </tr>
+  <tr>
+    <td class="tmain_nw" width="31%"><code>Version</code></td>
+    <td class="tmain" width="69%"><p>The version of the package, e.g. <code class="ctag">0.1.12</code></p>
+<p>When you are copying from <code class="ctag">gehtsoft.build.docgen</code>
+don't forget update the version in this task every time
+when you update the version in project reference.</p></td>
+  </tr>
+  <tr>
+    <td class="tmain_nw" width="31%"><code>Source</code></td>
+    <td class="tmain" width="69%"><p>The folder inside the package to copy data from.</p>
+<p>In order to make operable in Linux, use <code class="ctag">/</code>
+as path separator.</p></td>
+  </tr>
+  <tr>
+    <td class="tmain_nw" width="31%"><code>Destination</code></td>
+    <td class="tmain" width="69%"><p>The folder to copy data to.</p>
+<p>In order to make operable in Linux, use <code class="ctag">/</code>
+as path separator.</p></td>
+  </tr>
+</table><p>Declared in <a href="msbuildTasks.html">Tasks</a></p>
+<p>
+  <center><a href="msbuildTasks.html">back</a></center>
+</p><script language="javascript" type="text/javascript">syncList1('msbuildTasks');</script></body></html>

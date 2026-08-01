@@ -1,0 +1,782 @@
+﻿<html>
+
+<OBJECT type="text/site properties"></OBJECT>
+<UL>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="Gehtsoft Documentation Generator">
+              <param name="Name" value="Gehtsoft Documentation Generator">
+              <param name="Local" value="main.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="Tools">
+              <param name="Name" value="Tools">
+              <param name="Local" value="tools.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="Documentation Project Files">
+              <param name="Name" value="Documentation Project Files">
+              <param name="Local" value="projectFile.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="Documentation project">
+              <param name="Name" value="Documentation project">
+              <param name="Local" value="docProjectFile.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="project.xml file">
+              <param name="Name" value="project.xml file">
+              <param name="Local" value="docProjectFile1.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="common in project.xml file">
+              <param name="Name" value="common in project.xml file">
+              <param name="Local" value="docProjectFile1.common.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="define in project.xml file">
+              <param name="Name" value="define in project.xml file">
+              <param name="Local" value="docProjectFile1.define.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="file in project.xml file">
+              <param name="Name" value="file in project.xml file">
+              <param name="Local" value="docProjectFile1.file.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="folder in project.xml file">
+              <param name="Name" value="folder in project.xml file">
+              <param name="Local" value="docProjectFile1.folder.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="help-project in project.xml file">
+              <param name="Name" value="help-project in project.xml file">
+              <param name="Local" value="docProjectFile1.help-project.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="output in project.xml file">
+              <param name="Name" value="output in project.xml file">
+              <param name="Local" value="docProjectFile1.output.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="source in project.xml file">
+              <param name="Name" value="source in project.xml file">
+              <param name="Local" value="docProjectFile1.source.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="MSBuild Project File">
+              <param name="Name" value="MSBuild Project File">
+              <param name="Local" value="msbuildProjectFile.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="Tasks">
+              <param name="Name" value="Tasks">
+              <param name="Local" value="msbuildTasks.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="Asm2Xml in Tasks">
+              <param name="Name" value="Asm2Xml in Tasks">
+              <param name="Local" value="msbuildTasks.Asm2Xml.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="ContentFromPackage in Tasks">
+              <param name="Name" value="ContentFromPackage in Tasks">
+              <param name="Local" value="msbuildTasks.ContentFromPackage.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="DocGen in Tasks">
+              <param name="Name" value="DocGen in Tasks">
+              <param name="Local" value="msbuildTasks.DocGen.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="Source">
+              <param name="Name" value="Source">
+              <param name="Local" value="sources.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="Source code principles">
+              <param name="Name" value="Source code principles">
+              <param name="Local" value="principles.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="Define Documentation Structure">
+              <param name="Name" value="Define Documentation Structure">
+              <param name="Local" value="structure.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="Special Case: Class defined in multiple files">
+              <param name="Name" value="Special Case: Class defined in multiple files">
+              <param name="Local" value="classMultiFiles.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="Formatting: Using Markdown-style formatting">
+              <param name="Name" value="Formatting: Using Markdown-style formatting">
+              <param name="Local" value="formattingTables.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="BBCode">
+              <param name="Name" value="BBCode">
+              <param name="Local" value="bbcode.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="b in BBCode">
+              <param name="Name" value="b in BBCode">
+              <param name="Local" value="bbcode.b.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="blue in BBCode">
+              <param name="Name" value="blue in BBCode">
+              <param name="Local" value="bbcode.blue.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="br in BBCode">
+              <param name="Name" value="br in BBCode">
+              <param name="Local" value="bbcode.br.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="c in BBCode">
+              <param name="Name" value="c in BBCode">
+              <param name="Local" value="bbcode.c.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="clink in BBCode">
+              <param name="Name" value="clink in BBCode">
+              <param name="Local" value="bbcode.clink.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="color= in BBCode">
+              <param name="Name" value="color= in BBCode">
+              <param name="Local" value="bbcode.color=.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="eurl in BBCode">
+              <param name="Name" value="eurl in BBCode">
+              <param name="Local" value="bbcode.eurl.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="gray in BBCode">
+              <param name="Name" value="gray in BBCode">
+              <param name="Local" value="bbcode.gray.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="green in BBCode">
+              <param name="Name" value="green in BBCode">
+              <param name="Local" value="bbcode.green.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="i in BBCode">
+              <param name="Name" value="i in BBCode">
+              <param name="Local" value="bbcode.i.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="img= in BBCode">
+              <param name="Name" value="img= in BBCode">
+              <param name="Local" value="bbcode.img=.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="link= in BBCode">
+              <param name="Name" value="link= in BBCode">
+              <param name="Local" value="bbcode.link=.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="nil in BBCode">
+              <param name="Name" value="nil in BBCode">
+              <param name="Local" value="bbcode.nil.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="red in BBCode">
+              <param name="Name" value="red in BBCode">
+              <param name="Local" value="bbcode.red.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="s in BBCode">
+              <param name="Name" value="s in BBCode">
+              <param name="Local" value="bbcode.s.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="size= in BBCode">
+              <param name="Name" value="size= in BBCode">
+              <param name="Local" value="bbcode.size=.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="sub in BBCode">
+              <param name="Name" value="sub in BBCode">
+              <param name="Local" value="bbcode.sub.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="sup in BBCode">
+              <param name="Name" value="sup in BBCode">
+              <param name="Local" value="bbcode.sup.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="u in BBCode">
+              <param name="Name" value="u in BBCode">
+              <param name="Local" value="bbcode.u.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="url= in BBCode">
+              <param name="Name" value="url= in BBCode">
+              <param name="Local" value="bbcode.url=.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="Document Source Format">
+              <param name="Name" value="Document Source Format">
+              <param name="Local" value="modelDS.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="article in Document Source Format">
+              <param name="Name" value="article in Document Source Format">
+              <param name="Local" value="modelDS.article.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="class in Document Source Format">
+              <param name="Name" value="class in Document Source Format">
+              <param name="Local" value="modelDS.class.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="col in Document Source Format">
+              <param name="Name" value="col in Document Source Format">
+              <param name="Local" value="modelDS.col.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="declaration in Document Source Format">
+              <param name="Name" value="declaration in Document Source Format">
+              <param name="Local" value="modelDS.declaration.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="example in Document Source Format">
+              <param name="Name" value="example in Document Source Format">
+              <param name="Local" value="modelDS.example.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="exception in Document Source Format">
+              <param name="Name" value="exception in Document Source Format">
+              <param name="Local" value="modelDS.exception.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="group in Document Source Format">
+              <param name="Name" value="group in Document Source Format">
+              <param name="Local" value="modelDS.group.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="headline in Document Source Format">
+              <param name="Name" value="headline in Document Source Format">
+              <param name="Local" value="modelDS.headline.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="list in Document Source Format">
+              <param name="Name" value="list in Document Source Format">
+              <param name="Local" value="modelDS.list.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="list-item in Document Source Format">
+              <param name="Name" value="list-item in Document Source Format">
+              <param name="Local" value="modelDS.list-item.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="member in Document Source Format">
+              <param name="Name" value="member in Document Source Format">
+              <param name="Local" value="modelDS.member.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="note in Document Source Format">
+              <param name="Name" value="note in Document Source Format">
+              <param name="Local" value="modelDS.note.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="param in Document Source Format">
+              <param name="Name" value="param in Document Source Format">
+              <param name="Local" value="modelDS.param.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="return in Document Source Format">
+              <param name="Name" value="return in Document Source Format">
+              <param name="Local" value="modelDS.return.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="row in Document Source Format">
+              <param name="Name" value="row in Document Source Format">
+              <param name="Local" value="modelDS.row.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="see in Document Source Format">
+              <param name="Name" value="see in Document Source Format">
+              <param name="Local" value="modelDS.see.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="tab in Document Source Format">
+              <param name="Name" value="tab in Document Source Format">
+              <param name="Local" value="modelDS.tab.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="table in Document Source Format">
+              <param name="Name" value="table in Document Source Format">
+              <param name="Local" value="modelDS.table.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="Templates">
+              <param name="Name" value="Templates">
+              <param name="Local" value="templates.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="Authoring Templates">
+              <param name="Name" value="Authoring Templates">
+              <param name="Local" value="authoringTemplates.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions">
+              <param name="Name" value="XPath extensions">
+              <param name="Local" value="xpathFunctions.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.call">
+              <param name="Name" value="XPath extensions.call">
+              <param name="Local" value="xpathFunctions.call.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.call">
+              <param name="Name" value="XPath extensions.call">
+              <param name="Local" value="xpathFunctions.call1.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.caller">
+              <param name="Name" value="XPath extensions.caller">
+              <param name="Local" value="xpathFunctions.caller.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.document">
+              <param name="Name" value="XPath extensions.document">
+              <param name="Local" value="xpathFunctions.document.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.error">
+              <param name="Name" value="XPath extensions.error">
+              <param name="Local" value="xpathFunctions.error.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.escape">
+              <param name="Name" value="XPath extensions.escape">
+              <param name="Local" value="xpathFunctions.escape.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.exists">
+              <param name="Name" value="XPath extensions.exists">
+              <param name="Local" value="xpathFunctions.exists.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.fileexists">
+              <param name="Name" value="XPath extensions.fileexists">
+              <param name="Local" value="xpathFunctions.fileexists.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.files">
+              <param name="Name" value="XPath extensions.files">
+              <param name="Local" value="xpathFunctions.files.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.get">
+              <param name="Name" value="XPath extensions.get">
+              <param name="Local" value="xpathFunctions.get.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.let">
+              <param name="Name" value="XPath extensions.let">
+              <param name="Local" value="xpathFunctions.let.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.letglobal">
+              <param name="Name" value="XPath extensions.letglobal">
+              <param name="Local" value="xpathFunctions.letglobal.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.lower">
+              <param name="Name" value="XPath extensions.lower">
+              <param name="Local" value="xpathFunctions.lower.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.ltrim">
+              <param name="Name" value="XPath extensions.ltrim">
+              <param name="Local" value="xpathFunctions.ltrim.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.match">
+              <param name="Name" value="XPath extensions.match">
+              <param name="Local" value="xpathFunctions.match.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.methodkey">
+              <param name="Name" value="XPath extensions.methodkey">
+              <param name="Local" value="xpathFunctions.methodkey.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.parse">
+              <param name="Name" value="XPath extensions.parse">
+              <param name="Local" value="xpathFunctions.parse.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.parsebbcode">
+              <param name="Name" value="XPath extensions.parsebbcode">
+              <param name="Local" value="xpathFunctions.parsebbcode.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.readAllText">
+              <param name="Name" value="XPath extensions.readAllText">
+              <param name="Local" value="xpathFunctions.readAllText.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.removehtml">
+              <param name="Name" value="XPath extensions.removehtml">
+              <param name="Local" value="xpathFunctions.removehtml.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.replace">
+              <param name="Name" value="XPath extensions.replace">
+              <param name="Local" value="xpathFunctions.replace.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.replaceentity">
+              <param name="Name" value="XPath extensions.replaceentity">
+              <param name="Local" value="xpathFunctions.replaceentity.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.rtrim">
+              <param name="Name" value="XPath extensions.rtrim">
+              <param name="Local" value="xpathFunctions.rtrim.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.trace">
+              <param name="Name" value="XPath extensions.trace">
+              <param name="Local" value="xpathFunctions.trace.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.trim">
+              <param name="Name" value="XPath extensions.trim">
+              <param name="Local" value="xpathFunctions.trim.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.upper">
+              <param name="Name" value="XPath extensions.upper">
+              <param name="Local" value="xpathFunctions.upper.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XPath extensions.writeBase64">
+              <param name="Name" value="XPath extensions.writeBase64">
+              <param name="Local" value="xpathFunctions.writeBase64.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="Documentation XML Model">
+              <param name="Name" value="Documentation XML Model">
+              <param name="Local" value="modelXML.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="article in Documentation XML Model">
+              <param name="Name" value="article in Documentation XML Model">
+              <param name="Local" value="modelXML.article.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="class in Documentation XML Model">
+              <param name="Name" value="class in Documentation XML Model">
+              <param name="Local" value="modelXML.class.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="declaration in Documentation XML Model">
+              <param name="Name" value="declaration in Documentation XML Model">
+              <param name="Local" value="modelXML.declaration.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="example in Documentation XML Model">
+              <param name="Name" value="example in Documentation XML Model">
+              <param name="Local" value="modelXML.example.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="example-tab in Documentation XML Model">
+              <param name="Name" value="example-tab in Documentation XML Model">
+              <param name="Local" value="modelXML.example-tab.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="exception in Documentation XML Model">
+              <param name="Name" value="exception in Documentation XML Model">
+              <param name="Local" value="modelXML.exception.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="group in Documentation XML Model">
+              <param name="Name" value="group in Documentation XML Model">
+              <param name="Local" value="modelXML.group.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="header in Documentation XML Model">
+              <param name="Name" value="header in Documentation XML Model">
+              <param name="Local" value="modelXML.header.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="list in Documentation XML Model">
+              <param name="Name" value="list in Documentation XML Model">
+              <param name="Local" value="modelXML.list.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="list-item in Documentation XML Model">
+              <param name="Name" value="list-item in Documentation XML Model">
+              <param name="Local" value="modelXML.list-item.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="member in Documentation XML Model">
+              <param name="Name" value="member in Documentation XML Model">
+              <param name="Local" value="modelXML.member.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="note in Documentation XML Model">
+              <param name="Name" value="note in Documentation XML Model">
+              <param name="Local" value="modelXML.note.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="param in Documentation XML Model">
+              <param name="Name" value="param in Documentation XML Model">
+              <param name="Local" value="modelXML.param.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="return in Documentation XML Model">
+              <param name="Name" value="return in Documentation XML Model">
+              <param name="Local" value="modelXML.return.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="root in Documentation XML Model">
+              <param name="Name" value="root in Documentation XML Model">
+              <param name="Local" value="modelXML.root.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="see-also in Documentation XML Model">
+              <param name="Name" value="see-also in Documentation XML Model">
+              <param name="Local" value="modelXML.see-also.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="table in Documentation XML Model">
+              <param name="Name" value="table in Documentation XML Model">
+              <param name="Local" value="modelXML.table.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="table-col in Documentation XML Model">
+              <param name="Name" value="table-col in Documentation XML Model">
+              <param name="Local" value="modelXML.table-col.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="table-row in Documentation XML Model">
+              <param name="Name" value="table-row in Documentation XML Model">
+              <param name="Local" value="modelXML.table-row.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="Results of RegExp parsing call">
+              <param name="Name" value="Results of RegExp parsing call">
+              <param name="Local" value="parseDocument.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="group in Results of RegExp parsing call">
+              <param name="Name" value="group in Results of RegExp parsing call">
+              <param name="Local" value="parseDocument.group.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="match in Results of RegExp parsing call">
+              <param name="Name" value="match in Results of RegExp parsing call">
+              <param name="Local" value="parseDocument.match.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="result in Results of RegExp parsing call">
+              <param name="Name" value="result in Results of RegExp parsing call">
+              <param name="Local" value="parseDocument.result.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="HTML template">
+              <param name="Name" value="HTML template">
+              <param name="Local" value="htmlTemplate.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="Adding Custom Content">
+              <param name="Name" value="Adding Custom Content">
+              <param name="Local" value="htmlCustomContent.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="HTML Template Modification">
+              <param name="Name" value="HTML Template Modification">
+              <param name="Local" value="htmlTemplateModification.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="CS2DS template">
+              <param name="Name" value="CS2DS template">
+              <param name="Local" value="cs2dsTemplate.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="Settings File Schema">
+              <param name="Name" value="Settings File Schema">
+              <param name="Local" value="cs2dsTemplateSettings.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="assembly in Settings File Schema">
+              <param name="Name" value="assembly in Settings File Schema">
+              <param name="Local" value="cs2dsTemplateSettings.assembly.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="include in Settings File Schema">
+              <param name="Name" value="include in Settings File Schema">
+              <param name="Local" value="cs2dsTemplateSettings.include.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="settings in Settings File Schema">
+              <param name="Name" value="settings in Settings File Schema">
+              <param name="Local" value="cs2dsTemplateSettings.settings.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="strip-namespace in Settings File Schema">
+              <param name="Name" value="strip-namespace in Settings File Schema">
+              <param name="Local" value="cs2dsTemplateSettings.strip-namespace.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="Doxygen2Ds template">
+              <param name="Name" value="Doxygen2Ds template">
+              <param name="Local" value="doxigen2dsTemplate.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="NULL template">
+              <param name="Name" value="NULL template">
+              <param name="Local" value="nullTemplate.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="XMLDOC template">
+              <param name="Name" value="XMLDOC template">
+              <param name="Local" value="xmldocTemplate.html">
+              </object>
+    
+    <li><object type="text/sitemap">
+              <param name="Keyword" value="TREECLASSMATCH template">
+              <param name="Name" value="TREECLASSMATCH template">
+              <param name="Local" value="treeclassmatch.html">
+              </object>
+    
+</UL>
+</html>
+    

@@ -1,0 +1,25 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><title>Special Case: Class defined in multiple files</title><link rel="stylesheet" href="highlighter/default.css">
+<link rel="stylesheet" href="res/styles.css">
+<link rel="stylesheet" href="res/dripicons.css"></head><body><script type="text/javascript" src="highlighter/highlight.pack.js"></script><script type="text/javascript" src="highlighter/highlight.cshtml.js"></script><script type="text/javascript" src="settings.js"></script><script type="text/javascript" src="res/page-scripts.js"></script><script type="text/javascript">
+    loadStarted();
+</script><h1>Special Case: Class defined in multiple files</h1>
+<h2>Brief</h2>
+<p>The article describes how docgen handles classes declared in multiple files</p>
+<h2>Details</h2><p>While in most cases the content of one documentation object is defined in one text file,
+the class content may be split between multiple files.</p>
+<p>When the class with the same key is defined multiple times, the following rules apply:</p>
+<p>1) The values for all attributes will be taken from the first occurrence of the class. The values from the other
+occurrences will be ignored.</p>
+<p>2) The members of the all next occurrences will be added to the class, unless they are defined earlier. The second
+definition of a member with the same key will be ignored.</p>
+<p>This feature is useful in two specific cases:</p>
+<p>1) A class with large number of methods may be separated to multiple files for simpler modification and
+handling.</p>
+<p>2) If documentation is partially generated from the source code, the following trick may be used:</p>
+<p>2.1) Put auto-generated code to the very end of the source list in the documentation project file. So, auto-generated
+documentation will be used only in case when it is not manually refined.</p>
+<p>2.2) To refine auto-generated description, create a class definition with the same key and put it before auto-generated
+documentation in the source list in the project file.</p>
+<p>2.3) Define only methods you want to refine. The rest of the methods will be taken from the auto-generated part.</p><p>
+  <center><a href="sources.html">back</a></center>
+</p><script language="javascript" type="text/javascript">syncList();</script></body></html>

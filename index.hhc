@@ -1,0 +1,221 @@
+﻿<html>
+
+<OBJECT type="text/site properties"></OBJECT>
+<UL>
+    <li><object type="text/sitemap"><param name="Name" value="Gehtsoft Documentation Generator"><param name="Local" value="main.html"></object><a href="main.html">Gehtsoft Documentation Generator</a>
+    
+        <UL>
+            <li><object type="text/sitemap"><param name="Name" value="Tools"><param name="Local" value="tools.html"></object><a href="tools.html">Tools</a>
+    <li><object type="text/sitemap"><param name="Name" value="Documentation Project Files"><param name="Local" value="projectFile.html"></object><a href="projectFile.html">Documentation Project Files</a>
+    
+        <UL>
+            <li><object type="text/sitemap"><param name="Name" value="Documentation project"><param name="Local" value="docProjectFile.html"></object><a href="docProjectFile.html">Documentation project</a>
+    
+        <UL>
+            <li><object type="text/sitemap"><param name="Name" value="Tags"></object>Tags
+        <UL>
+            <li><object type="text/sitemap"><param name="Name" value="project.xml file"><param name="Local" value="docProjectFile1.html"></object><a href="docProjectFile1.html">project.xml file</a>
+    
+        <UL>
+            <li><object type="text/sitemap"><param name="Name" value="common"><param name="Local" value="docProjectFile1.common.html"></object><a href="docProjectFile1.common.html">common</a>
+    <li><object type="text/sitemap"><param name="Name" value="define"><param name="Local" value="docProjectFile1.define.html"></object><a href="docProjectFile1.define.html">define</a>
+    <li><object type="text/sitemap"><param name="Name" value="file"><param name="Local" value="docProjectFile1.file.html"></object><a href="docProjectFile1.file.html">file</a>
+    <li><object type="text/sitemap"><param name="Name" value="folder"><param name="Local" value="docProjectFile1.folder.html"></object><a href="docProjectFile1.folder.html">folder</a>
+    <li><object type="text/sitemap"><param name="Name" value="help-project"><param name="Local" value="docProjectFile1.help-project.html"></object><a href="docProjectFile1.help-project.html">help-project</a>
+    <li><object type="text/sitemap"><param name="Name" value="output"><param name="Local" value="docProjectFile1.output.html"></object><a href="docProjectFile1.output.html">output</a>
+    <li><object type="text/sitemap"><param name="Name" value="source"><param name="Local" value="docProjectFile1.source.html"></object><a href="docProjectFile1.source.html">source</a>
+    
+        </UL>
+    
+        </UL>
+    
+        </UL>
+    <li><object type="text/sitemap"><param name="Name" value="MSBuild Project File"><param name="Local" value="msbuildProjectFile.html"></object><a href="msbuildProjectFile.html">MSBuild Project File</a>
+    
+        <UL>
+            <li><object type="text/sitemap"><param name="Name" value="Tags"></object>Tags
+        <UL>
+            <li><object type="text/sitemap"><param name="Name" value="Tasks"><param name="Local" value="msbuildTasks.html"></object><a href="msbuildTasks.html">Tasks</a>
+    
+        <UL>
+            <li><object type="text/sitemap"><param name="Name" value="Asm2Xml"><param name="Local" value="msbuildTasks.Asm2Xml.html"></object><a href="msbuildTasks.Asm2Xml.html">Asm2Xml</a>
+    <li><object type="text/sitemap"><param name="Name" value="ContentFromPackage"><param name="Local" value="msbuildTasks.ContentFromPackage.html"></object><a href="msbuildTasks.ContentFromPackage.html">ContentFromPackage</a>
+    <li><object type="text/sitemap"><param name="Name" value="DocGen"><param name="Local" value="msbuildTasks.DocGen.html"></object><a href="msbuildTasks.DocGen.html">DocGen</a>
+    
+        </UL>
+    
+        </UL>
+    
+        </UL>
+    
+        </UL>
+    <li><object type="text/sitemap"><param name="Name" value="Source"><param name="Local" value="sources.html"></object><a href="sources.html">Source</a>
+    
+        <UL>
+            <li><object type="text/sitemap"><param name="Name" value="Source code principles"><param name="Local" value="principles.html"></object><a href="principles.html">Source code principles</a>
+    <li><object type="text/sitemap"><param name="Name" value="Define Documentation Structure"><param name="Local" value="structure.html"></object><a href="structure.html">Define Documentation Structure</a>
+    <li><object type="text/sitemap"><param name="Name" value="Special Case: Class defined in multiple files"><param name="Local" value="classMultiFiles.html"></object><a href="classMultiFiles.html">Special Case: Class defined in multiple files</a>
+    <li><object type="text/sitemap"><param name="Name" value="Formatting: Using Markdown-style formatting"><param name="Local" value="formattingTables.html"></object><a href="formattingTables.html">Formatting: Using Markdown-style formatting</a>
+    <li><object type="text/sitemap"><param name="Name" value="Tags"></object>Tags
+        <UL>
+            <li><object type="text/sitemap"><param name="Name" value="BBCode"><param name="Local" value="bbcode.html"></object><a href="bbcode.html">BBCode</a>
+    
+        <UL>
+            <li><object type="text/sitemap"><param name="Name" value="b"><param name="Local" value="bbcode.b.html"></object><a href="bbcode.b.html">b</a>
+    <li><object type="text/sitemap"><param name="Name" value="blue"><param name="Local" value="bbcode.blue.html"></object><a href="bbcode.blue.html">blue</a>
+    <li><object type="text/sitemap"><param name="Name" value="br"><param name="Local" value="bbcode.br.html"></object><a href="bbcode.br.html">br</a>
+    <li><object type="text/sitemap"><param name="Name" value="c"><param name="Local" value="bbcode.c.html"></object><a href="bbcode.c.html">c</a>
+    <li><object type="text/sitemap"><param name="Name" value="clink"><param name="Local" value="bbcode.clink.html"></object><a href="bbcode.clink.html">clink</a>
+    <li><object type="text/sitemap"><param name="Name" value="color="><param name="Local" value="bbcode.color=.html"></object><a href="bbcode.color=.html">color=</a>
+    <li><object type="text/sitemap"><param name="Name" value="eurl"><param name="Local" value="bbcode.eurl.html"></object><a href="bbcode.eurl.html">eurl</a>
+    <li><object type="text/sitemap"><param name="Name" value="gray"><param name="Local" value="bbcode.gray.html"></object><a href="bbcode.gray.html">gray</a>
+    <li><object type="text/sitemap"><param name="Name" value="green"><param name="Local" value="bbcode.green.html"></object><a href="bbcode.green.html">green</a>
+    <li><object type="text/sitemap"><param name="Name" value="i"><param name="Local" value="bbcode.i.html"></object><a href="bbcode.i.html">i</a>
+    <li><object type="text/sitemap"><param name="Name" value="img="><param name="Local" value="bbcode.img=.html"></object><a href="bbcode.img=.html">img=</a>
+    <li><object type="text/sitemap"><param name="Name" value="link="><param name="Local" value="bbcode.link=.html"></object><a href="bbcode.link=.html">link=</a>
+    <li><object type="text/sitemap"><param name="Name" value="nil"><param name="Local" value="bbcode.nil.html"></object><a href="bbcode.nil.html">nil</a>
+    <li><object type="text/sitemap"><param name="Name" value="red"><param name="Local" value="bbcode.red.html"></object><a href="bbcode.red.html">red</a>
+    <li><object type="text/sitemap"><param name="Name" value="s"><param name="Local" value="bbcode.s.html"></object><a href="bbcode.s.html">s</a>
+    <li><object type="text/sitemap"><param name="Name" value="size="><param name="Local" value="bbcode.size=.html"></object><a href="bbcode.size=.html">size=</a>
+    <li><object type="text/sitemap"><param name="Name" value="sub"><param name="Local" value="bbcode.sub.html"></object><a href="bbcode.sub.html">sub</a>
+    <li><object type="text/sitemap"><param name="Name" value="sup"><param name="Local" value="bbcode.sup.html"></object><a href="bbcode.sup.html">sup</a>
+    <li><object type="text/sitemap"><param name="Name" value="u"><param name="Local" value="bbcode.u.html"></object><a href="bbcode.u.html">u</a>
+    <li><object type="text/sitemap"><param name="Name" value="url="><param name="Local" value="bbcode.url=.html"></object><a href="bbcode.url=.html">url=</a>
+    
+        </UL>
+    <li><object type="text/sitemap"><param name="Name" value="Document Source Format"><param name="Local" value="modelDS.html"></object><a href="modelDS.html">Document Source Format</a>
+    
+        <UL>
+            <li><object type="text/sitemap"><param name="Name" value="article"><param name="Local" value="modelDS.article.html"></object><a href="modelDS.article.html">article</a>
+    <li><object type="text/sitemap"><param name="Name" value="class"><param name="Local" value="modelDS.class.html"></object><a href="modelDS.class.html">class</a>
+    <li><object type="text/sitemap"><param name="Name" value="col"><param name="Local" value="modelDS.col.html"></object><a href="modelDS.col.html">col</a>
+    <li><object type="text/sitemap"><param name="Name" value="declaration"><param name="Local" value="modelDS.declaration.html"></object><a href="modelDS.declaration.html">declaration</a>
+    <li><object type="text/sitemap"><param name="Name" value="example"><param name="Local" value="modelDS.example.html"></object><a href="modelDS.example.html">example</a>
+    <li><object type="text/sitemap"><param name="Name" value="exception"><param name="Local" value="modelDS.exception.html"></object><a href="modelDS.exception.html">exception</a>
+    <li><object type="text/sitemap"><param name="Name" value="group"><param name="Local" value="modelDS.group.html"></object><a href="modelDS.group.html">group</a>
+    <li><object type="text/sitemap"><param name="Name" value="headline"><param name="Local" value="modelDS.headline.html"></object><a href="modelDS.headline.html">headline</a>
+    <li><object type="text/sitemap"><param name="Name" value="list"><param name="Local" value="modelDS.list.html"></object><a href="modelDS.list.html">list</a>
+    <li><object type="text/sitemap"><param name="Name" value="list-item"><param name="Local" value="modelDS.list-item.html"></object><a href="modelDS.list-item.html">list-item</a>
+    <li><object type="text/sitemap"><param name="Name" value="member"><param name="Local" value="modelDS.member.html"></object><a href="modelDS.member.html">member</a>
+    <li><object type="text/sitemap"><param name="Name" value="note"><param name="Local" value="modelDS.note.html"></object><a href="modelDS.note.html">note</a>
+    <li><object type="text/sitemap"><param name="Name" value="param"><param name="Local" value="modelDS.param.html"></object><a href="modelDS.param.html">param</a>
+    <li><object type="text/sitemap"><param name="Name" value="return"><param name="Local" value="modelDS.return.html"></object><a href="modelDS.return.html">return</a>
+    <li><object type="text/sitemap"><param name="Name" value="row"><param name="Local" value="modelDS.row.html"></object><a href="modelDS.row.html">row</a>
+    <li><object type="text/sitemap"><param name="Name" value="see"><param name="Local" value="modelDS.see.html"></object><a href="modelDS.see.html">see</a>
+    <li><object type="text/sitemap"><param name="Name" value="tab"><param name="Local" value="modelDS.tab.html"></object><a href="modelDS.tab.html">tab</a>
+    <li><object type="text/sitemap"><param name="Name" value="table"><param name="Local" value="modelDS.table.html"></object><a href="modelDS.table.html">table</a>
+    
+        </UL>
+    
+        </UL>
+    
+        </UL>
+    <li><object type="text/sitemap"><param name="Name" value="Templates"><param name="Local" value="templates.html"></object><a href="templates.html">Templates</a>
+    
+        <UL>
+            <li><object type="text/sitemap"><param name="Name" value="Authoring Templates"><param name="Local" value="authoringTemplates.html"></object><a href="authoringTemplates.html">Authoring Templates</a>
+    
+        <UL>
+            <li><object type="text/sitemap"><param name="Name" value="Functions"></object>Functions
+        <UL>
+            <li><object type="text/sitemap"><param name="Name" value="XPath extensions"><param name="Local" value="xpathFunctions.html"></object><a href="xpathFunctions.html">XPath extensions</a>
+    
+        <UL>
+            <li><object type="text/sitemap"><param name="Name" value="call"><param name="Local" value="xpathFunctions.call.html"></object><a href="xpathFunctions.call.html">call</a>
+    <li><object type="text/sitemap"><param name="Name" value="call"><param name="Local" value="xpathFunctions.call1.html"></object><a href="xpathFunctions.call1.html">call</a>
+    <li><object type="text/sitemap"><param name="Name" value="caller"><param name="Local" value="xpathFunctions.caller.html"></object><a href="xpathFunctions.caller.html">caller</a>
+    <li><object type="text/sitemap"><param name="Name" value="document"><param name="Local" value="xpathFunctions.document.html"></object><a href="xpathFunctions.document.html">document</a>
+    <li><object type="text/sitemap"><param name="Name" value="error"><param name="Local" value="xpathFunctions.error.html"></object><a href="xpathFunctions.error.html">error</a>
+    <li><object type="text/sitemap"><param name="Name" value="escape"><param name="Local" value="xpathFunctions.escape.html"></object><a href="xpathFunctions.escape.html">escape</a>
+    <li><object type="text/sitemap"><param name="Name" value="exists"><param name="Local" value="xpathFunctions.exists.html"></object><a href="xpathFunctions.exists.html">exists</a>
+    <li><object type="text/sitemap"><param name="Name" value="fileexists"><param name="Local" value="xpathFunctions.fileexists.html"></object><a href="xpathFunctions.fileexists.html">fileexists</a>
+    <li><object type="text/sitemap"><param name="Name" value="files"><param name="Local" value="xpathFunctions.files.html"></object><a href="xpathFunctions.files.html">files</a>
+    <li><object type="text/sitemap"><param name="Name" value="get"><param name="Local" value="xpathFunctions.get.html"></object><a href="xpathFunctions.get.html">get</a>
+    <li><object type="text/sitemap"><param name="Name" value="let"><param name="Local" value="xpathFunctions.let.html"></object><a href="xpathFunctions.let.html">let</a>
+    <li><object type="text/sitemap"><param name="Name" value="letglobal"><param name="Local" value="xpathFunctions.letglobal.html"></object><a href="xpathFunctions.letglobal.html">letglobal</a>
+    <li><object type="text/sitemap"><param name="Name" value="lower"><param name="Local" value="xpathFunctions.lower.html"></object><a href="xpathFunctions.lower.html">lower</a>
+    <li><object type="text/sitemap"><param name="Name" value="ltrim"><param name="Local" value="xpathFunctions.ltrim.html"></object><a href="xpathFunctions.ltrim.html">ltrim</a>
+    <li><object type="text/sitemap"><param name="Name" value="match"><param name="Local" value="xpathFunctions.match.html"></object><a href="xpathFunctions.match.html">match</a>
+    <li><object type="text/sitemap"><param name="Name" value="methodkey"><param name="Local" value="xpathFunctions.methodkey.html"></object><a href="xpathFunctions.methodkey.html">methodkey</a>
+    <li><object type="text/sitemap"><param name="Name" value="parse"><param name="Local" value="xpathFunctions.parse.html"></object><a href="xpathFunctions.parse.html">parse</a>
+    <li><object type="text/sitemap"><param name="Name" value="parsebbcode"><param name="Local" value="xpathFunctions.parsebbcode.html"></object><a href="xpathFunctions.parsebbcode.html">parsebbcode</a>
+    <li><object type="text/sitemap"><param name="Name" value="readAllText"><param name="Local" value="xpathFunctions.readAllText.html"></object><a href="xpathFunctions.readAllText.html">readAllText</a>
+    <li><object type="text/sitemap"><param name="Name" value="removehtml"><param name="Local" value="xpathFunctions.removehtml.html"></object><a href="xpathFunctions.removehtml.html">removehtml</a>
+    <li><object type="text/sitemap"><param name="Name" value="replace"><param name="Local" value="xpathFunctions.replace.html"></object><a href="xpathFunctions.replace.html">replace</a>
+    <li><object type="text/sitemap"><param name="Name" value="replaceentity"><param name="Local" value="xpathFunctions.replaceentity.html"></object><a href="xpathFunctions.replaceentity.html">replaceentity</a>
+    <li><object type="text/sitemap"><param name="Name" value="rtrim"><param name="Local" value="xpathFunctions.rtrim.html"></object><a href="xpathFunctions.rtrim.html">rtrim</a>
+    <li><object type="text/sitemap"><param name="Name" value="trace"><param name="Local" value="xpathFunctions.trace.html"></object><a href="xpathFunctions.trace.html">trace</a>
+    <li><object type="text/sitemap"><param name="Name" value="trim"><param name="Local" value="xpathFunctions.trim.html"></object><a href="xpathFunctions.trim.html">trim</a>
+    <li><object type="text/sitemap"><param name="Name" value="upper"><param name="Local" value="xpathFunctions.upper.html"></object><a href="xpathFunctions.upper.html">upper</a>
+    <li><object type="text/sitemap"><param name="Name" value="writeBase64"><param name="Local" value="xpathFunctions.writeBase64.html"></object><a href="xpathFunctions.writeBase64.html">writeBase64</a>
+    
+        </UL>
+    
+        </UL>
+    <li><object type="text/sitemap"><param name="Name" value="Tags"></object>Tags
+        <UL>
+            <li><object type="text/sitemap"><param name="Name" value="Documentation XML Model"><param name="Local" value="modelXML.html"></object><a href="modelXML.html">Documentation XML Model</a>
+    
+        <UL>
+            <li><object type="text/sitemap"><param name="Name" value="article"><param name="Local" value="modelXML.article.html"></object><a href="modelXML.article.html">article</a>
+    <li><object type="text/sitemap"><param name="Name" value="class"><param name="Local" value="modelXML.class.html"></object><a href="modelXML.class.html">class</a>
+    <li><object type="text/sitemap"><param name="Name" value="declaration"><param name="Local" value="modelXML.declaration.html"></object><a href="modelXML.declaration.html">declaration</a>
+    <li><object type="text/sitemap"><param name="Name" value="example"><param name="Local" value="modelXML.example.html"></object><a href="modelXML.example.html">example</a>
+    <li><object type="text/sitemap"><param name="Name" value="example-tab"><param name="Local" value="modelXML.example-tab.html"></object><a href="modelXML.example-tab.html">example-tab</a>
+    <li><object type="text/sitemap"><param name="Name" value="exception"><param name="Local" value="modelXML.exception.html"></object><a href="modelXML.exception.html">exception</a>
+    <li><object type="text/sitemap"><param name="Name" value="group"><param name="Local" value="modelXML.group.html"></object><a href="modelXML.group.html">group</a>
+    <li><object type="text/sitemap"><param name="Name" value="header"><param name="Local" value="modelXML.header.html"></object><a href="modelXML.header.html">header</a>
+    <li><object type="text/sitemap"><param name="Name" value="list"><param name="Local" value="modelXML.list.html"></object><a href="modelXML.list.html">list</a>
+    <li><object type="text/sitemap"><param name="Name" value="list-item"><param name="Local" value="modelXML.list-item.html"></object><a href="modelXML.list-item.html">list-item</a>
+    <li><object type="text/sitemap"><param name="Name" value="member"><param name="Local" value="modelXML.member.html"></object><a href="modelXML.member.html">member</a>
+    <li><object type="text/sitemap"><param name="Name" value="note"><param name="Local" value="modelXML.note.html"></object><a href="modelXML.note.html">note</a>
+    <li><object type="text/sitemap"><param name="Name" value="param"><param name="Local" value="modelXML.param.html"></object><a href="modelXML.param.html">param</a>
+    <li><object type="text/sitemap"><param name="Name" value="return"><param name="Local" value="modelXML.return.html"></object><a href="modelXML.return.html">return</a>
+    <li><object type="text/sitemap"><param name="Name" value="root"><param name="Local" value="modelXML.root.html"></object><a href="modelXML.root.html">root</a>
+    <li><object type="text/sitemap"><param name="Name" value="see-also"><param name="Local" value="modelXML.see-also.html"></object><a href="modelXML.see-also.html">see-also</a>
+    <li><object type="text/sitemap"><param name="Name" value="table"><param name="Local" value="modelXML.table.html"></object><a href="modelXML.table.html">table</a>
+    <li><object type="text/sitemap"><param name="Name" value="table-col"><param name="Local" value="modelXML.table-col.html"></object><a href="modelXML.table-col.html">table-col</a>
+    <li><object type="text/sitemap"><param name="Name" value="table-row"><param name="Local" value="modelXML.table-row.html"></object><a href="modelXML.table-row.html">table-row</a>
+    
+        </UL>
+    <li><object type="text/sitemap"><param name="Name" value="Results of RegExp parsing call"><param name="Local" value="parseDocument.html"></object><a href="parseDocument.html">Results of RegExp parsing call</a>
+    
+        <UL>
+            <li><object type="text/sitemap"><param name="Name" value="group"><param name="Local" value="parseDocument.group.html"></object><a href="parseDocument.group.html">group</a>
+    <li><object type="text/sitemap"><param name="Name" value="match"><param name="Local" value="parseDocument.match.html"></object><a href="parseDocument.match.html">match</a>
+    <li><object type="text/sitemap"><param name="Name" value="result"><param name="Local" value="parseDocument.result.html"></object><a href="parseDocument.result.html">result</a>
+    
+        </UL>
+    
+        </UL>
+    
+        </UL>
+    <li><object type="text/sitemap"><param name="Name" value="HTML template"><param name="Local" value="htmlTemplate.html"></object><a href="htmlTemplate.html">HTML template</a>
+    
+        <UL>
+            <li><object type="text/sitemap"><param name="Name" value="Adding Custom Content"><param name="Local" value="htmlCustomContent.html"></object><a href="htmlCustomContent.html">Adding Custom Content</a>
+    <li><object type="text/sitemap"><param name="Name" value="HTML Template Modification"><param name="Local" value="htmlTemplateModification.html"></object><a href="htmlTemplateModification.html">HTML Template Modification</a>
+    
+        </UL>
+    <li><object type="text/sitemap"><param name="Name" value="CS2DS template"><param name="Local" value="cs2dsTemplate.html"></object><a href="cs2dsTemplate.html">CS2DS template</a>
+    
+        <UL>
+            <li><object type="text/sitemap"><param name="Name" value="Tags"></object>Tags
+        <UL>
+            <li><object type="text/sitemap"><param name="Name" value="Settings File Schema"><param name="Local" value="cs2dsTemplateSettings.html"></object><a href="cs2dsTemplateSettings.html">Settings File Schema</a>
+    
+        </UL>
+    
+        </UL>
+    <li><object type="text/sitemap"><param name="Name" value="Doxygen2Ds template"><param name="Local" value="doxigen2dsTemplate.html"></object><a href="doxigen2dsTemplate.html">Doxygen2Ds template</a>
+    <li><object type="text/sitemap"><param name="Name" value="NULL template"><param name="Local" value="nullTemplate.html"></object><a href="nullTemplate.html">NULL template</a>
+    <li><object type="text/sitemap"><param name="Name" value="XMLDOC template"><param name="Local" value="xmldocTemplate.html"></object><a href="xmldocTemplate.html">XMLDOC template</a>
+    <li><object type="text/sitemap"><param name="Name" value="TREECLASSMATCH template"><param name="Local" value="treeclassmatch.html"></object><a href="treeclassmatch.html">TREECLASSMATCH template</a>
+    
+        </UL>
+    
+        </UL>
+    
+</UL>
+</html>
+    

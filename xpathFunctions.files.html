@@ -1,0 +1,40 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><title>files</title><link rel="stylesheet" href="highlighter/default.css">
+<link rel="stylesheet" href="res/styles.css">
+<link rel="stylesheet" href="res/dripicons.css"></head><body><script type="text/javascript" src="highlighter/highlight.pack.js"></script><script type="text/javascript" src="highlighter/highlight.cshtml.js"></script><script type="text/javascript" src="settings.js"></script><script type="text/javascript" src="res/page-scripts.js"></script><script type="text/javascript">
+    loadStarted();
+</script><h1><code>Function <b>files</b></code></h1><h2>Brief</h2>
+<p>Finds all files that matches the specified pattern</p>
+<table class="tmain" width="100%">
+  <tr>
+    <td class="thdr"><b>Declaration</b></td>
+  </tr>
+  <tr>
+    <td class="tmain"><table class="decl">
+  <tr>
+    <td>XPATH</td>
+  </tr>
+  <tr>
+    <td><code><b>files</b> (folder : string, pattern : string) : node-iterator&nbsp; </code></td>
+  </tr>
+</table></td>
+  </tr>
+</table><p></p>
+<table class="tmain" width="100%">
+  <tr>
+    <td colspan="2" class="thdr"><b>Parameters</b></td>
+  </tr>
+  <tr>
+    <td class="tmain_nw" width="31%"><code>folder</code></td>
+    <td class="tmain" width="69%"><p>The folder to find the files in</p></td>
+  </tr>
+  <tr>
+    <td class="tmain_nw" width="31%"><code>pattern</code></td>
+    <td class="tmain" width="69%"><p>The pattern to search.</p>
+<p>If the pattern starts and ends with <code class="ctag">/</code> character, the pattern
+is recognized as a regular expression.</p>
+<p>Otherwise it is recognized as a filename pattern.</p></td>
+  </tr>
+</table><h2>Details</h2><p>The method returns an iterator of <code class="ctag">file</code> nodes. Each node has a <code class="ctag">name</code> attribute.</p>
+<p>The function introduced in docgen 0.1.17.</p><p>
+  <center><a href="xpathFunctions.html">back</a></center>
+</p><script language="javascript" type="text/javascript">syncList1('xpathFunctions');</script></body></html>

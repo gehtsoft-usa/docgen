@@ -1,0 +1,58 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><title>TREECLASSMATCH template</title><link rel="stylesheet" href="highlighter/default.css">
+<link rel="stylesheet" href="res/styles.css">
+<link rel="stylesheet" href="res/dripicons.css"></head><body><script type="text/javascript" src="highlighter/highlight.pack.js"></script><script type="text/javascript" src="highlighter/highlight.cshtml.js"></script><script type="text/javascript" src="settings.js"></script><script type="text/javascript" src="res/page-scripts.js"></script><script type="text/javascript">
+    loadStarted();
+</script><h1>TREECLASSMATCH template</h1>
+<h2>Brief</h2>
+<p>The section describes the template that compares two classes set in different docgen models</p>
+<h2>Details</h2><p>The template is useful when the documentation is created using <a href="cs2dsTemplate.html">C# to docgen</a>
+or <a href="doxigen2dsTemplate.html">Doxygen to docgen</a> to create the documentation skeleton which then
+was modified by the documentation writer. When code changes the task to find which classes and methods
+are added or removed or which signatures are changed may become challenging. This template allows to compare
+the documentation source and auto-generated tree in order to find these situations.</p>
+<p>Please note that this template does NOT use <a href="modelXML.html">DocGen XML document</a>
+as a source. It opens and processes the document specified
+in the template parameters. However, because it is still required to have
+any DocGen XML document, you have to create a source file with an
+empty index group, e.g. and specify it as a source for your
+<a href="docProjectFile.html">docgen project</a>.</p>
+<p>To provide initial data for the template you should parse two sets of docgen source files and
+save them using <a href="nullTemplate.html"><code>nullTemplate</code></a> as XML files. You will need two
+separate docgen projects to do that.</p><pre class="example" id="example25"><code>@group
+    @title=Index
+    @brief=
+    @key=main
+    @ingroup=
+@end</code></pre><p>The template is located at
+<code class="ctag">%docgen%/template/treeclassmatch/main.xsl</code></p><pre class="example" id="example26"><code class="xml">&lt;dg:output template=&quot;%docgen%/template/treeclassmatch/main.xsl&quot; file=&quot;comparison.xml&quot; encoding=&quot;utf-8&quot;&gt;</code></pre><p>The template has following parameters:</p><table class="tmain" width="100%">
+  <tr>
+    <td class="thdr" width="30%"><p>Parameter</p></td>
+    <td class="thdr"><p>Description</p></td>
+  </tr>
+  <tr>
+    <td class="tmain"><p><code class="ctag">model1</code></p></td>
+    <td class="tmain"><p>The first XML model to compare</p></td>
+  </tr>
+  <tr>
+    <td class="tmain"><p><code class="ctag">model2</code></p></td>
+    <td class="tmain"><p>The second XML model to compare</p></td>
+  </tr>
+  <tr>
+    <td class="tmain"><p><code class="ctag">member-find-mode</code></p></td>
+    <td class="tmain"><p><code class="ctag">name</code> or <code class="ctag">key</code>.</p>
+<p>The flag defines the method how the template finds the methods by the name or by the key.</p>
+<p>If the documentation is build using newer templates (post 1.10 for C# and post 1.17 for C++ and Java)
+the key for the member is build from the member signature and it is suggested to use the <code class="ctag">key</code> option.</p>
+<p>Earlier documentation may have key which does not depend on the member signature so <code class="ctag">name</code> option
+would be more efficient.</p></td>
+  </tr>
+  <tr>
+    <td class="tmain"><p><code class="ctag">compare-parameters</code></p></td>
+    <td class="tmain"><p><code class="ctag">yes</code> or <code class="ctag">no</code>.</p>
+<p>If methods are found using <code class="ctag">key</code>, the key itself already reflects the whole signature, so you don't have
+to compare parameters separately. However, if the methods are found using <code class="ctag">name</code> you may
+want to use this option to detect the situation when the parameter set is changed.</p></td>
+  </tr>
+</table><p>The template is introduced in docgen 0.1.17.</p><p>
+  <center><a href="templates.html">back</a></center>
+</p><script language="javascript" type="text/javascript">syncList();</script></body></html>

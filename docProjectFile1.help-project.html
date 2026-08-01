@@ -1,0 +1,46 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><title>help-project in project.xml file</title><link rel="stylesheet" href="highlighter/default.css">
+<link rel="stylesheet" href="res/styles.css">
+<link rel="stylesheet" href="res/dripicons.css"></head><body><script type="text/javascript" src="highlighter/highlight.pack.js"></script><script type="text/javascript" src="highlighter/highlight.cshtml.js"></script><script type="text/javascript" src="settings.js"></script><script type="text/javascript" src="res/page-scripts.js"></script><script type="text/javascript">
+    loadStarted();
+</script><h1><code>tag <b>help-project</b> in project.xml file</code></h1><h2>Brief</h2>
+<p>The root element of the project document</p>
+<table class="tmain" width="100%">
+  <tr>
+    <td class="thdr"><b>Declaration</b></td>
+  </tr>
+  <tr>
+    <td class="tmain"><table class="decl">
+  <tr>
+    <td><code>&lt;<b>help-project</b>/&gt;</code></td>
+  </tr>
+</table></td>
+  </tr>
+</table>
+<h2>Details</h2><p>Don't forget to add reference to the namespace
+<code class="ctag">http://www.gehtsoft.com/docgen/project</code>
+and, if a prefix is used, keep prefix use
+consitent trough the whole project file.</p><div id="open1" style="display:none">
+  <p>Project file example&nbsp;<a href="javascript: showdiv('close1'); hidediv('open1');" onclick="javascript: showdiv('close1'); hidediv('open1');" class="action">Show<span class="side-icon dripicons-chevron-right"></span></a></p>
+</div>
+<div id="close1" style="display:inline">
+  <p>Project file example&nbsp;<a href="javascript: showdiv('open1'); hidediv('close1');" onclick="javascript: showdiv('open1'); hidediv('close1');" class="action">Hide<span class="side-icon dripicons-chevron-down"></span></a></p>
+  <div id="tab1_1" style="display:inline">
+    <pre class="example" id="example1_1"><a href="javascript: hidediv(&quot;tab1_1&quot;);hidediv(&quot;tab1_2&quot;);showdiv(&quot;tab1_1&quot;);" onclick="javascript: hidediv(&quot;tab1_1&quot;);hidediv(&quot;tab1_2&quot;);showdiv(&quot;tab1_1&quot;);" class="actiontab"><b>Without namespace prefix</b></a><a href="javascript: hidediv(&quot;tab1_1&quot;);hidediv(&quot;tab1_2&quot;);showdiv(&quot;tab1_2&quot;);" onclick="javascript: hidediv(&quot;tab1_1&quot;);hidediv(&quot;tab1_2&quot;);showdiv(&quot;tab1_2&quot;);" class="actiontab">With namespace prefix</a><hr><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+ &lt;help-project xmlns=&quot;http://www.gehtsoft.com/docgen/project&quot;&gt;
+ <i>... project content ...</i>
+&lt;/help-project&gt;</code></pre>
+  </div>
+  <div id="tab1_2" style="display:none">
+    <pre class="example" id="example1_2"><a href="javascript: hidediv(&quot;tab1_1&quot;);hidediv(&quot;tab1_2&quot;);showdiv(&quot;tab1_1&quot;);" onclick="javascript: hidediv(&quot;tab1_1&quot;);hidediv(&quot;tab1_2&quot;);showdiv(&quot;tab1_1&quot;);" class="actiontab">Without namespace prefix</a><a href="javascript: hidediv(&quot;tab1_1&quot;);hidediv(&quot;tab1_2&quot;);showdiv(&quot;tab1_2&quot;);" onclick="javascript: hidediv(&quot;tab1_1&quot;);hidediv(&quot;tab1_2&quot;);showdiv(&quot;tab1_2&quot;);" class="actiontab"><b>With namespace prefix</b></a><hr><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+ &lt;dg:help-project xmlns:dg=&quot;http://www.gehtsoft.com/docgen/project&quot;&gt;
+ <i>... project content ...</i>
+&lt;/dg:help-project&gt;</code></pre>
+  </div>
+</div><p>The project may have three sections:</p><ul class="main">
+  <li><p>Optional common definitions section (see <a href="docProjectFile1.common.html"><code>common</code></a>)</p></li>
+  <li><p>One source section (see <a href="docProjectFile1.source.html"><code>source</code></a>)</p></li>
+  <li><p>One or more output template sections (see <a href="docProjectFile1.output.html"><code>output</code></a>)</p></li>
+</ul><p>Declared in <a href="docProjectFile1.html">project.xml file</a></p>
+<p>
+  <center><a href="docProjectFile1.html">back</a></center>
+</p><script language="javascript" type="text/javascript">syncList1('docProjectFile1');</script></body></html>

@@ -1,0 +1,66 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><title>Authoring Templates</title><link rel="stylesheet" href="highlighter/default.css">
+<link rel="stylesheet" href="res/styles.css">
+<link rel="stylesheet" href="res/dripicons.css"></head><body><script type="text/javascript" src="highlighter/highlight.pack.js"></script><script type="text/javascript" src="highlighter/highlight.cshtml.js"></script><script type="text/javascript" src="settings.js"></script><script type="text/javascript" src="res/page-scripts.js"></script><script type="text/javascript">
+    loadStarted();
+</script><h1>Authoring Templates</h1>
+<h2>Brief</h2>
+<p>The section describes how to create your own template</p>
+<h2>Details</h2><p>To save the documentation in a particular format a <b>template</b> is used.</p>
+<p>There are a set of predefined templates, however you can create
+your own templates.</p>
+<p>When documentation is compiled from the source code, the compiler
+builds up an XML document that contains all the documentation
+information. The schema of this document reflects the structure of
+the documentation. Check <a href="modelXML.html">XML model</a> for more details.</p>
+<p>The template is a set of one or more XSLT transformations that
+creates one or more text documents (e.g. other HTML for web documentation or
+Microsoft HTMLHelp sources, or XML for XMLDoc). In order to facilitate
+the procedure approach to the development (as XSLT functional approach is
+not always easy to learn for developers) and to extend XSLT 1.0 with
+ability to create multiple output files, a set of
+<a href="xpathFunctions.html">XPATH extension functions</a> is
+provided for these templates.</p>
+<p>As a result, the documentation generator has all features of a
+code generator and it also can be used, for example, to create a
+documentation source on the base of assembly structure or
+doxygen output.</p>
+<p>If you look for examples, please check <code class="ctag">template</code> folder
+of the docgen git repository. All the standard templates
+are located there.</p><p></p>
+<table class="tmain" width="100%">
+  <tr>
+    <td colspan="2" class="thdr"><b>Functions</b></td>
+  </tr>
+  <tr>
+    <td class="tmain_nw" width="31%">
+      <p><a href="xpathFunctions.html">XPath extensions</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>The list XPATH functions that may be used in output templates</p>
+    </td>
+  </tr>
+</table>
+<p></p>
+<table class="tmain" width="100%">
+  <tr>
+    <td colspan="2" class="thdr"><b>Tags</b></td>
+  </tr>
+  <tr>
+    <td class="tmain_nw" width="31%">
+      <p><a href="modelXML.html">Documentation XML Model</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>The section describes XML model that is passed to the output templates</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="tmain_nw" width="31%">
+      <p><a href="parseDocument.html">Results of RegExp parsing call</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>The document returned by the parse function.</p>
+    </td>
+  </tr>
+</table><p>
+  <center><a href="templates.html">back</a></center>
+</p><script language="javascript" type="text/javascript">syncList();</script></body></html>

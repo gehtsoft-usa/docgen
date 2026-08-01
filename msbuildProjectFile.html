@@ -1,0 +1,90 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><title>MSBuild Project File</title><link rel="stylesheet" href="highlighter/default.css">
+<link rel="stylesheet" href="res/styles.css">
+<link rel="stylesheet" href="res/dripicons.css"></head><body><script type="text/javascript" src="highlighter/highlight.pack.js"></script><script type="text/javascript" src="highlighter/highlight.cshtml.js"></script><script type="text/javascript" src="settings.js"></script><script type="text/javascript" src="res/page-scripts.js"></script><script type="text/javascript">
+    loadStarted();
+</script><h1>MSBuild Project File</h1>
+<h2>Brief</h2>
+<p>The section describes MSBuild file defining the project compilation routing</p>
+<h2>Details</h2><p>The build file is a standard
+<a href="https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild" target="_blank">MSBuild</a>
+project file. This file may be compiled using either <code class="ctag">msbuild.exe</code>
+or <code class="ctag">dotnet build</code> command.</p>
+<p>The docgen relies on two nuget packages available
+from Gehtsoft public nuget stream
+<a href="https://www.myget.org/F/gehtsoft-public/api" target="_blank">https://www.myget.org/F/gehtsoft-public/api/v3/index.json</a>:</p><ul class="main">
+  <li><p>Gehtsoft.Build.DocGen</p></li>
+  <li><p>Gehtsoft.Build.ContentDelivery</p></li>
+</ul><p>You organizes the build process using
+custom tasks defined in these packages. Refer to
+project tags for details about the tasks.</p>
+<p>You can also expand an example of a project files below
+that uses all custom tasks:</p><div id="open2" style="display:inline">
+  <p>Documentation Project File Example&nbsp;<a href="javascript: showdiv('close2'); hidediv('open2');" onclick="javascript: showdiv('close2'); hidediv('open2');" class="action">Show<span class="side-icon dripicons-chevron-right"></span></a></p>
+</div>
+<div id="close2" style="display:none">
+  <p>Documentation Project File Example&nbsp;<a href="javascript: showdiv('open2'); hidediv('close2');" onclick="javascript: showdiv('open2'); hidediv('close2');" class="action">Hide<span class="side-icon dripicons-chevron-down"></span></a></p>
+  <div id="tab2_1" style="display:inline">
+    <pre class="example" id="example2_1"><a href="javascript: hidediv(&quot;tab2_1&quot;);hidediv(&quot;tab2_2&quot;);showdiv(&quot;tab2_1&quot;);" onclick="javascript: hidediv(&quot;tab2_1&quot;);hidediv(&quot;tab2_2&quot;);showdiv(&quot;tab2_1&quot;);" class="actiontab"><b>project</b></a><a href="javascript: hidediv(&quot;tab2_1&quot;);hidediv(&quot;tab2_2&quot;);showdiv(&quot;tab2_2&quot;);" onclick="javascript: hidediv(&quot;tab2_1&quot;);hidediv(&quot;tab2_2&quot;);showdiv(&quot;tab2_2&quot;);" class="actiontab">Command</a><hr><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;
+ &lt;PropertyGroup&gt;
+  &lt;TargetFramework&gt;netstandard2.0&lt;/TargetFramework&gt;
+ &lt;/PropertyGroup&gt;
+ &lt;!-- Get required packages --&gt;
+ &lt;ItemGroup&gt;
+  &lt;!-- If you update the package version here,
+       don't forget to update it as well below,
+       In ContentFromPackage task parameters --&gt;
+  &lt;PackageReference Include=&quot;Gehtsoft.Build.DocGen&quot; Version=&quot;0.1.12&quot; IncludeAssets=&quot;build&quot; /&gt;
+  &lt;PackageReference Include=&quot;Gehtsoft.Build.ContentDelivery&quot; Version=&quot;0.1.10&quot; IncludeAssets=&quot;build&quot; /&gt;
+ &lt;/ItemGroup&gt;
+ &lt;!-- Define folder location --&gt;
+ &lt;PropertyGroup&gt;
+  &lt;DocTargetDir&gt;$(MSBuildProjectDirectory)/dst&lt;/DocTargetDir&gt;
+ &lt;/PropertyGroup&gt;
+ &lt;!-- Define file groups and constants --&gt;
+ &lt;ItemGroup&gt;
+  &lt;!-- Images and raw HTML files to include into doc --&gt;
+  &lt;CustomFile Include=&quot;$(MSBuildProjectDirectory)/img/**/*.png;$(MSBuildProjectDirectory)/html/**/*.*&quot; /&gt;
+  &lt;!-- All files in target directory --&gt;
+  &lt;CurrentDocTargetDir Include=&quot;$(DocTargetDir)&quot; /&gt;
+ &lt;/ItemGroup&gt;
+ &lt;!-- Target that removes results of compilation --&gt;
+ &lt;Target Name=&quot;CleanDoc&quot;&gt;
+  &lt;RemoveDir Directories=&quot;@(CurrentDocTargetDir)&quot; /&gt;
+ &lt;/Target&gt;
+ &lt;!-- Target that creates the project --&gt;
+ &lt;Target Name=&quot;MakeDoc&quot;&gt;
+  &lt;!-- Remove previous output --&gt;
+  &lt;RemoveDir Directories=&quot;@(CurrentDocTargetDir)&quot; /&gt;
+  &lt;MakeDir Directories=&quot;$(DocTargetDir)&quot; /&gt;
+  &lt;!-- Compile documentation project --&gt;
+  &lt;DocGen Project=&quot;project.xml&quot; /&gt;
+  &lt;!-- Copy raw content to the output folder --&gt;
+  &lt;Copy SourceFiles=&quot;@(CustomFile)&quot; DestinationFolder=&quot;$(DocTargetDir)&quot; /&gt;
+  &lt;!-- Copy content (e.g. web menu, icons, scripts) for HTML template output --&gt;
+  &lt;ContentFromPackage Package=&quot;Gehtsoft.Build.DocGen&quot; Source=&quot;Content/template/html/res&quot; Version=&quot;0.1.12&quot; Destination=&quot;$(DocTargetDir)/res&quot; /&gt;
+  &lt;ContentFromPackage Package=&quot;Gehtsoft.Build.DocGen&quot; Source=&quot;Content/template/html/highlighter&quot; Version=&quot;0.1.12&quot; Destination=&quot;$(DocTargetDir)/highlighter&quot; /&gt;
+  &lt;ContentFromPackage Package=&quot;Gehtsoft.Build.DocGen&quot; Source=&quot;Content/template/html/menu&quot; Version=&quot;0.1.12&quot; Destination=&quot;$(DocTargetDir)/menu&quot; /&gt;
+  &lt;ContentFromPackage Package=&quot;Gehtsoft.Build.DocGen&quot; Source=&quot;Content/template/html/pageImages&quot; Version=&quot;0.1.12&quot; Destination=&quot;$(DocTargetDir)/pageImages&quot; /&gt;
+ &lt;/Target&gt;
+&lt;/Project&gt;</code></pre>
+  </div>
+  <div id="tab2_2" style="display:none">
+    <pre class="example" id="example2_2"><a href="javascript: hidediv(&quot;tab2_1&quot;);hidediv(&quot;tab2_2&quot;);showdiv(&quot;tab2_1&quot;);" onclick="javascript: hidediv(&quot;tab2_1&quot;);hidediv(&quot;tab2_2&quot;);showdiv(&quot;tab2_1&quot;);" class="actiontab">project</a><a href="javascript: hidediv(&quot;tab2_1&quot;);hidediv(&quot;tab2_2&quot;);showdiv(&quot;tab2_2&quot;);" onclick="javascript: hidediv(&quot;tab2_1&quot;);hidediv(&quot;tab2_2&quot;);showdiv(&quot;tab2_2&quot;);" class="actiontab"><b>Command</b></a><hr><code><code class="ctag">dotnet build project.proj /t:CleanDoc,MakeDoc</code></code></pre>
+  </div>
+</div><p></p>
+<table class="tmain" width="100%">
+  <tr>
+    <td colspan="2" class="thdr"><b>Tags</b></td>
+  </tr>
+  <tr>
+    <td class="tmain_nw" width="31%">
+      <p><a href="msbuildTasks.html">Tasks</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>The section describes custom MSBuild tasks</p>
+    </td>
+  </tr>
+</table><p>
+  <center><a href="projectFile.html">back</a></center>
+</p><script language="javascript" type="text/javascript">syncList();</script></body></html>

@@ -1,0 +1,72 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><title>Adding Custom Content</title><link rel="stylesheet" href="highlighter/default.css">
+<link rel="stylesheet" href="res/styles.css">
+<link rel="stylesheet" href="res/dripicons.css"></head><body><script type="text/javascript" src="highlighter/highlight.pack.js"></script><script type="text/javascript" src="highlighter/highlight.cshtml.js"></script><script type="text/javascript" src="settings.js"></script><script type="text/javascript" src="res/page-scripts.js"></script><script type="text/javascript">
+    loadStarted();
+</script><h1>Adding Custom Content</h1>
+<h2>Brief</h2>
+<p>The article describes how to add custom content/make minor customizations</p>
+<h2>Details</h2><p><b>Copying Content into Result</b></p>
+<p>The easiest way to add custom content or customize the content is simply add images, html files into
+output folder and then reference them from your content.</p>
+<p>For example, all you need to add the icon the documentation is to put
+<code class="ctag">favicon.ico</code> file into the root of the compiled documentation.</p>
+<p><b>Adding Custom Pages to Content Tree/Index</b></p>
+<p>In order to add your HTML files into a content tree and index you should</p>
+<p>1) Prepare content specification for a tree. It is a very simple format that has
+a root tag <code class="ctag">help-content</code> and one or more tags <code class="ctag">node</code> organized into a tree.</p>
+<p>A tag <code class="ctag">node</code> shall have attribute <code class="ctag">name</code> and may have attribute <code class="ctag">local</code> that
+points to the html file.</p><pre class="example" id="example16"><code class="xml">&lt;help-content&gt;
+    &lt;node name=&quot;Lua 5.1 Reference Manual&quot; local=&quot;lua/lua_51_reference_manual.html&quot;&gt;
+        &lt;node name=&quot;1 - Introduction&quot; local=&quot;lua/1.html&quot;/&gt;
+        &lt;node name=&quot;2 - The Language&quot; local=&quot;lua/2.html&quot;/&gt;
+        &lt;node name=&quot;2.1 - Lexical Conventions&quot; local=&quot;lua/2.1.html&quot;/&gt;
+        &lt;node name=&quot;2.2 - Values and Types&quot; local=&quot;lua/2.2.html&quot;&gt;
+        &lt;node name=&quot;2.2.1 - Coercion&quot; local=&quot;lua/2.2.1.html&quot; /&gt;
+    &lt;/node&gt;
+    ...
+&lt;/help-content&gt;</code></pre><p>2) Prepare a content specification for an index.</p>
+<p>The index is a plain list of <code class="ctag">key</code> tags which has three obligatory attributes: <code class="ctag">keyword</code>, <code class="ctag">name</code> and <code class="ctag">local</code>.</p><pre class="example" id="example17"><code class="xml">&lt;help-index&gt;
+ &lt;key keyword=&quot;Lua 5.1 Reference Manual&quot; name=&quot;Lua 5.1 Reference Manual&quot; local=&quot;lua/lua_51_reference_manual.html&quot; /&gt;
+ &lt;key keyword=&quot;Lua: 1 - Introduction&quot; name=&quot;Lua: 1 - Introduction&quot; local=&quot;lua/1.html&quot; /&gt;
+ &lt;key keyword=&quot;Lua: 2 - The Language&quot; name=&quot;Lua: 2 - The Language&quot; local=&quot;lua/2.html&quot; /&gt;
+&lt;/help-index&gt;</code></pre><p>3) Choose a group that will be the parent node for the content and specify
+the XML files using <code class="ctag">@importhhc</code> (content) and <code class="ctag">@importhhk</code> (keywords index)
+attributes.</p>
+<p><b>Customizing Styles</b></p>
+<p>You can also take the standard styles from the HTML template
+(if you use nuget, the template is located at
+<code class="ctag">%USERPROFILE%\.nuget\packages\gehtsoft.build.docgen\<u>docgen version</u>\Content\template\html\res</code></p>
+<p>You can modify these templates and then overwrite them in <code class="ctag">res</code> folder inside of
+the compiled documentation.</p>
+<p>Don't forget set <code class="ctag">external-resources</code> definition in the template properties to <code class="ctag">yes</code> if you
+want to override styles.</p>
+<p>Alternatively you can override styles using <code class="ctag">add-custom-style</code> option.</p>
+<p><b>Customizing header and footer</b></p>
+<p>You can add a piece of HTML to: <code class="ctag">head</code> tag, right after <code class="ctag">body</code> tag and right before closing <code class="ctag">body</code> tag.</p>
+<p>Use the following properties of the template <code class="ctag">add-to-prolog-head</code>, <code class="ctag">add-to-prolog-body</code> and
+<code class="ctag">add-to-epilog</code>. The values must be a file name, the content of the specified file
+will be written into corresponding location of the HTML files for articles, groups, and members.</p>
+<p><b>Customizing the frame container</b></p>
+<p>You can add your own code to the header of the container page using
+<code class="ctag">add-to-container-prolog-head</code> property of the template or
+replace a table cell (including <code class="ctag">&lt;td&gt;</code> tag) that contains
+the header text using <code class="ctag">replace-container-prolog-title</code> property. Both property
+points at a text file that contains a fragment of the HTML to be inserted.</p>
+<p><b>Github Pages Default File</b></p>
+<p>Default configuration of the html template has following settings:</p><ul class="main">
+  <li><p>The root group has <code class="ctag">index</code> key and so named <code class="ctag">index.html</code>.</p></li>
+  <li><p>The web content files has <code class="ctag">web-content.html</code> name.</p></li>
+</ul><p>In some environments, e.g. in github pages, it is not possible to
+change the default file. In such environments, the following course of
+actions is suggested:</p><ul class="main">
+  <li><p>Make the root group key other than <code class="ctag">index</code>, e.g. <code class="ctag">main</code>.</p></li>
+  <li><p>Force the naming of the web content file to <code class="ctag">index.html</code> using
+<code class="ctag">web-content-file-name</code> property of the HTML template (set only
+file name, without extension!).</p></li>
+  <li><p>If need to support old links directed to <code class="ctag">web-content.html</code>
+add property <code class="ctag">web-content-file-name-backward-compatibility</code>
+and set it to <code class="ctag">yes</code>.</p></li>
+</ul><p><b>Customize Template</b></p>
+<p>For the &quot;heavy lifting&quot; customization modify the the template and use your own custom template.</p><p>
+  <center><a href="htmlTemplate.html">back</a></center>
+</p><script language="javascript" type="text/javascript">syncList();</script></body></html>

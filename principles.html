@@ -1,0 +1,28 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><title>Source code principles</title><link rel="stylesheet" href="highlighter/default.css">
+<link rel="stylesheet" href="res/styles.css">
+<link rel="stylesheet" href="res/dripicons.css"></head><body><script type="text/javascript" src="highlighter/highlight.pack.js"></script><script type="text/javascript" src="highlighter/highlight.cshtml.js"></script><script type="text/javascript" src="settings.js"></script><script type="text/javascript" src="res/page-scripts.js"></script><script type="text/javascript">
+    loadStarted();
+</script><h1>Source code principles</h1>
+<h2>Brief</h2>
+<p>The article describes the common principles of the source organization</p>
+<h2>Details</h2><p>The documentation source format is a plain text format with documentation-specific tags.</p>
+<p>The documentation markup always starts with <code class="ctag">@</code> character at the first character of the code (after any
+number of the whitespace characters).</p>
+<p>A tag is a section of text between the opening tag and special keyword <code class="ctag">@end</code>. Each tag may contain
+values, plain text and sometimes other tags.</p>
+<p>An attribute is always one line construction and consists of the name of the value, and <code class="ctag">=</code> character followed by the value.</p>
+<p>The text which does not starts with <code class="ctag">@</code> character is considered plain text. Following rules applies to the plain text:</p>
+<p>1) All leading whitespace characters are trimmed. If you need to keep leading whitespace characters
+put <code class="ctag">!</code> character in the beginning of the line.</p>
+<p>2) All consecutive lines are concatenated in one paragraph. Separate paragraphs with an empty line.</p>
+<p>And example of tag is below:</p><pre class="example" id="example3"><code class="ds">@article
+    @title=My title
+    Article content.
+    Still first paragraph.
+ 
+    More content. This is a new paragraph.
+@end</code></pre><p>The tags either defines the structure of the documentation
+(e.g. <code class="ctag">groups</code>, <code class="ctag">article</code>, <code class="ctag">class</code> and <code class="ctag">member</code>) or helps to define complex formatting
+(e.g. <code class="ctag">table</code> or <code class="ctag">list</code>).</p><p>
+  <center><a href="sources.html">back</a></center>
+</p><script language="javascript" type="text/javascript">syncList();</script></body></html>

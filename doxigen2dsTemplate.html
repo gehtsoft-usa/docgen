@@ -1,0 +1,72 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><title>Doxygen2Ds template</title><link rel="stylesheet" href="highlighter/default.css">
+<link rel="stylesheet" href="res/styles.css">
+<link rel="stylesheet" href="res/dripicons.css"></head><body><script type="text/javascript" src="highlighter/highlight.pack.js"></script><script type="text/javascript" src="highlighter/highlight.cshtml.js"></script><script type="text/javascript" src="settings.js"></script><script type="text/javascript" src="res/page-scripts.js"></script><script type="text/javascript">
+    loadStarted();
+</script><h1>Doxygen2Ds template</h1>
+<h2>Brief</h2>
+<p>The section describes the template that converts a doxygen XML output to document source</p>
+<h2>Details</h2><p>To prepare the source data for the template use the <a href="https://www.doxygen.nl/index.html" target="_blank">doxygen</a> of version
+1.8 or above. Make sure that XML output is enabled (<code class="ctag">GENERATE_XML = YES</code> in doxygen configuration file).</p>
+<p>Please not that this assembly does NOT use <a href="modelXML.html">DocGen XML document</a>
+as a source. It opens and processes the document specified
+in the template parameters. However, because it is still required to have
+any DocGen XML document, you have to create a source file with an
+empty index group, e.g. and specify it as a source for your
+<a href="docProjectFile.html">docgen project</a>.</p><pre class="example" id="example23"><code>@group
+    @title=Index
+    @brief=
+    @key=main
+    @ingroup=
+@end</code></pre><p>The template is located at
+<code class="ctag">%docgen%/template/doxygen2ds/main.xsl</code></p>
+<p>This template creates multiple output files, so use <code class="ctag">file</code> parameter
+of the <a href="docProjectFile1.output.html"><code>output</code></a> element of the project file
+to specify the destination folder:</p>
+<p>Example:</p><pre class="example" id="example24"><code class="xml">&lt;dg:output template=&quot;%docgen%/template/doxygen2ds/main.xsl&quot; file=&quot;src/raw/null-file&quot; encoding=&quot;utf-8&quot;&gt;</code></pre><p>The template has following parameters:</p><table class="tmain" width="100%">
+  <tr>
+    <td class="thdr" width="30%"><p>Parameter</p></td>
+    <td class="thdr"><p>Description</p></td>
+  </tr>
+  <tr>
+    <td class="tmain"><p><code class="ctag">xml-path</code></p></td>
+    <td class="tmain"><p>The folder where Doxygen XML output is located.</p></td>
+  </tr>
+  <tr>
+    <td class="tmain"><p><code class="ctag">ds-path</code></p></td>
+    <td class="tmain"><p>The folder to write output docgen source files.</p></td>
+  </tr>
+  <tr>
+    <td class="tmain"><p><code class="ctag">codepage</code></p></td>
+    <td class="tmain"><p>The codepage for the output files (use <code class="ctag">65001</code> for UTF-8)</p></td>
+  </tr>
+  <tr>
+    <td class="tmain"><p><code class="ctag">group</code></p></td>
+    <td class="tmain"><p>The group name into which all namespaces must be included.</p></td>
+  </tr>
+  <tr>
+    <td class="tmain"><p><code class="ctag">language</code></p></td>
+    <td class="tmain"><p>The programming language for declarations</p></td>
+  </tr>
+  <tr>
+    <td class="tmain"><p><code class="ctag">divisor</code></p></td>
+    <td class="tmain"><p>The divisor to be used in class and namespace names instead of default
+doxygen's <code class="ctag">::</code>. For example, you may want to set it <code class="ctag">.</code> for Java.</p></td>
+  </tr>
+  <tr>
+    <td class="tmain"><p><code class="ctag">exclude-namespace</code></p></td>
+    <td class="tmain"><p>The regexp for namespace doxygen identifiers to be excluded from the documentation.
+For example you may want to exclude <code class="ctag">java:.+</code> for Java or
+<code class="ctag">^std$</code> for C++.</p></td>
+  </tr>
+</table><p>The template is fully refactored in docgen 0.1.17. Check your projects.</p>
+<p>The template picks up comment docs as well for brief and detailed description of the classes
+and methods and for parameter description.</p>
+<p>There is limited support of Doxygen markdown (see <a href="https://www.doxygen.nl/manual/markdown.html" target="_blank">documentation</a> for details) formatting:</p><ul class="main">
+  <li><p>Bold, strike-through and code</p></li>
+  <li><p>code block with syntax highlighting</p></li>
+  <li><p>table, but without row and col span</p></li>
+  <li><p>one-level bullet lists</p></li>
+  <li><p>links (both to other classes and to URLs) and images</p></li>
+</ul><p>
+  <center><a href="templates.html">back</a></center>
+</p><script language="javascript" type="text/javascript">syncList();</script></body></html>

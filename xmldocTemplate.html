@@ -1,0 +1,39 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><title>XMLDOC template</title><link rel="stylesheet" href="highlighter/default.css">
+<link rel="stylesheet" href="res/styles.css">
+<link rel="stylesheet" href="res/dripicons.css"></head><body><script type="text/javascript" src="highlighter/highlight.pack.js"></script><script type="text/javascript" src="highlighter/highlight.cshtml.js"></script><script type="text/javascript" src="settings.js"></script><script type="text/javascript" src="res/page-scripts.js"></script><script type="text/javascript">
+    loadStarted();
+</script><h1>XMLDOC template</h1>
+<h2>Brief</h2>
+<p>The section describes the template that creates XML doc file from the documentation for a C# project.</p>
+<h2>Details</h2><p>The null template is located in
+<code class="ctag">%docgen%/template/xmldoc/main.xls</code></p>
+<p>The following parameters may be specified for the template</p><table class="tmain">
+  <tr>
+    <td class="thdr" width="30%"><p>Parameter</p></td>
+    <td class="thdr"><p>Description</p></td>
+  </tr>
+  <tr>
+    <td class="tmain"><p><code class="ctag">assembly</code></p></td>
+    <td class="tmain"><p>The name of the assembly (without <code class="ctag">.dll</code> extension)</p></td>
+  </tr>
+  <tr>
+    <td class="tmain"><p><code class="ctag">namespace</code></p></td>
+    <td class="tmain"><p>A regular expression for namespace(s) to include
+into the XMLDoc (useful if documentation
+covers multiple assemblies).</p></td>
+  </tr>
+  <tr>
+    <td class="tmain"><p><code class="ctag">write-summary</code></p></td>
+    <td class="tmain"><p><code class="ctag">yes</code> or <code class="ctag">no</code></p>
+<p>The parameter defines whether only
+the content of brief tag or the whole
+summary needs to be saved for classes and methods.</p>
+<p>In case your documentation has rich formatting
+in detailed description (e.g. a lot of tables, lists)
+it may be not a good idea to save this
+information to XMLDoc because formatting support
+there is highly limited.</p></td>
+  </tr>
+</table><p>
+  <center><a href="templates.html">back</a></center>
+</p><script language="javascript" type="text/javascript">syncList();</script></body></html>

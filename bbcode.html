@@ -1,0 +1,197 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><title>BBCode</title><link rel="stylesheet" href="highlighter/default.css">
+<link rel="stylesheet" href="res/styles.css">
+<link rel="stylesheet" href="res/dripicons.css"></head><body><script type="text/javascript" src="highlighter/highlight.pack.js"></script><script type="text/javascript" src="highlighter/highlight.cshtml.js"></script><script type="text/javascript" src="settings.js"></script><script type="text/javascript" src="res/page-scripts.js"></script><script type="text/javascript">
+    loadStarted();
+</script><h1><code>tags <b>BBCode</b></code></h1>
+<h2>Brief</h2>
+<p>The section describes BBCode that is used to format the source code</p>
+<h2>Details</h2><p>The BBCode is well-know formatting specification actively used
+in phpbb forums and their descendants.</p>
+<p>BBCode is supported only by output templates that has the option
+to format the text. In order to have bbcode processed make sure
+that <code class="ctag">default-transform</code> option is enabled in the output template.</p>
+<p>BBCode tags should be put in square brackets <code class="ctag">[]</code>.</p>
+<p>The opening bbcode tag has format <b>[<i>tagName</i>]</b></p>
+<p>The closing bbcode tag has format <b>[<i>/tagName</i>]</b></p>
+<p>Typically, bbcode with a few exceptions are applied to the text between opening
+and closing bbcodes, e.g. <code class="ctag">text [b]bold[/b] text</code> will
+be displayed as 'text <b>bold</b> text'. Exceptions are tags <code class="ctag">[nil]</code>, <code class="ctag">[br]</code>,
+<code class="ctag">[img]</code>.</p>
+<p>There is no special character to escape an opening square bracket because if it is not
+recognized as a bbcode, the compiler simply adds it to the text. However, if
+there is the text that is a correct bbcode, but you want to display it as is, for example
+<code class="ctag">myArray[i] + 1</code> in C++ example will be displayed as
+'<code class="ctag">myArray<i> + 1</i></code>. To make example look correctly, add <code class="ctag">[nil]</code> tag
+after opening square bracket 'breaking' the correct pattern: <code class="ctag">myArray[[nil]i] + 1</code>,</p>
+<p>If bbcode has a value, the value is set after <code class="ctag">=</code> character after the bbcode name, for example:
+<code class="ctag">[color=red]red[[/color]</code>.</p>
+<p>BBCodes may be used inside other bbcodes, for example:
+<code class="ctag">[b]myt[i]e[sub]xt[/sub] is [/i] heavi[/b]ly [u]for[color=gray]mat[/color]ted[/u]</code>.
+('<b>myt<i>e<sub>xt</sub> is </i> heavi</b>ly <u>for<font color="#gray">mat</font>ted</u>').</p><p></p>
+<table class="tmain" width="100%">
+  <tr>
+    <td colspan="2" class="thdr"><b>Tags</b></td>
+  </tr>
+  <tr>
+    <td class="tmain">
+      <p><a href="bbcode.b.html">b</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>Make text bold</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="tmain">
+      <p><a href="bbcode.blue.html">blue</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>Make text blue</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="tmain">
+      <p><a href="bbcode.br.html">br</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>Inserts a page break.</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="tmain">
+      <p><a href="bbcode.c.html">c</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>Make text code (monospace)</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="tmain">
+      <p><a href="bbcode.clink.html">clink</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>A link to another topic displayed as a code</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="tmain">
+      <p><a href="bbcode.color=.html">color=</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>Sets the color of the text</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="tmain">
+      <p><a href="bbcode.eurl.html">eurl</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>A link to specified URL to be opened in a new window</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="tmain">
+      <p><a href="bbcode.gray.html">gray</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>Make text dark gray</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="tmain">
+      <p><a href="bbcode.green.html">green</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>Make text green</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="tmain">
+      <p><a href="bbcode.i.html">i</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>Make text italic</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="tmain">
+      <p><a href="bbcode.img=.html">img=</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>Inserts an image</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="tmain">
+      <p><a href="bbcode.link=.html">link=</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>A link to another topic</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="tmain">
+      <p><a href="bbcode.nil.html">nil</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>Tag that displays nothing.</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="tmain">
+      <p><a href="bbcode.red.html">red</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>Make text red</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="tmain">
+      <p><a href="bbcode.s.html">s</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>Make text strikedthrough</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="tmain">
+      <p><a href="bbcode.size=.html">size=</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>Increase or decrease the size of the text</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="tmain">
+      <p><a href="bbcode.sub.html">sub</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>Make text subscript</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="tmain">
+      <p><a href="bbcode.sup.html">sup</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>Make text superscript</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="tmain">
+      <p><a href="bbcode.u.html">u</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>Underline the text</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="tmain">
+      <p><a href="bbcode.url=.html">url=</a></p>
+    </td>
+    <td class="tmain" width="69%">
+      <p>A link to specified URL to be opened in the same window</p>
+    </td>
+  </tr>
+</table><p>
+  <center><a href="sources.html">back</a></center>
+</p><script language="javascript" type="text/javascript">syncList();</script></body></html>

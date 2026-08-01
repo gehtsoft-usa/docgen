@@ -1,0 +1,17 @@
+
+[OPTIONS]
+Index file=index.hhk
+Auto Index=Yes
+Binary TOC=Yes
+Compatibility=1.1 or later
+Compiled file=help.chm
+Contents file=index.hhc
+Create CHI file=Yes
+Default topic=main.html
+Display compile progress=No
+Full-text search=Yes
+Language=English
+Title=Gehtsoft Documentation Generator
+
+[FILES]
+    

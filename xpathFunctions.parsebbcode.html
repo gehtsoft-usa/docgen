@@ -1,0 +1,49 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><title>parsebbcode</title><link rel="stylesheet" href="highlighter/default.css">
+<link rel="stylesheet" href="res/styles.css">
+<link rel="stylesheet" href="res/dripicons.css"></head><body><script type="text/javascript" src="highlighter/highlight.pack.js"></script><script type="text/javascript" src="highlighter/highlight.cshtml.js"></script><script type="text/javascript" src="settings.js"></script><script type="text/javascript" src="res/page-scripts.js"></script><script type="text/javascript">
+    loadStarted();
+</script><h1><code>Function <b>parsebbcode</b></code></h1><h2>Brief</h2>
+<p>The method parses text that contains bbcode</p>
+<table class="tmain" width="100%">
+  <tr>
+    <td class="thdr"><b>Declaration</b></td>
+  </tr>
+  <tr>
+    <td class="tmain"><table class="decl">
+  <tr>
+    <td>XPATH</td>
+  </tr>
+  <tr>
+    <td><code><b>parsebbcode</b> (value : string) : node&nbsp; </code></td>
+  </tr>
+</table></td>
+  </tr>
+</table><p></p>
+<table class="tmain" width="100%">
+  <tr>
+    <td colspan="2" class="thdr"><b>Parameters</b></td>
+  </tr>
+  <tr>
+    <td class="tmain_nw" width="31%"><code>value</code></td>
+    <td class="tmain" width="69%"><p>The text to be parsed</p></td>
+  </tr>
+</table><h2>Details</h2><p>The structure of XML document follows the structure of <a href="bbcode.html">bbcode</a>
+with the following additions:</p><ul class="main">
+  <li><p>The root tag of the returned document will be <code class="ctag">&lt;r&gt;</code></p></li>
+  <li><p>All pieces of the text will be wrapped into <code class="ctag">&lt;t&gt;</code> tag</p></li>
+  <li><p>Wherever the bbcode attribute has a value, it will be saved into <code class="ctag">attr</code> attribute.</p></li>
+</ul><p>Example</p>
+<p>BBCode: <code class="ctag">My [b]bold and [color=green]green[/color][/b] text</code></p>
+<p>Will be parsed into:</p>
+<p>XML</p><pre id="example13"><code class="xml">&lt;r&gt;
+ &lt;t&gt;My &lt;/t&gt;
+ &lt;b&gt;
+   &lt;t&gt;bold and &lt;/t&gt;
+   &lt;color attr=&quot;green&quot;&gt;
+     &lt;t&gt;italic&lt;/t&gt;
+   &lt;/color&gt;
+ &lt;/b&gt;
+ &lt;t&gt;text&lt;/t&gt;
+&lt;/r&gt;</code></pre><p>
+  <center><a href="xpathFunctions.html">back</a></center>
+</p><script language="javascript" type="text/javascript">syncList1('xpathFunctions');</script></body></html>

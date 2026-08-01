@@ -1,0 +1,30 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><title>strip-namespace in Settings File Schema</title><link rel="stylesheet" href="highlighter/default.css">
+<link rel="stylesheet" href="res/styles.css">
+<link rel="stylesheet" href="res/dripicons.css"></head><body><script type="text/javascript" src="highlighter/highlight.pack.js"></script><script type="text/javascript" src="highlighter/highlight.cshtml.js"></script><script type="text/javascript" src="settings.js"></script><script type="text/javascript" src="res/page-scripts.js"></script><script type="text/javascript">
+    loadStarted();
+</script><h1><code>tag <b>strip-namespace</b> in Settings File Schema</code></h1><h2>Brief</h2>
+<p>The list of namespaces those names should be displayed as a short name rather than full name</p><p></p>
+<table class="tmain" width="100%">
+  <tr>
+    <td colspan="2" class="thdr"><b>Parameters</b></td>
+  </tr>
+  <tr>
+    <td class="tmain_nw" width="31%"><code>name</code></td>
+    <td class="tmain" width="69%"><p>The name of namespace.</p></td>
+  </tr>
+</table><h2>Details</h2><p>The types to belong to the assembly specified will be
+shown in the documentation using their short names rather than
+full names.</p>
+<p>The following areas will be affected:</p><ul class="main">
+  <li><p>The list of class parents</p></li>
+  <li><p>The types of the parameters in declarations</p></li>
+  <li><p>The return types in the declarations</p></li>
+</ul><p>E.g. by default an auto-generated declaration may look like these</p><pre class="example" id="example20"><code class="csharp">System.Task&lt;System.Collections.Generic.List&lt;T&gt;&gt; Sample&lt;T&gt;(System.Collections.Generic.IEnumerable&lt;T&gt; parameter);</code></pre><p>If you add the following lines to the project file</p><pre class="example" id="example21"><code class="xml">&lt;settings&gt;
+ ...
+ &lt;strip-namespace name=&quot;System&quot; /&gt;
+ &lt;strip-namespace name=&quot;System.Collections.Generic&quot; /&gt;
+ ...
+&lt;/settings&gt;</code></pre><p>The declaration will look like this</p><pre class="example" id="example22"><code class="csharp">Task&lt;List&lt;T&gt;&gt; Sample&lt;T&gt;(IEnumerable&lt;T&gt; parameter);</code></pre><p>Declared in <a href="cs2dsTemplateSettings.html">Settings File Schema</a></p>
+<p>
+  <center><a href="cs2dsTemplateSettings.html">back</a></center>
+</p><script language="javascript" type="text/javascript">syncList1('cs2dsTemplateSettings');</script></body></html>

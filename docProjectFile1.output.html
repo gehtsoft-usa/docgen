@@ -1,0 +1,57 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><title>output in project.xml file</title><link rel="stylesheet" href="highlighter/default.css">
+<link rel="stylesheet" href="res/styles.css">
+<link rel="stylesheet" href="res/dripicons.css"></head><body><script type="text/javascript" src="highlighter/highlight.pack.js"></script><script type="text/javascript" src="highlighter/highlight.cshtml.js"></script><script type="text/javascript" src="settings.js"></script><script type="text/javascript" src="res/page-scripts.js"></script><script type="text/javascript">
+    loadStarted();
+</script><h1><code>tag <b>output</b> in project.xml file</code></h1><h2>Brief</h2>
+<p>The tags defines the output template to be used</p>
+<table class="tmain" width="100%">
+  <tr>
+    <td class="thdr"><b>Declaration</b></td>
+  </tr>
+  <tr>
+    <td class="tmain"><table class="decl">
+  <tr>
+    <td><code>&lt;<b>output</b> template=&quot;<i>path</i>&quot; output=&quot;<i>file</i>&quot; encoding=&quot;<i>encoding</i>&quot; /&gt;</code></td>
+  </tr>
+</table></td>
+  </tr>
+</table><p></p>
+<table class="tmain" width="100%">
+  <tr>
+    <td colspan="2" class="thdr"><b>Parameters</b></td>
+  </tr>
+  <tr>
+    <td class="tmain_nw" width="31%"><code>template</code></td>
+    <td class="tmain" width="69%"><p>The name of the main file in the template.</p>
+<p>If you build your help file with a standard template
+and using nuget package (e.g. via MSBuild)
+you can refer to a standard templates using
+<code class="ctag">%docgen%/template/</code> as the base path.</p></td>
+  </tr>
+  <tr>
+    <td class="tmain_nw" width="31%"><code>output</code></td>
+    <td class="tmain" width="69%"><p>The name of the output file (for templates
+that creates only one file).</p>
+<p>For templates that creates multiple file use
+this parameter to specify the output folder.
+However, because the parameter requires a file,
+add <code class="ctag">null-file</code> as a file name. The file
+with such name will not be created, however, its
+location will be used as base path to create
+all other files by the template.</p></td>
+  </tr>
+  <tr>
+    <td class="tmain_nw" width="31%"><code>encoding</code></td>
+    <td class="tmain" width="69%"><p>The name of the encoding for output file(s) (e.g. 'ascii', 'utf-8', or 'windows-1252').</p></td>
+  </tr>
+</table><h2>Details</h2><p>The tag should be used one or more time inside of
+<a href="docProjectFile1.help-project.html"><code>help-project</code></a> tag.</p>
+<p>The section may contain one or more
+<a href="docProjectFile1.define.html"><code>define</code></a> tags.
+for template-specific definitions.</p>
+<p>Refer the template documentation of the list
+of the templates available and for the
+parameters specific for the template.</p><p>Declared in <a href="docProjectFile1.html">project.xml file</a></p>
+<p>
+  <center><a href="docProjectFile1.html">back</a></center>
+</p><script language="javascript" type="text/javascript">syncList1('docProjectFile1');</script></body></html>

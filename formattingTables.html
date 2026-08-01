@@ -1,0 +1,163 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><title>Formatting: Using Markdown-style formatting</title><link rel="stylesheet" href="highlighter/default.css">
+<link rel="stylesheet" href="res/styles.css">
+<link rel="stylesheet" href="res/dripicons.css"></head><body><script type="text/javascript" src="highlighter/highlight.pack.js"></script><script type="text/javascript" src="highlighter/highlight.cshtml.js"></script><script type="text/javascript" src="settings.js"></script><script type="text/javascript" src="res/page-scripts.js"></script><script type="text/javascript">
+    loadStarted();
+</script><h1>Formatting: Using Markdown-style formatting</h1>
+<h2>Brief</h2>
+<p>The article describes markdown-style formatting</p>
+<h2>Details</h2><p>The docgen also partially supports using of
+MarkDown-style formatting.</p>
+<p>The enable markdown style formatting add
+define with the name <code class="ctag">simplified-text-syntax</code> to
+common section of the project file.</p>
+<p><b>Text formatting</b></p><table class="tmain" width="100%">
+  <tr>
+    <td class="thdr" width="30%"><p>Markdown Tag</p></td>
+    <td class="thdr"><p>Description</p></td>
+  </tr>
+  <tr>
+    <td class="tmain"><p><code class="ctag">**text**</code></p></td>
+    <td class="tmain"><p>Make text <b>bold</b></p></td>
+  </tr>
+  <tr>
+    <td class="tmain"><p><code class="ctag">//text//</code></p></td>
+    <td class="tmain"><p>Make text <i>italic</i></p></td>
+  </tr>
+  <tr>
+    <td class="tmain"><p><code class="ctag">__text__</code></p></td>
+    <td class="tmain"><p>Make text <u>underline</u></p></td>
+  </tr>
+  <tr>
+    <td class="tmain"><p><code class="ctag">~~text~~</code></p></td>
+    <td class="tmain"><p>Make text <s>strikedthrough</s></p></td>
+  </tr>
+  <tr>
+    <td class="tmain"><p><code class="ctag">^^text^^</code></p></td>
+    <td class="tmain"><p>Make text <sup>superscript</sup></p></td>
+  </tr>
+  <tr>
+    <td class="tmain"><p><code class="ctag">[&lt;text&gt;]&lt;keyword&gt;</code></p></td>
+    <td class="tmain"><p>Make a link to internal article</p></td>
+  </tr>
+  <tr>
+    <td class="tmain"><p><code class="ctag">&lt;http://link&gt;</code></p></td>
+    <td class="tmain"><p>This is a link <a href="https://www.gehtsoftusa.com" target="_blank">https://www.gehtsoftusa.com</a></p></td>
+  </tr>
+</table><p>To make the text <code class="ctag">code</code> put it between back quotes <code class="ctag">`</code>.</p>
+<p><b>Code Samples</b></p>
+<p>To insert a code sample you can put it between triple back quotes <code class="ctag">```</code>.
+The first one should define the language name for syntax highlighting
+(use <code class="ctag">text</code> to no formatting)</p><pre class="example" id="example4"><code class="text">   ```csharp
+    if (a &gt; b)
+        Console.WriteLine(&quot;A is bigger&quot;);
+   ```</code></pre><p>Will be displayed as:</p><pre class="example" id="example5"><code class="csharp">    if (a &gt; b)
+        Console.WriteLine(&quot;A is bigger&quot;);</code></pre><p>You can make the example collapsible by adding a plus (<code class="ctag">+</code>) sign
+to make it expanded or a (<code class="ctag">-</code>) sign to make it collapsed.</p><pre class="example" id="example6"><code class="text">   ```<b>+</b>csharp
+    if (a &gt; b)
+        Console.WriteLine(&quot;A is bigger&quot;);
+   ```</code></pre><div id="open7" style="display:none">
+  <p>Example&nbsp;<a href="javascript: showdiv('close7'); hidediv('open7');" onclick="javascript: showdiv('close7'); hidediv('open7');" class="action">Show<span class="side-icon dripicons-chevron-right"></span></a></p>
+</div>
+<div id="close7" style="display:inline">
+  <p>Example&nbsp;<a href="javascript: showdiv('open7'); hidediv('close7');" onclick="javascript: showdiv('open7'); hidediv('close7');" class="action">Hide<span class="side-icon dripicons-chevron-down"></span></a></p>
+  <pre class="example" id="example7"><code class="csharp">    if (a &gt; b)
+        Console.WriteLine(&quot;A is bigger&quot;);</code></pre>
+</div><p><b>Headers</b></p>
+<p>To mark a line as a header, start it with <code class="ctag">#</code> character. The number
+of characters defines the level of the header.</p><pre class="example" id="example8"><code># Header Level 1
+## Header Level 2
+### Header Level 3
+#### Header Level 4</code></pre><p></p>
+<h1>Header Level 1</h1>
+<p></p>
+<h2>Header Level 2</h2>
+<p></p>
+<h3>Header Level 3</h3>
+<p><b>Header Level 4</b></p>
+<p><b>Simple lists</b></p>
+<p>To make a simple list use <code class="ctag">*</code>, <code class="ctag">-</code> as the first character of the line.
+The list lines follows the same rule a paragraph - the next item starts after
+the empty line or with the next line starts with list character.</p><table class="tmain" width="100%">
+  <tr>
+    <td class="tmain" width="50%"><pre class="example" id="example9"><code>    * Item 1
+    - Item 2
+    * Item 3
+      is a multi-line line
+    * Item 4</code></pre></td>
+    <td class="tmain"><ul class="main">
+  <li><p>Item 1</p></li>
+  <li><p>Item 2</p></li>
+  <li><p>Item 3
+is a multi-line line</p></li>
+  <li><p>Item 4</p></li>
+</ul></td>
+  </tr>
+</table><p><b>Numbered Lists</b></p>
+<p>The numbered lists similar to bullet list, the only difference is that
+the symbol <code class="ctag">0</code> should be used in first item. The rest items may have
+either <code class="ctag">0</code>, <code class="ctag">*</code>, or <code class="ctag">-</code>.</p><table class="tmain" width="100%">
+  <tr>
+    <td class="tmain" width="50%"><pre class="example" id="example10"><code>    0 Item 1
+    0 Item 2
+    * And this is numbered list too
+    * Item 4</code></pre></td>
+    <td class="tmain"><ol class="main">
+  <li><p>Item 1</p></li>
+  <li><p>Item 2</p></li>
+  <li><p>And this is numbered list too</p></li>
+  <li><p>Item 4</p></li>
+</ol></td>
+  </tr>
+</table><p><b>Tables</b></p>
+<p>To format the table use <code class="ctag">|</code> character a column delimiter. Markdown
+based tables cannot have values longer than 1 line. <code class="ctag">|</code> character must
+be the first character in the line.</p>
+<p>Example: <code class="ctag">|cell1|cell2|cell3|</code></p><table class="tmain">
+  <tr>
+    <td class="tmain"><p>cell1</p></td>
+    <td class="tmain"><p>cell2</p></td>
+    <td class="tmain"><p>cell3</p></td>
+  </tr>
+</table><p>To make a row header put <code class="ctag">!,</code> after the first <code class="ctag">|</code></p>
+<p>Example: <code class="ctag">|!,cell1|cell2|cell3|</code></p><table class="tmain">
+  <tr>
+    <td class="thdr"><p>cell1</p></td>
+    <td class="thdr"><p>cell2</p></td>
+    <td class="thdr"><p>cell3</p></td>
+  </tr>
+</table><p>To make the table 100% width put <code class="ctag">&gt;</code> character at end of the first
+line of the table</p>
+<p>Example: <code class="ctag">|cell1|cell2|cell3| &gt;</code></p><table class="tmain" width="100%">
+  <tr>
+    <td class="tmain"><p>cell1</p></td>
+    <td class="tmain"><p>cell2</p></td>
+    <td class="tmain"><p>cell3</p></td>
+  </tr>
+</table><p>To define the width of the column put size in percents after <code class="ctag">|</code> character followed
+by <code class="ctag">,</code>.</p>
+<p>Example: <code class="ctag">|50%,cell1|25%,cell2|25%,cell3| &gt;</code></p>
+<p>You can specify both, the width and the header flag</p>
+<p>Example: <code class="ctag">|!50%,cell1|25%,cell2|25%,cell3| &gt;</code></p>
+<p>To add more lines put them right after the first line. You can
+also use formatting inside the table</p><p>Example</p>
+<pre class="example" id="example11"><code>|!50%,cell1|25%,cell2|25%,cell3| &gt;
+|[b]cell4[/b]|[i]cell5[/i]|[sup]cell6[sub]|
+|**cell4**|__cell5__|^^cell6^^|</code></pre><table class="tmain" width="100%">
+  <tr>
+    <td class="thdr" width="50%"><p>cell1</p></td>
+    <td class="thdr" width="25%"><p>cell2</p></td>
+    <td class="thdr" width="25%"><p>cell3</p></td>
+  </tr>
+  <tr>
+    <td class="tmain"><p><b>cell4</b></p></td>
+    <td class="tmain"><p><i>cell5</i></p></td>
+    <td class="tmain"><p><sup>cell6</sup></p></td>
+  </tr>
+  <tr>
+    <td class="tmain"><p><b>cell4</b></p></td>
+    <td class="tmain"><p><u>cell5</u></p></td>
+    <td class="tmain"><p><sup>cell6</sup></p></td>
+  </tr>
+</table><p>
+  <center><a href="sources.html">back</a></center>
+</p><script language="javascript" type="text/javascript">syncList();</script></body></html>
